@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#151922"/>
+      <stop offset="100%" stop-color="#262e3d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#56c7ff"/>
+      <stop offset="50%" stop-color="#ff72b6"/>
+      <stop offset="100%" stop-color="#7a5cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <rect x="86" y="72" width="340" height="368" rx="36" fill="#f7f2ea"/>
+  <rect x="122" y="136" width="68" height="68" rx="10" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <rect x="224" y="136" width="68" height="68" rx="10" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <rect x="326" y="136" width="68" height="68" rx="10" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <rect x="122" y="250" width="68" height="68" rx="10" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <path d="M222 250h176v68H222z" fill="url(#card)" rx="10"/>
+  <path d="M236 316l34-52 24 30 40-60 42 82" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M325 246c29 0 48 20 48 48s-20 50-48 50-48-22-48-50 19-48 48-48z" fill="#7b5cff"/>
+  <circle cx="311" cy="287" r="7" fill="#fff"/>
+  <circle cx="339" cy="287" r="7" fill="#fff"/>
+  <path d="M311 308c7 8 21 8 28 0" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M137 246h39v39h-39z" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <path d="M137 360h39v39h-39z" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <path d="M244 360h39v39h-39z" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <path d="M351 360h39v39h-39z" fill="none" stroke="#1f2430" stroke-width="12"/>
+  <path d="M243 83h26" stroke="#1f2430" stroke-width="12" stroke-linecap="round"/>
+</svg>
