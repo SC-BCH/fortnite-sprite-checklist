@@ -110,21 +110,25 @@ function toggle(id) {
   saveState(state);
   render();
 }
-function appendCross(group, x, y, w, h) {
-  const pad = Math.max(10, Math.min(w, h) * 0.18);
-  const x1 = x + pad;
-  const y1 = y + pad;
-  const x2 = x + w - pad;
-  const y2 = y + h - pad;
-  const sx1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  sx1.setAttribute("x1", x1); sx1.setAttribute("y1", y1); sx1.setAttribute("x2", x2); sx1.setAttribute("y2", y2); sx1.setAttribute("class", "cross-shadow");
-  const sx2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  sx2.setAttribute("x1", x1); sx2.setAttribute("y1", y2); sx2.setAttribute("x2", x2); sx2.setAttribute("y2", y1); sx2.setAttribute("class", "cross-shadow");
-  const lx1 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  lx1.setAttribute("x1", x1); lx1.setAttribute("y1", y1); lx1.setAttribute("x2", x2); lx1.setAttribute("y2", y2); lx1.setAttribute("class", "cross-line");
-  const lx2 = document.createElementNS("http://www.w3.org/2000/svg", "line");
-  lx2.setAttribute("x1", x1); lx2.setAttribute("y1", y2); lx2.setAttribute("x2", x2); lx2.setAttribute("y2", y1); lx2.setAttribute("class", "cross-line");
-  group.appendChild(sx1); group.appendChild(sx2); group.appendChild(lx1); group.appendChild(lx2);
+function appendCheck(group, x, y, w, h) {
+  const p1x = x + w * 0.18;
+  const p1y = y + h * 0.56;
+  const p2x = x + w * 0.42;
+  const p2y = y + h * 0.78;
+  const p3x = x + w * 0.82;
+  const p3y = y + h * 0.24;
+  const points = `${p1x},${p1y} ${p2x},${p2y} ${p3x},${p3y}`;
+
+  const shadow = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+  shadow.setAttribute("points", points);
+  shadow.setAttribute("class", "check-shadow");
+
+  const line = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+  line.setAttribute("points", points);
+  line.setAttribute("class", "check-line");
+
+  group.appendChild(shadow);
+  group.appendChild(line);
 }
 function render() {
   overlay.innerHTML = "";
