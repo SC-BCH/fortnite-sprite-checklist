@@ -10,6 +10,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Sprite Checklist">
 <link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&display=swap">
 <style>
 :root {
   --bg:#0f1115; --panel:#171b22; --text:#eef2f7; --muted:#a9b3c1; --accent:#ff4d4f; --board-max:1180px;
@@ -38,17 +39,24 @@ button.action {
   appearance:none; border:0; border-radius:12px; padding:10px 14px; background:#242c39; color:var(--text); font-weight:700;
   cursor:pointer; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
 }
-.name-input {
+.name-input,
+.name-color-select {
   appearance:none;
   -webkit-appearance:none;
   border:0;
   border-radius:12px;
   padding:10px 14px;
-  min-width:180px;
   background:#242c39;
   color:var(--text);
   font:inherit;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.name-input {
+  min-width:180px;
+}
+.name-color-select {
+  min-width:96px;
+  cursor:pointer;
 }
 .name-input::placeholder {
   color:rgba(238,242,247,0.58);
@@ -63,26 +71,33 @@ button.action {
 }
 .name-overlay {
   position:absolute;
-  left:2.3%;
-  top:2.25%;
-  max-width:28%;
-  padding:8px 12px 9px;
-  border-radius:12px;
-  background:linear-gradient(180deg, rgba(20,25,34,0.72), rgba(20,25,34,0.58));
-  color:rgba(255,255,255,0.96);
+  left:2.35%;
+  top:2.15%;
+  max-width:30%;
+  color:#141414;
+  font-family:"Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
   font-weight:700;
-  font-size:clamp(13px, 1.28vw, 20px);
-  line-height:1.15;
-  letter-spacing:0.01em;
-  box-shadow:0 6px 18px rgba(0,0,0,0.14);
-  border:1px solid rgba(255,255,255,0.14);
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
+  font-size:clamp(14px, 1.12vw, 18px);
+  line-height:1.06;
+  letter-spacing:0.02em;
+  text-shadow:0 1px 2px rgba(255,255,255,0.58), 0 0 1px rgba(255,255,255,0.42);
   pointer-events:none;
   z-index:2;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+}
+.name-overlay.name-color-white {
+  color:rgba(255,255,255,0.96);
+  text-shadow:0 1px 2px rgba(0,0,0,0.34), 0 0 1px rgba(0,0,0,0.26);
+}
+.name-overlay.name-color-black {
+  color:#141414;
+  text-shadow:0 1px 2px rgba(255,255,255,0.58), 0 0 1px rgba(255,255,255,0.42);
+}
+.name-overlay.name-color-red {
+  color:#c93642;
+  text-shadow:0 1px 2px rgba(255,255,255,0.72), 0 0 1px rgba(255,255,255,0.56);
 }
 .name-overlay.is-hidden {
   display:none;
@@ -135,8 +150,9 @@ button.action {
 @media (max-width:640px) {
   .badge { font-size:13px; padding:9px 11px; }
   button.action { font-size:13px; padding:9px 12px; }
-  .name-input { min-width:100%; font-size:13px; padding:9px 12px; }
-  .name-overlay { max-width:46%; padding:7px 10px 8px; font-size:clamp(12px, 3.4vw, 17px); }
+  .name-input,
+  .name-color-select { min-width:100%; font-size:13px; padding:9px 12px; }
+  .name-overlay { max-width:48%; font-size:clamp(12px, 3.2vw, 16px); }
   .hint { font-size:12px; }
 }
 </style>
@@ -147,6 +163,11 @@ button.action {
     <div class="badge" id="countBadge">0 / 41</div>
     <div class="badge" id="saveBadge">保存済み</div>
     <input class="name-input" id="nameInput" type="text" maxlength="32" placeholder="名前（任意）">
+    <select class="name-color-select" id="nameColorSelect" aria-label="名前文字色">
+      <option value="black">黒</option>
+      <option value="red">赤</option>
+      <option value="white">白</option>
+    </select>
     <div class="spacer"></div>
     <button class="action" id="saveImageBtn" type="button">画像保存</button>
     <button class="action" id="resetBtn" type="button">全解除</button>
@@ -162,6 +183,7 @@ button.action {
 <script>
 const STORAGE_KEY = "fortnite_sprite_checklist_v4";
 const NAME_STORAGE_KEY = "fortnite_sprite_checklist_name_v1";
+const NAME_COLOR_STORAGE_KEY = "fortnite_sprite_checklist_name_color_v1";
 const IMAGE_WIDTH = 2048;
 const IMAGE_HEIGHT = 1629;
 const boxes = [{"id": "water_normal", "label": "水の精霊 / ノーマル", "x": 197, "y": 460, "w": 68, "h": 60}, {"id": "water_gold", "label": "水の精霊 / ゴールド", "x": 399, "y": 462, "w": 66, "h": 60}, {"id": "water_gummy", "label": "水の精霊 / グミ", "x": 592, "y": 463, "w": 66, "h": 60}, {"id": "water_galaxy", "label": "水の精霊 / ギャラクシー", "x": 791, "y": 465, "w": 66, "h": 60}, {"id": "dream_normal", "label": "夢の精霊 / ノーマル", "x": 1222, "y": 462, "w": 65, "h": 60}, {"id": "dream_gold", "label": "夢の精霊 / ゴールド", "x": 1425, "y": 461, "w": 65, "h": 60}, {"id": "dream_gummy", "label": "夢の精霊 / グミ", "x": 1621, "y": 460, "w": 66, "h": 60}, {"id": "dream_galaxy", "label": "夢の精霊 / ギャラクシー", "x": 1805, "y": 460, "w": 66, "h": 59}, {"id": "earth_normal", "label": "地の精霊 / ノーマル", "x": 197, "y": 739, "w": 68, "h": 61}, {"id": "earth_gold", "label": "地の精霊 / ゴールド", "x": 399, "y": 740, "w": 67, "h": 61}, {"id": "earth_gummy", "label": "地の精霊 / グミ", "x": 594, "y": 741, "w": 66, "h": 60}, {"id": "earth_galaxy", "label": "地の精霊 / ギャラクシー", "x": 792, "y": 742, "w": 66, "h": 60}, {"id": "burnt_peanut", "label": "BurntPeanut", "x": 1010, "y": 742, "w": 66, "h": 60}, {"id": "demon_normal", "label": "デーモン精霊 / ノーマル", "x": 1222, "y": 741, "w": 66, "h": 60}, {"id": "demon_gold", "label": "デーモン精霊 / ゴールド", "x": 1425, "y": 740, "w": 66, "h": 60}, {"id": "demon_gummy", "label": "デーモン精霊 / グミ", "x": 1622, "y": 740, "w": 66, "h": 60}, {"id": "demon_galaxy", "label": "デーモン精霊 / ギャラクシー", "x": 1807, "y": 740, "w": 67, "h": 60}, {"id": "fire_normal", "label": "炎の精霊 / ノーマル", "x": 195, "y": 1014, "w": 68, "h": 60}, {"id": "fire_gold", "label": "炎の精霊 / ゴールド", "x": 398, "y": 1013, "w": 66, "h": 60}, {"id": "fire_gummy", "label": "炎の精霊 / グミ", "x": 592, "y": 1013, "w": 66, "h": 60}, {"id": "fire_galaxy", "label": "炎の精霊 / ギャラクシー", "x": 790, "y": 1013, "w": 67, "h": 60}, {"id": "punk_normal", "label": "パンクの精霊 / ノーマル", "x": 1224, "y": 1013, "w": 65, "h": 59}, {"id": "punk_gold", "label": "パンクの精霊 / ゴールド", "x": 1424, "y": 1012, "w": 65, "h": 60}, {"id": "punk_gummy", "label": "パンクの精霊 / グミ", "x": 1617, "y": 1012, "w": 65, "h": 61}, {"id": "punk_galaxy", "label": "パンクの精霊 / ギャラクシー", "x": 1807, "y": 1013, "w": 66, "h": 60}, {"id": "duck_normal", "label": "ダッグ精霊 / ノーマル", "x": 194, "y": 1275, "w": 68, "h": 61}, {"id": "duck_gold", "label": "ダッグ精霊 / ゴールド", "x": 398, "y": 1275, "w": 67, "h": 61}, {"id": "duck_gummy", "label": "ダッグ精霊 / グミ", "x": 591, "y": 1275, "w": 67, "h": 61}, {"id": "duck_galaxy", "label": "ダッグ精霊 / ギャラクシー", "x": 790, "y": 1275, "w": 67, "h": 61}, {"id": "king_normal", "label": "王様の精霊 / ノーマル", "x": 1223, "y": 1275, "w": 66, "h": 61}, {"id": "king_gold", "label": "王様の精霊 / ゴールド", "x": 1424, "y": 1275, "w": 66, "h": 60}, {"id": "king_gummy", "label": "王様の精霊 / グミ", "x": 1620, "y": 1275, "w": 67, "h": 61}, {"id": "king_galaxy", "label": "王様の精霊 / ギャラクシー", "x": 1807, "y": 1275, "w": 68, "h": 62}, {"id": "ghost_normal", "label": "ゴースト精霊 / ノーマル", "x": 191, "y": 1537, "w": 67, "h": 61}, {"id": "ghost_gold", "label": "ゴースト精霊 / ゴールド", "x": 398, "y": 1537, "w": 67, "h": 61}, {"id": "ghost_gummy", "label": "ゴースト精霊 / グミ", "x": 591, "y": 1537, "w": 67, "h": 61}, {"id": "ghost_galaxy", "label": "ゴースト精霊 / ギャラクシー", "x": 791, "y": 1537, "w": 67, "h": 61}, {"id": "zero_point_normal", "label": "ゼロポイントの精霊 / ノーマル", "x": 1223, "y": 1537, "w": 66, "h": 61}, {"id": "zero_point_gold", "label": "ゼロポイントの精霊 / ゴールド", "x": 1424, "y": 1535, "w": 66, "h": 61}, {"id": "zero_point_gummy", "label": "ゼロポイントの精霊 / グミ", "x": 1617, "y": 1537, "w": 66, "h": 61}, {"id": "zero_point_galaxy", "label": "ゼロポイントの精霊 / ギャラクシー", "x": 1809, "y": 1537, "w": 66, "h": 61}];
@@ -170,6 +192,7 @@ const boardImage = document.getElementById("boardImage");
 const countBadge = document.getElementById("countBadge");
 const saveBadge = document.getElementById("saveBadge");
 const nameInput = document.getElementById("nameInput");
+const nameColorSelect = document.getElementById("nameColorSelect");
 const nameOverlay = document.getElementById("nameOverlay");
 const saveImageBtn = document.getElementById("saveImageBtn");
 const resetBtn = document.getElementById("resetBtn");
@@ -192,6 +215,16 @@ function loadName() {
     return "";
   }
 }
+function loadNameColor() {
+  try {
+    return normalizeNameColor(localStorage.getItem(NAME_COLOR_STORAGE_KEY) || "black");
+  } catch (e) {
+    return "black";
+  }
+}
+function normalizeNameColor(value) {
+  return ["black", "red", "white"].includes(value) ? value : "black";
+}
 function normalizeName(value) {
   return String(value || "").replace(/\s+/g, " ").trim().slice(0, 32);
 }
@@ -201,8 +234,15 @@ function saveName(value) {
   saveBadge.textContent = "保存済み";
   return normalized;
 }
+function saveNameColor(value) {
+  const normalized = normalizeNameColor(value);
+  localStorage.setItem(NAME_COLOR_STORAGE_KEY, normalized);
+  saveBadge.textContent = "保存済み";
+  return normalized;
+}
 let state = loadState();
 let displayName = loadName();
+let displayNameColor = loadNameColor();
 function checkedCount() {
   return Object.values(state).filter(Boolean).length;
 }
@@ -257,7 +297,11 @@ function drawCheckOnContext(ctx, box) {
 }
 function syncNameOverlay() {
   const normalized = normalizeName(displayName);
+  const color = normalizeNameColor(displayNameColor);
   if (nameInput.value !== normalized) nameInput.value = normalized;
+  if (nameColorSelect.value !== color) nameColorSelect.value = color;
+  nameOverlay.classList.remove("name-color-black", "name-color-red", "name-color-white");
+  nameOverlay.classList.add(`name-color-${color}`);
   if (normalized) {
     nameOverlay.textContent = normalized;
     nameOverlay.classList.remove("is-hidden");
@@ -266,56 +310,42 @@ function syncNameOverlay() {
     nameOverlay.classList.add("is-hidden");
   }
 }
-function drawRoundedRect(ctx, x, y, width, height, radius) {
-  const r = Math.min(radius, width / 2, height / 2);
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + width - r, y);
-  ctx.arcTo(x + width, y, x + width, y + r, r);
-  ctx.lineTo(x + width, y + height - r);
-  ctx.arcTo(x + width, y + height, x + width - r, y + height, r);
-  ctx.lineTo(x + r, y + height);
-  ctx.arcTo(x, y + height, x, y + height - r, r);
-  ctx.lineTo(x, y + r);
-  ctx.arcTo(x, y, x + r, y, r);
-  ctx.closePath();
+function getNameColorStyle(color) {
+  const normalized = normalizeNameColor(color);
+  if (normalized === "white") {
+    return { fill: "rgba(255,255,255,0.96)", stroke: "rgba(0,0,0,0.32)" };
+  }
+  if (normalized === "red") {
+    return { fill: "#c93642", stroke: "rgba(255,255,255,0.72)" };
+  }
+  return { fill: "#141414", stroke: "rgba(255,255,255,0.58)" };
 }
-function drawNameOnContext(ctx, name) {
+function drawNameOnContext(ctx, name, color) {
   const normalized = normalizeName(name);
   if (!normalized) return;
 
-  let fontSize = 34;
-  const maxTextWidth = IMAGE_WIDTH * 0.28;
+  let fontSize = 36;
+  const maxTextWidth = IMAGE_WIDTH * 0.30;
+  const fontFamily = `"Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
   do {
-    ctx.font = `700 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
+    ctx.font = `700 ${fontSize}px ${fontFamily}`;
     if (ctx.measureText(normalized).width <= maxTextWidth || fontSize <= 24) break;
     fontSize -= 2;
   } while (fontSize > 24);
 
-  const metrics = ctx.measureText(normalized);
-  const padX = 18;
-  const padY = 11;
+  const style = getNameColorStyle(color);
   const x = 48;
-  const y = 44;
-  const boxWidth = Math.ceil(metrics.width + padX * 2);
-  const boxHeight = Math.ceil(fontSize + padY * 2);
+  const y = 42;
 
   ctx.save();
-  drawRoundedRect(ctx, x, y, boxWidth, boxHeight, 14);
-  const gradient = ctx.createLinearGradient(x, y, x, y + boxHeight);
-  gradient.addColorStop(0, "rgba(20,25,34,0.72)");
-  gradient.addColorStop(1, "rgba(20,25,34,0.58)");
-  ctx.fillStyle = gradient;
-  ctx.fill();
-  ctx.strokeStyle = "rgba(255,255,255,0.14)";
-  ctx.lineWidth = 2;
-  ctx.stroke();
-  ctx.shadowColor = "rgba(0,0,0,0.18)";
-  ctx.shadowBlur = 10;
-  ctx.fillStyle = "rgba(255,255,255,0.96)";
+  ctx.font = `700 ${fontSize}px ${fontFamily}`;
   ctx.textBaseline = "top";
-  ctx.font = `700 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
-  ctx.fillText(normalized, x + padX, y + padY - 1);
+  ctx.lineJoin = "round";
+  ctx.strokeStyle = style.stroke;
+  ctx.lineWidth = 4;
+  ctx.strokeText(normalized, x, y);
+  ctx.fillStyle = style.fill;
+  ctx.fillText(normalized, x, y);
   ctx.restore();
 }
 async function buildChecklistBlob() {
@@ -331,7 +361,12 @@ async function buildChecklistBlob() {
   canvas.height = IMAGE_HEIGHT;
   const ctx = canvas.getContext("2d");
   ctx.drawImage(boardImage, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-  drawNameOnContext(ctx, displayName);
+
+  if (document.fonts && document.fonts.ready) {
+    try { await document.fonts.ready; } catch (e) {}
+  }
+
+  drawNameOnContext(ctx, displayName, displayNameColor);
 
   boxes.forEach((box) => {
     if (state[box.id]) drawCheckOnContext(ctx, box);
@@ -442,6 +477,10 @@ function render() {
 }
 nameInput.addEventListener("input", () => {
   displayName = saveName(nameInput.value);
+  syncNameOverlay();
+});
+nameColorSelect.addEventListener("change", () => {
+  displayNameColor = saveNameColor(nameColorSelect.value);
   syncNameOverlay();
 });
 saveImageBtn.addEventListener("click", () => {
