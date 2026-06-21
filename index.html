@@ -78,14 +78,14 @@ button.action {
 }
 .mark path.shadow {
   stroke:rgba(255,255,255,0.34);
-  stroke-width:18;
+  stroke-width:20;
   stroke-linecap:round;
   stroke-linejoin:round;
   fill:none;
 }
 .mark path.main {
   stroke:var(--accent);
-  stroke-width:12;
+  stroke-width:14;
   stroke-linecap:round;
   stroke-linejoin:round;
   fill:none;
@@ -173,7 +173,7 @@ function drawCheckOnContext(ctx, box) {
   ctx.lineJoin = "round";
 
   ctx.strokeStyle = "rgba(255,255,255,0.34)";
-  ctx.lineWidth = 18;
+  ctx.lineWidth = 20;
   ctx.beginPath();
   ctx.moveTo(p1x, p1y);
   ctx.lineTo(p2x, p2y);
@@ -181,7 +181,7 @@ function drawCheckOnContext(ctx, box) {
   ctx.stroke();
 
   ctx.strokeStyle = "#ff4d4f";
-  ctx.lineWidth = 12;
+  ctx.lineWidth = 14;
   ctx.beginPath();
   ctx.moveTo(p1x, p1y);
   ctx.lineTo(p2x, p2y);
