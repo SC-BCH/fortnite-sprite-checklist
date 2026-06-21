@@ -63,18 +63,21 @@ button.action {
 }
 .name-overlay {
   position:absolute;
-  left:2.2%;
-  top:2.2%;
-  max-width:34%;
-  padding:10px 16px;
-  border-radius:16px;
-  background:rgba(255,255,255,0.82);
-  color:#1b2330;
-  font-weight:800;
-  font-size:clamp(16px, 1.8vw, 28px);
-  line-height:1.2;
-  letter-spacing:0.02em;
-  box-shadow:0 6px 18px rgba(0,0,0,0.16);
+  left:2.3%;
+  top:2.25%;
+  max-width:28%;
+  padding:8px 12px 9px;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(20,25,34,0.72), rgba(20,25,34,0.58));
+  color:rgba(255,255,255,0.96);
+  font-weight:700;
+  font-size:clamp(13px, 1.28vw, 20px);
+  line-height:1.15;
+  letter-spacing:0.01em;
+  box-shadow:0 6px 18px rgba(0,0,0,0.14);
+  border:1px solid rgba(255,255,255,0.14);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
   pointer-events:none;
   z-index:2;
   white-space:nowrap;
@@ -133,7 +136,7 @@ button.action {
   .badge { font-size:13px; padding:9px 11px; }
   button.action { font-size:13px; padding:9px 12px; }
   .name-input { min-width:100%; font-size:13px; padding:9px 12px; }
-  .name-overlay { max-width:42%; padding:8px 12px; }
+  .name-overlay { max-width:46%; padding:7px 10px 8px; font-size:clamp(12px, 3.4vw, 17px); }
   .hint { font-size:12px; }
 }
 </style>
@@ -281,32 +284,37 @@ function drawNameOnContext(ctx, name) {
   const normalized = normalizeName(name);
   if (!normalized) return;
 
-  let fontSize = 46;
-  const maxTextWidth = IMAGE_WIDTH * 0.34;
+  let fontSize = 34;
+  const maxTextWidth = IMAGE_WIDTH * 0.28;
   do {
-    ctx.font = `800 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
-    if (ctx.measureText(normalized).width <= maxTextWidth || fontSize <= 28) break;
+    ctx.font = `700 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
+    if (ctx.measureText(normalized).width <= maxTextWidth || fontSize <= 24) break;
     fontSize -= 2;
-  } while (fontSize > 28);
+  } while (fontSize > 24);
 
   const metrics = ctx.measureText(normalized);
-  const padX = 22;
-  const padY = 14;
-  const x = 44;
+  const padX = 18;
+  const padY = 11;
+  const x = 48;
   const y = 44;
   const boxWidth = Math.ceil(metrics.width + padX * 2);
   const boxHeight = Math.ceil(fontSize + padY * 2);
 
   ctx.save();
-  drawRoundedRect(ctx, x, y, boxWidth, boxHeight, 18);
-  ctx.fillStyle = "rgba(255,255,255,0.82)";
+  drawRoundedRect(ctx, x, y, boxWidth, boxHeight, 14);
+  const gradient = ctx.createLinearGradient(x, y, x, y + boxHeight);
+  gradient.addColorStop(0, "rgba(20,25,34,0.72)");
+  gradient.addColorStop(1, "rgba(20,25,34,0.58)");
+  ctx.fillStyle = gradient;
   ctx.fill();
-  ctx.strokeStyle = "rgba(27,35,48,0.18)";
+  ctx.strokeStyle = "rgba(255,255,255,0.14)";
   ctx.lineWidth = 2;
   ctx.stroke();
-  ctx.fillStyle = "#1b2330";
+  ctx.shadowColor = "rgba(0,0,0,0.18)";
+  ctx.shadowBlur = 10;
+  ctx.fillStyle = "rgba(255,255,255,0.96)";
   ctx.textBaseline = "top";
-  ctx.font = `800 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
+  ctx.font = `700 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
   ctx.fillText(normalized, x + padX, y + padY - 1);
   ctx.restore();
 }
