@@ -63,6 +63,18 @@ button.action {
 .name-input::placeholder {
   color:rgba(238,242,247,0.58);
 }
+.labeled-select {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.control-label {
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+  line-height:1;
+  white-space:nowrap;
+}
 .hint { color:var(--muted); font-size:13px; margin:2px 0 12px; }
 .board {
   position:relative; width:100%; max-width:var(--board-max); margin:0 auto; border-radius:18px; overflow:hidden;
@@ -186,6 +198,13 @@ button.action {
   .name-input,
   .name-color-select,
   .name-size-select { min-width:100%; font-size:13px; padding:9px 12px; }
+  .labeled-select {
+    width:100%;
+  }
+  .control-label {
+    min-width:64px;
+    font-size:12px;
+  }
   .dev-mode-flag { font-size:12px; padding:0; }
   .meta-overlay { max-width:48%; }
   .date-overlay { font-size:clamp(11px, 2.7vw, 14px); }
@@ -203,16 +222,22 @@ button.action {
     <div class="badge" id="countBadge">0 / 41</div>
     <div class="badge" id="saveBadge">保存済み</div>
     <input class="name-input" id="nameInput" type="text" maxlength="32" placeholder="名前（任意）">
-    <select class="name-color-select" id="nameColorSelect" aria-label="名前文字色">
-      <option value="black">黒</option>
-      <option value="red">赤</option>
-      <option value="white">白</option>
-    </select>
-    <select class="name-size-select" id="nameSizeSelect" aria-label="名前サイズ">
-      <option value="small">小</option>
-      <option value="medium" selected>中</option>
-      <option value="large">大</option>
-    </select>
+    <div class="labeled-select">
+      <span class="control-label">文字色</span>
+      <select class="name-color-select" id="nameColorSelect" aria-label="名前文字色">
+        <option value="black">黒</option>
+        <option value="red">赤</option>
+        <option value="white">白</option>
+      </select>
+    </div>
+    <div class="labeled-select">
+      <span class="control-label">文字サイズ</span>
+      <select class="name-size-select" id="nameSizeSelect" aria-label="名前サイズ">
+        <option value="small">小</option>
+        <option value="medium" selected>中</option>
+        <option value="large">大</option>
+      </select>
+    </div>
     <div class="dev-mode-flag" id="devModeFlag">開発者モード</div>
     <div class="spacer"></div>
     <button class="action" id="saveImageBtn" type="button">画像保存</button>
