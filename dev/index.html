@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fortnite Sprite Checklist [DEV]</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#0f1115">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sprite Checklist DEV">
+<link rel="apple-touch-icon" href="../icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&display=swap">
+<style>
+:root {
+  --bg:#0f1115; --panel:#171b22; --text:#eef2f7; --muted:#a9b3c1; --accent:#ff4d4f; --board-max:1180px;
+}
+* { box-sizing:border-box; }
+html,body { margin:0; padding:0; }
+body {
+  background:linear-gradient(180deg, #0d1015 0%, #141922 100%);
+  color:var(--text);
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+}
+.wrap {
+  width:min(100%, calc(var(--board-max) + 24px));
+  margin:0 auto;
+  padding:max(12px, env(safe-area-inset-top)) 12px calc(18px + env(safe-area-inset-bottom));
+}
+.toolbar {
+  display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px;
+}
+.badge {
+  padding:10px 12px; border-radius:999px; background:var(--panel); font-weight:700; font-size:14px; line-height:1;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.env-badge {
+  background:#5a1c1c;
+  box-shadow:inset 0 0 0 1px rgba(255,120,120,0.34);
+}
+.spacer { flex:1 1 auto; }
+button.action {
+  appearance:none; border:0; border-radius:12px; padding:10px 14px; background:#242c39; color:var(--text); font-weight:700;
+  cursor:pointer; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.name-input,
+.name-color-select,
+.name-size-select {
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  border-radius:12px;
+  padding:10px 14px;
+  background:#242c39;
+  color:var(--text);
+  font:inherit;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+.name-input {
+  min-width:180px;
+}
+.name-color-select,
+.name-size-select {
+  min-width:96px;
+  cursor:pointer;
+}
+.name-input::placeholder {
+  color:rgba(238,242,247,0.58);
+}
+.labeled-select {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.control-label {
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+  line-height:1;
+  white-space:nowrap;
+}
+.hint { color:var(--muted); font-size:13px; margin:2px 0 12px; }
+.board {
+  position:relative; width:100%; max-width:var(--board-max); margin:0 auto; border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35); line-height:0;
+}
+.board img {
+  width:100%; height:auto; display:block; touch-action:manipulation; user-select:none; -webkit-user-select:none; -webkit-user-drag:none;
+}
+.dev-mode-flag {
+  display:none;
+  color:#ff4d4f;
+  font-weight:700;
+  font-size:13px;
+  line-height:1;
+  padding:0 4px;
+}
+.dev-mode-flag.is-visible {
+  display:block;
+}
+.meta-overlay {
+  position:absolute;
+  left:2.35%;
+  top:2.15%;
+  max-width:30%;
+  pointer-events:none;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.meta-line {
+  font-family:"Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif;
+  font-weight:700;
+  line-height:1.06;
+  letter-spacing:0.02em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.date-overlay {
+  font-size:clamp(12px, 0.96vw, 15px);
+}
+.count-overlay {
+  font-size:clamp(12px, 0.96vw, 15px);
+}
+.name-overlay {
+  font-size:clamp(14px, 1.12vw, 18px);
+}
+.name-overlay.name-size-small {
+  font-size:clamp(12px, 0.98vw, 16px);
+}
+.name-overlay.name-size-medium {
+  font-size:clamp(14px, 1.12vw, 18px);
+}
+.name-overlay.name-size-large {
+  font-size:clamp(16px, 1.28vw, 21px);
+}
+.meta-line.meta-color-white {
+  color:rgba(255,255,255,0.96);
+  text-shadow:0 1px 2px rgba(0,0,0,0.34), 0 0 1px rgba(0,0,0,0.26);
+}
+.meta-line.meta-color-black {
+  color:#141414;
+  text-shadow:0 1px 2px rgba(255,255,255,0.58), 0 0 1px rgba(255,255,255,0.42);
+}
+.meta-line.meta-color-red {
+  color:#c93642;
+  text-shadow:0 1px 2px rgba(255,255,255,0.72), 0 0 1px rgba(255,255,255,0.56);
+}
+.meta-line.is-hidden {
+  display:none;
+}
+.board.is-raw-export .layer {
+  pointer-events:none;
+}
+.layer { position:absolute; inset:0; z-index:1; }
+.hit {
+  position:absolute;
+  appearance:none;
+  -webkit-appearance:none;
+  border:0;
+  background:transparent;
+  padding:0;
+  margin:0;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.hit::before {
+  content:"";
+  position:absolute;
+  inset:-8px;
+}
+.hit:focus-visible {
+  outline:2px solid rgba(255,255,255,0.95);
+  outline-offset:2px;
+  border-radius:6px;
+}
+.mark {
+  position:absolute;
+  inset:8%;
+  width:84%;
+  height:84%;
+  pointer-events:none;
+}
+.mark path.shadow {
+  stroke:rgba(255,255,255,0.34);
+  stroke-width:20;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  fill:none;
+}
+.mark path.main {
+  stroke:var(--accent);
+  stroke-width:14;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  fill:none;
+}
+.footer { padding:14px 2px 6px; color:var(--muted); font-size:12px; text-align:center; }
+.footer a { color:inherit; text-decoration:underline; text-underline-offset:2px; }
+.footer a:hover { opacity:0.9; }
+@media (max-width:640px) {
+  .badge { font-size:13px; padding:9px 11px; }
+  button.action { font-size:13px; padding:9px 12px; }
+  .name-input,
+  .name-color-select,
+  .name-size-select { min-width:100%; font-size:13px; padding:9px 12px; }
+  .labeled-select {
+    width:100%;
+  }
+  .control-label {
+    min-width:64px;
+    font-size:12px;
+  }
+  .dev-mode-flag { font-size:12px; padding:0; }
+  .meta-overlay { max-width:48%; }
+  .date-overlay { font-size:clamp(11px, 2.7vw, 14px); }
+  .count-overlay { font-size:clamp(11px, 2.7vw, 14px); }
+  .name-overlay { font-size:clamp(12px, 3.2vw, 16px); }
+  .hint { font-size:12px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="toolbar">
+    <div class="badge" id="countBadge">0 / 41</div>
+    <div class="badge" id="saveBadge">保存済み</div>
+    <div class="badge env-badge">DEV</div>
+    <input class="name-input" id="nameInput" type="text" maxlength="32" placeholder="名前（任意）">
+    <div class="labeled-select">
+      <span class="control-label">文字色</span>
+      <select class="name-color-select" id="nameColorSelect" aria-label="名前文字色">
+        <option value="black">黒</option>
+        <option value="red">赤</option>
+        <option value="white">白</option>
+      </select>
+    </div>
+    <div class="labeled-select">
+      <span class="control-label">名前サイズ</span>
+      <select class="name-size-select" id="nameSizeSelect" aria-label="名前サイズ">
+        <option value="small">小</option>
+        <option value="medium" selected>中</option>
+        <option value="large">大</option>
+      </select>
+    </div>
+    <div class="dev-mode-flag" id="devModeFlag">開発者モード</div>
+    <div class="spacer"></div>
+    <button class="action" id="saveImageBtn" type="button">画像保存</button>
+    <button class="action" id="resetBtn" type="button">全解除</button>
+  </div>
+  <div class="hint">開発版です。タップで切替。状態はこの端末のブラウザに保存されます。本番環境とは別キーで保存されます。</div>
+  <div class="board" id="board">
+    <img id="boardImage" src="data:image/jpeg;base64,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" alt="Fortnite Sprite Checklist background">
+    <div class="meta-overlay" id="metaOverlay">
+      <div class="meta-line date-overlay" id="dateOverlay"></div>
+      <div class="meta-line count-overlay" id="countOverlay"></div>
+      <div class="meta-line name-overlay is-hidden" id="nameOverlay"></div>
+    </div>
+    <div class="layer" id="layer" aria-label="Fortnite Sprite Checklist"></div>
+  </div>
+  <div class="footer">DEV環境 / 本番とは別保存 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a></div>
+</div>
+<script>
+const STORAGE_KEY = "fortnite_sprite_checklist_v4_dev";
+const NAME_STORAGE_KEY = "fortnite_sprite_checklist_name_v1_dev";
+const NAME_COLOR_STORAGE_KEY = "fortnite_sprite_checklist_name_color_v1_dev";
+const NAME_SIZE_STORAGE_KEY = "fortnite_sprite_checklist_name_size_v1_dev";
+const RAW_EXPORT_KEY = "BCH_ServOfMiori_AD";
+const IMAGE_WIDTH = 2048;
+const IMAGE_HEIGHT = 1629;
+const boxes = [{"id": "water_normal", "label": "水の精霊 / ノーマル", "x": 197, "y": 460, "w": 68, "h": 60}, {"id": "water_gold", "label": "水の精霊 / ゴールド", "x": 399, "y": 462, "w": 66, "h": 60}, {"id": "water_gummy", "label": "水の精霊 / グミ", "x": 592, "y": 463, "w": 66, "h": 60}, {"id": "water_galaxy", "label": "水の精霊 / ギャラクシー", "x": 791, "y": 465, "w": 66, "h": 60}, {"id": "dream_normal", "label": "夢の精霊 / ノーマル", "x": 1222, "y": 462, "w": 65, "h": 60}, {"id": "dream_gold", "label": "夢の精霊 / ゴールド", "x": 1425, "y": 461, "w": 65, "h": 60}, {"id": "dream_gummy", "label": "夢の精霊 / グミ", "x": 1621, "y": 460, "w": 66, "h": 60}, {"id": "dream_galaxy", "label": "夢の精霊 / ギャラクシー", "x": 1805, "y": 460, "w": 66, "h": 59}, {"id": "earth_normal", "label": "地の精霊 / ノーマル", "x": 197, "y": 739, "w": 68, "h": 61}, {"id": "earth_gold", "label": "地の精霊 / ゴールド", "x": 399, "y": 740, "w": 67, "h": 61}, {"id": "earth_gummy", "label": "地の精霊 / グミ", "x": 594, "y": 741, "w": 66, "h": 60}, {"id": "earth_galaxy", "label": "地の精霊 / ギャラクシー", "x": 792, "y": 742, "w": 66, "h": 60}, {"id": "burnt_peanut", "label": "BurntPeanut", "x": 1010, "y": 742, "w": 66, "h": 60}, {"id": "demon_normal", "label": "デーモン精霊 / ノーマル", "x": 1222, "y": 741, "w": 66, "h": 60}, {"id": "demon_gold", "label": "デーモン精霊 / ゴールド", "x": 1425, "y": 740, "w": 66, "h": 60}, {"id": "demon_gummy", "label": "デーモン精霊 / グミ", "x": 1622, "y": 740, "w": 66, "h": 60}, {"id": "demon_galaxy", "label": "デーモン精霊 / ギャラクシー", "x": 1807, "y": 740, "w": 67, "h": 60}, {"id": "fire_normal", "label": "炎の精霊 / ノーマル", "x": 195, "y": 1014, "w": 68, "h": 60}, {"id": "fire_gold", "label": "炎の精霊 / ゴールド", "x": 398, "y": 1013, "w": 66, "h": 60}, {"id": "fire_gummy", "label": "炎の精霊 / グミ", "x": 592, "y": 1013, "w": 66, "h": 60}, {"id": "fire_galaxy", "label": "炎の精霊 / ギャラクシー", "x": 790, "y": 1013, "w": 67, "h": 60}, {"id": "punk_normal", "label": "パンクの精霊 / ノーマル", "x": 1224, "y": 1013, "w": 65, "h": 59}, {"id": "punk_gold", "label": "パンクの精霊 / ゴールド", "x": 1424, "y": 1012, "w": 65, "h": 60}, {"id": "punk_gummy", "label": "パンクの精霊 / グミ", "x": 1617, "y": 1012, "w": 65, "h": 61}, {"id": "punk_galaxy", "label": "パンクの精霊 / ギャラクシー", "x": 1807, "y": 1013, "w": 66, "h": 60}, {"id": "duck_normal", "label": "ダッグ精霊 / ノーマル", "x": 194, "y": 1275, "w": 68, "h": 61}, {"id": "duck_gold", "label": "ダッグ精霊 / ゴールド", "x": 398, "y": 1275, "w": 67, "h": 61}, {"id": "duck_gummy", "label": "ダッグ精霊 / グミ", "x": 591, "y": 1275, "w": 67, "h": 61}, {"id": "duck_galaxy", "label": "ダッグ精霊 / ギャラクシー", "x": 790, "y": 1275, "w": 67, "h": 61}, {"id": "king_normal", "label": "王様の精霊 / ノーマル", "x": 1223, "y": 1275, "w": 66, "h": 61}, {"id": "king_gold", "label": "王様の精霊 / ゴールド", "x": 1424, "y": 1275, "w": 66, "h": 60}, {"id": "king_gummy", "label": "王様の精霊 / グミ", "x": 1620, "y": 1275, "w": 67, "h": 61}, {"id": "king_galaxy", "label": "王様の精霊 / ギャラクシー", "x": 1807, "y": 1275, "w": 68, "h": 62}, {"id": "ghost_normal", "label": "ゴースト精霊 / ノーマル", "x": 191, "y": 1537, "w": 67, "h": 61}, {"id": "ghost_gold", "label": "ゴースト精霊 / ゴールド", "x": 398, "y": 1537, "w": 67, "h": 61}, {"id": "ghost_gummy", "label": "ゴースト精霊 / グミ", "x": 591, "y": 1537, "w": 67, "h": 61}, {"id": "ghost_galaxy", "label": "ゴースト精霊 / ギャラクシー", "x": 791, "y": 1537, "w": 67, "h": 61}, {"id": "zero_point_normal", "label": "ゼロポイントの精霊 / ノーマル", "x": 1223, "y": 1537, "w": 66, "h": 61}, {"id": "zero_point_gold", "label": "ゼロポイントの精霊 / ゴールド", "x": 1424, "y": 1535, "w": 66, "h": 61}, {"id": "zero_point_gummy", "label": "ゼロポイントの精霊 / グミ", "x": 1617, "y": 1537, "w": 66, "h": 61}, {"id": "zero_point_galaxy", "label": "ゼロポイントの精霊 / ギャラクシー", "x": 1809, "y": 1537, "w": 66, "h": 61}];
+const board = document.getElementById("board");
+const layer = document.getElementById("layer");
+const boardImage = document.getElementById("boardImage");
+const countBadge = document.getElementById("countBadge");
+const saveBadge = document.getElementById("saveBadge");
+const nameInput = document.getElementById("nameInput");
+const nameColorSelect = document.getElementById("nameColorSelect");
+const nameSizeSelect = document.getElementById("nameSizeSelect");
+const metaOverlay = document.getElementById("metaOverlay");
+const dateOverlay = document.getElementById("dateOverlay");
+const countOverlay = document.getElementById("countOverlay");
+const nameOverlay = document.getElementById("nameOverlay");
+const devModeFlag = document.getElementById("devModeFlag");
+const saveImageBtn = document.getElementById("saveImageBtn");
+const resetBtn = document.getElementById("resetBtn");
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  saveBadge.textContent = "保存済み";
+}
+function loadName() {
+  try {
+    return localStorage.getItem(NAME_STORAGE_KEY) || "";
+  } catch (e) {
+    return "";
+  }
+}
+function loadNameColor() {
+  try {
+    return normalizeNameColor(localStorage.getItem(NAME_COLOR_STORAGE_KEY) || "black");
+  } catch (e) {
+    return "black";
+  }
+}
+function loadNameSize() {
+  try {
+    return normalizeNameSize(localStorage.getItem(NAME_SIZE_STORAGE_KEY) || "medium");
+  } catch (e) {
+    return "medium";
+  }
+}
+function normalizeNameColor(value) {
+  return ["black", "red", "white"].includes(value) ? value : "black";
+}
+function normalizeNameSize(value) {
+  return ["small", "medium", "large"].includes(value) ? value : "medium";
+}
+function normalizeName(value) {
+  return String(value || "").replace(/\s+/g, " ").trim().slice(0, 32);
+}
+function saveName(value) {
+  const normalized = normalizeName(value);
+  localStorage.setItem(NAME_STORAGE_KEY, normalized);
+  saveBadge.textContent = "保存済み";
+  return normalized;
+}
+function saveNameColor(value) {
+  const normalized = normalizeNameColor(value);
+  localStorage.setItem(NAME_COLOR_STORAGE_KEY, normalized);
+  saveBadge.textContent = "保存済み";
+  return normalized;
+}
+function saveNameSize(value) {
+  const normalized = normalizeNameSize(value);
+  localStorage.setItem(NAME_SIZE_STORAGE_KEY, normalized);
+  saveBadge.textContent = "保存済み";
+  return normalized;
+}
+let state = loadState();
+let displayName = loadName();
+let displayNameColor = loadNameColor();
+let displayNameSize = loadNameSize();
+function checkedCount() {
+  return Object.values(state).filter(Boolean).length;
+}
+function updateCount() {
+  countBadge.textContent = `${checkedCount()} / ${boxes.length}`;
+}
+function pctX(v) { return (v / IMAGE_WIDTH) * 100; }
+function pctY(v) { return (v / IMAGE_HEIGHT) * 100; }
+function makeMark() {
+  const wrap = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  wrap.setAttribute("viewBox", "0 0 100 100");
+  wrap.setAttribute("class", "mark");
+  const shadow = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  shadow.setAttribute("d", "M18 54 L40 76 L82 24");
+  shadow.setAttribute("class", "shadow");
+  const main = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  main.setAttribute("d", "M18 54 L40 76 L82 24");
+  main.setAttribute("class", "main");
+  wrap.appendChild(shadow);
+  wrap.appendChild(main);
+  return wrap;
+}
+function drawCheckOnContext(ctx, box) {
+  const p1x = box.x + box.w * 0.18;
+  const p1y = box.y + box.h * 0.56;
+  const p2x = box.x + box.w * 0.40;
+  const p2y = box.y + box.h * 0.76;
+  const p3x = box.x + box.w * 0.82;
+  const p3y = box.y + box.h * 0.24;
+
+  ctx.save();
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  ctx.strokeStyle = "rgba(255,255,255,0.34)";
+  ctx.lineWidth = 20;
+  ctx.beginPath();
+  ctx.moveTo(p1x, p1y);
+  ctx.lineTo(p2x, p2y);
+  ctx.lineTo(p3x, p3y);
+  ctx.stroke();
+
+  ctx.strokeStyle = "#ff4d4f";
+  ctx.lineWidth = 14;
+  ctx.beginPath();
+  ctx.moveTo(p1x, p1y);
+  ctx.lineTo(p2x, p2y);
+  ctx.lineTo(p3x, p3y);
+  ctx.stroke();
+
+  ctx.restore();
+}
+function formatCurrentDate() {
+  const now = new Date();
+  const pad = (value) => String(value).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+function isRawExportMode() {
+  return normalizeName(displayName) === RAW_EXPORT_KEY;
+}
+function syncMetaOverlay() {
+  const normalized = normalizeName(displayName);
+  const color = normalizeNameColor(displayNameColor);
+  const size = normalizeNameSize(displayNameSize);
+  const rawMode = isRawExportMode();
+  if (nameInput.value !== normalized) nameInput.value = normalized;
+  if (nameColorSelect.value !== color) nameColorSelect.value = color;
+  if (nameSizeSelect.value !== size) nameSizeSelect.value = size;
+  dateOverlay.className = `meta-line date-overlay meta-color-${color}`;
+  countOverlay.className = `meta-line count-overlay meta-color-${color}`;
+  nameOverlay.className = `meta-line name-overlay meta-color-${color} name-size-${size}`;
+  board.classList.toggle("is-raw-export", rawMode);
+  devModeFlag.classList.toggle("is-visible", rawMode);
+  metaOverlay.setAttribute("aria-hidden", rawMode ? "true" : "false");
+
+  if (rawMode) {
+    dateOverlay.textContent = "";
+    countOverlay.textContent = "";
+    nameOverlay.textContent = "";
+    dateOverlay.classList.add("is-hidden");
+    countOverlay.classList.add("is-hidden");
+    nameOverlay.classList.add("is-hidden");
+    return;
+  }
+
+  dateOverlay.textContent = formatCurrentDate();
+  countOverlay.textContent = `${checkedCount()}/${boxes.length} collected`;
+  dateOverlay.classList.remove("is-hidden");
+  countOverlay.classList.remove("is-hidden");
+
+  if (normalized) {
+    nameOverlay.textContent = normalized;
+    nameOverlay.classList.remove("is-hidden");
+  } else {
+    nameOverlay.textContent = "";
+    nameOverlay.classList.add("is-hidden");
+  }
+}
+function getNameColorStyle(color) {
+  const normalized = normalizeNameColor(color);
+  if (normalized === "white") {
+    return { fill: "rgba(255,255,255,0.96)", stroke: "rgba(0,0,0,0.32)" };
+  }
+  if (normalized === "red") {
+    return { fill: "#c93642", stroke: "rgba(255,255,255,0.72)" };
+  }
+  return { fill: "#141414", stroke: "rgba(255,255,255,0.58)" };
+}
+function fitFontSize(ctx, text, fontWeight, startSize, minSize, maxTextWidth, fontFamily) {
+  let fontSize = startSize;
+  do {
+    ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+    if (ctx.measureText(text).width <= maxTextWidth || fontSize <= minSize) break;
+    fontSize -= 2;
+  } while (fontSize > minSize);
+  return fontSize;
+}
+function drawMetaOnContext(ctx, dateText, countText, nameText, color, size) {
+  const normalizedName = normalizeName(nameText);
+  const normalizedDate = String(dateText || "").trim();
+  const normalizedCount = String(countText || "").trim();
+  if (!normalizedDate && !normalizedCount && !normalizedName) return;
+
+  const style = getNameColorStyle(color);
+  const normalizedSize = normalizeNameSize(size);
+  const fontFamily = `"Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", sans-serif`;
+  const maxTextWidth = IMAGE_WIDTH * 0.30;
+  const x = 48;
+  const dateY = 42;
+  const countY = 72;
+  const nameY = normalizedName ? 102 : 0;
+  const nameStartSize = normalizedSize === "small" ? 30 : normalizedSize === "large" ? 42 : 36;
+  const nameMinSize = normalizedSize === "small" ? 20 : normalizedSize === "large" ? 28 : 24;
+
+  ctx.save();
+  ctx.textBaseline = "top";
+  ctx.lineJoin = "round";
+
+  if (normalizedDate) {
+    const dateSize = fitFontSize(ctx, normalizedDate, 700, 30, 22, maxTextWidth, fontFamily);
+    ctx.font = `700 ${dateSize}px ${fontFamily}`;
+    ctx.strokeStyle = style.stroke;
+    ctx.lineWidth = 4;
+    ctx.strokeText(normalizedDate, x, dateY);
+    ctx.fillStyle = style.fill;
+    ctx.fillText(normalizedDate, x, dateY);
+  }
+
+  if (normalizedCount) {
+    const countSize = fitFontSize(ctx, normalizedCount, 700, 30, 22, maxTextWidth, fontFamily);
+    ctx.font = `700 ${countSize}px ${fontFamily}`;
+    ctx.strokeStyle = style.stroke;
+    ctx.lineWidth = 4;
+    ctx.strokeText(normalizedCount, x, countY);
+    ctx.fillStyle = style.fill;
+    ctx.fillText(normalizedCount, x, countY);
+  }
+
+  if (normalizedName) {
+    const nameSize = fitFontSize(ctx, normalizedName, 700, nameStartSize, nameMinSize, maxTextWidth, fontFamily);
+    ctx.font = `700 ${nameSize}px ${fontFamily}`;
+    ctx.strokeStyle = style.stroke;
+    ctx.lineWidth = 4;
+    ctx.strokeText(normalizedName, x, nameY);
+    ctx.fillStyle = style.fill;
+    ctx.fillText(normalizedName, x, nameY);
+  }
+
+  ctx.restore();
+}
+async function buildChecklistBlob() {
+  if (!boardImage.complete) {
+    await new Promise((resolve, reject) => {
+      boardImage.addEventListener("load", resolve, { once: true });
+      boardImage.addEventListener("error", reject, { once: true });
+    });
+  }
+
+  const canvas = document.createElement("canvas");
+  canvas.width = IMAGE_WIDTH;
+  canvas.height = IMAGE_HEIGHT;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(boardImage, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+
+  if (document.fonts && document.fonts.ready) {
+    try { await document.fonts.ready; } catch (e) {}
+  }
+
+  const rawMode = isRawExportMode();
+  if (!rawMode) {
+    drawMetaOnContext(ctx, formatCurrentDate(), `${checkedCount()}/${boxes.length} collected`, displayName, displayNameColor, displayNameSize);
+  }
+
+  boxes.forEach((box) => {
+    if (!rawMode && state[box.id]) drawCheckOnContext(ctx, box);
+  });
+
+  const blob = await new Promise((resolve, reject) => {
+    canvas.toBlob((value) => {
+      if (value) resolve(value);
+      else reject(new Error("画像化に失敗しました。"));
+    }, "image/png");
+  });
+
+  return blob;
+}
+function makeExportFileName() {
+  const now = new Date();
+  const pad = (value) => String(value).padStart(2, "0");
+  return `fortnite_sprite_checklist_${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.png`;
+}
+function shouldUseNativeShare() {
+  const ua = navigator.userAgent || "";
+  const isIOS = /iP(hone|ad|od)/.test(ua);
+  const isAndroid = /Android/i.test(ua);
+  return isIOS || isAndroid;
+}
+async function saveChecklistImage() {
+  const beforeText = saveBadge.textContent;
+  saveImageBtn.disabled = true;
+  saveBadge.textContent = "画像生成中...";
+
+  try {
+    const blob = await buildChecklistBlob();
+    const fileName = makeExportFileName();
+    const file = typeof File === "function" ? new File([blob], fileName, { type: "image/png" }) : null;
+    const canUseShare =
+      shouldUseNativeShare() &&
+      file &&
+      typeof navigator.share === "function" &&
+      (typeof navigator.canShare !== "function" || navigator.canShare({ files: [file] }));
+
+    if (canUseShare) {
+      saveBadge.textContent = "共有シート起動中...";
+      await navigator.share({ files: [file], title: "Fortnite Sprite Checklist" });
+      saveBadge.textContent = "保存済み";
+      return;
+    }
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent || "");
+    if (isIOS) {
+      window.open(url, "_blank", "noopener");
+    }
+
+    setTimeout(() => URL.revokeObjectURL(url), 60 * 1000);
+    saveBadge.textContent = "保存済み";
+  } catch (error) {
+    console.error(error);
+    if (error && error.name === "AbortError") {
+      saveBadge.textContent = beforeText || "保存済み";
+    } else {
+      saveBadge.textContent = "保存失敗";
+    }
+  } finally {
+    saveImageBtn.disabled = false;
+    if (saveBadge.textContent === beforeText && beforeText) saveBadge.textContent = beforeText;
+  }
+}
+function toggle(id) {
+  state[id] = !state[id];
+  saveBadge.textContent = "保存中...";
+  saveState(state);
+  render();
+}
+function render() {
+  const rawMode = isRawExportMode();
+  syncMetaOverlay();
+  layer.innerHTML = "";
+  boxes.forEach((b) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "hit";
+    btn.style.left = pctX(b.x) + "%";
+    btn.style.top = pctY(b.y) + "%";
+    btn.style.width = pctX(b.w) + "%";
+    btn.style.height = pctY(b.h) + "%";
+    btn.setAttribute("aria-label", b.label);
+    btn.setAttribute("aria-pressed", state[b.id] ? "true" : "false");
+    btn.addEventListener("click", () => toggle(b.id));
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggle(b.id);
+      }
+    });
+    if (!rawMode && state[b.id]) btn.appendChild(makeMark());
+    layer.appendChild(btn);
+  });
+  updateCount();
+}
+nameInput.addEventListener("input", () => {
+  displayName = saveName(nameInput.value);
+  syncMetaOverlay();
+  render();
+});
+nameColorSelect.addEventListener("change", () => {
+  displayNameColor = saveNameColor(nameColorSelect.value);
+  syncMetaOverlay();
+});
+nameSizeSelect.addEventListener("change", () => {
+  displayNameSize = saveNameSize(nameSizeSelect.value);
+  syncMetaOverlay();
+});
+saveImageBtn.addEventListener("click", () => {
+  saveChecklistImage();
+});
+resetBtn.addEventListener("click", () => {
+  state = {};
+  saveBadge.textContent = "保存中...";
+  saveState(state);
+  render();
+});
+syncMetaOverlay();
+render();
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
