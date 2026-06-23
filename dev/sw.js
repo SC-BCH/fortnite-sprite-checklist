@@ -1,7 +1,8 @@
-const CACHE_NAME = "fortnite-sprite-checklist-dev-v2";
+const CACHE_NAME = "fortnite-sprite-checklist-dev-v3";
 const ASSETS = [
   "./",
   "./index.html",
+  "./template.html",
   "./manifest.webmanifest",
   "./sw.js",
   "../icons/icon-192.png",
