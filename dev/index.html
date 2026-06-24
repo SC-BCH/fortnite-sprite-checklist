@@ -17,8 +17,8 @@ html,body{height:100%}
 body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at top, #15224a 0%, var(--bg1) 48%, #03050d 100%)}
 button,input,select{font:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:14px 12px 18px}
-.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
-.badge,.pill,.dev-flag,.lang-btn,.action{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:7px 11px;line-height:1}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px;font-size:15px}
+.badge,.pill,.dev-flag,.lang-btn,.action{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:7px 11px;line-height:1;font-size:15px}
 .badge{font-weight:800}
 .badge.saved{font-size:12px;color:var(--success);padding:7px 10px}
 .dev-flag{background:#4a1e1e;color:#ffd1d1;border-color:rgba(255,138,138,.4);font-weight:800;font-size:12px}
@@ -26,11 +26,11 @@ button,input,select{font:inherit}
 .lang-btn{cursor:pointer;padding:7px 12px;font-weight:700;color:var(--muted)}
 .lang-btn.is-active{color:#fff;border-color:rgba(122,162,255,.58);background:rgba(122,162,255,.18)}
 .pill.label{padding-right:8px;color:var(--muted)}
-.select,.name-input{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:9px 12px;min-height:38px}
+.select,.name-input{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:9px 12px;min-height:38px;font-size:15px}
 .name-input{min-width:150px}
 .spacer{flex:1 1 auto}
 .action{cursor:pointer;font-weight:700}
-.hint{color:var(--muted);font-size:12px;margin:4px 0 10px}
+.hint{color:var(--muted);font-size:13px;margin:4px 0 10px}
 .board{position:relative;width:100%;max-width:1180px;margin:0 auto;border-radius:22px;overflow:hidden;background:#d6d6d0;box-shadow:0 18px 44px rgba(0,0,0,.32)}
 .board img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .layer{position:absolute;inset:0}
@@ -54,10 +54,10 @@ button,input,select{font:inherit}
 .meta-line.color-red{color:#d11d2c}
 .meta-line.color-white{color:#fff;text-shadow:0 0 2px rgba(0,0,0,.9),0 0 5px rgba(0,0,0,.7)}
 .meta-line.is-hidden{display:none}
-.footer{margin-top:10px;text-align:center;color:var(--muted);font-size:12px}
+.footer{margin-top:10px;text-align:center;color:var(--muted);font-size:13px}
 .footer a{color:inherit}
 @media (max-width:640px) {
-  .wrap{padding:10px 8px 14px} .name-input{min-width:0;flex:1 1 148px}
+  .wrap{padding:10px 8px 14px} .toolbar{font-size:14px} .name-input{min-width:0;flex:1 1 148px}
   .complete-badge{left:73.8%;top:2.6%;min-width:118px;padding:5px 6px 4px}
   .complete-badge-main{font-size:12px} .complete-badge-sub{font-size:7px}
 }
@@ -118,13 +118,35 @@ const IMAGE_HEIGHT = 1629;
 const boxes = [{"id":"water_normal","label":"水の精霊 / ノーマル","x":164,"y":461,"w":66,"h":64},{"id":"water_gold","label":"水の精霊 / ゴールド","x":346,"y":461,"w":66,"h":64},{"id":"water_gummy","label":"水の精霊 / グミ","x":529,"y":461,"w":66,"h":64},{"id":"water_galaxy","label":"水の精霊 / ギャラクシー","x":711,"y":461,"w":66,"h":64},{"id":"acorn_normal","label":"どんぐりの精霊 / ノーマル","x":1096,"y":461,"w":66,"h":64},{"id":"dream_normal","label":"夢の精霊 / ノーマル","x":1278,"y":461,"w":66,"h":64},{"id":"dream_gold","label":"夢の精霊 / ゴールド","x":1460,"y":461,"w":66,"h":64},{"id":"dream_gummy","label":"夢の精霊 / グミ","x":1642,"y":461,"w":66,"h":64},{"id":"dream_galaxy","label":"夢の精霊 / ギャラクシー","x":1825,"y":461,"w":66,"h":64},{"id":"earth_normal","label":"地の精霊 / ノーマル","x":164,"y":722,"w":66,"h":64},{"id":"earth_gold","label":"地の精霊 / ゴールド","x":346,"y":722,"w":66,"h":64},{"id":"earth_gummy","label":"地の精霊 / グミ","x":529,"y":722,"w":66,"h":64},{"id":"earth_galaxy","label":"地の精霊 / ギャラクシー","x":711,"y":722,"w":66,"h":64},{"id":"burnt_peanut","label":"焦げたピーナッツの精霊","x":912,"y":722,"w":66,"h":64},{"id":"soccer_panda","label":"サッカーパンダの精霊","x":1096,"y":722,"w":66,"h":64},{"id":"demon_normal","label":"悪魔の精霊 / ノーマル","x":1278,"y":722,"w":66,"h":64},{"id":"demon_gold","label":"悪魔の精霊 / ゴールド","x":1460,"y":722,"w":66,"h":64},{"id":"demon_gummy","label":"悪魔の精霊 / グミ","x":1642,"y":722,"w":66,"h":64},{"id":"demon_galaxy","label":"悪魔の精霊 / ギャラクシー","x":1825,"y":722,"w":66,"h":64},{"id":"fire_normal","label":"炎の精霊 / ノーマル","x":164,"y":982,"w":66,"h":64},{"id":"fire_gold","label":"炎の精霊 / ゴールド","x":346,"y":982,"w":66,"h":64},{"id":"fire_gummy","label":"炎の精霊 / グミ","x":529,"y":982,"w":66,"h":64},{"id":"fire_galaxy","label":"炎の精霊 / ギャラクシー","x":711,"y":982,"w":66,"h":64},{"id":"punk_red","label":"パンクの精霊 / レッド","x":1096,"y":982,"w":66,"h":64},{"id":"punk_normal","label":"パンクの精霊 / ノーマル","x":1278,"y":982,"w":66,"h":64},{"id":"punk_gold","label":"パンクの精霊 / ゴールド","x":1460,"y":982,"w":66,"h":64},{"id":"punk_gummy","label":"パンクの精霊 / グミ","x":1642,"y":982,"w":66,"h":64},{"id":"punk_galaxy","label":"パンクの精霊 / ギャラクシー","x":1825,"y":982,"w":66,"h":64},{"id":"duck_normal","label":"ダックの精霊 / ノーマル","x":164,"y":1242,"w":66,"h":64},{"id":"duck_gold","label":"ダックの精霊 / ゴールド","x":346,"y":1242,"w":66,"h":64},{"id":"duck_gummy","label":"ダックの精霊 / グミ","x":529,"y":1242,"w":66,"h":64},{"id":"duck_galaxy","label":"ダックの精霊 / ギャラクシー","x":711,"y":1242,"w":66,"h":64},{"id":"hood_normal","label":"フードの精霊 / ノーマル","x":1096,"y":1242,"w":66,"h":64},{"id":"king_normal","label":"王の精霊 / ノーマル","x":1278,"y":1242,"w":66,"h":64},{"id":"king_gold","label":"王の精霊 / ゴールド","x":1460,"y":1242,"w":66,"h":64},{"id":"king_gummy","label":"王の精霊 / グミ","x":1642,"y":1242,"w":66,"h":64},{"id":"king_galaxy","label":"王の精霊 / ギャラクシー","x":1825,"y":1242,"w":66,"h":64},{"id":"ghost_normal","label":"ゴーストの精霊 / ノーマル","x":164,"y":1533,"w":66,"h":64},{"id":"ghost_gold","label":"ゴーストの精霊 / ゴールド","x":346,"y":1533,"w":66,"h":64},{"id":"ghost_gummy","label":"ゴーストの精霊 / グミ","x":529,"y":1533,"w":66,"h":64},{"id":"ghost_galaxy","label":"ゴーストの精霊 / ギャラクシー","x":711,"y":1533,"w":66,"h":64},{"id":"hood_dark","label":"フードの精霊 / ダーク","x":1096,"y":1533,"w":66,"h":64},{"id":"zero_point_normal","label":"ゼロポイントの精霊 / ノーマル","x":1278,"y":1533,"w":66,"h":64},{"id":"zero_point_gold","label":"ゼロポイントの精霊 / ゴールド","x":1460,"y":1533,"w":66,"h":64},{"id":"zero_point_gummy","label":"ゼロポイントの精霊 / グミ","x":1642,"y":1533,"w":66,"h":64},{"id":"zero_point_galaxy","label":"ゼロポイントの精霊 / ギャラクシー","x":1825,"y":1533,"w":66,"h":64}];
 const translations = {
   ja: {
-    namePlaceholder: "名前（任意）", colorLabel: "文字色", sizeLabel: "名前サイズ", saveImage: "画像保存", reset: "全解除", saved: "保存済み",
+    namePlaceholder: "名前（任意）",
+    colorLabel: "文字色",
+    sizeLabel: "名前サイズ",
+    colorBlack: "黒",
+    colorRed: "赤",
+    colorWhite: "白",
+    sizeSmall: "小",
+    sizeMedium: "中",
+    sizeLarge: "大",
+    saveImage: "画像保存",
+    reset: "全解除",
+    saved: "保存済み",
     hint: "開発版です。タップで切替。状態はこの端末のブラウザに保存されます。本番環境とは別キーに保存されます。",
     footer: 'DEV環境 / 本番とは別保存 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a>',
     collected: "collected"
   },
   en: {
-    namePlaceholder: "Name (optional)", colorLabel: "Text color", sizeLabel: "Name size", saveImage: "Save Image", reset: "Clear All", saved: "Saved",
+    namePlaceholder: "Name (optional)",
+    colorLabel: "Text color",
+    sizeLabel: "Name size",
+    colorBlack: "Black",
+    colorRed: "Red",
+    colorWhite: "White",
+    sizeSmall: "Small",
+    sizeMedium: "Medium",
+    sizeLarge: "Large",
+    saveImage: "Save Image",
+    reset: "Clear All",
+    saved: "Saved",
     hint: "Development build. Tap to toggle. Progress is saved in this browser on this device. Saved separately from the production version.",
     footer: 'DEV build / Saved separately from production | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a> | <a href="https://buymeacoffee.com/bch1025?new=1" target="_blank" rel="noopener noreferrer">Support the developer</a>',
     collected: "collected"
@@ -232,6 +254,14 @@ function applyLanguage() {
   nameInput.placeholder = t("namePlaceholder");
   colorLabel.textContent = t("colorLabel");
   sizeLabel.textContent = t("sizeLabel");
+  nameColorSelect.setAttribute("aria-label", t("colorLabel"));
+  nameSizeSelect.setAttribute("aria-label", t("sizeLabel"));
+  nameColorSelect.options[0].text = t("colorBlack");
+  nameColorSelect.options[1].text = t("colorRed");
+  nameColorSelect.options[2].text = t("colorWhite");
+  nameSizeSelect.options[0].text = t("sizeSmall");
+  nameSizeSelect.options[1].text = t("sizeMedium");
+  nameSizeSelect.options[2].text = t("sizeLarge");
   saveImageBtn.textContent = t("saveImage");
   resetBtn.textContent = t("reset");
   saveBadge.textContent = t("saved");
