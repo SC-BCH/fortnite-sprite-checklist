@@ -158,13 +158,16 @@ const normalizeSize = (v) => ["small","medium","large"].includes(v) ? v : "mediu
 const loadLanguage = () => localStorage.getItem(LANGUAGE_STORAGE_KEY) === "en" ? "en" : "ja";
 
 let state = loadJSON(STORAGE_KEY, {});
+const VALID_IDS = new Set(boxes.map((box) => box.id));
+state = Object.fromEntries(Object.entries(state).filter(([key, value]) => VALID_IDS.has(key) && !!value));
+saveJSON(STORAGE_KEY, state);
 let displayName = localStorage.getItem(NAME_STORAGE_KEY) || "";
 let displayNameColor = normalizeColor(localStorage.getItem(NAME_COLOR_STORAGE_KEY) || "black");
 let displayNameSize = normalizeSize(localStorage.getItem(NAME_SIZE_STORAGE_KEY) || "medium");
 let currentLanguage = loadLanguage();
 
 function t(key) { return translations[currentLanguage][key] || translations.ja[key] || ""; }
-function checkedCount() { return Object.values(state).filter(Boolean).length; }
+function checkedCount() { return boxes.reduce((total, box) => total + (state[box.id] ? 1 : 0), 0); }
 function isComplete() { return checkedCount() === boxes.length; }
 function isRawExportMode() { return displayName.trim() === RAW_EXPORT_KEY; }
 function formatCurrentDate() {
