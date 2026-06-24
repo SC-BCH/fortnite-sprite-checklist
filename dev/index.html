@@ -9,251 +9,57 @@
 <style>
 :root {
   color-scheme: dark;
-  --bg1:#050816;
-  --bg2:#0b1020;
-  --panel:rgba(12,18,36,0.88);
-  --line:rgba(255,255,255,0.12);
-  --text:#f5f7ff;
-  --muted:#c7cee2;
-  --accent:#ff4d4f;
-  --accent2:#7aa2ff;
-  --chip:rgba(255,255,255,0.08);
-  --success:#8bffb0;
-  --badge:#ff8b8b;
+  --bg1:#050816; --bg2:#0b1020; --panel:rgba(12,18,36,0.88); --line:rgba(255,255,255,0.12);
+  --text:#f5f7ff; --muted:#c7cee2; --accent:#ff4d4f; --accent2:#7aa2ff; --success:#8bffb0;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  color:var(--text);
-  background:radial-gradient(circle at top, #15224a 0%, var(--bg1) 48%, #03050d 100%);
-}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at top, #15224a 0%, var(--bg1) 48%, #03050d 100%)}
 button,input,select{font:inherit}
-.wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:14px 12px 18px;
-}
-.toolbar{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:8px;
-  margin-bottom:8px;
-}
-.badge,.pill,.chip,.dev-flag,.lang-btn,.action{
-  border:1px solid var(--line);
-  background:var(--panel);
-  color:var(--text);
-  border-radius:12px;
-  padding:7px 11px;
-  line-height:1;
-}
+.wrap{max-width:1180px;margin:0 auto;padding:14px 12px 18px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:8px}
+.badge,.pill,.dev-flag,.lang-btn,.action{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:7px 11px;line-height:1}
 .badge{font-weight:800}
-.badge.count{padding:7px 10px}
 .badge.saved{font-size:12px;color:var(--success);padding:7px 10px}
-.dev-flag{background:#4a1e1e;color:#ffd1d1;border-color:rgba(255,138,138,0.4);font-weight:800;font-size:12px}
-.dev-flag.is-hidden{display:none}
-.lang-switch{
-  display:flex;
-  gap:6px;
-  margin-right:4px;
-}
-.lang-btn{
-  cursor:pointer;
-  padding:7px 12px;
-  font-weight:700;
-  color:var(--muted);
-}
-.lang-btn.is-active{
-  color:#ffffff;
-  border-color:rgba(122,162,255,0.58);
-  background:rgba(122,162,255,0.18);
-}
+.dev-flag{background:#4a1e1e;color:#ffd1d1;border-color:rgba(255,138,138,.4);font-weight:800;font-size:12px}
+.lang-switch{display:flex;gap:6px;margin-right:4px}
+.lang-btn{cursor:pointer;padding:7px 12px;font-weight:700;color:var(--muted)}
+.lang-btn.is-active{color:#fff;border-color:rgba(122,162,255,.58);background:rgba(122,162,255,.18)}
 .pill.label{padding-right:8px;color:var(--muted)}
-.select,.name-input{
-  border:1px solid var(--line);
-  background:var(--panel);
-  color:var(--text);
-  border-radius:12px;
-  padding:9px 12px;
-  min-height:38px;
-}
+.select,.name-input{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:9px 12px;min-height:38px}
 .name-input{min-width:150px}
-.select{appearance:none}
 .spacer{flex:1 1 auto}
 .action{cursor:pointer;font-weight:700}
-.action:hover,.lang-btn:hover{filter:brightness(1.08)}
-.hint{
-  color:var(--muted);
-  font-size:12px;
-  margin:4px 0 10px;
-}
-.board{
-  position:relative;
-  width:100%;
-  max-width:1180px;
-  margin:0 auto;
-  border-radius:22px;
-  overflow:hidden;
-  background:#d6d6d0;
-  box-shadow:0 18px 44px rgba(0,0,0,0.32);
-}
-.board img{
-  display:block;
-  width:100%;
-  height:auto;
-  user-select:none;
-  -webkit-user-drag:none;
-  pointer-events:none;
-}
-.layer{
-  position:absolute;
-  inset:0;
-}
-.box{
-  position:absolute;
-  cursor:pointer;
-  border-radius:8px;
-  background:transparent;
-}
-.box:focus-visible{
-  outline:2px solid rgba(122,162,255,0.95);
-  outline-offset:1px;
-}
-.mark{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-}
-.mark path.shadow {
-  stroke:rgba(255,255,255,0.34);
-  stroke-width:20;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  fill:none;
-}
-.mark path.main {
-  stroke:var(--accent);
-  stroke-width:14;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  fill:none;
-}
-.complete-badge {
-  position:absolute;
-  left:74.2%;
-  top:3.0%;
-  z-index:25;
-  display:none;
-  pointer-events:none;
-  min-width:156px;
-  padding:6px 8px 5px;
-  border-radius:10px;
-  border:2px solid rgba(255,215,0,0.95);
-  background:linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,246,204,0.98));
-  box-shadow:0 0 0 1px rgba(255,255,255,0.72) inset, 0 5px 12px rgba(0,0,0,0.18), 0 0 10px rgba(255,215,0,0.24);
-  transform:rotate(-4deg);
-  text-align:center;
-}
-.complete-badge.show {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  animation:completePulse 1.1s ease-in-out infinite alternate;
-}
-.complete-badge-main {
-  font-size:16px;
-  line-height:1;
-  font-weight:900;
-  letter-spacing:0.04em;
-  color:#d62828;
-  text-shadow:1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 0 0 6px rgba(255,215,0,0.45);
-}
-.complete-badge-sub {
-  margin-top:3px;
-  font-size:8px;
-  line-height:1;
-  font-weight:800;
-  letter-spacing:0.06em;
-  color:#111111;
-}
-@keyframes completePulse {
-  from {
-    transform:rotate(-4deg) scale(1);
-    box-shadow:0 0 0 1px rgba(255,255,255,0.72) inset, 0 5px 12px rgba(0,0,0,0.18), 0 0 10px rgba(255,215,0,0.24);
-  }
-  to {
-    transform:rotate(-4deg) scale(1.02);
-    box-shadow:0 0 0 1px rgba(255,255,255,0.82) inset, 0 6px 14px rgba(0,0,0,0.20), 0 0 14px rgba(255,215,0,0.38);
-  }
-}
-.meta-overlay {
-  position:absolute;
-  left:2.35%;
-  top:2.6%;
-  z-index:20;
-  pointer-events:none;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:0.28em;
-  max-width:34%;
-}
-.meta-line {
-  margin:0;
-  line-height:1;
-  font-family:"Arial Black","Arial",sans-serif;
-  font-weight:700;
-  letter-spacing:0;
-  color:#111;
-  text-shadow:
-    -2px -2px 0 rgba(255,255,255,0.7),
-     2px -2px 0 rgba(255,255,255,0.7),
-    -2px  2px 0 rgba(255,255,255,0.7),
-     2px  2px 0 rgba(255,255,255,0.7);
-  word-break:break-word;
-}
-.meta-line.date-overlay,
-.meta-line.count-overlay{
-  font-size:clamp(12px, 1.35vw, 20px);
-}
-.meta-line.name-overlay.size-small{font-size:clamp(14px, 1.7vw, 24px)}
-.meta-line.name-overlay.size-medium{font-size:clamp(16px, 2vw, 30px)}
-.meta-line.name-overlay.size-large{font-size:clamp(18px, 2.4vw, 36px)}
+.hint{color:var(--muted);font-size:12px;margin:4px 0 10px}
+.board{position:relative;width:100%;max-width:1180px;margin:0 auto;border-radius:22px;overflow:hidden;background:#d6d6d0;box-shadow:0 18px 44px rgba(0,0,0,.32)}
+.board img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.layer{position:absolute;inset:0}
+.box{position:absolute;cursor:pointer;border-radius:8px;background:transparent}
+.box:focus-visible{outline:2px solid rgba(122,162,255,.95);outline-offset:1px}
+.mark{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.mark path.shadow{stroke:rgba(255,255,255,.34);stroke-width:20;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.mark path.main{stroke:var(--accent);stroke-width:14;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.complete-badge{position:absolute;left:74.2%;top:3%;z-index:25;display:none;pointer-events:none;min-width:156px;padding:6px 8px 5px;border-radius:10px;border:2px solid rgba(255,215,0,.95);background:linear-gradient(135deg, rgba(255,255,255,.95), rgba(255,246,204,.98));box-shadow:0 0 0 1px rgba(255,255,255,.72) inset,0 5px 12px rgba(0,0,0,.18),0 0 10px rgba(255,215,0,.24);transform:rotate(-4deg);text-align:center}
+.complete-badge.show{display:flex;flex-direction:column;align-items:center;justify-content:center;animation:completePulse 1.1s ease-in-out infinite alternate}
+.complete-badge-main{font-size:16px;line-height:1;font-weight:900;letter-spacing:.04em;color:#d62828;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,0 0 6px rgba(255,215,0,.45)}
+.complete-badge-sub{margin-top:3px;font-size:8px;line-height:1;font-weight:800;letter-spacing:.06em;color:#111}
+@keyframes completePulse{from{transform:rotate(-4deg) scale(1)}to{transform:rotate(-4deg) scale(1.02)}}
+.meta-overlay{position:absolute;left:2.35%;top:2.6%;z-index:20;pointer-events:none;display:flex;flex-direction:column;align-items:flex-start;gap:.28em;max-width:34%}
+.meta-line{margin:0;line-height:1;font-family:"Arial Black","Arial",sans-serif;font-weight:700;color:#111;text-shadow:-2px -2px 0 rgba(255,255,255,.7),2px -2px 0 rgba(255,255,255,.7),-2px 2px 0 rgba(255,255,255,.7),2px 2px 0 rgba(255,255,255,.7);word-break:break-word}
+.meta-line.date-overlay,.meta-line.count-overlay{font-size:clamp(12px,1.35vw,20px)}
+.meta-line.name-overlay.size-small{font-size:clamp(14px,1.7vw,24px)}
+.meta-line.name-overlay.size-medium{font-size:clamp(16px,2vw,30px)}
+.meta-line.name-overlay.size-large{font-size:clamp(18px,2.4vw,36px)}
 .meta-line.color-black{color:#111}
 .meta-line.color-red{color:#d11d2c}
-.meta-line.color-white{color:#fff;text-shadow:0 0 2px rgba(0,0,0,0.9),0 0 5px rgba(0,0,0,0.7)}
+.meta-line.color-white{color:#fff;text-shadow:0 0 2px rgba(0,0,0,.9),0 0 5px rgba(0,0,0,.7)}
 .meta-line.is-hidden{display:none}
-.footer{
-  margin-top:10px;
-  text-align:center;
-  color:var(--muted);
-  font-size:12px;
-}
+.footer{margin-top:10px;text-align:center;color:var(--muted);font-size:12px}
 .footer a{color:inherit}
-@media (max-width:920px){
-  .toolbar{gap:7px}
-  .name-input{min-width:128px;flex:1 1 150px}
-}
-@media (max-width:640px){
-  .wrap{padding:10px 8px 14px}
-  .toolbar{gap:6px}
-  .badge,.pill,.chip,.dev-flag,.lang-btn,.action{padding:7px 10px;border-radius:11px}
-  .name-input,.select{padding:9px 10px;min-height:38px}
-  .name-input{min-width:0;flex:1 1 148px}
-  .complete-badge {
-    left:73.8%;
-    top:2.6%;
-    min-width:118px;
-    padding:5px 6px 4px;
-  }
-  .complete-badge-main{font-size:12px}
-  .complete-badge-sub{font-size:7px}
+@media (max-width:640px) {
+  .wrap{padding:10px 8px 14px} .name-input{min-width:0;flex:1 1 148px}
+  .complete-badge{left:73.8%;top:2.6%;min-width:118px;padding:5px 6px 4px}
+  .complete-badge-main{font-size:12px} .complete-badge-sub{font-size:7px}
 }
 </style>
 </head>
@@ -267,7 +73,7 @@ button,input,select{font:inherit}
       <button class="lang-btn is-active" id="langJaBtn" type="button">日本語</button>
       <button class="lang-btn" id="langEnBtn" type="button">English</button>
     </div>
-    <input class="name-input" id="nameInput" type="text" placeholder="名前（任意）" inputmode="text" autocomplete="nickname" />
+    <input class="name-input" id="nameInput" type="text" placeholder="名前（任意）" autocomplete="nickname" />
     <span class="pill label" id="colorLabel">文字色</span>
     <select class="select" id="nameColorSelect" aria-label="文字色">
       <option value="black">黒</option>
@@ -286,7 +92,7 @@ button,input,select{font:inherit}
   </div>
   <div class="hint" id="pageHint">開発版です。タップで切替。状態はこの端末のブラウザに保存されます。本番環境とは別キーに保存されます。</div>
   <div class="board" id="board">
-    <img id="boardImage" src="../images/sprseireiv2.svg" alt="Fortnite Sprite Checklist" />
+    <img id="boardImage" src="../images/imagessprseireiv2.png" alt="Fortnite Sprite Checklist" />
     <div class="meta-overlay" id="metaOverlay">
       <div class="meta-line date-overlay" id="dateOverlay"></div>
       <div class="meta-line count-overlay" id="countOverlay"></div>
@@ -307,38 +113,21 @@ const NAME_COLOR_STORAGE_KEY = "fortnite_sprite_checklist_name_color_v1_dev";
 const NAME_SIZE_STORAGE_KEY = "fortnite_sprite_checklist_name_size_v1_dev";
 const LANGUAGE_STORAGE_KEY = "fortnite_sprite_checklist_lang_v1_dev";
 const RAW_EXPORT_KEY = "BCH_ServOfMiori_AD";
-const IS_DEV = STORAGE_KEY.endsWith("_dev");
 const IMAGE_WIDTH = 2048;
 const IMAGE_HEIGHT = 1629;
-const boxes = [{"id":"water_normal","label":"水の精霊 / ノーマル","x":164,"y":461,"w":66,"h":64},{"id":"water_gold","label":"水の精霊 / ゴールド","x":346,"y":461,"w":66,"h":64},{"id":"water_gummy","label":"水の精霊 / グミ","x":529,"y":461,"w":66,"h":64},{"id":"water_galaxy","label":"水の精霊 / ギャラクシー","x":711,"y":461,"w":66,"h":64},{"id":"acorn_normal","label":"どんぐりの精霊 / ノーマル","x":1096,"y":461,"w":66,"h":64},{"id":"dream_normal","label":"夢の精霊 / ノーマル","x":1278,"y":461,"w":66,"h":64},{"id":"dream_gold","label":"夢の精霊 / ゴールド","x":1460,"y":461,"w":66,"h":64},{"id":"dream_gummy","label":"夢の精霊 / グミ","x":1642,"y":461,"w":66,"h":64},{"id":"dream_galaxy","label":"夢の精霊 / ギャラクシー","x":1825,"y":461,"w":66,"h":64},{"id":"water_acorn","label":"ウォータードングリの精霊","x":2008,"y":461,"w":66,"h":64},{"id":"earth_normal","label":"地の精霊 / ノーマル","x":164,"y":722,"w":66,"h":64},{"id":"earth_gold","label":"地の精霊 / ゴールド","x":346,"y":722,"w":66,"h":64},{"id":"earth_gummy","label":"地の精霊 / グミ","x":529,"y":722,"w":66,"h":64},{"id":"earth_galaxy","label":"地の精霊 / ギャラクシー","x":711,"y":722,"w":66,"h":64},{"id":"burnt_peanut","label":"焦げたピーナッツの精霊","x":912,"y":722,"w":66,"h":64},{"id":"demon_normal","label":"悪魔の精霊 / ノーマル","x":1096,"y":722,"w":66,"h":64},{"id":"demon_gold","label":"悪魔の精霊 / ゴールド","x":1278,"y":722,"w":66,"h":64},{"id":"demon_gummy","label":"悪魔の精霊 / グミ","x":1460,"y":722,"w":66,"h":64},{"id":"demon_galaxy","label":"悪魔の精霊 / ギャラクシー","x":1642,"y":722,"w":66,"h":64},{"id":"soccer_panda","label":"サッカーパンダの精霊","x":2008,"y":722,"w":66,"h":64},{"id":"fire_normal","label":"炎の精霊 / ノーマル","x":164,"y":982,"w":66,"h":64},{"id":"fire_gold","label":"炎の精霊 / ゴールド","x":346,"y":982,"w":66,"h":64},{"id":"fire_gummy","label":"炎の精霊 / グミ","x":529,"y":982,"w":66,"h":64},{"id":"fire_galaxy","label":"炎の精霊 / ギャラクシー","x":711,"y":982,"w":66,"h":64},{"id":"shadow_normal","label":"影の精霊 / ノーマル","x":1096,"y":982,"w":66,"h":64},{"id":"shadow_gold","label":"影の精霊 / ゴールド","x":1278,"y":982,"w":66,"h":64},{"id":"shadow_gummy","label":"影の精霊 / グミ","x":1460,"y":982,"w":66,"h":64},{"id":"shadow_galaxy","label":"影の精霊 / ギャラクシー","x":1642,"y":982,"w":66,"h":64},{"id":"inferno_imp","label":"インフェルノインプの精霊","x":2008,"y":982,"w":66,"h":64},{"id":"air_normal","label":"風の精霊 / ノーマル","x":164,"y":1242,"w":66,"h":64},{"id":"air_gold","label":"風の精霊 / ゴールド","x":346,"y":1242,"w":66,"h":64},{"id":"air_gummy","label":"風の精霊 / グミ","x":529,"y":1242,"w":66,"h":64},{"id":"air_galaxy","label":"風の精霊 / ギャラクシー","x":711,"y":1242,"w":66,"h":64},{"id":"skull_normal","label":"スカルの精霊 / ノーマル","x":1096,"y":1242,"w":66,"h":64},{"id":"skull_gold","label":"スカルの精霊 / ゴールド","x":1278,"y":1242,"w":66,"h":64},{"id":"skull_gummy","label":"スカルの精霊 / グミ","x":1460,"y":1242,"w":66,"h":64},{"id":"skull_galaxy","label":"スカルの精霊 / ギャラクシー","x":1642,"y":1242,"w":66,"h":64},{"id":"void_wisp","label":"ヴォイドウィスプの精霊","x":2008,"y":1242,"w":66,"h":64},{"id":"light_normal","label":"光の精霊 / ノーマル","x":164,"y":1533,"w":66,"h":64},{"id":"light_gold","label":"光の精霊 / ゴールド","x":346,"y":1533,"w":66,"h":64},{"id":"light_gummy","label":"光の精霊 / グミ","x":529,"y":1533,"w":66,"h":64},{"id":"light_galaxy","label":"光の精霊 / ギャラクシー","x":711,"y":1533,"w":66,"h":64},{"id":"zero_point_normal","label":"ゼロポイントの精霊 / ノーマル","x":1096,"y":1533,"w":66,"h":64},{"id":"zero_point_gold","label":"ゼロポイントの精霊 / ゴールド","x":1278,"y":1533,"w":66,"h":64},{"id":"zero_point_gummy","label":"ゼロポイントの精霊 / グミ","x":1460,"y":1533,"w":66,"h":64},{"id":"zero_point_galaxy","label":"ゼロポイントの精霊 / ギャラクシー","x":1642,"y":1533,"w":66,"h":64},{"id":"grim_reaper","label":"グリムリーパーの精霊","x":2008,"y":1533,"w":66,"h":64}];
+const boxes = [{"id":"water_normal","label":"水の精霊 / ノーマル","x":164,"y":461,"w":66,"h":64},{"id":"water_gold","label":"水の精霊 / ゴールド","x":346,"y":461,"w":66,"h":64},{"id":"water_gummy","label":"水の精霊 / グミ","x":529,"y":461,"w":66,"h":64},{"id":"water_galaxy","label":"水の精霊 / ギャラクシー","x":711,"y":461,"w":66,"h":64},{"id":"acorn_normal","label":"どんぐりの精霊 / ノーマル","x":1096,"y":461,"w":66,"h":64},{"id":"dream_normal","label":"夢の精霊 / ノーマル","x":1278,"y":461,"w":66,"h":64},{"id":"dream_gold","label":"夢の精霊 / ゴールド","x":1460,"y":461,"w":66,"h":64},{"id":"dream_gummy","label":"夢の精霊 / グミ","x":1642,"y":461,"w":66,"h":64},{"id":"dream_galaxy","label":"夢の精霊 / ギャラクシー","x":1825,"y":461,"w":66,"h":64},{"id":"earth_normal","label":"地の精霊 / ノーマル","x":164,"y":722,"w":66,"h":64},{"id":"earth_gold","label":"地の精霊 / ゴールド","x":346,"y":722,"w":66,"h":64},{"id":"earth_gummy","label":"地の精霊 / グミ","x":529,"y":722,"w":66,"h":64},{"id":"earth_galaxy","label":"地の精霊 / ギャラクシー","x":711,"y":722,"w":66,"h":64},{"id":"burnt_peanut","label":"焦げたピーナッツの精霊","x":912,"y":722,"w":66,"h":64},{"id":"soccer_panda","label":"サッカーパンダの精霊","x":1096,"y":722,"w":66,"h":64},{"id":"demon_normal","label":"悪魔の精霊 / ノーマル","x":1278,"y":722,"w":66,"h":64},{"id":"demon_gold","label":"悪魔の精霊 / ゴールド","x":1460,"y":722,"w":66,"h":64},{"id":"demon_gummy","label":"悪魔の精霊 / グミ","x":1642,"y":722,"w":66,"h":64},{"id":"demon_galaxy","label":"悪魔の精霊 / ギャラクシー","x":1825,"y":722,"w":66,"h":64},{"id":"fire_normal","label":"炎の精霊 / ノーマル","x":164,"y":982,"w":66,"h":64},{"id":"fire_gold","label":"炎の精霊 / ゴールド","x":346,"y":982,"w":66,"h":64},{"id":"fire_gummy","label":"炎の精霊 / グミ","x":529,"y":982,"w":66,"h":64},{"id":"fire_galaxy","label":"炎の精霊 / ギャラクシー","x":711,"y":982,"w":66,"h":64},{"id":"punk_red","label":"パンクの精霊 / レッド","x":1096,"y":982,"w":66,"h":64},{"id":"punk_normal","label":"パンクの精霊 / ノーマル","x":1278,"y":982,"w":66,"h":64},{"id":"punk_gold","label":"パンクの精霊 / ゴールド","x":1460,"y":982,"w":66,"h":64},{"id":"punk_gummy","label":"パンクの精霊 / グミ","x":1642,"y":982,"w":66,"h":64},{"id":"punk_galaxy","label":"パンクの精霊 / ギャラクシー","x":1825,"y":982,"w":66,"h":64},{"id":"duck_normal","label":"ダックの精霊 / ノーマル","x":164,"y":1242,"w":66,"h":64},{"id":"duck_gold","label":"ダックの精霊 / ゴールド","x":346,"y":1242,"w":66,"h":64},{"id":"duck_gummy","label":"ダックの精霊 / グミ","x":529,"y":1242,"w":66,"h":64},{"id":"duck_galaxy","label":"ダックの精霊 / ギャラクシー","x":711,"y":1242,"w":66,"h":64},{"id":"hood_normal","label":"フードの精霊 / ノーマル","x":1096,"y":1242,"w":66,"h":64},{"id":"hood_gold","label":"フードの精霊 / ゴールド","x":1278,"y":1242,"w":66,"h":64},{"id":"hood_gummy","label":"フードの精霊 / グミ","x":1460,"y":1242,"w":66,"h":64},{"id":"hood_galaxy","label":"フードの精霊 / ギャラクシー","x":1642,"y":1242,"w":66,"h":64},{"id":"light_normal","label":"光の精霊 / ノーマル","x":164,"y":1533,"w":66,"h":64},{"id":"light_gold","label":"光の精霊 / ゴールド","x":346,"y":1533,"w":66,"h":64},{"id":"light_gummy","label":"光の精霊 / グミ","x":529,"y":1533,"w":66,"h":64},{"id":"light_galaxy","label":"光の精霊 / ギャラクシー","x":711,"y":1533,"w":66,"h":64},{"id":"zero_normal","label":"ゼロの精霊 / ノーマル","x":1096,"y":1533,"w":66,"h":64},{"id":"zero_gold","label":"ゼロの精霊 / ゴールド","x":1278,"y":1533,"w":66,"h":64},{"id":"zero_gummy","label":"ゼロの精霊 / グミ","x":1460,"y":1533,"w":66,"h":64},{"id":"zero_galaxy","label":"ゼロの精霊 / ギャラクシー","x":1642,"y":1533,"w":66,"h":64},{"id":"grim_reaper","label":"死神の精霊","x":1825,"y":1533,"w":66,"h":64}];
 const translations = {
   ja: {
-    title: "Fortnite Sprite Checklist",
-    namePlaceholder: "名前（任意）",
-    colorLabel: "文字色",
-    sizeLabel: "名前サイズ",
-    saveImage: "画像保存",
-    reset: "全解除",
-    saved: "保存済み",
+    namePlaceholder: "名前（任意）", colorLabel: "文字色", sizeLabel: "名前サイズ", saveImage: "画像保存", reset: "全解除", saved: "保存済み",
     hint: "開発版です。タップで切替。状態はこの端末のブラウザに保存されます。本番環境とは別キーに保存されます。",
     footer: 'DEV環境 / 本番とは別保存 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a>',
-    collected: "collected",
-    devMode: "開発者モード",
-    supportLink: ""
+    collected: "collected"
   },
   en: {
-    title: "Fortnite Sprite Checklist",
-    namePlaceholder: "Name (optional)",
-    colorLabel: "Text color",
-    sizeLabel: "Name size",
-    saveImage: "Save Image",
-    reset: "Clear All",
-    saved: "Saved",
+    namePlaceholder: "Name (optional)", colorLabel: "Text color", sizeLabel: "Name size", saveImage: "Save Image", reset: "Clear All", saved: "Saved",
     hint: "Development build. Tap to toggle. Progress is saved in this browser on this device. Saved separately from the production version.",
     footer: 'DEV build / Saved separately from production | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a> | <a href="https://buymeacoffee.com/bch1025?new=1" target="_blank" rel="noopener noreferrer">Support the developer</a>',
-    collected: "collected",
-    devMode: "Developer Mode",
-    supportLink: "Support the developer"
+    collected: "collected"
   }
 };
 const board = document.getElementById("board");
@@ -355,175 +144,70 @@ const sizeLabel = document.getElementById("sizeLabel");
 const nameInput = document.getElementById("nameInput");
 const nameColorSelect = document.getElementById("nameColorSelect");
 const nameSizeSelect = document.getElementById("nameSizeSelect");
-const metaOverlay = document.getElementById("metaOverlay");
 const dateOverlay = document.getElementById("dateOverlay");
 const countOverlay = document.getElementById("countOverlay");
 const nameOverlay = document.getElementById("nameOverlay");
-const devModeFlag = document.getElementById("devModeFlag");
 const completeBadge = document.getElementById("completeBadge");
 const saveImageBtn = document.getElementById("saveImageBtn");
 const resetBtn = document.getElementById("resetBtn");
-function loadState() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === "object" ? parsed : {};
-  } catch {
-    return {};
-  }
-}
-function saveState() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-}
-function loadName() {
-  return localStorage.getItem(NAME_STORAGE_KEY) || "";
-}
-function saveName(value) {
-  localStorage.setItem(NAME_STORAGE_KEY, value);
-}
-function normalizeNameColor(value) {
-  return ["black","red","white"].includes(value) ? value : "black";
-}
-function normalizeNameSize(value) {
-  return ["small","medium","large"].includes(value) ? value : "medium";
-}
-function loadNameColor() {
-  return normalizeNameColor(localStorage.getItem(NAME_COLOR_STORAGE_KEY) || "black");
-}
-function loadNameSize() {
-  return normalizeNameSize(localStorage.getItem(NAME_SIZE_STORAGE_KEY) || "medium");
-}
-function loadLanguage() {
-  const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  return stored === "en" ? "en" : "ja";
-}
-function saveLanguage(value) {
-  const normalized = value === "en" ? "en" : "ja";
-  localStorage.setItem(LANGUAGE_STORAGE_KEY, normalized);
-  return normalized;
-}
-function saveNameColor(value) {
-  const normalized = normalizeNameColor(value);
-  localStorage.setItem(NAME_COLOR_STORAGE_KEY, normalized);
-  saveBadge.textContent = t("saved");
-  return normalized;
-}
-function saveNameSize(value) {
-  const normalized = normalizeNameSize(value);
-  localStorage.setItem(NAME_SIZE_STORAGE_KEY, normalized);
-  saveBadge.textContent = t("saved");
-  return normalized;
-}
-let state = loadState();
-let displayName = loadName();
-let displayNameColor = loadNameColor();
-let displayNameSize = loadNameSize();
+
+const loadJSON = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key) || "null") ?? fallback; } catch { return fallback; } };
+const saveJSON = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+const normalizeColor = (v) => ["black","red","white"].includes(v) ? v : "black";
+const normalizeSize = (v) => ["small","medium","large"].includes(v) ? v : "medium";
+const loadLanguage = () => localStorage.getItem(LANGUAGE_STORAGE_KEY) === "en" ? "en" : "ja";
+
+let state = loadJSON(STORAGE_KEY, {});
+let displayName = localStorage.getItem(NAME_STORAGE_KEY) || "";
+let displayNameColor = normalizeColor(localStorage.getItem(NAME_COLOR_STORAGE_KEY) || "black");
+let displayNameSize = normalizeSize(localStorage.getItem(NAME_SIZE_STORAGE_KEY) || "medium");
 let currentLanguage = loadLanguage();
-function checkedCount() {
-  return Object.values(state).filter(Boolean).length;
-}
-function isComplete() {
-  return checkedCount() === boxes.length;
-}
-function updateCompleteBadge() {
-  if (!completeBadge) return;
-  const shouldShow = isComplete() && !isRawExportMode();
-  completeBadge.classList.toggle("show", shouldShow);
-  completeBadge.setAttribute("aria-hidden", shouldShow ? "false" : "true");
-}
-function updateCount() {
-  countBadge.textContent = `${checkedCount()} / ${boxes.length}`;
+
+function t(key) { return translations[currentLanguage][key] || translations.ja[key] || ""; }
+function checkedCount() { return Object.values(state).filter(Boolean).length; }
+function isComplete() { return checkedCount() === boxes.length; }
+function isRawExportMode() { return displayName.trim() === RAW_EXPORT_KEY; }
+function formatCurrentDate() {
+  const now = new Date();
+  const pad = (v) => String(v).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
 }
 function pctX(v) { return (v / IMAGE_WIDTH) * 100; }
 function pctY(v) { return (v / IMAGE_HEIGHT) * 100; }
+function updateCount() { countBadge.textContent = `${checkedCount()} / ${boxes.length}`; }
+function updateCompleteBadge() {
+  const show = isComplete() && !isRawExportMode();
+  completeBadge.classList.toggle("show", show);
+  completeBadge.setAttribute("aria-hidden", show ? "false" : "true");
+}
 function makeMark() {
-  const wrap = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  wrap.setAttribute("viewBox", "0 0 100 100");
-  wrap.setAttribute("class", "mark");
-  const shadow = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  shadow.setAttribute("d", "M18 54 L40 76 L82 24");
-  shadow.setAttribute("class", "shadow");
-  const main = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  main.setAttribute("d", "M18 54 L40 76 L82 24");
-  main.setAttribute("class", "main");
-  wrap.appendChild(shadow);
-  wrap.appendChild(main);
-  return wrap;
-}
-function drawCheckOnContext(ctx, box) {
-  const p1x = box.x + box.w * 0.18;
-  const p1y = box.y + box.h * 0.56;
-  const p2x = box.x + box.w * 0.40;
-  const p2y = box.y + box.h * 0.76;
-  const p3x = box.x + box.w * 0.82;
-  const p3y = box.y + box.h * 0.24;
-
-  ctx.save();
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-
-  ctx.strokeStyle = "rgba(255,255,255,0.34)";
-  ctx.lineWidth = 20;
-  ctx.beginPath();
-  ctx.moveTo(p1x, p1y);
-  ctx.lineTo(p2x, p2y);
-  ctx.lineTo(p3x, p3y);
-  ctx.stroke();
-
-  ctx.strokeStyle = "#ff4d4f";
-  ctx.lineWidth = 14;
-  ctx.beginPath();
-  ctx.moveTo(p1x, p1y);
-  ctx.lineTo(p2x, p2y);
-  ctx.lineTo(p3x, p3y);
-  ctx.stroke();
-
-  ctx.restore();
-}
-function formatCurrentDate() {
-  const now = new Date();
-  const pad = (value) => String(value).padStart(2, "0");
-  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
-}
-function isRawExportMode() {
-  return displayName.trim() === RAW_EXPORT_KEY;
-}
-function t(key) {
-  return translations[currentLanguage][key] || translations.ja[key] || "";
-}
-function applyLanguage() {
-  document.title = currentLanguage === "en" ? "Fortnite Sprite Checklist [DEV]" : "Fortnite Sprite Checklist [DEV]";
-  nameInput.placeholder = t("namePlaceholder");
-  colorLabel.textContent = t("colorLabel");
-  sizeLabel.textContent = t("sizeLabel");
-  saveImageBtn.textContent = t("saveImage");
-  resetBtn.textContent = t("reset");
-  saveBadge.textContent = t("saved");
-  pageHint.textContent = t("hint");
-  pageFooter.innerHTML = t("footer");
-  devModeFlag.textContent = currentLanguage === "en" ? "DEV" : "DEV";
-  langJaBtn.classList.toggle("is-active", currentLanguage === "ja");
-  langEnBtn.classList.toggle("is-active", currentLanguage === "en");
-  refreshMetaOverlay();
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 100 100");
+  svg.setAttribute("class", "mark");
+  for (const cls of ["shadow","main"]) {
+    const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    p.setAttribute("d", "M18 54 L40 76 L82 24");
+    p.setAttribute("class", cls);
+    svg.appendChild(p);
+  }
+  return svg;
 }
 function refreshMetaOverlay() {
-  const rawMode = isRawExportMode();
+  const raw = isRawExportMode();
   const countText = `${checkedCount()} / ${boxes.length} ${t("collected")}`;
-  const dateText = formatCurrentDate();
-  dateOverlay.textContent = rawMode ? "" : dateText;
-  countOverlay.textContent = rawMode ? "" : countText;
-  nameOverlay.textContent = rawMode ? "" : displayName.trim();
-  dateOverlay.classList.toggle("is-hidden", rawMode);
-  countOverlay.classList.toggle("is-hidden", rawMode);
-  const hasName = !rawMode && displayName.trim().length > 0;
+  dateOverlay.textContent = raw ? "" : formatCurrentDate();
+  countOverlay.textContent = raw ? "" : countText;
+  nameOverlay.textContent = raw ? "" : displayName.trim();
+  dateOverlay.classList.toggle("is-hidden", raw);
+  countOverlay.classList.toggle("is-hidden", raw);
+  const hasName = !raw && displayName.trim().length > 0;
   nameOverlay.classList.toggle("is-hidden", !hasName);
   nameOverlay.classList.remove("size-small","size-medium","size-large","color-black","color-red","color-white");
   nameOverlay.classList.add(`size-${displayNameSize}`, `color-${displayNameColor}`);
 }
 function rebuildLayer() {
   layer.innerHTML = "";
-  boxes.forEach((box) => {
+  for (const box of boxes) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "box";
@@ -535,15 +219,25 @@ function rebuildLayer() {
     if (state[box.id]) btn.appendChild(makeMark());
     btn.addEventListener("click", () => {
       state[box.id] = !state[box.id];
-      saveState();
+      saveJSON(STORAGE_KEY, state);
       saveBadge.textContent = t("saved");
-      rebuildLayer();
-      updateCount();
-      refreshMetaOverlay();
-      updateCompleteBadge();
+      rebuildLayer(); updateCount(); refreshMetaOverlay(); updateCompleteBadge();
     });
     layer.appendChild(btn);
-  });
+  }
+}
+function applyLanguage() {
+  nameInput.placeholder = t("namePlaceholder");
+  colorLabel.textContent = t("colorLabel");
+  sizeLabel.textContent = t("sizeLabel");
+  saveImageBtn.textContent = t("saveImage");
+  resetBtn.textContent = t("reset");
+  saveBadge.textContent = t("saved");
+  pageHint.textContent = t("hint");
+  pageFooter.innerHTML = t("footer");
+  langJaBtn.classList.toggle("is-active", currentLanguage === "ja");
+  langEnBtn.classList.toggle("is-active", currentLanguage === "en");
+  refreshMetaOverlay();
 }
 function fitFontSize(ctx, text, weight, startSize, minSize, maxWidth, fontFamily) {
   let size = startSize;
@@ -554,204 +248,77 @@ function fitFontSize(ctx, text, weight, startSize, minSize, maxWidth, fontFamily
   }
   return minSize;
 }
+function drawCheckOnContext(ctx, box) {
+  const p1x = box.x + box.w * 0.18, p1y = box.y + box.h * 0.56;
+  const p2x = box.x + box.w * 0.40, p2y = box.y + box.h * 0.76;
+  const p3x = box.x + box.w * 0.82, p3y = box.y + box.h * 0.24;
+  ctx.save(); ctx.lineCap = "round"; ctx.lineJoin = "round";
+  ctx.strokeStyle = "rgba(255,255,255,0.34)"; ctx.lineWidth = 20;
+  ctx.beginPath(); ctx.moveTo(p1x,p1y); ctx.lineTo(p2x,p2y); ctx.lineTo(p3x,p3y); ctx.stroke();
+  ctx.strokeStyle = "#ff4d4f"; ctx.lineWidth = 14;
+  ctx.beginPath(); ctx.moveTo(p1x,p1y); ctx.lineTo(p2x,p2y); ctx.lineTo(p3x,p3y); ctx.stroke();
+  ctx.restore();
+}
 function drawMetaText(ctx) {
   if (isRawExportMode()) return;
-
-  const normalizedName = displayName.trim();
-  const normalizedDate = formatCurrentDate();
-  const normalizedCount = `${checkedCount()} / ${boxes.length} ${t("collected")}`;
-  const normalizedColor = displayNameColor;
-  const normalizedSize = displayNameSize;
-  const fontFamily = 'Arial';
-  const maxTextWidth = 720;
-  const style = normalizedColor === 'red'
-    ? { fill: '#d11d2c', stroke: 'rgba(255,255,255,0.72)' }
-    : normalizedColor === 'white'
-      ? { fill: '#ffffff', stroke: 'rgba(0,0,0,0.92)' }
-      : { fill: '#111111', stroke: 'rgba(255,255,255,0.72)' };
-  const x = 48;
-  const dateY = 42;
-  const countY = 72;
-  const nameY = normalizedName ? 102 : 0;
-  const nameStartSize = normalizedSize === 'small' ? 30 : normalizedSize === 'large' ? 42 : 36;
-  const nameMinSize = normalizedSize === 'small' ? 20 : normalizedSize === 'large' ? 28 : 24;
-
-  ctx.save();
-  ctx.textBaseline = 'top';
-  ctx.lineJoin = 'round';
-
-  if (normalizedDate) {
-    const dateSize = fitFontSize(ctx, normalizedDate, 700, 30, 22, maxTextWidth, fontFamily);
-    ctx.font = `700 ${dateSize}px ${fontFamily}`;
-    ctx.strokeStyle = style.stroke;
-    ctx.lineWidth = 4;
-    ctx.strokeText(normalizedDate, x, dateY);
-    ctx.fillStyle = style.fill;
-    ctx.fillText(normalizedDate, x, dateY);
-  }
-
-  if (normalizedCount) {
-    const countSize = fitFontSize(ctx, normalizedCount, 700, 30, 22, maxTextWidth, fontFamily);
-    ctx.font = `700 ${countSize}px ${fontFamily}`;
-    ctx.strokeStyle = style.stroke;
-    ctx.lineWidth = 4;
-    ctx.strokeText(normalizedCount, x, countY);
-    ctx.fillStyle = style.fill;
-    ctx.fillText(normalizedCount, x, countY);
-  }
-
-  if (normalizedName) {
-    const nameSize = fitFontSize(ctx, normalizedName, 700, nameStartSize, nameMinSize, maxTextWidth, fontFamily);
-    ctx.font = `700 ${nameSize}px ${fontFamily}`;
-    ctx.strokeStyle = style.stroke;
-    ctx.lineWidth = 4;
-    ctx.strokeText(normalizedName, x, nameY);
-    ctx.fillStyle = style.fill;
-    ctx.fillText(normalizedName, x, nameY);
-  }
-
+  const name = displayName.trim();
+  const dateText = formatCurrentDate();
+  const countText = `${checkedCount()} / ${boxes.length} ${t("collected")}`;
+  const fontFamily = "Arial";
+  const maxWidth = 720;
+  const color = displayNameColor === "red" ? {fill:"#d11d2c", stroke:"rgba(255,255,255,0.72)"} :
+                displayNameColor === "white" ? {fill:"#fff", stroke:"rgba(0,0,0,0.92)"} :
+                {fill:"#111", stroke:"rgba(255,255,255,0.72)"};
+  const x=48, dateY=42, countY=72, nameY=name ? 102 : 0;
+  const nameStart = displayNameSize === "small" ? 30 : displayNameSize === "large" ? 42 : 36;
+  const nameMin = displayNameSize === "small" ? 20 : displayNameSize === "large" ? 28 : 24;
+  ctx.save(); ctx.textBaseline="top"; ctx.lineJoin="round";
+  const drawLine = (text, y, start=30, min=22) => {
+    const sz = fitFontSize(ctx, text, 700, start, min, maxWidth, fontFamily);
+    ctx.font = `700 ${sz}px ${fontFamily}`; ctx.strokeStyle = color.stroke; ctx.lineWidth = 4; ctx.strokeText(text, x, y); ctx.fillStyle = color.fill; ctx.fillText(text, x, y);
+  };
+  drawLine(dateText, dateY);
+  drawLine(countText, countY);
+  if (name) drawLine(name, nameY, nameStart, nameMin);
   ctx.restore();
 }
+function roundRect(ctx,x,y,w,h,r) { ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
 function drawCompleteStamp(ctx) {
-  if (!isComplete()) return;
-  if (isRawExportMode()) return;
-
-  const x = 1520;
-  const y = 54;
-  const w = 168;
-  const h = 58;
-  const r = 10;
-
-  ctx.save();
-  ctx.beginPath();
-  roundRect(ctx, x, y, w, h, r);
-  ctx.shadowColor = "rgba(0,0,0,0.20)";
-  ctx.shadowBlur = 8;
-  ctx.shadowOffsetX = 0;
-  ctx.shadowOffsetY = 4;
-  const grad = ctx.createLinearGradient(x, y, x + w, y + h);
-  grad.addColorStop(0, "rgba(255,255,255,0.96)");
-  grad.addColorStop(1, "rgba(255,246,204,0.98)");
-  ctx.fillStyle = grad;
-  ctx.fill();
-
-  ctx.shadowColor = "transparent";
-  ctx.lineWidth = 2.5;
-  ctx.strokeStyle = "rgba(255,215,0,0.95)";
-  ctx.stroke();
-
-  ctx.translate(x + w / 2, y + h / 2);
-  ctx.rotate(-4 * Math.PI / 180);
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-
-  ctx.fillStyle = "#d62828";
-  ctx.font = "900 22px Arial";
-  ctx.fillText("COMPLETE!", 0, -8);
-
-  ctx.fillStyle = "#111111";
-  ctx.font = "800 10px Arial";
-  ctx.fillText(`${boxes.length} / ${boxes.length} COLLECTED`, 0, 11);
-  ctx.restore();
-}
-function roundRect(ctx, x, y, w, h, r) {
-  ctx.moveTo(x + r, y);
-  ctx.arcTo(x + w, y, x + w, y + h, r);
-  ctx.arcTo(x + w, y + h, x, y + h, r);
-  ctx.arcTo(x, y + h, x, y, r);
-  ctx.arcTo(x, y, x + w, y, r);
-  ctx.closePath();
+  if (!isComplete() || isRawExportMode()) return;
+  const x=1520,y=54,w=168,h=58,r=10;
+  ctx.save(); ctx.beginPath(); roundRect(ctx,x,y,w,h,r);
+  ctx.shadowColor="rgba(0,0,0,0.20)"; ctx.shadowBlur=8; ctx.shadowOffsetY=4;
+  const grad=ctx.createLinearGradient(x,y,x+w,y+h); grad.addColorStop(0,"rgba(255,255,255,0.96)"); grad.addColorStop(1,"rgba(255,246,204,0.98)");
+  ctx.fillStyle=grad; ctx.fill(); ctx.shadowColor="transparent"; ctx.lineWidth=2.5; ctx.strokeStyle="rgba(255,215,0,0.95)"; ctx.stroke();
+  ctx.translate(x+w/2,y+h/2); ctx.rotate(-4*Math.PI/180); ctx.textAlign="center"; ctx.textBaseline="middle";
+  ctx.fillStyle="#d62828"; ctx.font="900 22px Arial"; ctx.fillText("COMPLETE!",0,-8);
+  ctx.fillStyle="#111"; ctx.font="800 10px Arial"; ctx.fillText(`${boxes.length} / ${boxes.length} COLLECTED`,0,11); ctx.restore();
 }
 async function buildChecklistBlob() {
-  if (!boardImage.complete) {
-    await new Promise((resolve, reject) => {
-      boardImage.addEventListener("load", resolve, { once: true });
-      boardImage.addEventListener("error", reject, { once: true });
-    });
-  }
-
-  const canvas = document.createElement("canvas");
-  canvas.width = IMAGE_WIDTH;
-  canvas.height = IMAGE_HEIGHT;
-  const ctx = canvas.getContext("2d");
-  ctx.drawImage(boardImage, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-
-  if (document.fonts && document.fonts.ready) {
-    try { await document.fonts.ready; } catch (e) {}
-  }
-
-  const rawMode = isRawExportMode();
-  if (!rawMode) drawMetaText(ctx);
-  boxes.forEach((box) => {
-    if (state[box.id]) drawCheckOnContext(ctx, box);
-  });
-  drawCompleteStamp(ctx);
-
-  return new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
+  if (!boardImage.complete || !boardImage.naturalWidth) await new Promise((resolve,reject)=>{boardImage.addEventListener("load",resolve,{once:true});boardImage.addEventListener("error",reject,{once:true});});
+  const canvas = document.createElement("canvas"); canvas.width = IMAGE_WIDTH; canvas.height = IMAGE_HEIGHT;
+  const ctx = canvas.getContext("2d"); ctx.drawImage(boardImage,0,0,IMAGE_WIDTH,IMAGE_HEIGHT);
+  if (document.fonts?.ready) try { await document.fonts.ready; } catch {}
+  drawMetaText(ctx); boxes.forEach((box)=>{ if(state[box.id]) drawCheckOnContext(ctx, box); }); drawCompleteStamp(ctx);
+  return await new Promise((resolve)=>canvas.toBlob(resolve, "image/png"));
 }
 async function saveImage() {
-  saveBadge.textContent = t("saved");
-  const blob = await buildChecklistBlob();
-  if (!blob) return;
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `fortnite-sprite-checklist-${formatCurrentDate()}.png`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  const blob = await buildChecklistBlob(); if (!blob) return;
+  const url = URL.createObjectURL(blob); const a = document.createElement("a");
+  a.href = url; a.download = `fortnite-sprite-checklist-${formatCurrentDate()}.png`; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
 }
-nameInput.value = displayName;
-nameColorSelect.value = displayNameColor;
-nameSizeSelect.value = displayNameSize;
-nameInput.addEventListener("input", (event) => {
-  displayName = event.target.value;
-  saveName(displayName);
-  saveBadge.textContent = t("saved");
-  refreshMetaOverlay();
-  updateCompleteBadge();
-});
-nameColorSelect.addEventListener("change", (event) => {
-  displayNameColor = saveNameColor(event.target.value);
-  refreshMetaOverlay();
-});
-nameSizeSelect.addEventListener("change", (event) => {
-  displayNameSize = saveNameSize(event.target.value);
-  refreshMetaOverlay();
-});
-langJaBtn.addEventListener("click", () => {
-  currentLanguage = saveLanguage("ja");
-  applyLanguage();
-});
-langEnBtn.addEventListener("click", () => {
-  currentLanguage = saveLanguage("en");
-  applyLanguage();
-});
+nameInput.value = displayName; nameColorSelect.value = displayNameColor; nameSizeSelect.value = displayNameSize;
+nameInput.addEventListener("input", (e)=>{ displayName=e.target.value; localStorage.setItem(NAME_STORAGE_KEY, displayName); saveBadge.textContent=t("saved"); refreshMetaOverlay(); updateCompleteBadge(); });
+nameColorSelect.addEventListener("change", (e)=>{ displayNameColor=normalizeColor(e.target.value); localStorage.setItem(NAME_COLOR_STORAGE_KEY, displayNameColor); saveBadge.textContent=t("saved"); refreshMetaOverlay(); });
+nameSizeSelect.addEventListener("change", (e)=>{ displayNameSize=normalizeSize(e.target.value); localStorage.setItem(NAME_SIZE_STORAGE_KEY, displayNameSize); saveBadge.textContent=t("saved"); refreshMetaOverlay(); });
+langJaBtn.addEventListener("click", ()=>{ currentLanguage="ja"; localStorage.setItem(LANGUAGE_STORAGE_KEY,currentLanguage); applyLanguage(); });
+langEnBtn.addEventListener("click", ()=>{ currentLanguage="en"; localStorage.setItem(LANGUAGE_STORAGE_KEY,currentLanguage); applyLanguage(); });
 saveImageBtn.addEventListener("click", saveImage);
-resetBtn.addEventListener("click", () => {
-  state = {};
-  saveState();
-  saveBadge.textContent = t("saved");
-  rebuildLayer();
-  updateCount();
-  refreshMetaOverlay();
-  updateCompleteBadge();
-});
-boardImage.addEventListener("load", () => {
-  rebuildLayer();
-  updateCount();
-  refreshMetaOverlay();
-  applyLanguage();
-  updateCompleteBadge();
-});
-if (boardImage.complete) {
-  rebuildLayer();
-  updateCount();
-  refreshMetaOverlay();
-  applyLanguage();
-  updateCompleteBadge();
-}
+resetBtn.addEventListener("click", ()=>{ state={}; saveJSON(STORAGE_KEY,state); saveBadge.textContent=t("saved"); rebuildLayer(); updateCount(); refreshMetaOverlay(); updateCompleteBadge(); });
+const init = () => { rebuildLayer(); updateCount(); refreshMetaOverlay(); applyLanguage(); updateCompleteBadge(); };
+boardImage.addEventListener("load", init);
+if (boardImage.complete) init();
 </script>
 </body>
 </html>
