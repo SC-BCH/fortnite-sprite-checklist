@@ -34,7 +34,8 @@ button,input,select{font:inherit}
 .board{position:relative;width:100%;max-width:1180px;margin:0 auto;border-radius:22px;overflow:hidden;background:#d6d6d0;box-shadow:0 18px 44px rgba(0,0,0,.32)}
 .board img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none;pointer-events:none}
 .layer{position:absolute;inset:0}
-.box{position:absolute;cursor:pointer;border-radius:8px;background:transparent}
+.box{position:absolute;cursor:pointer;border-radius:8px;background:transparent;appearance:none;-webkit-appearance:none;border:0;padding:0;margin:0;outline:none;box-shadow:none}
+.box::-webkit-focus-inner{border:0;padding:0}
 .box:focus-visible{outline:2px solid rgba(122,162,255,.95);outline-offset:1px}
 .mark{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .mark path.shadow{stroke:rgba(255,255,255,.34);stroke-width:20;stroke-linecap:round;stroke-linejoin:round;fill:none}
