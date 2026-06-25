@@ -33,8 +33,9 @@ button,input,select{font:inherit}
 .hint{color:var(--muted);font-size:13px;margin:4px 0 10px}
 .board{position:relative;width:100%;max-width:1180px;margin:0 auto;border-radius:22px;overflow:hidden;background:#d6d6d0;box-shadow:0 18px 44px rgba(0,0,0,.32)}
 .board img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.board.is-raw-export .layer{pointer-events:none}
 .layer{position:absolute;inset:0}
-.box{position:absolute;cursor:pointer;border-radius:8px;background:transparent;appearance:none;-webkit-appearance:none;border:0;padding:0;margin:0;outline:none;box-shadow:none}
+.box{position:absolute;cursor:pointer;border-radius:8px;background:transparent;appearance:none;-webkit-appearance:none;border:0;padding:0;margin:0;outline:none;box-shadow:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .box::-webkit-focus-inner{border:0;padding:0}
 .box:focus-visible{outline:2px solid rgba(122,162,255,.95);outline-offset:1px}
 .mark{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
@@ -58,23 +59,26 @@ button,input,select{font:inherit}
 .footer{margin-top:10px;text-align:center;color:var(--muted);font-size:13px}
 .footer a{color:inherit}
 @media (max-width:640px) {
-  .wrap{padding:10px 8px 14px} .toolbar{font-size:14px} .name-input{min-width:0;flex:1 1 148px}
+  .wrap{padding:10px 8px 14px}
+  .toolbar{font-size:14px}
+  .name-input{min-width:0;flex:1 1 148px}
   .complete-badge{left:73.8%;top:2.6%;min-width:118px;padding:5px 6px 4px}
-  .complete-badge-main{font-size:12px} .complete-badge-sub{font-size:7px}
+  .complete-badge-main{font-size:12px}
+  .complete-badge-sub{font-size:7px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="toolbar">
-    <span class="badge count" id="countBadge">0 / 46</span>
+    <span class="badge count" id="countBadge">0 / 61</span>
     <span class="badge saved" id="saveBadge">保存済み</span>
     <span class="dev-flag" id="devModeFlag">DEV</span>
     <div class="lang-switch" aria-label="Language switch">
       <button class="lang-btn is-active" id="langJaBtn" type="button">日本語</button>
       <button class="lang-btn" id="langEnBtn" type="button">English</button>
     </div>
-    <input class="name-input" id="nameInput" type="text" placeholder="名前（任意）" autocomplete="nickname" />
+    <input class="name-input" id="nameInput" type="text" placeholder="名前（任意）" maxlength="32" autocomplete="nickname" />
     <span class="pill label" id="colorLabel">文字色</span>
     <select class="select" id="nameColorSelect" aria-label="文字色">
       <option value="black">黒</option>
@@ -93,7 +97,7 @@ button,input,select{font:inherit}
   </div>
   <div class="hint" id="pageHint">開発版です。タップで切替。状態はこの端末のブラウザに保存されます。本番環境とは別キーに保存されます。</div>
   <div class="board" id="board">
-    <img id="boardImage" src="../images/imagessprseireiv2.png" alt="Fortnite Sprite Checklist" />
+    <img id="boardImage" alt="Fortnite Sprite Checklist" />
     <div class="meta-overlay" id="metaOverlay">
       <div class="meta-line date-overlay" id="dateOverlay"></div>
       <div class="meta-line count-overlay" id="countOverlay"></div>
@@ -102,7 +106,7 @@ button,input,select{font:inherit}
     <div class="layer" id="layer" aria-label="Fortnite Sprite Checklist"></div>
     <div id="completeBadge" class="complete-badge" aria-hidden="true">
       <span class="complete-badge-main">COMPLETE!</span>
-      <span class="complete-badge-sub">46 / 46 COLLECTED</span>
+      <span class="complete-badge-sub">61 / 61 COLLECTED</span>
     </div>
   </div>
   <div class="footer" id="pageFooter">DEV環境 / 本番とは別保存 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a></div>
@@ -116,7 +120,8 @@ const LANGUAGE_STORAGE_KEY = "fortnite_sprite_checklist_lang_v1_dev";
 const RAW_EXPORT_KEY = "BCH_ServOfMiori_AD";
 const IMAGE_WIDTH = 2048;
 const IMAGE_HEIGHT = 1629;
-const boxes = [{"id":"water_normal","label":"水の精霊 / ノーマル","x":164,"y":461,"w":66,"h":64},{"id":"water_gold","label":"水の精霊 / ゴールド","x":346,"y":461,"w":66,"h":64},{"id":"water_gummy","label":"水の精霊 / グミ","x":529,"y":461,"w":66,"h":64},{"id":"water_galaxy","label":"水の精霊 / ギャラクシー","x":711,"y":461,"w":66,"h":64},{"id":"acorn_normal","label":"どんぐりの精霊 / ノーマル","x":1096,"y":461,"w":66,"h":64},{"id":"dream_normal","label":"夢の精霊 / ノーマル","x":1278,"y":461,"w":66,"h":64},{"id":"dream_gold","label":"夢の精霊 / ゴールド","x":1460,"y":461,"w":66,"h":64},{"id":"dream_gummy","label":"夢の精霊 / グミ","x":1642,"y":461,"w":66,"h":64},{"id":"dream_galaxy","label":"夢の精霊 / ギャラクシー","x":1825,"y":461,"w":66,"h":64},{"id":"earth_normal","label":"地の精霊 / ノーマル","x":164,"y":722,"w":66,"h":64},{"id":"earth_gold","label":"地の精霊 / ゴールド","x":346,"y":722,"w":66,"h":64},{"id":"earth_gummy","label":"地の精霊 / グミ","x":529,"y":722,"w":66,"h":64},{"id":"earth_galaxy","label":"地の精霊 / ギャラクシー","x":711,"y":722,"w":66,"h":64},{"id":"burnt_peanut","label":"焦げたピーナッツの精霊","x":912,"y":722,"w":66,"h":64},{"id":"soccer_panda","label":"サッカーパンダの精霊","x":1096,"y":722,"w":66,"h":64},{"id":"demon_normal","label":"悪魔の精霊 / ノーマル","x":1278,"y":722,"w":66,"h":64},{"id":"demon_gold","label":"悪魔の精霊 / ゴールド","x":1460,"y":722,"w":66,"h":64},{"id":"demon_gummy","label":"悪魔の精霊 / グミ","x":1642,"y":722,"w":66,"h":64},{"id":"demon_galaxy","label":"悪魔の精霊 / ギャラクシー","x":1825,"y":722,"w":66,"h":64},{"id":"fire_normal","label":"炎の精霊 / ノーマル","x":164,"y":982,"w":66,"h":64},{"id":"fire_gold","label":"炎の精霊 / ゴールド","x":346,"y":982,"w":66,"h":64},{"id":"fire_gummy","label":"炎の精霊 / グミ","x":529,"y":982,"w":66,"h":64},{"id":"fire_galaxy","label":"炎の精霊 / ギャラクシー","x":711,"y":982,"w":66,"h":64},{"id":"punk_red","label":"パンクの精霊 / レッド","x":1096,"y":982,"w":66,"h":64},{"id":"punk_normal","label":"パンクの精霊 / ノーマル","x":1278,"y":982,"w":66,"h":64},{"id":"punk_gold","label":"パンクの精霊 / ゴールド","x":1460,"y":982,"w":66,"h":64},{"id":"punk_gummy","label":"パンクの精霊 / グミ","x":1642,"y":982,"w":66,"h":64},{"id":"punk_galaxy","label":"パンクの精霊 / ギャラクシー","x":1825,"y":982,"w":66,"h":64},{"id":"duck_normal","label":"ダックの精霊 / ノーマル","x":164,"y":1242,"w":66,"h":64},{"id":"duck_gold","label":"ダックの精霊 / ゴールド","x":346,"y":1242,"w":66,"h":64},{"id":"duck_gummy","label":"ダックの精霊 / グミ","x":529,"y":1242,"w":66,"h":64},{"id":"duck_galaxy","label":"ダックの精霊 / ギャラクシー","x":711,"y":1242,"w":66,"h":64},{"id":"hood_normal","label":"フードの精霊 / ノーマル","x":1096,"y":1242,"w":66,"h":64},{"id":"king_normal","label":"王の精霊 / ノーマル","x":1278,"y":1242,"w":66,"h":64},{"id":"king_gold","label":"王の精霊 / ゴールド","x":1460,"y":1242,"w":66,"h":64},{"id":"king_gummy","label":"王の精霊 / グミ","x":1642,"y":1242,"w":66,"h":64},{"id":"king_galaxy","label":"王の精霊 / ギャラクシー","x":1825,"y":1242,"w":66,"h":64},{"id":"ghost_normal","label":"ゴーストの精霊 / ノーマル","x":164,"y":1533,"w":66,"h":64},{"id":"ghost_gold","label":"ゴーストの精霊 / ゴールド","x":346,"y":1533,"w":66,"h":64},{"id":"ghost_gummy","label":"ゴーストの精霊 / グミ","x":529,"y":1533,"w":66,"h":64},{"id":"ghost_galaxy","label":"ゴーストの精霊 / ギャラクシー","x":711,"y":1533,"w":66,"h":64},{"id":"hood_dark","label":"フードの精霊 / ダーク","x":1096,"y":1533,"w":66,"h":64},{"id":"zero_point_normal","label":"ゼロポイントの精霊 / ノーマル","x":1278,"y":1533,"w":66,"h":64},{"id":"zero_point_gold","label":"ゼロポイントの精霊 / ゴールド","x":1460,"y":1533,"w":66,"h":64},{"id":"zero_point_gummy","label":"ゼロポイントの精霊 / グミ","x":1642,"y":1533,"w":66,"h":64},{"id":"zero_point_galaxy","label":"ゼロポイントの精霊 / ギャラクシー","x":1825,"y":1533,"w":66,"h":64}];
+const EMBEDDED_IMAGE_DATA = "data:image/webp;base64,UklGRlKvBgBXRUJQVlA4WAoAAAASAAAA/wcAA10GAASAAQUAA5AEAAQAALASCdAAtLk2mo+P/50S+qUPy4D29nOG1vNj1RnYQjwu7v75ZynbQ7ZAT95kD6iI/q2zOpmRgOjWC3Yt0bypVGROuE/lU01YqXhEy6SpnibXr2g5vq6x4pnrESAVgSyW2/E4oVUj0u8uCl6Vmc2ng4e3v3jzKXB7Dw1ud0wBMSgN0A7iZi7eJ76vUReMDKKdArWF0woir6t0xI7bmgqoR6mFsQpAgE7OO/yFTWzobgVBdMuHvyg/OT8N3gcMLR7M1iOcmz5jDKQoq3VnfjR1qWTHJ6eZuepgr8+J0Zq+ubMA+pf+EcgFQe2whH9/lP0pg/J9CQemRlVX4nGqWFfQNo2LTh4moV2wcdi3ZOyOImFlON6PiQwxgYzSUJ2q+1dbzWWZ97sB1UE7hOHwDyEH7D1T5c0vYtNaYmL7GvHeNaNdWTpxqIiH4hlYbSDPgn1dANQm7T2cZs6k9IC4eFMcGr5XvLGn3mNqg+V1ymdYeY8AjGgzf+Hv7Lh5Rfoq1G8h11jsTZhhB6Qr+Xaqm0x+YxAl+YK6gdt46Gg+JgpZ0yyJmC3JS5zdLMJyV2/hm9HcRKRz9zrqYMaY52dzDYPsK/BhSFqL+DbAb3HleWg2dji39uaC4eRk7g1kCahj/Xm9W+4D0ljct/45goIOhmyw8qJaqvlEwQhQ+eXCEq3R7FH4swJ0xBJXwytjmRGCIYXIye5jtnmqWk64SO9kZUu0Oq8vhqAJWhNCahjB3/kN2by0WMMj26zqRVIg4y8WzY7ZHuQrx+hM2jTgXwi1w2NCrh+zlX74CmoCfgaepnTmqoavx0OoJTU13WhNpw3nQaRmD/fdE3FpPYBAXk6Xt0WxAd97Wy2lI4FHFPVgDzGpU9T9MlE1bOOGaN7rCuWsYYZ4sez4nrpa1m0vyxj0LKq6jO+mMX4XcRo0S8aqT1g3cKakbdhlQuvOgX6qqW36RP+Qd8kr0G/DZRj83NqcYeH+ibVAKhy59l6rGwXGFHm2dt3HLY/QMU5x2CtNia8XHM2v2xduBwoUo5dxrtY3y6GjVfcpxKm0PVVWoA/0qGTpm0epkPys4VKMAo1z/Tvi78R1iQh4jFeXIAgt5MVomxkzlJ5RdkF2gUNpAXKSH3zIuHECq3gng3Xk86b6NB9Hco82tmfcw9BUKU9iAbQ/Y75fj43Vf1D7qdBbH6Q/WHA0Gbh5u5rR/eB4iDTDoP4KK1nTDmGxgA9wz69hV4l7QlCu4F0tX5XGvv0f76cGZt1kMLmcnnOdSRD7zjzjszKpFGgmgke1jUgNmeuNna1k7rjlwmrjH6bE78yNC8MFQZhElW1MxweA6T0Y1JvG1h4On4I8W8h6ecZi0vHrER2C0Srw7G1c+UlHMx0bn6HrHmxn6ja6aXFdnKbYcuv3XtgorLAXTVm6wwjjeX0Z1+xq/x3tq6vLwRKVVI2IiGjHibfWChP8j0VuHJmvmMveIQP1UYH9dkRH5LcyMdoNwMmf0B3cSFg+ACsIroTu1d4m4d/Y0Tcx9FNgoOufJWVHhZ8+pt6Q8+YkOKITeYgDi5jvEU2syFkhd/r3yr97zL0PX02gq/Ptf0M/f9G9uWyNCNZdBMR9sUeHE/nTA3scdGtuk4d6uJt7mKVeNe3vc8VnJ0hB4ZnRBQP[... huge base64 omitted here in summary, but actual tool call contained full data ...]";
+const boxes = [{"id":"water_normal","label":"水の精霊 / ノーマル","x":46,"y":470,"w":67,"h":67},{"id":"water_gold","label":"水の精霊 / ゴールド","x":194,"y":470,"w":66,"h":66},{"id":"water_gummy","label":"水の精霊 / グミ","x":344,"y":470,"w":67,"h":66},{"id":"water_galaxy","label":"水の精霊 / ギャラクシー","x":494,"y":470,"w":67,"h":66},{"id":"dream_normal","label":"夢の精霊 / ノーマル","x":654,"y":470,"w":67,"h":66},{"id":"dream_gold","label":"夢の精霊 / ゴールド","x":806,"y":470,"w":67,"h":66},{"id":"dream_gummy","label":"夢の精霊 / グミ","x":963,"y":470,"w":66,"h":67},{"id":"dream_galaxy","label":"夢の精霊 / ギャラクシー","x":1126,"y":470,"w":67,"h":67},{"id":"burnt_peanut","label":"焦げたピーナッツの精霊","x":1280,"y":470,"w":67,"h":66},{"id":"acorn_normal","label":"どんぐりの精霊 / ノーマル","x":1434,"y":470,"w":66,"h":66},{"id":"acorn_gold","label":"どんぐりの精霊 / ゴールド","x":1592,"y":471,"w":66,"h":65},{"id":"acorn_gummy","label":"どんぐりの精霊 / グミ","x":1745,"y":470,"w":65,"h":66},{"id":"acorn_galaxy","label":"どんぐりの精霊 / ギャラクシー","x":1902,"y":470,"w":66,"h":66},{"id":"earth_normal","label":"地の精霊 / ノーマル","x":48,"y":729,"w":66,"h":66},{"id":"earth_gold","label":"地の精霊 / ゴールド","x":196,"y":728,"w":67,"h":67},{"id":"earth_gummy","label":"地の精霊 / グミ","x":346,"y":730,"w":67,"h":66},{"id":"earth_galaxy","label":"地の精霊 / ギャラクシー","x":497,"y":730,"w":66,"h":66},{"id":"demon_normal","label":"悪魔の精霊 / ノーマル","x":656,"y":730,"w":66,"h":66},{"id":"demon_gold","label":"悪魔の精霊 / ゴールド","x":808,"y":730,"w":66,"h":66},{"id":"demon_gummy","label":"悪魔の精霊 / グミ","x":965,"y":729,"w":66,"h":66},{"id":"demon_galaxy","label":"悪魔の精霊 / ギャラクシー","x":1129,"y":729,"w":66,"h":66},{"id":"punk_red","label":"レッドパンクの精霊 / ノーマル","x":1436,"y":730,"w":67,"h":66},{"id":"punk_red_gold","label":"レッドパンクの精霊 / ゴールド","x":1594,"y":730,"w":67,"h":66},{"id":"punk_red_gummy","label":"レッドパンクの精霊 / グミ","x":1746,"y":730,"w":66,"h":65},{"id":"punk_red_galaxy","label":"レッドパンクの精霊 / ギャラクシー","x":1904,"y":730,"w":66,"h":65},{"id":"fire_normal","label":"炎の精霊 / ノーマル","x":50,"y":988,"w":67,"h":67},{"id":"fire_gold","label":"炎の精霊 / ゴールド","x":198,"y":988,"w":66,"h":66},{"id":"fire_gummy","label":"炎の精霊 / グミ","x":348,"y":989,"w":66,"h":65},{"id":"fire_galaxy","label":"炎の精霊 / ギャラクシー","x":499,"y":989,"w":66,"h":65},{"id":"punk_normal","label":"パンクの精霊 / ノーマル","x":658,"y":988,"w":67,"h":66},{"id":"punk_gold","label":"パンクの精霊 / ゴールド","x":810,"y":988,"w":66,"h":66},{"id":"punk_gummy","label":"パンクの精霊 / グミ","x":966,"y":988,"w":67,"h":67},{"id":"punk_galaxy","label":"パンクの精霊 / ギャラクシー","x":1130,"y":988,"w":66,"h":67},{"id":"soccer_panda","label":"サッカーパンダの精霊 / ノーマル","x":1438,"y":988,"w":67,"h":66},{"id":"soccer_panda_gold","label":"サッカーパンダの精霊 / ゴールド","x":1596,"y":988,"w":67,"h":66},{"id":"soccer_panda_gummy","label":"サッカーパンダの精霊 / グミ","x":1748,"y":988,"w":67,"h":66},{"id":"soccer_panda_galaxy","label":"サッカーパンダの精霊 / ギャラクシー","x":1906,"y":989,"w":65,"h":65},{"id":"duck_normal","label":"ダックの精霊 / ノーマル","x":52,"y":1246,"w":66,"h":67},{"id":"duck_gold","label":"ダックの精霊 / ゴールド","x":200,"y":1247,"w":65,"h":66},{"id":"duck_gummy","label":"ダックの精霊 / グミ","x":350,"y":1248,"w":65,"h":65},{"id":"duck_galaxy","label":"ダックの精霊 / ギャラクシー","x":501,"y":1248,"w":66,"h":65},{"id":"king_normal","label":"王の精霊 / ノーマル","x":660,"y":1248,"w":66,"h":65},{"id":"king_gold","label":"王の精霊 / ゴールド","x":811,"y":1248,"w":66,"h":66},{"id":"king_gummy","label":"王の精霊 / グミ","x":969,"y":1247,"w":66,"h":66},{"id":"king_galaxy","label":"王の精霊 / ギャラクシー","x":1132,"y":1247,"w":66,"h":66},{"id":"hood_normal","label":"フードの精霊 / ノーマル","x":1440,"y":1248,"w":66,"h":66},{"id":"hood_normal_gold","label":"フードの精霊 / ゴールド","x":1598,"y":1248,"w":66,"h":66},{"id":"hood_normal_gummy","label":"フードの精霊 / グミ","x":1750,"y":1248,"w":66,"h":65},{"id":"hood_normal_galaxy","label":"フードの精霊 / ギャラクシー","x":1907,"y":1248,"w":66,"h":65},{"id":"ghost_normal","label":"ゴーストの精霊 / ノーマル","x":53,"y":1506,"w":66,"h":67},{"id":"ghost_gold","label":"ゴーストの精霊 / ゴールド","x":201,"y":1506,"w":66,"h":67},{"id":"ghost_gummy","label":"ゴーストの精霊 / グミ","x":351,"y":1506,"w":66,"h":66},{"id":"ghost_galaxy","label":"ゴーストの精霊 / ギャラクシー","x":502,"y":1506,"w":66,"h":66},{"id":"zero_point_normal","label":"ゼロポイントの精霊 / ノーマル","x":662,"y":1506,"w":66,"h":66},{"id":"zero_point_gold","label":"ゼロポイントの精霊 / ゴールド","x":812,"y":1506,"w":67,"h":67},{"id":"zero_point_gummy","label":"ゼロポイントの精霊 / グミ","x":970,"y":1506,"w":66,"h":67},{"id":"zero_point_galaxy","label":"ゼロポイントの精霊 / ギャラクシー","x":1134,"y":1506,"w":67,"h":67},{"id":"hood_dark","label":"ダークフードの精霊 / ノーマル","x":1442,"y":1507,"w":66,"h":66},{"id":"hood_dark_gold","label":"ダークフードの精霊 / ゴールド","x":1600,"y":1506,"w":66,"h":67},{"id":"hood_dark_gummy","label":"ダークフードの精霊 / グミ","x":1752,"y":1506,"w":66,"h":66},{"id":"hood_dark_galaxy","label":"ダークフードの精霊 / ギャラクシー","x":1909,"y":1507,"w":66,"h":66}];
 const translations = {
   ja: {
     namePlaceholder: "名前（任意）",
@@ -153,10 +158,12 @@ const translations = {
     collected: "collected"
   }
 };
+const board = document.getElementById("board");
 const layer = document.getElementById("layer");
 const boardImage = document.getElementById("boardImage");
 const countBadge = document.getElementById("countBadge");
 const saveBadge = document.getElementById("saveBadge");
+const devModeFlag = document.getElementById("devModeFlag");
 const langJaBtn = document.getElementById("langJaBtn");
 const langEnBtn = document.getElementById("langEnBtn");
 const pageHint = document.getElementById("pageHint");
@@ -166,6 +173,7 @@ const sizeLabel = document.getElementById("sizeLabel");
 const nameInput = document.getElementById("nameInput");
 const nameColorSelect = document.getElementById("nameColorSelect");
 const nameSizeSelect = document.getElementById("nameSizeSelect");
+const metaOverlay = document.getElementById("metaOverlay");
 const dateOverlay = document.getElementById("dateOverlay");
 const countOverlay = document.getElementById("countOverlay");
 const nameOverlay = document.getElementById("nameOverlay");
@@ -173,33 +181,50 @@ const completeBadge = document.getElementById("completeBadge");
 const saveImageBtn = document.getElementById("saveImageBtn");
 const resetBtn = document.getElementById("resetBtn");
 
-const loadJSON = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key) || "null") ?? fallback; } catch { return fallback; } };
+const loadJSON = (key, fallback) => {
+  try {
+    return JSON.parse(localStorage.getItem(key) || "null") ?? fallback;
+  } catch {
+    return fallback;
+  }
+};
 const saveJSON = (key, value) => localStorage.setItem(key, JSON.stringify(value));
-const normalizeColor = (v) => ["black","red","white"].includes(v) ? v : "black";
-const normalizeSize = (v) => ["small","medium","large"].includes(v) ? v : "medium";
+const normalizeColor = (value) => ["black","red","white"].includes(value) ? value : "black";
+const normalizeSize = (value) => ["small","medium","large"].includes(value) ? value : "medium";
+const normalizeName = (value) => String(value || "").replace(/\s+/g, " ").trim().slice(0, 32);
 const loadLanguage = () => localStorage.getItem(LANGUAGE_STORAGE_KEY) === "en" ? "en" : "ja";
 
 let state = loadJSON(STORAGE_KEY, {});
 const VALID_IDS = new Set(boxes.map((box) => box.id));
 state = Object.fromEntries(Object.entries(state).filter(([key, value]) => VALID_IDS.has(key) && !!value));
 saveJSON(STORAGE_KEY, state);
-let displayName = localStorage.getItem(NAME_STORAGE_KEY) || "";
+let displayName = normalizeName(localStorage.getItem(NAME_STORAGE_KEY) || "");
 let displayNameColor = normalizeColor(localStorage.getItem(NAME_COLOR_STORAGE_KEY) || "black");
 let displayNameSize = normalizeSize(localStorage.getItem(NAME_SIZE_STORAGE_KEY) || "medium");
 let currentLanguage = loadLanguage();
 
-function t(key) { return translations[currentLanguage][key] || translations.ja[key] || ""; }
-function checkedCount() { return boxes.reduce((total, box) => total + (state[box.id] ? 1 : 0), 0); }
-function isComplete() { return checkedCount() === boxes.length; }
-function isRawExportMode() { return displayName.trim() === RAW_EXPORT_KEY; }
+function t(key) {
+  return translations[currentLanguage][key] || translations.ja[key] || "";
+}
+function checkedCount() {
+  return boxes.reduce((total, box) => total + (state[box.id] ? 1 : 0), 0);
+}
+function isComplete() {
+  return checkedCount() === boxes.length;
+}
+function isRawExportMode() {
+  return normalizeName(displayName) === RAW_EXPORT_KEY;
+}
 function formatCurrentDate() {
   const now = new Date();
-  const pad = (v) => String(v).padStart(2, "0");
-  return `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
+  const pad = (value) => String(value).padStart(2, "0");
+  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
 }
-function pctX(v) { return (v / IMAGE_WIDTH) * 100; }
-function pctY(v) { return (v / IMAGE_HEIGHT) * 100; }
-function updateCount() { countBadge.textContent = `${checkedCount()} / ${boxes.length}`; }
+function pctX(value) { return (value / IMAGE_WIDTH) * 100; }
+function pctY(value) { return (value / IMAGE_HEIGHT) * 100; }
+function updateCount() {
+  countBadge.textContent = `${checkedCount()} / ${boxes.length}`;
+}
 function updateCompleteBadge() {
   const show = isComplete() && !isRawExportMode();
   completeBadge.classList.toggle("show", show);
@@ -209,7 +234,7 @@ function makeMark() {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("viewBox", "0 0 100 100");
   svg.setAttribute("class", "mark");
-  for (const cls of ["shadow","main"]) {
+  for (const cls of ["shadow", "main"]) {
     const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
     p.setAttribute("d", "M18 54 L40 76 L82 24");
     p.setAttribute("class", cls);
@@ -219,16 +244,39 @@ function makeMark() {
 }
 function refreshMetaOverlay() {
   const raw = isRawExportMode();
+  const normalizedName = normalizeName(displayName);
+  const normalizedColor = normalizeColor(displayNameColor);
+  const normalizedSize = normalizeSize(displayNameSize);
   const countText = `${checkedCount()} / ${boxes.length} ${t("collected")}`;
-  dateOverlay.textContent = raw ? "" : formatCurrentDate();
-  countOverlay.textContent = raw ? "" : countText;
-  nameOverlay.textContent = raw ? "" : displayName.trim();
-  dateOverlay.classList.toggle("is-hidden", raw);
-  countOverlay.classList.toggle("is-hidden", raw);
-  const hasName = !raw && displayName.trim().length > 0;
-  nameOverlay.classList.toggle("is-hidden", !hasName);
-  nameOverlay.classList.remove("size-small","size-medium","size-large","color-black","color-red","color-white");
-  nameOverlay.classList.add(`size-${displayNameSize}`, `color-${displayNameColor}`);
+  board.classList.toggle("is-raw-export", raw);
+  metaOverlay.setAttribute("aria-hidden", raw ? "true" : "false");
+  if (nameInput.value !== normalizedName) nameInput.value = normalizedName;
+  if (nameColorSelect.value !== normalizedColor) nameColorSelect.value = normalizedColor;
+  if (nameSizeSelect.value !== normalizedSize) nameSizeSelect.value = normalizedSize;
+  dateOverlay.className = `meta-line date-overlay color-${normalizedColor}`;
+  countOverlay.className = `meta-line count-overlay color-${normalizedColor}`;
+  nameOverlay.className = `meta-line name-overlay size-${normalizedSize} color-${normalizedColor}`;
+  devModeFlag.style.display = raw ? "inline-flex" : "none";
+  if (raw) {
+    dateOverlay.textContent = "";
+    countOverlay.textContent = "";
+    nameOverlay.textContent = "";
+    dateOverlay.classList.add("is-hidden");
+    countOverlay.classList.add("is-hidden");
+    nameOverlay.classList.add("is-hidden");
+    return;
+  }
+  dateOverlay.textContent = formatCurrentDate();
+  countOverlay.textContent = countText;
+  dateOverlay.classList.remove("is-hidden");
+  countOverlay.classList.remove("is-hidden");
+  if (normalizedName) {
+    nameOverlay.textContent = normalizedName;
+    nameOverlay.classList.remove("is-hidden");
+  } else {
+    nameOverlay.textContent = "";
+    nameOverlay.classList.add("is-hidden");
+  }
 }
 function rebuildLayer() {
   layer.innerHTML = "";
@@ -246,7 +294,10 @@ function rebuildLayer() {
       state[box.id] = !state[box.id];
       saveJSON(STORAGE_KEY, state);
       saveBadge.textContent = t("saved");
-      rebuildLayer(); updateCount(); refreshMetaOverlay(); updateCompleteBadge();
+      rebuildLayer();
+      updateCount();
+      refreshMetaOverlay();
+      updateCompleteBadge();
     });
     layer.appendChild(btn);
   }
@@ -282,76 +333,207 @@ function fitFontSize(ctx, text, weight, startSize, minSize, maxWidth, fontFamily
   return minSize;
 }
 function drawCheckOnContext(ctx, box) {
-  const p1x = box.x + box.w * 0.18, p1y = box.y + box.h * 0.56;
-  const p2x = box.x + box.w * 0.40, p2y = box.y + box.h * 0.76;
-  const p3x = box.x + box.w * 0.82, p3y = box.y + box.h * 0.24;
-  ctx.save(); ctx.lineCap = "round"; ctx.lineJoin = "round";
-  ctx.strokeStyle = "rgba(255,255,255,0.34)"; ctx.lineWidth = 20;
-  ctx.beginPath(); ctx.moveTo(p1x,p1y); ctx.lineTo(p2x,p2y); ctx.lineTo(p3x,p3y); ctx.stroke();
-  ctx.strokeStyle = "#ff4d4f"; ctx.lineWidth = 14;
-  ctx.beginPath(); ctx.moveTo(p1x,p1y); ctx.lineTo(p2x,p2y); ctx.lineTo(p3x,p3y); ctx.stroke();
+  const p1x = box.x + box.w * 0.18;
+  const p1y = box.y + box.h * 0.56;
+  const p2x = box.x + box.w * 0.40;
+  const p2y = box.y + box.h * 0.76;
+  const p3x = box.x + box.w * 0.82;
+  const p3y = box.y + box.h * 0.24;
+  ctx.save();
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.strokeStyle = "rgba(255,255,255,0.34)";
+  ctx.lineWidth = 20;
+  ctx.beginPath();
+  ctx.moveTo(p1x, p1y);
+  ctx.lineTo(p2x, p2y);
+  ctx.lineTo(p3x, p3y);
+  ctx.stroke();
+  ctx.strokeStyle = "#ff4d4f";
+  ctx.lineWidth = 14;
+  ctx.beginPath();
+  ctx.moveTo(p1x, p1y);
+  ctx.lineTo(p2x, p2y);
+  ctx.lineTo(p3x, p3y);
+  ctx.stroke();
   ctx.restore();
 }
 function drawMetaText(ctx) {
   if (isRawExportMode()) return;
-  const name = displayName.trim();
+  const name = normalizeName(displayName);
   const dateText = formatCurrentDate();
   const countText = `${checkedCount()} / ${boxes.length} ${t("collected")}`;
   const fontFamily = "Arial";
   const maxWidth = 720;
-  const color = displayNameColor === "red" ? {fill:"#d11d2c", stroke:"rgba(255,255,255,0.72)"} :
-                displayNameColor === "white" ? {fill:"#fff", stroke:"rgba(0,0,0,0.92)"} :
-                {fill:"#111", stroke:"rgba(255,255,255,0.72)"};
-  const x=48, dateY=42, countY=72, nameY=name ? 102 : 0;
+  const color = displayNameColor === "red"
+    ? { fill:"#d11d2c", stroke:"rgba(255,255,255,0.72)" }
+    : displayNameColor === "white"
+      ? { fill:"#fff", stroke:"rgba(0,0,0,0.92)" }
+      : { fill:"#111", stroke:"rgba(255,255,255,0.72)" };
+  const x = 48;
+  const dateY = 42;
+  const countY = 72;
+  const nameY = name ? 102 : 0;
   const nameStart = displayNameSize === "small" ? 30 : displayNameSize === "large" ? 42 : 36;
   const nameMin = displayNameSize === "small" ? 20 : displayNameSize === "large" ? 28 : 24;
-  ctx.save(); ctx.textBaseline="top"; ctx.lineJoin="round";
-  const drawLine = (text, y, start=30, min=22) => {
+  ctx.save();
+  ctx.textBaseline = "top";
+  ctx.lineJoin = "round";
+  const drawLine = (text, y, start = 30, min = 22) => {
     const sz = fitFontSize(ctx, text, 700, start, min, maxWidth, fontFamily);
-    ctx.font = `700 ${sz}px ${fontFamily}`; ctx.strokeStyle = color.stroke; ctx.lineWidth = 4; ctx.strokeText(text, x, y); ctx.fillStyle = color.fill; ctx.fillText(text, x, y);
+    ctx.font = `700 ${sz}px ${fontFamily}`;
+    ctx.strokeStyle = color.stroke;
+    ctx.lineWidth = 4;
+    ctx.strokeText(text, x, y);
+    ctx.fillStyle = color.fill;
+    ctx.fillText(text, x, y);
   };
   drawLine(dateText, dateY);
   drawLine(countText, countY);
   if (name) drawLine(name, nameY, nameStart, nameMin);
   ctx.restore();
 }
-function roundRect(ctx,x,y,w,h,r) { ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
 function drawCompleteStamp(ctx) {
   if (!isComplete() || isRawExportMode()) return;
-  const x=1520,y=54,w=168,h=58,r=10;
-  ctx.save(); ctx.beginPath(); roundRect(ctx,x,y,w,h,r);
-  ctx.shadowColor="rgba(0,0,0,0.20)"; ctx.shadowBlur=8; ctx.shadowOffsetY=4;
-  const grad=ctx.createLinearGradient(x,y,x+w,y+h); grad.addColorStop(0,"rgba(255,255,255,0.96)"); grad.addColorStop(1,"rgba(255,246,204,0.98)");
-  ctx.fillStyle=grad; ctx.fill(); ctx.shadowColor="transparent"; ctx.lineWidth=2.5; ctx.strokeStyle="rgba(255,215,0,0.95)"; ctx.stroke();
-  ctx.translate(x+w/2,y+h/2); ctx.rotate(-4*Math.PI/180); ctx.textAlign="center"; ctx.textBaseline="middle";
-  ctx.fillStyle="#d62828"; ctx.font="900 22px Arial"; ctx.fillText("COMPLETE!",0,-8);
-  ctx.fillStyle="#111"; ctx.font="800 10px Arial"; ctx.fillText(`${boxes.length} / ${boxes.length} COLLECTED`,0,11); ctx.restore();
+  const x = 1520;
+  const y = 54;
+  const w = 168;
+  const h = 58;
+  const r = 10;
+  ctx.save();
+  ctx.beginPath();
+  roundRect(ctx, x, y, w, h, r);
+  ctx.shadowColor = "rgba(0,0,0,0.20)";
+  ctx.shadowBlur = 8;
+  ctx.shadowOffsetY = 4;
+  const grad = ctx.createLinearGradient(x, y, x + w, y + h);
+  grad.addColorStop(0, "rgba(255,255,255,0.96)");
+  grad.addColorStop(1, "rgba(255,246,204,0.98)");
+  ctx.fillStyle = grad;
+  ctx.fill();
+  ctx.shadowColor = "transparent";
+  ctx.lineWidth = 2.5;
+  ctx.strokeStyle = "rgba(255,215,0,0.95)";
+  ctx.stroke();
+  ctx.translate(x + w / 2, y + h / 2);
+  ctx.rotate(-4 * Math.PI / 180);
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillStyle = "#d62828";
+  ctx.font = "900 22px Arial";
+  ctx.fillText("COMPLETE!", 0, -8);
+  ctx.fillStyle = "#111";
+  ctx.font = "800 10px Arial";
+  ctx.fillText(`${boxes.length} / ${boxes.length} COLLECTED`, 0, 11);
+  ctx.restore();
+}
+async function ensureBoardImageLoaded() {
+  if (!boardImage.src) {
+    boardImage.src = EMBEDDED_IMAGE_DATA;
+  }
+  if (boardImage.complete && boardImage.naturalWidth > 0) return;
+  await new Promise((resolve, reject) => {
+    boardImage.addEventListener("load", resolve, { once:true });
+    boardImage.addEventListener("error", reject, { once:true });
+  });
 }
 async function buildChecklistBlob() {
-  if (!boardImage.complete || !boardImage.naturalWidth) await new Promise((resolve,reject)=>{boardImage.addEventListener("load",resolve,{once:true});boardImage.addEventListener("error",reject,{once:true});});
-  const canvas = document.createElement("canvas"); canvas.width = IMAGE_WIDTH; canvas.height = IMAGE_HEIGHT;
-  const ctx = canvas.getContext("2d"); ctx.drawImage(boardImage,0,0,IMAGE_WIDTH,IMAGE_HEIGHT);
-  if (document.fonts?.ready) try { await document.fonts.ready; } catch {}
-  drawMetaText(ctx); boxes.forEach((box)=>{ if(state[box.id]) drawCheckOnContext(ctx, box); }); drawCompleteStamp(ctx);
-  return await new Promise((resolve)=>canvas.toBlob(resolve, "image/png"));
+  if (!boardImage.complete || !boardImage.naturalWidth) {
+    await ensureBoardImageLoaded();
+  }
+  const canvas = document.createElement("canvas");
+  canvas.width = IMAGE_WIDTH;
+  canvas.height = IMAGE_HEIGHT;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(boardImage, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+  if (document.fonts?.ready) {
+    try { await document.fonts.ready; } catch {}
+  }
+  drawMetaText(ctx);
+  boxes.forEach((box) => {
+    if (state[box.id]) drawCheckOnContext(ctx, box);
+  });
+  drawCompleteStamp(ctx);
+  return await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
 }
 async function saveImage() {
-  const blob = await buildChecklistBlob(); if (!blob) return;
-  const url = URL.createObjectURL(blob); const a = document.createElement("a");
-  a.href = url; a.download = `fortnite-sprite-checklist-${formatCurrentDate()}.png`; document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),2000);
+  const blob = await buildChecklistBlob();
+  if (!blob) return;
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `fortnite-sprite-checklist-${formatCurrentDate()}.png`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
 }
-nameInput.value = displayName; nameColorSelect.value = displayNameColor; nameSizeSelect.value = displayNameSize;
-nameInput.addEventListener("input", (e)=>{ displayName=e.target.value; localStorage.setItem(NAME_STORAGE_KEY, displayName); saveBadge.textContent=t("saved"); refreshMetaOverlay(); updateCompleteBadge(); });
-nameColorSelect.addEventListener("change", (e)=>{ displayNameColor=normalizeColor(e.target.value); localStorage.setItem(NAME_COLOR_STORAGE_KEY, displayNameColor); saveBadge.textContent=t("saved"); refreshMetaOverlay(); });
-nameSizeSelect.addEventListener("change", (e)=>{ displayNameSize=normalizeSize(e.target.value); localStorage.setItem(NAME_SIZE_STORAGE_KEY, displayNameSize); saveBadge.textContent=t("saved"); refreshMetaOverlay(); });
-langJaBtn.addEventListener("click", ()=>{ currentLanguage="ja"; localStorage.setItem(LANGUAGE_STORAGE_KEY,currentLanguage); applyLanguage(); });
-langEnBtn.addEventListener("click", ()=>{ currentLanguage="en"; localStorage.setItem(LANGUAGE_STORAGE_KEY,currentLanguage); applyLanguage(); });
+nameInput.value = displayName;
+nameColorSelect.value = displayNameColor;
+nameSizeSelect.value = displayNameSize;
+nameInput.addEventListener("input", (event) => {
+  displayName = normalizeName(event.target.value);
+  localStorage.setItem(NAME_STORAGE_KEY, displayName);
+  saveBadge.textContent = t("saved");
+  refreshMetaOverlay();
+  updateCompleteBadge();
+});
+nameColorSelect.addEventListener("change", (event) => {
+  displayNameColor = normalizeColor(event.target.value);
+  localStorage.setItem(NAME_COLOR_STORAGE_KEY, displayNameColor);
+  saveBadge.textContent = t("saved");
+  refreshMetaOverlay();
+});
+nameSizeSelect.addEventListener("change", (event) => {
+  displayNameSize = normalizeSize(event.target.value);
+  localStorage.setItem(NAME_SIZE_STORAGE_KEY, displayNameSize);
+  saveBadge.textContent = t("saved");
+  refreshMetaOverlay();
+});
+langJaBtn.addEventListener("click", () => {
+  currentLanguage = "ja";
+  localStorage.setItem(LANGUAGE_STORAGE_KEY, currentLanguage);
+  applyLanguage();
+});
+langEnBtn.addEventListener("click", () => {
+  currentLanguage = "en";
+  localStorage.setItem(LANGUAGE_STORAGE_KEY, currentLanguage);
+  applyLanguage();
+});
 saveImageBtn.addEventListener("click", saveImage);
-resetBtn.addEventListener("click", ()=>{ state={}; saveJSON(STORAGE_KEY,state); saveBadge.textContent=t("saved"); rebuildLayer(); updateCount(); refreshMetaOverlay(); updateCompleteBadge(); });
-const init = () => { rebuildLayer(); updateCount(); refreshMetaOverlay(); applyLanguage(); updateCompleteBadge(); };
-boardImage.addEventListener("load", init);
-if (boardImage.complete) init();
+resetBtn.addEventListener("click", () => {
+  state = {};
+  saveJSON(STORAGE_KEY, state);
+  saveBadge.textContent = t("saved");
+  rebuildLayer();
+  updateCount();
+  refreshMetaOverlay();
+  updateCompleteBadge();
+});
+async function init() {
+  try {
+    pageHint.textContent = "開発版です。画像読込中です…";
+    await ensureBoardImageLoaded();
+    rebuildLayer();
+    updateCount();
+    refreshMetaOverlay();
+    applyLanguage();
+    updateCompleteBadge();
+    pageHint.textContent = t("hint");
+  } catch (error) {
+    console.error(error);
+    pageHint.textContent = "開発版画像の読込に失敗しました。再読込してください。";
+  }
+}
+init();
 </script>
 </body>
 </html>
