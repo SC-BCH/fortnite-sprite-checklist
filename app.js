@@ -145,6 +145,14 @@
     const configured = eventsData?.text?.collectedLabel?.[currentLanguage] || eventsData?.text?.collectedLabel?.ja;
     return configured || t("collected");
   }
+  function completeBadgeMainText() {
+    const configured = eventsData?.completeBadge?.mainTextByLanguage?.[currentLanguage] || eventsData?.completeBadge?.mainTextByLanguage?.ja;
+    return configured || eventsData?.completeBadge?.mainText || "COMPLETE!";
+  }
+  function completeBadgeSubTemplate() {
+    const configured = eventsData?.completeBadge?.subTextTemplateByLanguage?.[currentLanguage] || eventsData?.completeBadge?.subTextTemplateByLanguage?.ja;
+    return configured || eventsData?.completeBadge?.subTextTemplate || "{count} / {total} COLLECTED";
+  }
   function pctX(value) { return (value / boardData.image.width) * 100; }
   function pctY(value) { return (value / boardData.image.height) * 100; }
   function checkedCount() {
@@ -170,9 +178,9 @@
     els.completeBadge.setAttribute("aria-hidden", show ? "false" : "true");
     const main = els.completeBadge.querySelector(".complete-badge-main");
     const sub = els.completeBadge.querySelector(".complete-badge-sub");
-    if (main) main.textContent = eventsData.completeBadge?.mainText || "COMPLETE!";
+    if (main) main.textContent = completeBadgeMainText();
     if (sub) {
-      sub.textContent = (eventsData.completeBadge?.subTextTemplate || "{count} / {total} COLLECTED")
+      sub.textContent = completeBadgeSubTemplate()
         .replace("{count}", String(boardData.items.length))
         .replace("{total}", String(boardData.items.length));
     }
@@ -366,10 +374,10 @@
     ctx.textBaseline = "middle";
     ctx.fillStyle = "#d62828";
     ctx.font = "900 22px Arial";
-    ctx.fillText(eventsData.completeBadge?.mainText || "COMPLETE!", 0, -8);
+    ctx.fillText(completeBadgeMainText(), 0, -8);
     ctx.fillStyle = "#111";
     ctx.font = "800 10px Arial";
-    ctx.fillText((eventsData.completeBadge?.subTextTemplate || "{count} / {total} COLLECTED")
+    ctx.fillText(completeBadgeSubTemplate()
       .replace("{count}", String(boardData.items.length))
       .replace("{total}", String(boardData.items.length)), 0, 11);
     ctx.restore();
