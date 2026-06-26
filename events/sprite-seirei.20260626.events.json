@@ -10,5 +10,11 @@
     "showDate": true,
     "showCount": true,
     "showName": true
+  },
+  "text": {
+    "collectedLabel": {
+      "ja": "collected",
+      "en": "collected"
+    }
   }
 }
