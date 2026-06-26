@@ -37,6 +37,7 @@ const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 let boardData;
 let selectedId = null;
 let originals = new Map();
+let dragState = null;
 
 function pctX(value) { return (value / boardData.image.width) * 100; }
 function pctY(value) { return (value / boardData.image.height) * 100; }
@@ -76,6 +77,14 @@ function renderList() {
     itemList.appendChild(button);
   }
 }
+function normalizeItem(item) {
+  item.x = clamp(Math.round(item.x), 0, boardData.image.width - 1);
+  item.y = clamp(Math.round(item.y), 0, boardData.image.height - 1);
+  item.w = clamp(Math.round(item.w), 1, boardData.image.width);
+  item.h = clamp(Math.round(item.h), 1, boardData.image.height);
+  if (item.x + item.w > boardData.image.width) item.x = boardData.image.width - item.w;
+  if (item.y + item.h > boardData.image.height) item.y = boardData.image.height - item.h;
+}
 function renderRects() {
   editorLayer.innerHTML = "";
   for (const item of boardData.items) {
@@ -87,6 +96,7 @@ function renderRects() {
     rect.style.width = `${pctX(item.w)}%`;
     rect.style.height = `${pctY(item.h)}%`;
     rect.title = item.label?.ja || item.id;
+    rect.style.touchAction = "none";
     rect.addEventListener("click", (event) => {
       event.stopPropagation();
       selectedId = item.id;
@@ -94,26 +104,66 @@ function renderRects() {
       renderList();
       syncInputs();
     });
+    rect.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      selectedId = item.id;
+      renderRects();
+      renderList();
+      syncInputs();
+      rect.setPointerCapture?.(event.pointerId);
+      dragState = {
+        pointerId: event.pointerId,
+        startClientX: event.clientX,
+        startClientY: event.clientY,
+        startX: item.x,
+        startY: item.y,
+        itemId: item.id,
+        moved: false
+      };
+    });
     editorLayer.appendChild(rect);
   }
 }
-function normalizeItem(item) {
-  item.x = clamp(Math.round(item.x), 0, boardData.image.width - 1);
-  item.y = clamp(Math.round(item.y), 0, boardData.image.height - 1);
-  item.w = clamp(Math.round(item.w), 1, boardData.image.width);
-  item.h = clamp(Math.round(item.h), 1, boardData.image.height);
-  if (item.x + item.w > boardData.image.width) item.x = boardData.image.width - item.w;
-  if (item.y + item.h > boardData.image.height) item.y = boardData.image.height - item.h;
+function syncAll() {
+  renderRects();
+  renderList();
+  syncInputs();
+  syncJsonOutput();
 }
 function updateSelected(mutator) {
   const item = getSelectedItem();
   if (!item) return;
   mutator(item);
   normalizeItem(item);
-  renderRects();
-  renderList();
-  syncInputs();
-  syncJsonOutput();
+  syncAll();
+}
+function updateItemById(itemId, mutator) {
+  const item = boardData.items.find((entry) => entry.id === itemId);
+  if (!item) return;
+  mutator(item);
+  normalizeItem(item);
+  syncAll();
+}
+function moveDraggedItem(event) {
+  if (!dragState) return;
+  if (event.pointerId !== dragState.pointerId) return;
+  const rect = editorLayer.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
+  const dx = (event.clientX - dragState.startClientX) / rect.width * boardData.image.width;
+  const dy = (event.clientY - dragState.startClientY) / rect.height * boardData.image.height;
+  if (Math.abs(dx) >= 0.5 || Math.abs(dy) >= 0.5) {
+    dragState.moved = true;
+  }
+  updateItemById(dragState.itemId, (item) => {
+    item.x = dragState.startX + dx;
+    item.y = dragState.startY + dy;
+  });
+}
+function endDrag(event) {
+  if (!dragState) return;
+  if (event.pointerId !== dragState.pointerId) return;
+  dragState = null;
 }
 async function ensureImageLoaded() {
   const saved = localStorage.getItem(IMAGE_DATA_URL_KEY) || "";
@@ -165,10 +215,7 @@ function resetSelected() {
   item.y = original.y;
   item.w = original.w;
   item.h = original.h;
-  renderRects();
-  renderList();
-  syncInputs();
-  syncJsonOutput();
+  syncAll();
 }
 
 async function init() {
@@ -183,6 +230,7 @@ async function init() {
   syncInputs();
 
   editorLayer.addEventListener("click", (event) => {
+    if (dragState?.moved) return;
     const item = getSelectedItem();
     if (!item) return;
     const rect = editorLayer.getBoundingClientRect();
@@ -193,6 +241,9 @@ async function init() {
       target.y = Math.round(py - target.h / 2);
     });
   });
+  window.addEventListener("pointermove", moveDraggedItem);
+  window.addEventListener("pointerup", endDrag);
+  window.addEventListener("pointercancel", endDrag);
 
   selectedLabelInput.addEventListener("input", (event) => updateSelected((item) => {
     item.label = item.label || {};
