@@ -29,6 +29,13 @@
   const required = ["board","layer","boardImage","countBadge","saveBadge","nameInput","nameColorSelect","nameSizeSelect","metaOverlay","dateOverlay","countOverlay","nameOverlay","completeBadge","saveImageBtn","resetBtn"];
   if (required.some((key) => !els[key])) return;
 
+  const LEGACY_STORAGE_KEYS = {
+    name: "fortnite_sprite_checklist_name_v1",
+    color: "fortnite_sprite_checklist_name_color_v1",
+    size: "fortnite_sprite_checklist_name_size_v1",
+    lang: "fortnite_sprite_checklist_lang_v1"
+  };
+
   const translations = {
     ja: {
       namePlaceholder: "名前（任意）",
@@ -98,8 +105,16 @@
   function tLabel(item) {
     return item.label?.[currentLanguage] || item.label?.ja || item.id;
   }
-  function storageKey(suffix) {
-    return `${boardData.storage.stateKey}:${suffix}`;
+  function stateStorageKey() {
+    return boardData?.storage?.stateKey || manifest?.storage?.stateKey || "fortnite_sprite_checklist_v4";
+  }
+  function storageKey(kind) {
+    const storage = boardData?.storage || {};
+    if (kind === "name" && storage.nameKey) return storage.nameKey;
+    if (kind === "color" && storage.nameColorKey) return storage.nameColorKey;
+    if (kind === "size" && storage.nameSizeKey) return storage.nameSizeKey;
+    if (kind === "lang" && storage.languageKey) return storage.languageKey;
+    return LEGACY_STORAGE_KEYS[kind] || `${stateStorageKey()}:${kind}`;
   }
   function pctX(value) { return (value / boardData.image.width) * 100; }
   function pctY(value) { return (value / boardData.image.height) * 100; }
@@ -194,7 +209,7 @@
       if (state[item.id]) btn.appendChild(makeMark());
       btn.addEventListener("click", () => {
         state[item.id] = !state[item.id];
-        saveJSON(boardData.storage.stateKey, state);
+        saveJSON(stateStorageKey(), state);
         els.saveBadge.textContent = t("saved");
         rebuildLayer();
         updateCount();
@@ -392,7 +407,7 @@
     els.saveImageBtn.addEventListener("click", saveImage);
     els.resetBtn.addEventListener("click", () => {
       state = {};
-      saveJSON(boardData.storage.stateKey, state);
+      saveJSON(stateStorageKey(), state);
       els.saveBadge.textContent = t("saved");
       rebuildLayer();
       updateCount();
@@ -419,8 +434,8 @@
         }) : Promise.resolve(eventsData)
       ]);
       const validIds = new Set(boardData.items.map((item) => item.id));
-      state = Object.fromEntries(Object.entries(loadJSON(boardData.storage.stateKey, {})).filter(([key, value]) => validIds.has(key) && !!value));
-      saveJSON(boardData.storage.stateKey, state);
+      state = Object.fromEntries(Object.entries(loadJSON(stateStorageKey(), {})).filter(([key, value]) => validIds.has(key) && !!value));
+      saveJSON(stateStorageKey(), state);
       displayName = normalizeName(localStorage.getItem(storageKey("name")) || "");
       displayNameColor = normalizeColor(localStorage.getItem(storageKey("color")) || "black");
       displayNameSize = normalizeSize(localStorage.getItem(storageKey("size")) || "medium");
