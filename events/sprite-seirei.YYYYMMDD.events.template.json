@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "rawExportKey": "BCH_ServOfMiori_AD",
+  "completeBadge": {
+    "enabled": true,
+    "mainText": "COMPLETE!",
+    "subTextTemplate": "{count} / {total} COLLECTED"
+  },
+  "metaOverlay": {
+    "showDate": true,
+    "showCount": true,
+    "showName": true
+  }
+}
