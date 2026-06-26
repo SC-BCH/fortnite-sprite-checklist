@@ -7,7 +7,11 @@
     "height": 1629
   },
   "storage": {
-    "stateKey": "fortnite_sprite_checklist_sprite_seirei_v1"
+    "stateKey": "fortnite_sprite_checklist_v4",
+    "nameKey": "fortnite_sprite_checklist_name_v1",
+    "nameColorKey": "fortnite_sprite_checklist_name_color_v1",
+    "nameSizeKey": "fortnite_sprite_checklist_name_size_v1",
+    "languageKey": "fortnite_sprite_checklist_lang_v1"
   },
   "items": [
     {
