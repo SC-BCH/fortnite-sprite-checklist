@@ -89,7 +89,7 @@ button,input,select { font:inherit; }
 .mark path.main { stroke:var(--accent); stroke-width:14; stroke-linecap:round; stroke-linejoin:round; fill:none; }
 .complete-badge {
   position:absolute;
-  left:74.2%;
+  left:72.6%;
   top:3%;
   z-index:25;
   display:none;
@@ -142,7 +142,7 @@ button,input,select { font:inherit; }
   .wrap { padding:10px 8px 14px; }
   .toolbar { font-size:14px; }
   .name-input { min-width:0; flex:1 1 148px; }
-  .complete-badge { left:73.8%; top:2.6%; min-width:236px; padding:10px 12px 8px; }
+  .complete-badge { left:71.8%; top:2.6%; min-width:236px; padding:10px 12px 8px; }
   .complete-badge-main { font-size:24px; }
   .complete-badge-sub { font-size:14px; }
 }
