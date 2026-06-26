@@ -1,0 +1,55 @@
+:root {
+  color-scheme: dark;
+  --bg1:#050816;
+  --panel:rgba(12,18,36,0.88);
+  --line:rgba(255,255,255,0.12);
+  --text:#f5f7ff;
+  --muted:#c7cee2;
+  --accent:#ff4d4f;
+  --success:#8bffb0;
+}
+* { box-sizing:border-box; }
+html,body { height:100%; margin:0; }
+body {
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  background:radial-gradient(circle at top,#15224a 0%,var(--bg1) 48%,#03050d 100%);
+}
+button,input,select { font:inherit; }
+.wrap { max-width:1180px; margin:0 auto; padding:14px 12px 18px; }
+.toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:8px; font-size:15px; }
+.badge,.pill,.lang-btn,.action { border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:12px; padding:7px 11px; line-height:1; font-size:15px; }
+.badge { font-weight:800; }
+.badge.saved { font-size:12px; color:var(--success); padding:7px 10px; }
+.lang-switch { display:flex; gap:6px; margin-right:4px; }
+.lang-btn { cursor:pointer; padding:7px 12px; font-weight:700; color:var(--muted); }
+.lang-btn.is-active { color:#fff; border-color:rgba(122,162,255,.58); background:rgba(122,162,255,.18); }
+.pill.label { padding-right:8px; color:var(--muted); }
+.select,.name-input { border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:12px; padding:9px 12px; min-height:38px; font-size:15px; }
+.name-input { min-width:150px; }
+.spacer { flex:1 1 auto; }
+.action { cursor:pointer; font-weight:700; }
+.hint { color:var(--muted); font-size:13px; margin:4px 0 10px; }
+.board { position:relative; width:100%; max-width:1180px; margin:0 auto; border-radius:22px; overflow:hidden; background:#d6d6d0; box-shadow:0 18px 44px rgba(0,0,0,.32); }
+.board img { display:block; width:100%; height:auto; user-select:none; -webkit-user-drag:none; pointer-events:none; }
+.layer { position:absolute; inset:0; }
+.box { position:absolute; cursor:pointer; border-radius:8px; background:transparent; appearance:none; -webkit-appearance:none; border:0; padding:0; margin:0; outline:none; box-shadow:none; touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
+.mark { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.mark path.shadow { stroke:rgba(255,255,255,0.34); stroke-width:20; stroke-linecap:round; stroke-linejoin:round; fill:none; }
+.mark path.main { stroke:var(--accent); stroke-width:14; stroke-linecap:round; stroke-linejoin:round; fill:none; }
+.meta-overlay { position:absolute; left:2.35%; top:2.6%; z-index:20; pointer-events:none; display:flex; flex-direction:column; align-items:flex-start; gap:.28em; max-width:34%; }
+.meta-line { margin:0; line-height:1; font-family:"Arial Black","Arial",sans-serif; font-weight:700; color:#111; text-shadow:-2px -2px 0 rgba(255,255,255,.7),2px -2px 0 rgba(255,255,255,.7),-2px 2px 0 rgba(255,255,255,.7),2px 2px 0 rgba(255,255,255,.7); word-break:break-word; }
+.meta-line.date-overlay,.meta-line.count-overlay { font-size:clamp(12px,1.35vw,20px); }
+.meta-line.name-overlay.size-small { font-size:clamp(14px,1.7vw,24px); }
+.meta-line.name-overlay.size-medium { font-size:clamp(16px,2vw,30px); }
+.meta-line.name-overlay.size-large { font-size:clamp(18px,2.4vw,36px); }
+.meta-line.color-black { color:#111; }
+.meta-line.color-red { color:#d11d2c; }
+.meta-line.color-white { color:#fff; text-shadow:0 0 2px rgba(0,0,0,.9),0 0 5px rgba(0,0,0,.7); }
+.meta-line.is-hidden { display:none; }
+.complete-badge { position:absolute; left:74.2%; top:3%; z-index:25; display:none; pointer-events:none; min-width:156px; padding:6px 8px 5px; border-radius:10px; border:2px solid rgba(255,215,0,.95); background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,246,204,.98)); box-shadow:0 0 0 1px rgba(255,255,255,.72) inset,0 5px 12px rgba(0,0,0,.18),0 0 10px rgba(255,215,0,.24); transform:rotate(-4deg); text-align:center; }
+.complete-badge.show { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.complete-badge-main { font-size:16px; line-height:1; font-weight:900; letter-spacing:.04em; color:#d62828; }
+.complete-badge-sub { margin-top:3px; font-size:8px; line-height:1; font-weight:800; letter-spacing:.06em; color:#111; }
+.footer { margin-top:10px; text-align:center; color:var(--muted); font-size:13px; }
+.footer a { color:inherit; }
