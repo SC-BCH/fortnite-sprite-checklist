@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Fortnite Sprite Checklist [DEV Hub]</title>
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="./dev-app.css" />
+  <style>
+    .hub-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
+    .hub-card { border:1px solid var(--line); background:rgba(7,12,24,.9); border-radius:18px; padding:14px; }
+    .hub-card h2 { margin:0 0 8px; font-size:18px; }
+    .hub-card p { margin:0 0 12px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .hub-actions { display:flex; flex-wrap:wrap; gap:8px; }
+    .hub-steps { margin-top:14px; border:1px solid var(--line); background:rgba(7,12,24,.9); border-radius:18px; padding:14px; }
+    .hub-steps ol { margin:0; padding-left:20px; }
+    .hub-steps li { margin:0 0 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="toolbar">
+      <span class="badge">DEV Hub</span>
+      <span class="dev-flag">JSON ROUTE</span>
+      <span class="spacer"></span>
+      <a class="action" href="./index.html">legacy dev</a>
+    </div>
+
+    <div class="hint">新しい JSON 駆動ルートの入口です。既存の <code>dev/index.html</code> は残したまま、viewer / editor をここから使えます。</div>
+
+    <div class="hub-grid">
+      <section class="hub-card">
+        <h2>JSON Viewer</h2>
+        <p>draft JSON を読み込んで、チェック・保存画像・表示位置を確認する開発用 viewer です。画像はローカル選択で扱います。</p>
+        <div class="hub-actions">
+          <a class="action" href="./json-viewer.html">viewer を開く</a>
+        </div>
+      </section>
+
+      <section class="hub-card">
+        <h2>JSON Editor</h2>
+        <p>項目を選んで画像上をクリックし、x / y / w / h を微調整して draft JSON を更新するための editor です。</p>
+        <div class="hub-actions">
+          <a class="action" href="./editor.html">editor を開く</a>
+        </div>
+      </section>
+
+      <section class="hub-card">
+        <h2>Legacy DEV</h2>
+        <p>いままでの埋め込み画像ベースの開発ページです。新ルートとの比較用にそのまま残しています。</p>
+        <div class="hub-actions">
+          <a class="action" href="./index.html">legacy を開く</a>
+        </div>
+      </section>
+    </div>
+
+    <section class="hub-steps">
+      <h2 style="margin-top:0;">使い方</h2>
+      <ol>
+        <li><strong>editor</strong> で対象画像を選択し、項目位置を調整します。</li>
+        <li>editor 下部の JSON をコピーまたは保存します。</li>
+        <li>必要なら <code>dev/boards/sprite-seirei.draft.json</code> に反映します。</li>
+        <li><strong>viewer</strong> で同じ画像を選び、チェック位置・表示・PNG 保存を確認します。</li>
+        <li>問題なければ、この JSON を publish 用 board ファイルへ昇格させます。</li>
+      </ol>
+    </section>
+
+    <div class="footer">DEV Hub | Produced by BCH</div>
+  </div>
+</body>
+</html>
