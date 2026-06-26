@@ -1,0 +1,15 @@
+{
+  "boardId": "sprite-seirei",
+  "version": "YYYYMMDD",
+  "image": "./images/imagessprseireivX.png",
+  "board": "./boards/sprite-seirei.YYYYMMDD.json",
+  "events": "./events/sprite-seirei.YYYYMMDD.events.json",
+  "storage": {
+    "stateKey": "fortnite_sprite_checklist_sprite_seirei_v1"
+  },
+  "notes": [
+    "This is a publish template for the production manifest.",
+    "Paths are intended for the repository root, not for /dev.",
+    "Promote the verified draft JSON into versioned production files before updating the manifest."
+  ]
+}
