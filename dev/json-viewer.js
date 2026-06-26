@@ -314,10 +314,18 @@ function drawCompleteStamp(ctx) {
     .replace("{total}", String(boardData.items.length)), 0, 11);
   ctx.restore();
 }
+function getDefaultBoardImageSrc() {
+  return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
+}
 async function ensureBoardImageLoaded() {
   if (!boardImage.src) {
     const saved = localStorage.getItem(IMAGE_DATA_URL_KEY) || "";
-    if (saved) boardImage.src = saved;
+    if (saved) {
+      boardImage.src = saved;
+    } else {
+      const fallback = getDefaultBoardImageSrc();
+      if (fallback) boardImage.src = fallback;
+    }
   }
   if (boardImage.complete && boardImage.naturalWidth > 0) return true;
   if (!boardImage.src) return false;
