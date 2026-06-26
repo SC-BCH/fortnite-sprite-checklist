@@ -29,6 +29,47 @@
   const required = ["board","layer","boardImage","countBadge","saveBadge","nameInput","nameColorSelect","nameSizeSelect","metaOverlay","dateOverlay","countOverlay","nameOverlay","completeBadge","saveImageBtn","resetBtn"];
   if (required.some((key) => !els[key])) return;
 
+  const translations = {
+    ja: {
+      namePlaceholder: "名前（任意）",
+      colorLabel: "文字色",
+      sizeLabel: "名前サイズ",
+      colorBlack: "黒",
+      colorRed: "赤",
+      colorWhite: "白",
+      sizeSmall: "小",
+      sizeMedium: "中",
+      sizeLarge: "大",
+      saveImage: "画像保存",
+      reset: "全解除",
+      saved: "保存済み",
+      hint: "タップで切替。状態はこの端末のブラウザに保存されます。",
+      footer: 'ローカル保存対応 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a>',
+      collected: "collected",
+      loading: "チェックリストを読み込んでいます…",
+      failed: "チェックリストの初期化に失敗しました。board.manifest.json と参照先ファイルを確認してください。"
+    },
+    en: {
+      namePlaceholder: "Name (optional)",
+      colorLabel: "Text color",
+      sizeLabel: "Name size",
+      colorBlack: "Black",
+      colorRed: "Red",
+      colorWhite: "White",
+      sizeSmall: "Small",
+      sizeMedium: "Medium",
+      sizeLarge: "Large",
+      saveImage: "Save Image",
+      reset: "Clear All",
+      saved: "Saved",
+      hint: "Tap to toggle. Progress is saved in this browser on this device.",
+      footer: 'Local save supported | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a> | <a href="https://buymeacoffee.com/bch1025?new=1" target="_blank" rel="noopener noreferrer">Support the developer</a>',
+      collected: "collected",
+      loading: "Loading checklist...",
+      failed: "Failed to initialize the checklist. Check board.manifest.json and referenced files."
+    }
+  };
+
   const normalizeColor = (value) => ["black", "red", "white"].includes(value) ? value : "black";
   const normalizeSize = (value) => ["small", "medium", "large"].includes(value) ? value : "medium";
   const normalizeName = (value) => String(value || "").replace(/\s+/g, " ").trim().slice(0, 32);
@@ -39,15 +80,26 @@
 
   let manifest;
   let boardData;
-  let eventsData = { version:1, rawExportKey:"", completeBadge:{ enabled:true, mainText:"COMPLETE!", subTextTemplate:"{count} / {total} COLLECTED" }, metaOverlay:{ showDate:true, showCount:true, showName:true } };
+  let eventsData = {
+    version: 1,
+    rawExportKey: "BCH_ServOfMiori_AD",
+    completeBadge: { enabled: true, mainText: "COMPLETE!", subTextTemplate: "{count} / {total} COLLECTED" },
+    metaOverlay: { showDate: true, showCount: true, showName: true }
+  };
   let currentLanguage = "ja";
   let state = {};
   let displayName = "";
   let displayNameColor = "black";
   let displayNameSize = "medium";
 
+  function t(key) {
+    return translations[currentLanguage]?.[key] || translations.ja[key] || "";
+  }
   function tLabel(item) {
     return item.label?.[currentLanguage] || item.label?.ja || item.id;
+  }
+  function storageKey(suffix) {
+    return `${boardData.storage.stateKey}:${suffix}`;
   }
   function pctX(value) { return (value / boardData.image.width) * 100; }
   function pctY(value) { return (value / boardData.image.height) * 100; }
@@ -95,15 +147,18 @@
   }
   function refreshMetaOverlay() {
     const raw = isRawExportMode();
-    const countText = `${checkedCount()} / ${boardData.items.length} collected`;
     const normalizedName = normalizeName(displayName);
     const normalizedColor = normalizeColor(displayNameColor);
     const normalizedSize = normalizeSize(displayNameSize);
+    const countText = `${checkedCount()} / ${boardData.items.length} ${t("collected")}`;
     els.board.classList.toggle("is-raw-export", raw);
     els.metaOverlay.setAttribute("aria-hidden", raw ? "true" : "false");
     els.dateOverlay.className = `meta-line date-overlay color-${normalizedColor}`;
     els.countOverlay.className = `meta-line count-overlay color-${normalizedColor}`;
     els.nameOverlay.className = `meta-line name-overlay size-${normalizedSize} color-${normalizedColor}`;
+    if (els.nameInput.value !== normalizedName) els.nameInput.value = normalizedName;
+    if (els.nameColorSelect.value !== normalizedColor) els.nameColorSelect.value = normalizedColor;
+    if (els.nameSizeSelect.value !== normalizedSize) els.nameSizeSelect.value = normalizedSize;
     if (raw) {
       els.dateOverlay.textContent = "";
       els.countOverlay.textContent = "";
@@ -140,7 +195,7 @@
       btn.addEventListener("click", () => {
         state[item.id] = !state[item.id];
         saveJSON(boardData.storage.stateKey, state);
-        els.saveBadge.textContent = "Saved";
+        els.saveBadge.textContent = t("saved");
         rebuildLayer();
         updateCount();
         refreshMetaOverlay();
@@ -148,6 +203,28 @@
       });
       els.layer.appendChild(btn);
     });
+  }
+  function applyLanguage() {
+    els.nameInput.placeholder = t("namePlaceholder");
+    els.colorLabel.textContent = t("colorLabel");
+    els.sizeLabel.textContent = t("sizeLabel");
+    els.nameColorSelect.setAttribute("aria-label", t("colorLabel"));
+    els.nameSizeSelect.setAttribute("aria-label", t("sizeLabel"));
+    els.nameColorSelect.options[0].text = t("colorBlack");
+    els.nameColorSelect.options[1].text = t("colorRed");
+    els.nameColorSelect.options[2].text = t("colorWhite");
+    els.nameSizeSelect.options[0].text = t("sizeSmall");
+    els.nameSizeSelect.options[1].text = t("sizeMedium");
+    els.nameSizeSelect.options[2].text = t("sizeLarge");
+    els.saveImageBtn.textContent = t("saveImage");
+    els.resetBtn.textContent = t("reset");
+    els.saveBadge.textContent = t("saved");
+    els.pageHint.textContent = t("hint");
+    els.pageFooter.innerHTML = t("footer");
+    els.langJaBtn?.classList.toggle("is-active", currentLanguage === "ja");
+    els.langEnBtn?.classList.toggle("is-active", currentLanguage === "en");
+    refreshMetaOverlay();
+    rebuildLayer();
   }
   function fitFontSize(ctx, text, weight, startSize, minSize, maxWidth, fontFamily) {
     let size = startSize;
@@ -188,7 +265,7 @@
     if (isRawExportMode()) return;
     const name = normalizeName(displayName);
     const dateText = formatCurrentDate();
-    const countText = `${checkedCount()} / ${boardData.items.length} collected`;
+    const countText = `${checkedCount()} / ${boardData.items.length} ${t("collected")}`;
     const fontFamily = "Arial";
     const maxWidth = 720;
     const color = displayNameColor === "red"
@@ -196,15 +273,14 @@
       : displayNameColor === "white"
         ? { fill:"#fff", stroke:"rgba(0,0,0,0.92)" }
         : { fill:"#111", stroke:"rgba(255,255,255,0.72)" };
-    const x = 48;
     const drawLine = (text, y, start = 30, min = 22) => {
       const sz = fitFontSize(ctx, text, 700, start, min, maxWidth, fontFamily);
       ctx.font = `700 ${sz}px ${fontFamily}`;
       ctx.strokeStyle = color.stroke;
       ctx.lineWidth = 4;
-      ctx.strokeText(text, x, y);
+      ctx.strokeText(text, 48, y);
       ctx.fillStyle = color.fill;
-      ctx.fillText(text, x, y);
+      ctx.fillText(text, 48, y);
     };
     ctx.save();
     ctx.textBaseline = "top";
@@ -286,34 +362,38 @@
     els.nameSizeSelect.value = displayNameSize;
     els.nameInput.addEventListener("input", (event) => {
       displayName = normalizeName(event.target.value);
-      localStorage.setItem(`${boardData.storage.stateKey}:name`, displayName);
+      localStorage.setItem(storageKey("name"), displayName);
+      els.saveBadge.textContent = t("saved");
       refreshMetaOverlay();
       updateCompleteBadge();
     });
     els.nameColorSelect.addEventListener("change", (event) => {
       displayNameColor = normalizeColor(event.target.value);
-      localStorage.setItem(`${boardData.storage.stateKey}:color`, displayNameColor);
+      localStorage.setItem(storageKey("color"), displayNameColor);
+      els.saveBadge.textContent = t("saved");
       refreshMetaOverlay();
     });
     els.nameSizeSelect.addEventListener("change", (event) => {
       displayNameSize = normalizeSize(event.target.value);
-      localStorage.setItem(`${boardData.storage.stateKey}:size`, displayNameSize);
+      localStorage.setItem(storageKey("size"), displayNameSize);
+      els.saveBadge.textContent = t("saved");
       refreshMetaOverlay();
     });
     els.langJaBtn?.addEventListener("click", () => {
       currentLanguage = "ja";
-      localStorage.setItem(`${boardData.storage.stateKey}:lang`, currentLanguage);
-      rebuildLayer();
+      localStorage.setItem(storageKey("lang"), currentLanguage);
+      applyLanguage();
     });
     els.langEnBtn?.addEventListener("click", () => {
       currentLanguage = "en";
-      localStorage.setItem(`${boardData.storage.stateKey}:lang`, currentLanguage);
-      rebuildLayer();
+      localStorage.setItem(storageKey("lang"), currentLanguage);
+      applyLanguage();
     });
     els.saveImageBtn.addEventListener("click", saveImage);
     els.resetBtn.addEventListener("click", () => {
       state = {};
       saveJSON(boardData.storage.stateKey, state);
+      els.saveBadge.textContent = t("saved");
       rebuildLayer();
       updateCount();
       refreshMetaOverlay();
@@ -323,22 +403,28 @@
 
   async function init() {
     try {
-      els.pageHint.textContent = "manifest viewer を初期化しています…";
+      els.pageHint.textContent = t("loading");
       manifest = await fetch(MANIFEST_PATH).then((res) => {
         if (!res.ok) throw new Error(`Manifest load failed: ${res.status}`);
         return res.json();
       });
       [boardData, eventsData] = await Promise.all([
-        fetch(manifest.board).then((res) => res.json()),
-        manifest.events ? fetch(manifest.events).then((res) => res.json()) : Promise.resolve(eventsData)
+        fetch(manifest.board).then((res) => {
+          if (!res.ok) throw new Error(`Board load failed: ${res.status}`);
+          return res.json();
+        }),
+        manifest.events ? fetch(manifest.events).then((res) => {
+          if (!res.ok) throw new Error(`Events load failed: ${res.status}`);
+          return res.json();
+        }) : Promise.resolve(eventsData)
       ]);
       const validIds = new Set(boardData.items.map((item) => item.id));
       state = Object.fromEntries(Object.entries(loadJSON(boardData.storage.stateKey, {})).filter(([key, value]) => validIds.has(key) && !!value));
       saveJSON(boardData.storage.stateKey, state);
-      displayName = normalizeName(localStorage.getItem(`${boardData.storage.stateKey}:name`) || "");
-      displayNameColor = normalizeColor(localStorage.getItem(`${boardData.storage.stateKey}:color`) || "black");
-      displayNameSize = normalizeSize(localStorage.getItem(`${boardData.storage.stateKey}:size`) || "medium");
-      currentLanguage = localStorage.getItem(`${boardData.storage.stateKey}:lang`) === "en" ? "en" : "ja";
+      displayName = normalizeName(localStorage.getItem(storageKey("name")) || "");
+      displayNameColor = normalizeColor(localStorage.getItem(storageKey("color")) || "black");
+      displayNameSize = normalizeSize(localStorage.getItem(storageKey("size")) || "medium");
+      currentLanguage = localStorage.getItem(storageKey("lang")) === "en" ? "en" : "ja";
       els.boardImage.src = manifest.image || boardData.image.src;
       await new Promise((resolve, reject) => {
         if (els.boardImage.complete && els.boardImage.naturalWidth > 0) return resolve();
@@ -348,12 +434,12 @@
       wireInputs();
       rebuildLayer();
       updateCount();
-      refreshMetaOverlay();
+      applyLanguage();
       updateCompleteBadge();
-      els.pageHint.textContent = "manifest viewer の土台は読み込まれました。";
+      els.pageHint.textContent = t("hint");
     } catch (error) {
       console.error(error);
-      els.pageHint.textContent = "manifest viewer の初期化に失敗しました。board.manifest.json と参照先ファイルを確認してください。";
+      els.pageHint.textContent = t("failed");
     }
   }
 
