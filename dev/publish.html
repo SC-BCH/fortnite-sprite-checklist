@@ -50,6 +50,7 @@
           <li>version 付き board JSON</li>
           <li>version 付き events JSON</li>
           <li>manifest</li>
+          <li>publish record</li>
         </ul>
         <p>publish 時は <strong>HTML 本体ではなく manifest の参照先を切り替える</strong> のが基本方針です。</p>
       </section>
@@ -74,14 +75,35 @@
       </section>
 
       <section class="publish-card">
-        <h2>5. publish 判定</h2>
+        <h2>5. publish record テンプレート</h2>
+        <p><code>dev/publish-record.template.json</code> を使って、何を確認して publish したかを残します。</p>
+        <span class="publish-code">{
+  "boardId": "sprite-seirei",
+  "version": "YYYYMMDD",
+  "verifiedAt": "YYYY-MM-DD",
+  "verifiedBy": "",
+  "verification": {
+    "editorSelectionMatch": true,
+    "editorDragMoveOk": true,
+    "editorResizeOk": true,
+    "viewerClickMatch": true,
+    "viewerPngMatch": true,
+    "completeBadgeOk": true,
+    "itemCountMatch": true
+  }
+}</span>
+      </section>
+
+      <section class="publish-card">
+        <h2>6. publish 判定</h2>
         <ul>
           <li>PNG 保存結果がずれない</li>
           <li>クリック位置とチェック表示がずれない</li>
           <li>COMPLETE 表示が問題ない</li>
           <li>件数が一致している</li>
+          <li>publish record の verification がすべて true</li>
         </ul>
-        <p>この 4 点が通らない限り、manifest は切り替えない前提にします。</p>
+        <p>この条件が通らない限り、manifest は切り替えない前提にします。</p>
       </section>
     </div>
 
