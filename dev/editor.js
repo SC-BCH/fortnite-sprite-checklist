@@ -260,9 +260,19 @@ function endDrag(event) {
     }, 0);
   }
 }
+function getDefaultBoardImageSrc() {
+  return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
+}
 async function ensureImageLoaded() {
   const saved = localStorage.getItem(IMAGE_DATA_URL_KEY) || "";
-  if (!editorBoardImage.src && saved) editorBoardImage.src = saved;
+  if (!editorBoardImage.src) {
+    if (saved) {
+      editorBoardImage.src = saved;
+    } else {
+      const fallback = getDefaultBoardImageSrc();
+      if (fallback) editorBoardImage.src = fallback;
+    }
+  }
   if (editorBoardImage.complete && editorBoardImage.naturalWidth > 0) return true;
   if (!editorBoardImage.src) return false;
   await new Promise((resolve, reject) => {
