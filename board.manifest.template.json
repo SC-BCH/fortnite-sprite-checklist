@@ -1,0 +1,10 @@
+{
+  "boardId": "sprite-seirei",
+  "version": "YYYYMMDD",
+  "image": "./images/imagessprseireivX.png",
+  "board": "./boards/sprite-seirei.YYYYMMDD.json",
+  "events": "./events/sprite-seirei.YYYYMMDD.events.json",
+  "storage": {
+    "stateKey": "fortnite_sprite_checklist_sprite_seirei_v1"
+  }
+}
