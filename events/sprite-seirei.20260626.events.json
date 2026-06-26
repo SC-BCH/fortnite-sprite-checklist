@@ -10,7 +10,7 @@
     },
     "subTextTemplate": "{count} / {total} COLLECTED",
     "subTextTemplateByLanguage": {
-      "ja": "{count} / {total} 集めた",
+      "ja": "{count} / {total} COLLECTED",
       "en": "{count} / {total} COLLECTED"
     }
   },
