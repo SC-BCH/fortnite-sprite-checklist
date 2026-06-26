@@ -1,0 +1,25 @@
+{
+  "boardId": "sprite-seirei",
+  "version": "YYYYMMDD",
+  "image": {
+    "src": "./images/imagessprseireivX.png",
+    "width": 2048,
+    "height": 1629
+  },
+  "storage": {
+    "stateKey": "fortnite_sprite_checklist_sprite_seirei_v1"
+  },
+  "items": [
+    {
+      "id": "water_normal",
+      "label": {
+        "ja": "水の精霊 / ノーマル",
+        "en": "Water Sprite / Normal"
+      },
+      "x": 46,
+      "y": 470,
+      "w": 67,
+      "h": 67
+    }
+  ]
+}
