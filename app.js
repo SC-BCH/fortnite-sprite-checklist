@@ -116,6 +116,31 @@
     if (kind === "lang" && storage.languageKey) return storage.languageKey;
     return LEGACY_STORAGE_KEYS[kind] || `${stateStorageKey()}:${kind}`;
   }
+  function readStoredRaw(kind) {
+    const key = storageKey(kind);
+    const value = localStorage.getItem(key);
+    return value === null ? null : value;
+  }
+  function readStoredLanguage(fallback) {
+    const value = readStoredRaw("lang");
+    if (value === "ja" || value === "en") return value;
+    return fallback;
+  }
+  function readStoredName(fallback) {
+    const value = readStoredRaw("name");
+    if (value === null) return normalizeName(fallback);
+    return normalizeName(value);
+  }
+  function readStoredColor(fallback) {
+    const value = readStoredRaw("color");
+    if (value === null) return normalizeColor(fallback);
+    return normalizeColor(value);
+  }
+  function readStoredSize(fallback) {
+    const value = readStoredRaw("size");
+    if (value === null) return normalizeSize(fallback);
+    return normalizeSize(value);
+  }
   function pctX(value) { return (value / boardData.image.width) * 100; }
   function pctY(value) { return (value / boardData.image.height) * 100; }
   function checkedCount() {
@@ -276,11 +301,11 @@
     ctx.stroke();
     ctx.restore();
   }
-  function drawMetaText(ctx) {
+  function drawMetaText(ctx, countLabel) {
     if (isRawExportMode()) return;
     const name = normalizeName(displayName);
     const dateText = formatCurrentDate();
-    const countText = `${checkedCount()} / ${boardData.items.length} ${t("collected")}`;
+    const countText = `${checkedCount()} / ${boardData.items.length} ${countLabel}`;
     const fontFamily = "Arial";
     const maxWidth = 720;
     const color = displayNameColor === "red"
@@ -354,7 +379,7 @@
     if (document.fonts?.ready) {
       try { await document.fonts.ready; } catch {}
     }
-    drawMetaText(ctx);
+    drawMetaText(ctx, t("collected"));
     boardData.items.forEach((item) => { if (state[item.id]) drawCheckOnContext(ctx, item); });
     drawCompleteStamp(ctx);
     return await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
@@ -436,10 +461,10 @@
       const validIds = new Set(boardData.items.map((item) => item.id));
       state = Object.fromEntries(Object.entries(loadJSON(stateStorageKey(), {})).filter(([key, value]) => validIds.has(key) && !!value));
       saveJSON(stateStorageKey(), state);
-      displayName = normalizeName(localStorage.getItem(storageKey("name")) || displayName);
-      displayNameColor = normalizeColor(localStorage.getItem(storageKey("color")) || displayNameColor);
-      displayNameSize = normalizeSize(localStorage.getItem(storageKey("size")) || displayNameSize);
-      currentLanguage = localStorage.getItem(storageKey("lang")) === "en" ? "en" : currentLanguage;
+      displayName = readStoredName(displayName);
+      displayNameColor = readStoredColor(displayNameColor);
+      displayNameSize = readStoredSize(displayNameSize);
+      currentLanguage = readStoredLanguage(currentLanguage);
       els.boardImage.src = manifest.image || boardData.image.src;
       await new Promise((resolve, reject) => {
         if (els.boardImage.complete && els.boardImage.naturalWidth > 0) return resolve();
