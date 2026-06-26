@@ -38,6 +38,7 @@ let boardData;
 let selectedId = null;
 let originals = new Map();
 let dragState = null;
+let suppressNextLayerClick = false;
 
 function pctX(value) { return (value / boardData.image.width) * 100; }
 function pctY(value) { return (value / boardData.image.height) * 100; }
@@ -85,6 +86,25 @@ function normalizeItem(item) {
   if (item.x + item.w > boardData.image.width) item.x = boardData.image.width - item.w;
   if (item.y + item.h > boardData.image.height) item.y = boardData.image.height - item.h;
 }
+function createHandle(position, cursor) {
+  const handle = document.createElement("span");
+  handle.dataset.handle = position;
+  handle.style.position = "absolute";
+  handle.style.width = "14px";
+  handle.style.height = "14px";
+  handle.style.borderRadius = "999px";
+  handle.style.background = "rgba(255,255,255,0.92)";
+  handle.style.border = "2px solid rgba(255,77,79,0.95)";
+  handle.style.boxShadow = "0 0 0 1px rgba(0,0,0,0.25)";
+  handle.style.pointerEvents = "auto";
+  handle.style.cursor = cursor;
+  handle.style.zIndex = "2";
+  if (position.includes("t")) handle.style.top = "-7px";
+  if (position.includes("b")) handle.style.bottom = "-7px";
+  if (position.includes("l")) handle.style.left = "-7px";
+  if (position.includes("r")) handle.style.right = "-7px";
+  return handle;
+}
 function renderRects() {
   editorLayer.innerHTML = "";
   for (const item of boardData.items) {
@@ -105,6 +125,7 @@ function renderRects() {
       syncInputs();
     });
     rect.addEventListener("pointerdown", (event) => {
+      if (event.target instanceof HTMLElement && event.target.dataset.handle) return;
       event.preventDefault();
       event.stopPropagation();
       selectedId = item.id;
@@ -114,14 +135,54 @@ function renderRects() {
       rect.setPointerCapture?.(event.pointerId);
       dragState = {
         pointerId: event.pointerId,
+        mode: "move",
         startClientX: event.clientX,
         startClientY: event.clientY,
         startX: item.x,
         startY: item.y,
+        startW: item.w,
+        startH: item.h,
         itemId: item.id,
         moved: false
       };
     });
+
+    const handles = [
+      ["tl", "nwse-resize"],
+      ["tr", "nesw-resize"],
+      ["bl", "nesw-resize"],
+      ["br", "nwse-resize"]
+    ];
+    for (const [position, cursor] of handles) {
+      const handle = createHandle(position, cursor);
+      handle.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+      handle.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        selectedId = item.id;
+        renderRects();
+        renderList();
+        syncInputs();
+        rect.setPointerCapture?.(event.pointerId);
+        dragState = {
+          pointerId: event.pointerId,
+          mode: `resize-${position}`,
+          startClientX: event.clientX,
+          startClientY: event.clientY,
+          startX: item.x,
+          startY: item.y,
+          startW: item.w,
+          startH: item.h,
+          itemId: item.id,
+          moved: false
+        };
+      });
+      rect.appendChild(handle);
+    }
+
     editorLayer.appendChild(rect);
   }
 }
@@ -155,15 +216,49 @@ function moveDraggedItem(event) {
   if (Math.abs(dx) >= 0.5 || Math.abs(dy) >= 0.5) {
     dragState.moved = true;
   }
+
   updateItemById(dragState.itemId, (item) => {
-    item.x = dragState.startX + dx;
-    item.y = dragState.startY + dy;
+    if (dragState.mode === "move") {
+      item.x = dragState.startX + dx;
+      item.y = dragState.startY + dy;
+      return;
+    }
+    if (dragState.mode === "resize-br") {
+      item.w = dragState.startW + dx;
+      item.h = dragState.startH + dy;
+      return;
+    }
+    if (dragState.mode === "resize-tr") {
+      item.y = dragState.startY + dy;
+      item.w = dragState.startW + dx;
+      item.h = dragState.startH - dy;
+      return;
+    }
+    if (dragState.mode === "resize-bl") {
+      item.x = dragState.startX + dx;
+      item.w = dragState.startW - dx;
+      item.h = dragState.startH + dy;
+      return;
+    }
+    if (dragState.mode === "resize-tl") {
+      item.x = dragState.startX + dx;
+      item.y = dragState.startY + dy;
+      item.w = dragState.startW - dx;
+      item.h = dragState.startH - dy;
+    }
   });
 }
 function endDrag(event) {
   if (!dragState) return;
   if (event.pointerId !== dragState.pointerId) return;
+  const moved = dragState.moved;
   dragState = null;
+  if (moved) {
+    suppressNextLayerClick = true;
+    setTimeout(() => {
+      suppressNextLayerClick = false;
+    }, 0);
+  }
 }
 async function ensureImageLoaded() {
   const saved = localStorage.getItem(IMAGE_DATA_URL_KEY) || "";
@@ -230,7 +325,7 @@ async function init() {
   syncInputs();
 
   editorLayer.addEventListener("click", (event) => {
-    if (dragState?.moved) return;
+    if (suppressNextLayerClick) return;
     const item = getSelectedItem();
     if (!item) return;
     const rect = editorLayer.getBoundingClientRect();
