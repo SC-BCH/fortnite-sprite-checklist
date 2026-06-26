@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Fortnite Sprite Checklist [DEV Editor]</title>
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="./dev-app.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="toolbar">
+      <span class="badge" id="itemCountBadge">0 items</span>
+      <span class="dev-flag">EDITOR</span>
+      <span class="status warn" id="editorImageStatus">画像未設定</span>
+      <span class="spacer"></span>
+      <a class="action" href="./json-viewer.html">viewer を開く</a>
+    </div>
+
+    <div class="subbar">
+      <label class="action">
+        画像選択
+        <input id="editorImageFileInput" type="file" accept="image/*" hidden />
+      </label>
+      <button class="action" id="editorClearImageBtn" type="button">画像解除</button>
+      <button class="action" id="copyJsonBtn" type="button">JSONコピー</button>
+      <button class="action" id="downloadJsonBtn" type="button">JSON保存</button>
+      <button class="action" id="resetSelectedBtn" type="button">選択項目を既定値へ戻す</button>
+    </div>
+
+    <div class="hint" id="editorHint">左の一覧で項目を選択し、画像上をクリックするとその項目の中心位置へ移動します。右側の数値入力で微調整できます。</div>
+
+    <div class="board-shell">
+      <div class="board" id="editorBoard">
+        <img id="editorBoardImage" alt="Editor board" />
+        <div class="editor-layer" id="editorLayer" aria-label="editor layer"></div>
+      </div>
+
+      <aside class="sidepanel">
+        <h2>editor</h2>
+        <p id="editorBoardInfo">board 読込中…</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+          <input class="text-input" id="selectedIdInput" type="text" readonly />
+          <input class="text-input" id="selectedLabelInput" type="text" />
+          <input class="text-input" id="selectedXInput" type="number" step="1" />
+          <input class="text-input" id="selectedYInput" type="number" step="1" />
+          <input class="text-input" id="selectedWInput" type="number" step="1" min="1" />
+          <input class="text-input" id="selectedHInput" type="number" step="1" min="1" />
+        </div>
+        <div class="subbar" style="margin-top:0;">
+          <button class="action" id="nudgeLeftBtn" type="button">←</button>
+          <button class="action" id="nudgeUpBtn" type="button">↑</button>
+          <button class="action" id="nudgeDownBtn" type="button">↓</button>
+          <button class="action" id="nudgeRightBtn" type="button">→</button>
+        </div>
+        <h3>項目一覧</h3>
+        <div class="item-list" id="itemList"></div>
+      </aside>
+    </div>
+
+    <div class="sidepanel" style="margin-top:12px;">
+      <h3>現在の JSON</h3>
+      <p>この内容を `dev/boards/sprite-seirei.draft.json` に反映すれば、viewer 側と同じ定義として使えます。</p>
+      <textarea class="json-output" id="jsonOutput" spellcheck="false"></textarea>
+    </div>
+
+    <div class="footer">DEV JSON editor | Produced by BCH</div>
+  </div>
+
+  <script type="module" src="./editor.js"></script>
+</body>
+</html>
