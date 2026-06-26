@@ -93,11 +93,11 @@
     completeBadge: { enabled: true, mainText: "COMPLETE!", subTextTemplate: "{count} / {total} COLLECTED" },
     metaOverlay: { showDate: true, showCount: true, showName: true }
   };
-  let currentLanguage = "ja";
+  let currentLanguage = localStorage.getItem(LEGACY_STORAGE_KEYS.lang) === "en" ? "en" : "ja";
   let state = {};
-  let displayName = "";
-  let displayNameColor = "black";
-  let displayNameSize = "medium";
+  let displayName = normalizeName(localStorage.getItem(LEGACY_STORAGE_KEYS.name) || "");
+  let displayNameColor = normalizeColor(localStorage.getItem(LEGACY_STORAGE_KEYS.color) || "black");
+  let displayNameSize = normalizeSize(localStorage.getItem(LEGACY_STORAGE_KEYS.size) || "medium");
 
   function t(key) {
     return translations[currentLanguage]?.[key] || translations.ja[key] || "";
@@ -436,10 +436,10 @@
       const validIds = new Set(boardData.items.map((item) => item.id));
       state = Object.fromEntries(Object.entries(loadJSON(stateStorageKey(), {})).filter(([key, value]) => validIds.has(key) && !!value));
       saveJSON(stateStorageKey(), state);
-      displayName = normalizeName(localStorage.getItem(storageKey("name")) || "");
-      displayNameColor = normalizeColor(localStorage.getItem(storageKey("color")) || "black");
-      displayNameSize = normalizeSize(localStorage.getItem(storageKey("size")) || "medium");
-      currentLanguage = localStorage.getItem(storageKey("lang")) === "en" ? "en" : "ja";
+      displayName = normalizeName(localStorage.getItem(storageKey("name")) || displayName);
+      displayNameColor = normalizeColor(localStorage.getItem(storageKey("color")) || displayNameColor);
+      displayNameSize = normalizeSize(localStorage.getItem(storageKey("size")) || displayNameSize);
+      currentLanguage = localStorage.getItem(storageKey("lang")) === "en" ? "en" : currentLanguage;
       els.boardImage.src = manifest.image || boardData.image.src;
       await new Promise((resolve, reject) => {
         if (els.boardImage.complete && els.boardImage.naturalWidth > 0) return resolve();
