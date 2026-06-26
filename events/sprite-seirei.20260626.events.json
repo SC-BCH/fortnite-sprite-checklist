@@ -4,7 +4,15 @@
   "completeBadge": {
     "enabled": true,
     "mainText": "COMPLETE!",
-    "subTextTemplate": "{count} / {total} COLLECTED"
+    "mainTextByLanguage": {
+      "ja": "COMPLETE!",
+      "en": "COMPLETE!"
+    },
+    "subTextTemplate": "{count} / {total} COLLECTED",
+    "subTextTemplateByLanguage": {
+      "ja": "{count} / {total} 集めた",
+      "en": "{count} / {total} COLLECTED"
+    }
   },
   "metaOverlay": {
     "showDate": true,
