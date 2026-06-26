@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Fortnite Sprite Checklist [DEV Verification]</title>
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="./dev-app.css" />
+  <style>
+    .verify-grid { display:grid; gap:12px; }
+    .verify-card { border:1px solid var(--line); background:rgba(7,12,24,.9); border-radius:18px; padding:14px; }
+    .verify-card h2 { margin:0 0 10px; font-size:18px; }
+    .verify-card p { margin:0 0 10px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .verify-card ol, .verify-card ul { margin:0; padding-left:22px; }
+    .verify-card li { margin:0 0 8px; }
+    .verify-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .verify-pass { color:var(--success); font-weight:700; }
+    .verify-warn { color:var(--warn); font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="toolbar">
+      <span class="badge">DEV Verification</span>
+      <span class="dev-flag">CHECKLIST</span>
+      <span class="spacer"></span>
+      <a class="action" href="./hub.html">hub に戻る</a>
+    </div>
+
+    <div class="hint">JSON editor / viewer を使った後に、このページの順で確認すると「publish へ上げてよいか」の判断を固定できます。</div>
+
+    <div class="verify-grid">
+      <section class="verify-card">
+        <h2>1. 事前条件</h2>
+        <ol>
+          <li>editor と viewer で <strong>同じ画像</strong> を選択していること。</li>
+          <li><code>dev/boards/sprite-seirei.draft.json</code> の対象件数が想定通りであること。</li>
+          <li>legacy dev と比較する場合は、旧画面の表示と大きく乖離していないこと。</li>
+        </ol>
+        <div class="verify-actions">
+          <a class="action" href="./editor.html">editor を開く</a>
+          <a class="action" href="./json-viewer.html">viewer を開く</a>
+        </div>
+      </section>
+
+      <section class="verify-card">
+        <h2>2. editor 確認</h2>
+        <ol>
+          <li>選択した項目が一覧と画像上の矩形で一致すること。</li>
+          <li>クリック再配置、ドラッグ移動、四隅リサイズが正しく効くこと。</li>
+          <li>x / y / w / h を数値で変更すると矩形が即時反映されること。</li>
+          <li>JSON 出力に同じ値が反映されること。</li>
+          <li>画像端で矩形が範囲外に飛ばないこと。</li>
+        </ol>
+        <p class="verify-pass">上の 5 点が通れば editor 側は OK 判定。</p>
+      </section>
+
+      <section class="verify-card">
+        <h2>3. viewer 確認</h2>
+        <ol>
+          <li>同じ画像を選択して、クリック位置とチェック表示がずれていないこと。</li>
+          <li>全解除が効くこと。</li>
+          <li>名前・文字色・サイズ変更がオーバーレイへ反映されること。</li>
+          <li>PNG 保存時もチェック位置とオーバーレイ位置がずれていないこと。</li>
+          <li>全件チェック時に COMPLETE 表示が期待通り出ること。</li>
+        </ol>
+        <p class="verify-pass">上の 5 点が通れば viewer 側は OK 判定。</p>
+      </section>
+
+      <section class="verify-card">
+        <h2>4. publish 判定</h2>
+        <ul>
+          <li><span class="verify-pass">publish 可</span>: editor / viewer の両方で問題なし。</li>
+          <li><span class="verify-warn">publish 保留</span>: クリック位置、PNG 出力、COMPLETE 表示のいずれかにズレがある。</li>
+          <li><span class="verify-warn">差し戻し</span>: 画像自体が違う、または件数が違う。</li>
+        </ul>
+      </section>
+
+      <section class="verify-card">
+        <h2>5. 反映前メモ</h2>
+        <p>publish 前に残すべきメモの例です。</p>
+        <ul>
+          <li>対象画像名</li>
+          <li>確認した viewer / editor の日付</li>
+          <li>ズレ修正を入れた項目 ID</li>
+          <li>legacy dev と差があった項目</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer">DEV Verification | Produced by BCH</div>
+  </div>
+</body>
+</html>
