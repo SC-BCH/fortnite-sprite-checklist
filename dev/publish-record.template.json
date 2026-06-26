@@ -1,0 +1,32 @@
+{
+  "boardId": "sprite-seirei",
+  "version": "YYYYMMDD",
+  "verifiedAt": "YYYY-MM-DD",
+  "verifiedBy": "",
+  "image": {
+    "selectedImageName": "",
+    "publishPath": "./images/imagessprseireivX.png"
+  },
+  "draft": {
+    "board": "./dev/boards/sprite-seirei.draft.json",
+    "events": "./dev/events/sprite-seirei.draft.json"
+  },
+  "publish": {
+    "board": "./boards/sprite-seirei.YYYYMMDD.json",
+    "events": "./events/sprite-seirei.YYYYMMDD.events.json",
+    "manifest": "./board.manifest.json"
+  },
+  "verification": {
+    "editorSelectionMatch": false,
+    "editorDragMoveOk": false,
+    "editorResizeOk": false,
+    "viewerClickMatch": false,
+    "viewerPngMatch": false,
+    "completeBadgeOk": false,
+    "itemCountMatch": false
+  },
+  "notes": [
+    "Fill this record before promoting a draft into publish files.",
+    "Do not update the production manifest until every verification field is true."
+  ]
+}
