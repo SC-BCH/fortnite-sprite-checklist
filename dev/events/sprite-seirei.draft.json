@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rawExportKey": "BCH_ServOfMiori_AD",
+  "completeBadge": {
+    "enabled": true,
+    "mainText": "COMPLETE!",
+    "subTextTemplate": "{count} / {total} COLLECTED"
+  },
+  "metaOverlay": {
+    "showDate": true,
+    "showCount": true,
+    "showName": true
+  },
+  "ui": {
+    "devFlagText": "DEV JSON",
+    "supportUrl": "https://buymeacoffee.com/bch1025?new=1",
+    "xUrl": "https://x.com/BCH_1025"
+  }
+}
