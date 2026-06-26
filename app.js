@@ -141,6 +141,10 @@
     if (value === null) return normalizeSize(fallback);
     return normalizeSize(value);
   }
+  function collectedLabel() {
+    const configured = eventsData?.text?.collectedLabel?.[currentLanguage] || eventsData?.text?.collectedLabel?.ja;
+    return configured || t("collected");
+  }
   function pctX(value) { return (value / boardData.image.width) * 100; }
   function pctY(value) { return (value / boardData.image.height) * 100; }
   function checkedCount() {
@@ -190,7 +194,7 @@
     const normalizedName = normalizeName(displayName);
     const normalizedColor = normalizeColor(displayNameColor);
     const normalizedSize = normalizeSize(displayNameSize);
-    const countText = `${checkedCount()} / ${boardData.items.length} ${t("collected")}`;
+    const countText = `${checkedCount()} / ${boardData.items.length} ${collectedLabel()}`;
     els.board.classList.toggle("is-raw-export", raw);
     els.metaOverlay.setAttribute("aria-hidden", raw ? "true" : "false");
     els.dateOverlay.className = `meta-line date-overlay color-${normalizedColor}`;
@@ -379,7 +383,7 @@
     if (document.fonts?.ready) {
       try { await document.fonts.ready; } catch {}
     }
-    drawMetaText(ctx, t("collected"));
+    drawMetaText(ctx, collectedLabel());
     boardData.items.forEach((item) => { if (state[item.id]) drawCheckOnContext(ctx, item); });
     drawCompleteStamp(ctx);
     return await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
