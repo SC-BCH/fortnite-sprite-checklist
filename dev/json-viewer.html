@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Fortnite Sprite Checklist [DEV JSON Viewer]</title>
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="./dev-app.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="toolbar">
+      <span class="badge count" id="countBadge">0 / 0</span>
+      <span class="badge saved" id="saveBadge">保存済み</span>
+      <span class="dev-flag" id="devModeFlag">DEV JSON</span>
+      <div class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn is-active" id="langJaBtn" type="button">日本語</button>
+        <button class="lang-btn" id="langEnBtn" type="button">English</button>
+      </div>
+      <input class="name-input" id="nameInput" type="text" maxlength="32" placeholder="名前（任意）" autocomplete="nickname" />
+      <span class="pill label" id="colorLabel">文字色</span>
+      <select class="select" id="nameColorSelect" aria-label="文字色">
+        <option value="black">黒</option>
+        <option value="red">赤</option>
+        <option value="white">白</option>
+      </select>
+      <span class="pill label" id="sizeLabel">名前サイズ</span>
+      <select class="select" id="nameSizeSelect" aria-label="名前サイズ">
+        <option value="small">小</option>
+        <option value="medium" selected>中</option>
+        <option value="large">大</option>
+      </select>
+      <span class="spacer"></span>
+      <button class="action" id="saveImageBtn" type="button">画像保存</button>
+      <button class="action" id="resetBtn" type="button">全解除</button>
+    </div>
+
+    <div class="subbar">
+      <label class="action">
+        画像選択
+        <input id="imageFileInput" type="file" accept="image/*" hidden />
+      </label>
+      <button class="action" id="clearImageBtn" type="button">画像解除</button>
+      <a class="action" href="./editor.html">editor を開く</a>
+      <span class="status warn" id="imageStatus">画像未設定</span>
+    </div>
+
+    <div class="hint" id="pageHint">JSON 駆動の開発用 viewer です。まず画像を選択してください。状態は本番とは別の localStorage に保存されます。</div>
+
+    <div class="board-shell">
+      <div class="board" id="board">
+        <img id="boardImage" alt="Fortnite Sprite Checklist" />
+        <div class="meta-overlay" id="metaOverlay">
+          <div class="meta-line date-overlay" id="dateOverlay"></div>
+          <div class="meta-line count-overlay" id="countOverlay"></div>
+          <div class="meta-line name-overlay is-hidden" id="nameOverlay"></div>
+        </div>
+        <div class="layer" id="layer" aria-label="Fortnite Sprite Checklist"></div>
+        <div id="completeBadge" class="complete-badge" aria-hidden="true">
+          <span class="complete-badge-main">COMPLETE!</span>
+          <span class="complete-badge-sub">0 / 0 COLLECTED</span>
+        </div>
+      </div>
+
+      <aside class="sidepanel">
+        <h2>viewer 情報</h2>
+        <p id="boardInfo">board 読み込み中…</p>
+        <p>この viewer は <code>dev/boards/sprite-seirei.draft.json</code> を読みます。</p>
+        <p>画像は legacy dev の埋め込み画像を使わず、手元から選択した画像を localStorage に保持します。</p>
+      </aside>
+    </div>
+
+    <div class="footer" id="pageFooter">DEV JSON viewer | Produced by BCH</div>
+  </div>
+
+  <script type="module" src="./json-viewer.js"></script>
+</body>
+</html>
