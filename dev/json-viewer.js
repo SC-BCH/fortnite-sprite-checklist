@@ -389,10 +389,34 @@ function applyLanguage() {
 async function handleImageFile(file) {
   try {
     const dataUrl = await readAsDataUrl(file);
-    localStorage.setItem(IMAGE_DATA_URL_KEY, dataUrl);
+
     boardImage.src = dataUrl;
-    await ensureBoardImageLoaded();
-    imageStatus.textContent = t("imageLoaded");
+
+    const ready = await new Promise((resolve) => {
+      if (boardImage.complete) {
+        return resolve(boardImage.naturalWidth > 0);
+      }
+      boardImage.addEventListener("load", () => resolve(true), { once:true });
+      boardImage.addEventListener("error", () => resolve(false), { once:true });
+    });
+
+    if (!ready) {
+      throw new Error("selected image load failed");
+    }
+
+    let stored = true;
+    try {
+      localStorage.setItem(IMAGE_DATA_URL_KEY, dataUrl);
+    } catch (error) {
+      stored = false;
+      console.warn("viewer image cache save failed", error);
+    }
+
+    imageStatus.textContent = stored
+      ? t("imageLoaded")
+      : (currentLanguage === "ja"
+        ? "画像を表示しました（このブラウザには保存できませんでした）"
+        : "Image loaded (could not save it in this browser).");
     imageStatus.classList.remove("warn");
   } catch (error) {
     console.error(error);
