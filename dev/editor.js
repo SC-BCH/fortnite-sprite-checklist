@@ -4,6 +4,7 @@ const IMAGE_DB_NAME = "fortnite_sprite_checklist_dev_assets";
 const IMAGE_DB_VERSION = 1;
 const IMAGE_STORE_NAME = "images";
 const IMAGE_RECORD_KEY = "shared-image";
+const WORKING_BOARD_JSON_KEY = "fortnite_sprite_checklist_json_dev_working_board_v1";
 
 const $ = (id) => document.getElementById(id);
 const itemCountBadge = $("itemCountBadge");
@@ -367,6 +368,26 @@ function distributeSelectedX() {
 function getDefaultBoardImageSrc() {
   return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
 }
+function loadWorkingBoardOverride(fallbackBoardData) {
+  try {
+    const raw = localStorage.getItem(WORKING_BOARD_JSON_KEY) || "";
+    if (!raw) return fallbackBoardData;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return fallbackBoardData;
+    if (parsed.boardId !== fallbackBoardData.boardId) return fallbackBoardData;
+    if (!Array.isArray(parsed.items)) return fallbackBoardData;
+    if (!parsed.image || typeof parsed.image.width !== "number" || typeof parsed.image.height !== "number") {
+      return fallbackBoardData;
+    }
+    return parsed;
+  } catch (error) {
+    console.warn("editor working board load failed", error);
+    return fallbackBoardData;
+  }
+}
+function saveWorkingBoardOverride() {
+  localStorage.setItem(WORKING_BOARD_JSON_KEY, JSON.stringify(boardData));
+}
 
 function openImageDb() {
   return new Promise((resolve, reject) => {
@@ -506,16 +527,14 @@ async function handleImageFile(file) {
     setStatus("画像の読込に失敗しました", true);
   }
 }
-function downloadJson() {
-  const blob = new Blob([jsonOutput.value], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "sprite-seirei.draft.json";
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 2000);
+function saveWorkingBoardJson() {
+  try {
+    saveWorkingBoardOverride();
+    editorHint.textContent = "作業中JSONをブラウザ保存しました。viewer で位置確認できます。";
+  } catch (error) {
+    console.error(error);
+    editorHint.textContent = "作業中JSONの保存に失敗しました。コンソールを確認してください。";
+  }
 }
 function copyJson() {
   jsonOutput.focus();
@@ -537,8 +556,9 @@ function resetSelected() {
 }
 
 async function init() {
-  boardData = await fetch(BOARD_PATH).then((res) => res.json());
-  originals = new Map(boardData.items.map((item) => [item.id, JSON.parse(JSON.stringify(item))]));
+  const fetchedBoardData = await fetch(BOARD_PATH).then((res) => res.json());
+  boardData = loadWorkingBoardOverride(fetchedBoardData);
+  originals = new Map(fetchedBoardData.items.map((item) => [item.id, JSON.parse(JSON.stringify(item))]));
   selectedId = boardData.items[0]?.id || null;
   selectedIds = selectedId ? new Set([selectedId]) : new Set();
   itemCountBadge.textContent = `${boardData.items.length} items`;
@@ -584,7 +604,7 @@ async function init() {
   distributeXBtn.addEventListener("click", distributeSelectedX);
   clearSelectionBtn.addEventListener("click", clearSelection);
   copyJsonBtn.addEventListener("click", copyJson);
-  downloadJsonBtn.addEventListener("click", downloadJson);
+  downloadJsonBtn.addEventListener("click", saveWorkingBoardJson);
   editorImageFileInput.addEventListener("change", async (event) => {
     const file = event.target.files?.[0];
     if (file) await handleImageFile(file);
