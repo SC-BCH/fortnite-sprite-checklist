@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Fortnite Sprite Checklist Preview</title>
+  <meta name="theme-color" content="#0b1020">
+  <link rel="stylesheet" href="/fortnite-sprite-checklist/app.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="toolbar">
+    <span class="badge count" id="countBadge">0 / 46</span>
+    <span class="badge saved" id="saveBadge">保存済み</span>
+    <div class="lang-switch" aria-label="Language switch">
+      <button class="lang-btn is-active" id="langJaBtn" type="button">日本語</button>
+      <button class="lang-btn" id="langEnBtn" type="button">English</button>
+    </div>
+    <input class="name-input" id="nameInput" type="text" maxlength="32" placeholder="名前（任意）">
+    <span class="pill label" id="colorLabel">文字色</span>
+    <select class="select" id="nameColorSelect" aria-label="文字色">
+      <option value="black">黒</option>
+      <option value="red">赤</option>
+      <option value="white">白</option>
+    </select>
+    <span class="pill label" id="sizeLabel">名前サイズ</span>
+    <select class="select" id="nameSizeSelect" aria-label="名前サイズ">
+      <option value="small">小</option>
+      <option value="medium" selected>中</option>
+      <option value="large">大</option>
+    </select>
+    <span class="spacer"></span>
+    <button class="action" id="saveImageBtn" type="button">画像保存</button>
+    <button class="action" id="resetBtn" type="button">全解除</button>
+  </div>
+  <div class="hint" id="pageHint">Preview: Ver2.1.1 表示確認用です。本番URLではありません。</div>
+  <div class="board" id="board">
+    <img id="boardImage" src="/fortnite-sprite-checklist/images/Ver2.1.png" alt="Fortnite Sprite Checklist Preview">
+    <div class="meta-overlay" id="metaOverlay">
+      <div class="meta-line date-overlay" id="dateOverlay"></div>
+      <div class="meta-line count-overlay" id="countOverlay"></div>
+      <div class="meta-line name-overlay is-hidden" id="nameOverlay"></div>
+    </div>
+    <div class="layer" id="layer" aria-label="Fortnite Sprite Checklist Preview"></div>
+    <div id="completeBadge" class="complete-badge" aria-hidden="true">
+      <span class="complete-badge-main">COMPLETE!</span>
+      <span class="complete-badge-sub">46 / 46 COLLECTED</span>
+    </div>
+  </div>
+  <div class="footer" id="pageFooter">PREVIEW | Local save supported | Produced by BCH</div>
+</div>
+<script src="/fortnite-sprite-checklist/app.js"></script>
+</body>
+</html>
