@@ -1,5 +1,9 @@
 const BOARD_PATH = "./boards/sprite-seirei.draft.json";
 const IMAGE_DATA_URL_KEY = "fortnite_sprite_checklist_json_dev_image_v1";
+const IMAGE_DB_NAME = "fortnite_sprite_checklist_dev_assets";
+const IMAGE_DB_VERSION = 1;
+const IMAGE_STORE_NAME = "images";
+const IMAGE_RECORD_KEY = "shared-image";
 
 const $ = (id) => document.getElementById(id);
 const itemCountBadge = $("itemCountBadge");
@@ -263,48 +267,137 @@ function endDrag(event) {
 function getDefaultBoardImageSrc() {
   return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
 }
+
+function openImageDb() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(IMAGE_DB_NAME, IMAGE_DB_VERSION);
+    request.onupgradeneeded = () => {
+      const db = request.result;
+      if (!db.objectStoreNames.contains(IMAGE_STORE_NAME)) {
+        db.createObjectStore(IMAGE_STORE_NAME);
+      }
+    };
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error || new Error("indexedDB open failed"));
+  });
+}
+async function readImageFromIndexedDb() {
+  const db = await openImageDb();
+  return await new Promise((resolve, reject) => {
+    const tx = db.transaction(IMAGE_STORE_NAME, "readonly");
+    const store = tx.objectStore(IMAGE_STORE_NAME);
+    const request = store.get(IMAGE_RECORD_KEY);
+    request.onsuccess = () => {
+      db.close();
+      resolve(typeof request.result === "string" ? request.result : "");
+    };
+    request.onerror = () => {
+      db.close();
+      reject(request.error || new Error("indexedDB read failed"));
+    };
+  });
+}
+async function writeImageToIndexedDb(dataUrl) {
+  const db = await openImageDb();
+  return await new Promise((resolve, reject) => {
+    const tx = db.transaction(IMAGE_STORE_NAME, "readwrite");
+    const store = tx.objectStore(IMAGE_STORE_NAME);
+    const request = store.put(dataUrl, IMAGE_RECORD_KEY);
+    request.onsuccess = () => {
+      db.close();
+      resolve(true);
+    };
+    request.onerror = () => {
+      db.close();
+      reject(request.error || new Error("indexedDB write failed"));
+    };
+  });
+}
+async function deleteImageFromIndexedDb() {
+  const db = await openImageDb();
+  return await new Promise((resolve, reject) => {
+    const tx = db.transaction(IMAGE_STORE_NAME, "readwrite");
+    const store = tx.objectStore(IMAGE_STORE_NAME);
+    const request = store.delete(IMAGE_RECORD_KEY);
+    request.onsuccess = () => {
+      db.close();
+      resolve(true);
+    };
+    request.onerror = () => {
+      db.close();
+      reject(request.error || new Error("indexedDB delete failed"));
+    };
+  });
+}
+async function waitForImageResult(img) {
+  if (img.complete) {
+    return img.naturalWidth > 0;
+  }
+  return await new Promise((resolve) => {
+    img.addEventListener("load", () => resolve(true), { once:true });
+    img.addEventListener("error", () => resolve(false), { once:true });
+  });
+}
+async function loadImageSource(img, src) {
+  if (!src) return false;
+  img.src = src;
+  return await waitForImageResult(img);
+}
+function getLegacyStoredImageDataUrl() {
+  return localStorage.getItem(IMAGE_DATA_URL_KEY) || "";
+}
+function clearLegacyStoredImageDataUrl() {
+  localStorage.removeItem(IMAGE_DATA_URL_KEY);
+}
 async function ensureImageLoaded() {
-  const saved = localStorage.getItem(IMAGE_DATA_URL_KEY) || "";
-  if (!editorBoardImage.src) {
-    if (saved) {
-      editorBoardImage.src = saved;
-    } else {
-      const fallback = getDefaultBoardImageSrc();
-      if (fallback) editorBoardImage.src = fallback;
+  if (editorBoardImage.complete && editorBoardImage.naturalWidth > 0) return true;
+  if (editorBoardImage.src) {
+    return await waitForImageResult(editorBoardImage);
+  }
+
+  try {
+    const idbImage = await readImageFromIndexedDb();
+    if (idbImage) {
+      const ready = await loadImageSource(editorBoardImage, idbImage);
+      if (ready) return true;
+    }
+  } catch (error) {
+    console.warn("editor indexedDB read failed", error);
+  }
+
+  const legacyImage = getLegacyStoredImageDataUrl();
+  if (legacyImage) {
+    const ready = await loadImageSource(editorBoardImage, legacyImage);
+    if (ready) {
+      try {
+        await writeImageToIndexedDb(legacyImage);
+        clearLegacyStoredImageDataUrl();
+      } catch (error) {
+        console.warn("editor legacy image migration failed", error);
+      }
+      return true;
     }
   }
-  if (editorBoardImage.complete && editorBoardImage.naturalWidth > 0) return true;
-  if (!editorBoardImage.src) return false;
-  await new Promise((resolve, reject) => {
-    editorBoardImage.addEventListener("load", resolve, { once:true });
-    editorBoardImage.addEventListener("error", reject, { once:true });
-  });
-  return true;
+
+  const fallback = getDefaultBoardImageSrc();
+  if (!fallback) return false;
+  return await loadImageSource(editorBoardImage, fallback);
 }
 async function handleImageFile(file) {
   try {
     const dataUrl = await readAsDataUrl(file);
-
-    editorBoardImage.src = dataUrl;
-
-    const ready = await new Promise((resolve) => {
-      if (editorBoardImage.complete) {
-        return resolve(editorBoardImage.naturalWidth > 0);
-      }
-      editorBoardImage.addEventListener("load", () => resolve(true), { once:true });
-      editorBoardImage.addEventListener("error", () => resolve(false), { once:true });
-    });
-
+    const ready = await loadImageSource(editorBoardImage, dataUrl);
     if (!ready) {
       throw new Error("selected image load failed");
     }
 
     let stored = true;
     try {
-      localStorage.setItem(IMAGE_DATA_URL_KEY, dataUrl);
+      await writeImageToIndexedDb(dataUrl);
+      clearLegacyStoredImageDataUrl();
     } catch (error) {
       stored = false;
-      console.warn("editor image cache save failed", error);
+      console.warn("editor image indexedDB save failed", error);
     }
 
     setStatus(stored ? "画像設定済み" : "画像は表示中 / 保存は失敗", false);
@@ -390,8 +483,13 @@ async function init() {
     const file = event.target.files?.[0];
     if (file) await handleImageFile(file);
   });
-  editorClearImageBtn.addEventListener("click", () => {
-    localStorage.removeItem(IMAGE_DATA_URL_KEY);
+  editorClearImageBtn.addEventListener("click", async () => {
+    try {
+      await deleteImageFromIndexedDb();
+    } catch (error) {
+      console.warn("editor indexedDB delete failed", error);
+    }
+    clearLegacyStoredImageDataUrl();
     editorBoardImage.removeAttribute("src");
     setStatus("画像未設定", true);
   });
