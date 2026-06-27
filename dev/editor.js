@@ -262,6 +262,7 @@ function syncAll() {
   syncInputs();
   updateSelectionControls();
   syncJsonOutput();
+  saveWorkingBoardToStorage();
 }
 function updateSelected(mutator) {
   const item = getSelectedItem();
