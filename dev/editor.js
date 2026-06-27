@@ -51,6 +51,7 @@ let selectedIds = new Set();
 let originals = new Map();
 let dragState = null;
 let suppressNextLayerClick = false;
+let isUsingWorkingBoard = false;
 
 function pctX(value) { return (value / boardData.image.width) * 100; }
 function pctY(value) { return (value / boardData.image.height) * 100; }
@@ -368,25 +369,31 @@ function distributeSelectedX() {
 function getDefaultBoardImageSrc() {
   return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
 }
-function loadWorkingBoardOverride(fallbackBoardData) {
+function parseWorkingBoardJson(raw) {
+  if (!raw) return null;
   try {
-    const raw = localStorage.getItem(WORKING_BOARD_JSON_KEY) || "";
-    if (!raw) return fallbackBoardData;
-    const parsed = JSON.parse(raw);
-    if (!parsed || typeof parsed !== "object") return fallbackBoardData;
-    if (parsed.boardId !== fallbackBoardData.boardId) return fallbackBoardData;
-    if (!Array.isArray(parsed.items)) return fallbackBoardData;
-    if (!parsed.image || typeof parsed.image.width !== "number" || typeof parsed.image.height !== "number") {
-      return fallbackBoardData;
-    }
-    return parsed;
-  } catch (error) {
-    console.warn("editor working board load failed", error);
-    return fallbackBoardData;
+    const parsed = typeof raw === "string" ? JSON.parse(raw) : raw;
+    if (!parsed || typeof parsed !== "object") return null;
+    if (typeof parsed.boardId !== "string") return null;
+    if (!parsed.image || !Number.isFinite(parsed.image.width) || !Number.isFinite(parsed.image.height)) return null;
+    if (!Array.isArray(parsed.items)) return null;
+    const valid = parsed.items.every((item) => item && typeof item.id === "string" && Number.isFinite(item.x) && Number.isFinite(item.y) && Number.isFinite(item.w) && Number.isFinite(item.h));
+    return valid ? parsed : null;
+  } catch {
+    return null;
   }
 }
-function saveWorkingBoardOverride() {
-  localStorage.setItem(WORKING_BOARD_JSON_KEY, JSON.stringify(boardData));
+function loadWorkingBoardFromStorage() {
+  return parseWorkingBoardJson(localStorage.getItem(WORKING_BOARD_JSON_KEY) || "");
+}
+function saveWorkingBoardToStorage() {
+  try {
+    localStorage.setItem(WORKING_BOARD_JSON_KEY, JSON.stringify(boardData));
+    return true;
+  } catch (error) {
+    console.warn("editor working board save failed", error);
+    return false;
+  }
 }
 
 function openImageDb() {
@@ -527,20 +534,29 @@ async function handleImageFile(file) {
     setStatus("画像の読込に失敗しました", true);
   }
 }
-function saveWorkingBoardJson() {
-  try {
-    saveWorkingBoardOverride();
-    editorHint.textContent = "作業中JSONをブラウザ保存しました。viewer で位置確認できます。";
-  } catch (error) {
-    console.error(error);
-    editorHint.textContent = "作業中JSONの保存に失敗しました。コンソールを確認してください。";
-  }
+function downloadJson() {
+  const saved = saveWorkingBoardToStorage();
+  const blob = new Blob([jsonOutput.value], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "sprite-seirei.draft.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  editorHint.textContent = saved
+    ? "JSON を保存しました。viewer 連携用の作業状態も更新しました。"
+    : "JSON は保存しましたが、viewer 連携用の作業状態保存は失敗しました。";
 }
 function copyJson() {
+  const saved = saveWorkingBoardToStorage();
   jsonOutput.focus();
   jsonOutput.select();
   document.execCommand("copy");
-  editorHint.textContent = "JSON をコピーしました。";
+  editorHint.textContent = saved
+    ? "JSON をコピーしました。viewer 連携用の作業状態も更新しました。"
+    : "JSON はコピーしましたが、viewer 連携用の作業状態保存は失敗しました。";
 }
 function resetSelected() {
   const item = getSelectedItem();
@@ -557,12 +573,14 @@ function resetSelected() {
 
 async function init() {
   const fetchedBoardData = await fetch(BOARD_PATH).then((res) => res.json());
-  boardData = loadWorkingBoardOverride(fetchedBoardData);
-  originals = new Map(fetchedBoardData.items.map((item) => [item.id, JSON.parse(JSON.stringify(item))]));
+  const workingBoardData = loadWorkingBoardFromStorage();
+  boardData = workingBoardData || fetchedBoardData;
+  isUsingWorkingBoard = !!workingBoardData;
+  originals = new Map(boardData.items.map((item) => [item.id, JSON.parse(JSON.stringify(item))]));
   selectedId = boardData.items[0]?.id || null;
   selectedIds = selectedId ? new Set([selectedId]) : new Set();
   itemCountBadge.textContent = `${boardData.items.length} items`;
-  editorBoardInfo.textContent = `board 読込済み | ${boardData.image.width} x ${boardData.image.height}`;
+  editorBoardInfo.textContent = `board 読込済み | ${boardData.image.width} x ${boardData.image.height}${isUsingWorkingBoard ? " | working board" : ""}`;
   syncJsonOutput();
   renderList();
   renderRects();
@@ -604,7 +622,7 @@ async function init() {
   distributeXBtn.addEventListener("click", distributeSelectedX);
   clearSelectionBtn.addEventListener("click", clearSelection);
   copyJsonBtn.addEventListener("click", copyJson);
-  downloadJsonBtn.addEventListener("click", saveWorkingBoardJson);
+  downloadJsonBtn.addEventListener("click", downloadJson);
   editorImageFileInput.addEventListener("change", async (event) => {
     const file = event.target.files?.[0];
     if (file) await handleImageFile(file);
