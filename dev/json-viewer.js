@@ -105,6 +105,7 @@ let currentLanguage = "ja";
 let displayName = "";
 let displayNameColor = "black";
 let displayNameSize = "medium";
+let isUsingWorkingBoard = false;
 
 function t(key) {
   return translations[currentLanguage]?.[key] || translations.ja[key] || "";
@@ -322,22 +323,22 @@ function drawCompleteStamp(ctx) {
 function getDefaultBoardImageSrc() {
   return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
 }
-function loadWorkingBoardOverride(fallbackBoardData) {
+function parseWorkingBoardJson(raw) {
+  if (!raw) return null;
   try {
-    const raw = localStorage.getItem(WORKING_BOARD_JSON_KEY) || "";
-    if (!raw) return fallbackBoardData;
-    const parsed = JSON.parse(raw);
-    if (!parsed || typeof parsed !== "object") return fallbackBoardData;
-    if (parsed.boardId !== fallbackBoardData.boardId) return fallbackBoardData;
-    if (!Array.isArray(parsed.items)) return fallbackBoardData;
-    if (!parsed.image || typeof parsed.image.width !== "number" || typeof parsed.image.height !== "number") {
-      return fallbackBoardData;
-    }
-    return parsed;
-  } catch (error) {
-    console.warn("viewer working board load failed", error);
-    return fallbackBoardData;
+    const parsed = typeof raw === "string" ? JSON.parse(raw) : raw;
+    if (!parsed || typeof parsed !== "object") return null;
+    if (typeof parsed.boardId !== "string") return null;
+    if (!parsed.image || !Number.isFinite(parsed.image.width) || !Number.isFinite(parsed.image.height)) return null;
+    if (!Array.isArray(parsed.items)) return null;
+    const valid = parsed.items.every((item) => item && typeof item.id === "string" && Number.isFinite(item.x) && Number.isFinite(item.y) && Number.isFinite(item.w) && Number.isFinite(item.h));
+    return valid ? parsed : null;
+  } catch {
+    return null;
   }
+}
+function loadWorkingBoardFromStorage() {
+  return parseWorkingBoardJson(localStorage.getItem(WORKING_BOARD_JSON_KEY) || "");
 }
 
 function openImageDb() {
@@ -505,6 +506,8 @@ function applyLanguage() {
   langJaBtn.classList.toggle("is-active", currentLanguage === "ja");
   langEnBtn.classList.toggle("is-active", currentLanguage === "en");
   refreshMetaOverlay();
+  const boardModeLabel = isUsingWorkingBoard ? " | working board" : "";
+  boardInfo.textContent = `${t("boardLoaded")} | ${boardData.items.length} items | ${boardData.image.width} x ${boardData.image.height}${boardModeLabel}`;
 }
 async function handleImageFile(file) {
   try {
@@ -536,11 +539,15 @@ async function handleImageFile(file) {
   }
 }
 async function init() {
-  const fetchedBoardData = await fetch(BOARD_PATH).then((res) => res.json());
-  [eventsData] = await Promise.all([
+  const [fetchedBoardData, fetchedEventsData] = await Promise.all([
+    fetch(BOARD_PATH).then((res) => res.json()),
     fetch(EVENTS_PATH).then((res) => res.json())
   ]);
-  boardData = loadWorkingBoardOverride(fetchedBoardData);
+  const workingBoardData = loadWorkingBoardFromStorage();
+  boardData = workingBoardData || fetchedBoardData;
+  eventsData = fetchedEventsData;
+  isUsingWorkingBoard = !!workingBoardData;
+
   const validIds = new Set(boardData.items.map((item) => item.id));
   state = Object.fromEntries(Object.entries(loadJSON(boardData.storage.stateKey, {})).filter(([key, value]) => validIds.has(key) && !!value));
   saveJSON(boardData.storage.stateKey, state);
@@ -553,7 +560,6 @@ async function init() {
   nameColorSelect.value = displayNameColor;
   nameSizeSelect.value = displayNameSize;
 
-  boardInfo.textContent = `${t("boardLoaded")} | ${boardData.items.length} items | ${boardData.image.width} x ${boardData.image.height}`;
   devModeFlag.textContent = eventsData.ui?.devFlagText || "DEV JSON";
 
   nameInput.addEventListener("input", (event) => {
