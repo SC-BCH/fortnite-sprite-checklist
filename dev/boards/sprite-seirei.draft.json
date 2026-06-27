@@ -1,9 +1,9 @@
 {
   "boardId": "sprite-seirei-dev",
   "version": 1,
-  "title": "Fortnite Sprite Checklist Ver.2.1 [DEV draft]",
+  "title": "Fortnite Sprite Checklist Ver.2.1.1 [DEV draft]",
   "image": {
-    "src": "../images/Ver2.1.png",
+    "src": "../images/Ver 2.1.1.png",
     "width": 2048,
     "height": 1629,
     "note": "legacy dev image is still embedded in dev/index.html. upload the matching image in viewer/editor until the new image pipeline is fixed."
