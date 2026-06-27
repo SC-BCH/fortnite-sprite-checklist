@@ -28,7 +28,7 @@
       <button class="action" id="resetSelectedBtn" type="button">選択項目を既定値へ戻す</button>
     </div>
 
-    <div class="hint" id="editorHint">左の一覧で項目を選択し、画像上をクリックするとその項目の中心位置へ移動します。右側の数値入力で微調整できます。</div>
+    <div class="hint" id="editorHint">左の一覧または赤枠を選択し、画像上をクリックするとその項目の中心位置へ移動します。Ctrl/Cmd+クリックで複数選択できます。右側の数値入力で微調整できます。</div>
 
     <div class="board-shell">
       <div class="board" id="editorBoard">
@@ -52,6 +52,13 @@
           <button class="action" id="nudgeUpBtn" type="button">↑</button>
           <button class="action" id="nudgeDownBtn" type="button">↓</button>
           <button class="action" id="nudgeRightBtn" type="button">→</button>
+        </div>
+        <div class="subbar" style="margin-top:8px;">
+          <span class="badge" id="selectionCountBadge">1選択</span>
+          <button class="action" id="alignXBtn" type="button">X揃え</button>
+          <button class="action" id="alignYBtn" type="button">Y揃え</button>
+          <button class="action" id="distributeXBtn" type="button">横等間隔</button>
+          <button class="action" id="clearSelectionBtn" type="button">選択解除</button>
         </div>
         <h3>項目一覧</h3>
         <div class="item-list" id="itemList"></div>
