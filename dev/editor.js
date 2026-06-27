@@ -25,6 +25,11 @@ const nudgeUpBtn = $("nudgeUpBtn");
 const nudgeDownBtn = $("nudgeDownBtn");
 const nudgeRightBtn = $("nudgeRightBtn");
 const resetSelectedBtn = $("resetSelectedBtn");
+const selectionCountBadge = $("selectionCountBadge");
+const alignXBtn = $("alignXBtn");
+const alignYBtn = $("alignYBtn");
+const distributeXBtn = $("distributeXBtn");
+const clearSelectionBtn = $("clearSelectionBtn");
 const copyJsonBtn = $("copyJsonBtn");
 const downloadJsonBtn = $("downloadJsonBtn");
 const itemList = $("itemList");
@@ -37,9 +42,11 @@ const readAsDataUrl = (file) => new Promise((resolve, reject) => {
   reader.readAsDataURL(file);
 });
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+const isMultiSelectEvent = (event) => !!(event?.ctrlKey || event?.metaKey || event?.shiftKey);
 
 let boardData;
 let selectedId = null;
+let selectedIds = new Set();
 let originals = new Map();
 let dragState = null;
 let suppressNextLayerClick = false;
@@ -48,6 +55,9 @@ function pctX(value) { return (value / boardData.image.width) * 100; }
 function pctY(value) { return (value / boardData.image.height) * 100; }
 function getSelectedItem() {
   return boardData.items.find((item) => item.id === selectedId) || null;
+}
+function getSelectedItems() {
+  return boardData.items.filter((item) => selectedIds.has(item.id));
 }
 function syncJsonOutput() {
   jsonOutput.value = JSON.stringify(boardData, null, 2);
@@ -58,7 +68,15 @@ function setStatus(text, warn) {
 }
 function syncInputs() {
   const item = getSelectedItem();
-  if (!item) return;
+  if (!item) {
+    selectedIdInput.value = "";
+    selectedLabelInput.value = "";
+    selectedXInput.value = "";
+    selectedYInput.value = "";
+    selectedWInput.value = "";
+    selectedHInput.value = "";
+    return;
+  }
   selectedIdInput.value = item.id;
   selectedLabelInput.value = item.label?.ja || "";
   selectedXInput.value = String(item.x);
@@ -66,18 +84,65 @@ function syncInputs() {
   selectedWInput.value = String(item.w);
   selectedHInput.value = String(item.h);
 }
+function updateSelectionControls() {
+  const count = selectedIds.size;
+  selectionCountBadge.textContent = `${count}選択`;
+  const hasPrimary = !!getSelectedItem();
+  const hasMany = count >= 2;
+  const hasThree = count >= 3;
+
+  selectedLabelInput.disabled = !hasPrimary;
+  selectedXInput.disabled = !hasPrimary;
+  selectedYInput.disabled = !hasPrimary;
+  selectedWInput.disabled = !hasPrimary;
+  selectedHInput.disabled = !hasPrimary;
+  nudgeLeftBtn.disabled = !hasPrimary;
+  nudgeUpBtn.disabled = !hasPrimary;
+  nudgeDownBtn.disabled = !hasPrimary;
+  nudgeRightBtn.disabled = !hasPrimary;
+  resetSelectedBtn.disabled = !hasPrimary;
+  alignXBtn.disabled = !hasMany;
+  alignYBtn.disabled = !hasMany;
+  distributeXBtn.disabled = !hasThree;
+  clearSelectionBtn.disabled = count === 0;
+}
+function selectSingleItem(itemId) {
+  selectedId = itemId || null;
+  selectedIds = itemId ? new Set([itemId]) : new Set();
+}
+function toggleSelectedItem(itemId) {
+  if (!itemId) return;
+  if (selectedIds.has(itemId)) {
+    selectedIds.delete(itemId);
+    if (selectedId === itemId) {
+      selectedId = selectedIds.size ? Array.from(selectedIds).at(-1) : null;
+    }
+  } else {
+    selectedIds.add(itemId);
+    selectedId = itemId;
+  }
+}
+function applySelection(itemId, additive) {
+  if (additive) {
+    toggleSelectedItem(itemId);
+  } else {
+    selectSingleItem(itemId);
+  }
+  syncAll();
+}
+function clearSelection() {
+  selectSingleItem(null);
+  syncAll();
+}
 function renderList() {
   itemList.innerHTML = "";
   for (const item of boardData.items) {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = `item-row${item.id === selectedId ? " is-active" : ""}`;
+    button.className = `item-row${selectedIds.has(item.id) ? " is-active" : ""}`;
     button.innerHTML = `${item.label?.ja || item.id}<small>${item.id}</small>`;
-    button.addEventListener("click", () => {
-      selectedId = item.id;
-      renderRects();
-      renderList();
-      syncInputs();
+    button.addEventListener("click", (event) => {
+      applySelection(item.id, isMultiSelectEvent(event));
     });
     itemList.appendChild(button);
   }
@@ -114,7 +179,7 @@ function renderRects() {
   for (const item of boardData.items) {
     const rect = document.createElement("button");
     rect.type = "button";
-    rect.className = `editor-rect${item.id === selectedId ? " is-active" : ""}`;
+    rect.className = `editor-rect${selectedIds.has(item.id) ? " is-active" : ""}`;
     rect.style.left = `${pctX(item.x)}%`;
     rect.style.top = `${pctY(item.y)}%`;
     rect.style.width = `${pctX(item.w)}%`;
@@ -123,19 +188,17 @@ function renderRects() {
     rect.style.touchAction = "none";
     rect.addEventListener("click", (event) => {
       event.stopPropagation();
-      selectedId = item.id;
-      renderRects();
-      renderList();
-      syncInputs();
+      applySelection(item.id, isMultiSelectEvent(event));
     });
     rect.addEventListener("pointerdown", (event) => {
       if (event.target instanceof HTMLElement && event.target.dataset.handle) return;
+      if (isMultiSelectEvent(event)) return;
       event.preventDefault();
       event.stopPropagation();
-      selectedId = item.id;
-      renderRects();
-      renderList();
-      syncInputs();
+      if (!selectedIds.has(item.id) || selectedIds.size !== 1) {
+        selectSingleItem(item.id);
+        syncAll();
+      }
       rect.setPointerCapture?.(event.pointerId);
       dragState = {
         pointerId: event.pointerId,
@@ -164,12 +227,13 @@ function renderRects() {
         event.stopPropagation();
       });
       handle.addEventListener("pointerdown", (event) => {
+        if (isMultiSelectEvent(event)) return;
         event.preventDefault();
         event.stopPropagation();
-        selectedId = item.id;
-        renderRects();
-        renderList();
-        syncInputs();
+        if (!selectedIds.has(item.id) || selectedIds.size !== 1) {
+          selectSingleItem(item.id);
+          syncAll();
+        }
         rect.setPointerCapture?.(event.pointerId);
         dragState = {
           pointerId: event.pointerId,
@@ -194,6 +258,7 @@ function syncAll() {
   renderRects();
   renderList();
   syncInputs();
+  updateSelectionControls();
   syncJsonOutput();
 }
 function updateSelected(mutator) {
@@ -263,6 +328,41 @@ function endDrag(event) {
       suppressNextLayerClick = false;
     }, 0);
   }
+}
+function alignSelectedX() {
+  const anchor = getSelectedItem();
+  const items = getSelectedItems();
+  if (!anchor || items.length < 2) return;
+  const targetX = anchor.x;
+  items.forEach((item) => {
+    item.x = targetX;
+    normalizeItem(item);
+  });
+  syncAll();
+}
+function alignSelectedY() {
+  const anchor = getSelectedItem();
+  const items = getSelectedItems();
+  if (!anchor || items.length < 2) return;
+  const targetY = anchor.y;
+  items.forEach((item) => {
+    item.y = targetY;
+    normalizeItem(item);
+  });
+  syncAll();
+}
+function distributeSelectedX() {
+  const items = getSelectedItems().slice().sort((a, b) => a.x - b.x);
+  if (items.length < 3) return;
+  const firstX = items[0].x;
+  const lastX = items[items.length - 1].x;
+  const step = (lastX - firstX) / (items.length - 1);
+  items.forEach((item, index) => {
+    if (index === 0 || index === items.length - 1) return;
+    item.x = Math.round(firstX + step * index);
+    normalizeItem(item);
+  });
+  syncAll();
 }
 function getDefaultBoardImageSrc() {
   return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
@@ -440,12 +540,14 @@ async function init() {
   boardData = await fetch(BOARD_PATH).then((res) => res.json());
   originals = new Map(boardData.items.map((item) => [item.id, JSON.parse(JSON.stringify(item))]));
   selectedId = boardData.items[0]?.id || null;
+  selectedIds = selectedId ? new Set([selectedId]) : new Set();
   itemCountBadge.textContent = `${boardData.items.length} items`;
   editorBoardInfo.textContent = `board 読込済み | ${boardData.image.width} x ${boardData.image.height}`;
   syncJsonOutput();
   renderList();
   renderRects();
   syncInputs();
+  updateSelectionControls();
 
   editorLayer.addEventListener("click", (event) => {
     if (suppressNextLayerClick) return;
@@ -477,6 +579,10 @@ async function init() {
   nudgeDownBtn.addEventListener("click", () => updateSelected((item) => { item.y += 1; }));
   nudgeRightBtn.addEventListener("click", () => updateSelected((item) => { item.x += 1; }));
   resetSelectedBtn.addEventListener("click", resetSelected);
+  alignXBtn.addEventListener("click", alignSelectedX);
+  alignYBtn.addEventListener("click", alignSelectedY);
+  distributeXBtn.addEventListener("click", distributeSelectedX);
+  clearSelectionBtn.addEventListener("click", clearSelection);
   copyJsonBtn.addEventListener("click", copyJson);
   downloadJsonBtn.addEventListener("click", downloadJson);
   editorImageFileInput.addEventListener("change", async (event) => {
