@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "rawExportKey": "BCH_ServOfMiori_AD",
+  "completeBadge": {
+    "enabled": true,
+    "mainText": "COMPLETE!",
+    "mainTextByLanguage": {
+      "ja": "COMPLETE!",
+      "en": "COMPLETE!"
+    },
+    "subTextTemplate": "{count} / {total} COLLECTED",
+    "subTextTemplateByLanguage": {
+      "ja": "{count} / {total} COLLECTED",
+      "en": "{count} / {total} COLLECTED"
+    }
+  },
+  "metaOverlay": {
+    "showDate": true,
+    "showCount": true,
+    "showName": true
+  },
+  "text": {
+    "collectedLabel": {
+      "ja": "collected",
+      "en": "collected"
+    }
+  }
+}
