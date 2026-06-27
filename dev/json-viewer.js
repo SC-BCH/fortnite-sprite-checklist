@@ -5,6 +5,7 @@ const IMAGE_DB_NAME = "fortnite_sprite_checklist_dev_assets";
 const IMAGE_DB_VERSION = 1;
 const IMAGE_STORE_NAME = "images";
 const IMAGE_RECORD_KEY = "shared-image";
+const WORKING_BOARD_JSON_KEY = "fortnite_sprite_checklist_json_dev_working_board_v1";
 
 const translations = {
   ja: {
@@ -321,6 +322,23 @@ function drawCompleteStamp(ctx) {
 function getDefaultBoardImageSrc() {
   return typeof boardData?.image?.src === "string" ? boardData.image.src.trim() : "";
 }
+function loadWorkingBoardOverride(fallbackBoardData) {
+  try {
+    const raw = localStorage.getItem(WORKING_BOARD_JSON_KEY) || "";
+    if (!raw) return fallbackBoardData;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return fallbackBoardData;
+    if (parsed.boardId !== fallbackBoardData.boardId) return fallbackBoardData;
+    if (!Array.isArray(parsed.items)) return fallbackBoardData;
+    if (!parsed.image || typeof parsed.image.width !== "number" || typeof parsed.image.height !== "number") {
+      return fallbackBoardData;
+    }
+    return parsed;
+  } catch (error) {
+    console.warn("viewer working board load failed", error);
+    return fallbackBoardData;
+  }
+}
 
 function openImageDb() {
   return new Promise((resolve, reject) => {
@@ -518,10 +536,11 @@ async function handleImageFile(file) {
   }
 }
 async function init() {
-  [boardData, eventsData] = await Promise.all([
-    fetch(BOARD_PATH).then((res) => res.json()),
+  const fetchedBoardData = await fetch(BOARD_PATH).then((res) => res.json());
+  [eventsData] = await Promise.all([
     fetch(EVENTS_PATH).then((res) => res.json())
   ]);
+  boardData = loadWorkingBoardOverride(fetchedBoardData);
   const validIds = new Set(boardData.items.map((item) => item.id));
   state = Object.fromEntries(Object.entries(loadJSON(boardData.storage.stateKey, {})).filter(([key, value]) => validIds.has(key) && !!value));
   saveJSON(boardData.storage.stateKey, state);
