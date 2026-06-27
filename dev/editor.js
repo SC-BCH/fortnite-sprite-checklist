@@ -284,10 +284,30 @@ async function ensureImageLoaded() {
 async function handleImageFile(file) {
   try {
     const dataUrl = await readAsDataUrl(file);
-    localStorage.setItem(IMAGE_DATA_URL_KEY, dataUrl);
+
     editorBoardImage.src = dataUrl;
-    await ensureImageLoaded();
-    setStatus("画像設定済み", false);
+
+    const ready = await new Promise((resolve) => {
+      if (editorBoardImage.complete) {
+        return resolve(editorBoardImage.naturalWidth > 0);
+      }
+      editorBoardImage.addEventListener("load", () => resolve(true), { once:true });
+      editorBoardImage.addEventListener("error", () => resolve(false), { once:true });
+    });
+
+    if (!ready) {
+      throw new Error("selected image load failed");
+    }
+
+    let stored = true;
+    try {
+      localStorage.setItem(IMAGE_DATA_URL_KEY, dataUrl);
+    } catch (error) {
+      stored = false;
+      console.warn("editor image cache save failed", error);
+    }
+
+    setStatus(stored ? "画像設定済み" : "画像は表示中 / 保存は失敗", false);
   } catch (error) {
     console.error(error);
     setStatus("画像の読込に失敗しました", true);
