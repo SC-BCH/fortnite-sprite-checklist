@@ -50,9 +50,10 @@
       saveImage: "画像保存",
       reset: "全解除",
       saved: "保存済み",
-      hint: "タップで切替。状態はこの端末のブラウザに保存されます。",
+      hint: "タップで 未所持 → 所持 → マスター → 未所持。状態はこの端末のブラウザに保存されます。",
       footer: 'ローカル保存対応 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a>',
-      collected: "collected",
+      collected: "所持",
+      mastered: "マスター",
       loading: "チェックリストを読み込んでいます…",
       failed: "チェックリストの初期化に失敗しました。board.manifest.json と参照先ファイルを確認してください。"
     },
@@ -69,9 +70,10 @@
       saveImage: "Save Image",
       reset: "Clear All",
       saved: "Saved",
-      hint: "Tap to toggle. Progress is saved in this browser on this device.",
+      hint: "Tap to cycle: Unowned → Collected → Mastered → Unowned. Progress is saved in this browser on this device.",
       footer: 'Local save supported | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a> | <a href="https://buymeacoffee.com/bch1025?new=1" target="_blank" rel="noopener noreferrer">Support the developer</a>',
-      collected: "collected",
+      collected: "Collected",
+      mastered: "Mastered",
       loading: "Loading checklist...",
       failed: "Failed to initialize the checklist. Check board.manifest.json and referenced files."
     }
@@ -145,6 +147,10 @@
     const configured = eventsData?.text?.collectedLabel?.[currentLanguage] || eventsData?.text?.collectedLabel?.ja;
     return configured || t("collected");
   }
+  function masteredLabel() {
+    const configured = eventsData?.text?.masteredLabel?.[currentLanguage] || eventsData?.text?.masteredLabel?.ja;
+    return configured || t("mastered");
+  }
   function completeBadgeMainText() {
     const configured = eventsData?.completeBadge?.mainTextByLanguage?.[currentLanguage] || eventsData?.completeBadge?.mainTextByLanguage?.ja;
     return configured || eventsData?.completeBadge?.mainText || "COMPLETE!";
@@ -155,8 +161,23 @@
   }
   function pctX(value) { return (value / boardData.image.width) * 100; }
   function pctY(value) { return (value / boardData.image.height) * 100; }
+  function normalizeStateValue(value) {
+    if (value === true) return 1;
+    if (value === 1 || value === "1") return 1;
+    if (value === 2 || value === "2") return 2;
+    return 0;
+  }
+  function itemState(item) {
+    return normalizeStateValue(state[item.id]);
+  }
   function checkedCount() {
-    return boardData.items.reduce((sum, item) => sum + (state[item.id] ? 1 : 0), 0);
+    return collectedCount();
+  }
+  function collectedCount() {
+    return boardData.items.reduce((sum, item) => sum + (itemState(item) >= 1 ? 1 : 0), 0);
+  }
+  function masteredCount() {
+    return boardData.items.reduce((sum, item) => sum + (itemState(item) === 2 ? 1 : 0), 0);
   }
   function isComplete() {
     return checkedCount() === boardData.items.length;
@@ -197,12 +218,40 @@
     });
     return svg;
   }
+  function masterBox(item) {
+    return { x: item.x + 10, y: item.y - 205, w: 88, h: 62 };
+  }
+  function makeCrown() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 100 70");
+    svg.setAttribute("class", "crown-mark");
+    const paths = [
+      ["path", "crown-burst", "M6 25 L0 20 M18 12 L14 3 M37 8 L36 0 M63 8 L64 0 M82 12 L86 3 M94 25 L100 20 M8 48 L0 51 M92 48 L100 51"],
+      ["path", "crown-shadow", "M12 56 L20 25 L38 44 L50 14 L62 44 L80 25 L88 56 Z"],
+      ["path", "crown-body", "M12 54 L20 25 L38 44 L50 14 L62 44 L80 25 L88 54 Q50 66 12 54 Z"]
+    ];
+    paths.forEach(([, cls, d]) => {
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("class", cls);
+      path.setAttribute("d", d);
+      svg.appendChild(path);
+    });
+    [[20,24],[50,12],[80,24]].forEach(([cx, cy]) => {
+      const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      dot.setAttribute("class", "crown-dot");
+      dot.setAttribute("cx", String(cx));
+      dot.setAttribute("cy", String(cy));
+      dot.setAttribute("r", "4");
+      svg.appendChild(dot);
+    });
+    return svg;
+  }
   function refreshMetaOverlay() {
     const raw = isRawExportMode();
     const normalizedName = normalizeName(displayName);
     const normalizedColor = normalizeColor(displayNameColor);
     const normalizedSize = normalizeSize(displayNameSize);
-    const countText = `${checkedCount()} / ${boardData.items.length} ${collectedLabel()}`;
+    const countText = `${collectedLabel()} ${checkedCount()} / ${boardData.items.length}\n${masteredLabel()} ${masteredCount()} / ${boardData.items.length}`;
     els.board.classList.toggle("is-raw-export", raw);
     els.metaOverlay.setAttribute("aria-hidden", raw ? "true" : "false");
     els.dateOverlay.className = `meta-line date-overlay color-${normalizedColor}`;
@@ -235,17 +284,34 @@
   function rebuildLayer() {
     els.layer.innerHTML = "";
     boardData.items.forEach((item) => {
+      const value = itemState(item);
+
+      if (value === 2) {
+        const crown = document.createElement("div");
+        const box = masterBox(item);
+        crown.className = "master-crown";
+        crown.style.left = `${pctX(box.x)}%`;
+        crown.style.top = `${pctY(box.y)}%`;
+        crown.style.width = `${pctX(box.w)}%`;
+        crown.style.height = `${pctY(box.h)}%`;
+        crown.appendChild(makeCrown());
+        els.layer.appendChild(crown);
+      }
+
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "box";
       btn.setAttribute("aria-label", tLabel(item));
+      btn.dataset.state = String(value);
       btn.style.left = `${pctX(item.x)}%`;
       btn.style.top = `${pctY(item.y)}%`;
       btn.style.width = `${pctX(item.w)}%`;
       btn.style.height = `${pctY(item.h)}%`;
-      if (state[item.id]) btn.appendChild(makeMark());
+      if (value >= 1) btn.appendChild(makeMark());
       btn.addEventListener("click", () => {
-        state[item.id] = !state[item.id];
+        const next = (itemState(item) + 1) % 3;
+        if (next === 0) delete state[item.id];
+        else state[item.id] = next;
         saveJSON(stateStorageKey(), state);
         els.saveBadge.textContent = t("saved");
         rebuildLayer();
@@ -313,11 +379,51 @@
     ctx.stroke();
     ctx.restore();
   }
+  function drawCrownOnContext(ctx, item) {
+    const box = masterBox(item);
+    ctx.save();
+    ctx.translate(box.x, box.y);
+    ctx.scale(box.w / 100, box.h / 70);
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = "rgba(15,15,15,0.62)";
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    [[6,25,0,20],[18,12,14,3],[37,8,36,0],[63,8,64,0],[82,12,86,3],[94,25,100,20],[8,48,0,51],[92,48,100,51]].forEach(([x1,y1,x2,y2]) => {
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+    });
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(12, 54);
+    ctx.lineTo(20, 25);
+    ctx.lineTo(38, 44);
+    ctx.lineTo(50, 14);
+    ctx.lineTo(62, 44);
+    ctx.lineTo(80, 25);
+    ctx.lineTo(88, 54);
+    ctx.quadraticCurveTo(50, 66, 12, 54);
+    ctx.closePath();
+    ctx.fillStyle = "#ffd92e";
+    ctx.fill();
+    ctx.strokeStyle = "rgba(70,58,8,0.8)";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.fillStyle = "#fff47a";
+    [[20,24],[50,12],[80,24]].forEach(([cx, cy]) => {
+      ctx.beginPath();
+      ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    });
+    ctx.restore();
+  }
   function drawMetaText(ctx, countLabel) {
     if (isRawExportMode()) return;
     const name = normalizeName(displayName);
     const dateText = formatCurrentDate();
-    const countText = `${checkedCount()} / ${boardData.items.length} ${countLabel}`;
+    const collectedText = `${collectedLabel()} ${checkedCount()} / ${boardData.items.length}`;
+    const masteredText = `${masteredLabel()} ${masteredCount()} / ${boardData.items.length}`;
     const fontFamily = "Arial";
     const maxWidth = 720;
     const color = displayNameColor === "red"
@@ -338,11 +444,14 @@
     ctx.textBaseline = "top";
     ctx.lineJoin = "round";
     if (eventsData.metaOverlay?.showDate !== false) drawLine(dateText, 42);
-    if (eventsData.metaOverlay?.showCount !== false) drawLine(countText, 72);
+    if (eventsData.metaOverlay?.showCount !== false) {
+      drawLine(collectedText, 72);
+      drawLine(masteredText, 102, 28, 20);
+    }
     if (name && eventsData.metaOverlay?.showName !== false) {
       const start = displayNameSize === "small" ? 30 : displayNameSize === "large" ? 42 : 36;
       const min = displayNameSize === "small" ? 20 : displayNameSize === "large" ? 28 : 24;
-      drawLine(name, 102, start, min);
+      drawLine(name, 132, start, min);
     }
     ctx.restore();
   }
@@ -392,7 +501,8 @@
       try { await document.fonts.ready; } catch {}
     }
     drawMetaText(ctx, collectedLabel());
-    boardData.items.forEach((item) => { if (state[item.id]) drawCheckOnContext(ctx, item); });
+    boardData.items.forEach((item) => { if (itemState(item) === 2) drawCrownOnContext(ctx, item); });
+    boardData.items.forEach((item) => { if (itemState(item) >= 1) drawCheckOnContext(ctx, item); });
     drawCompleteStamp(ctx);
     return await new Promise((resolve) => canvas.toBlob(resolve, "image/png"));
   }
@@ -471,7 +581,13 @@
         }) : Promise.resolve(eventsData)
       ]);
       const validIds = new Set(boardData.items.map((item) => item.id));
-      state = Object.fromEntries(Object.entries(loadJSON(stateStorageKey(), {})).filter(([key, value]) => validIds.has(key) && !!value));
+      const rawState = loadJSON(stateStorageKey(), {});
+      state = {};
+      Object.entries(rawState).forEach(([key, value]) => {
+        if (!validIds.has(key)) return;
+        const normalized = normalizeStateValue(value);
+        if (normalized > 0) state[key] = normalized;
+      });
       saveJSON(stateStorageKey(), state);
       displayName = readStoredName(displayName);
       displayNameColor = readStoredColor(displayNameColor);

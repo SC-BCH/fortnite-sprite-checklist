@@ -81,12 +81,19 @@ button,input,select { font:inherit; }
   box-shadow:none;
   touch-action:manipulation;
   -webkit-tap-highlight-color:transparent;
+  z-index:12;
 }
 .box::-webkit-focus-inner { border:0; padding:0; }
 .box:focus-visible { outline:2px solid rgba(122,162,255,.95); outline-offset:1px; }
 .mark { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
 .mark path.shadow { stroke:rgba(255,255,255,.34); stroke-width:20; stroke-linecap:round; stroke-linejoin:round; fill:none; }
 .mark path.main { stroke:var(--accent); stroke-width:14; stroke-linecap:round; stroke-linejoin:round; fill:none; }
+.master-crown { position:absolute; z-index:11; pointer-events:none; filter:drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
+.crown-mark { width:100%; height:100%; overflow:visible; }
+.crown-burst { stroke:rgba(20,20,20,.65); stroke-width:4; stroke-linecap:round; fill:none; }
+.crown-shadow { fill:rgba(0,0,0,.36); stroke:none; transform:translate(0,4px); }
+.crown-body { fill:#ffd92e; stroke:rgba(70,58,8,.8); stroke-width:3; stroke-linejoin:round; }
+.crown-dot { fill:#fff47a; stroke:rgba(70,58,8,.8); stroke-width:2; }
 .complete-badge {
   position:absolute;
   left:70.5%;
@@ -130,7 +137,8 @@ button,input,select { font:inherit; }
   text-shadow:-2px -2px 0 rgba(255,255,255,.7),2px -2px 0 rgba(255,255,255,.7),-2px 2px 0 rgba(255,255,255,.7),2px 2px 0 rgba(255,255,255,.7);
   word-break:break-word;
 }
-.meta-line.date-overlay,.meta-line.count-overlay { font-size:clamp(12px,1.35vw,20px); }
+.meta-line.date-overlay { font-size:clamp(12px,1.35vw,20px); }
+.meta-line.count-overlay { font-size:clamp(11px,1.25vw,19px); white-space:pre-line; line-height:1.08; }
 .meta-line.name-overlay.size-small { font-size:clamp(14px,1.7vw,24px); }
 .meta-line.name-overlay.size-medium { font-size:clamp(16px,2vw,30px); }
 .meta-line.name-overlay.size-large { font-size:clamp(18px,2.4vw,36px); }
