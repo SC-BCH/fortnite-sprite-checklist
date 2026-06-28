@@ -49,7 +49,7 @@
   const collected = () => board.items.reduce((sum, item) => sum + (getState(item) >= 1 ? 1 : 0), 0);
   const mastered = () => board.items.reduce((sum, item) => sum + (getState(item) === 2 ? 1 : 0), 0);
   const isComplete = () => collected() === board.items.length;
-  const masterBox = (item) => item.master || { x: item.x - 11, y: item.y - 218, w: 88, h: 62 };
+  const masterBox = (item) => ({ x: item.x + 10, y: item.y - 205, w: 88, h: 62 });
 
   function loadState() {
     try {
@@ -292,3 +292,5 @@
     if (hint) hint.textContent = "Master dev initialization failed.";
   });
 })();
+
+
