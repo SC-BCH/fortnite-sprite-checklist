@@ -1,7 +1,7 @@
 {
   "boardId": "sprite-seirei",
   "version": "20260627-master-dev",
-  "image": "/fortnite-sprite-checklist/images/Ver%202.1.1.png",
+  "image": "../images/Ver 2.1.1.png",
   "board": "../boards/sprite-seirei.20260627.master-dev.json",
-  "events": "/fortnite-sprite-checklist/events/sprite-seirei.20260626.events.json"
+  "events": "../events/sprite-seirei.20260626.events.json"
 }
