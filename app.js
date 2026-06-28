@@ -356,16 +356,16 @@
   }
   function drawCompleteStamp(ctx) {
     if (!eventsData.completeBadge?.enabled || !isComplete() || isRawExportMode()) return;
-    const x = 1520, y = 54, w = 168, h = 58;
+    const x = 1512, y = 54, w = 284, h = 82;
     ctx.save();
     ctx.beginPath();
-    roundRect(ctx, x, y, w, h, 10);
+    roundRect(ctx, x, y, w, h, 14);
     const grad = ctx.createLinearGradient(x, y, x + w, y + h);
     grad.addColorStop(0, "rgba(255,255,255,0.96)");
     grad.addColorStop(1, "rgba(255,246,204,0.98)");
     ctx.fillStyle = grad;
     ctx.fill();
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = 4;
     ctx.strokeStyle = "rgba(255,215,0,0.95)";
     ctx.stroke();
     ctx.translate(x + w / 2, y + h / 2);
@@ -373,13 +373,13 @@
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillStyle = "#d62828";
-    ctx.font = "900 22px Arial";
-    ctx.fillText(completeBadgeMainText(), 0, -8);
+    ctx.font = "900 34px Arial";
+    ctx.fillText(completeBadgeMainText(), 0, -11);
     ctx.fillStyle = "#111";
-    ctx.font = "800 10px Arial";
+    ctx.font = "800 14px Arial";
     ctx.fillText(completeBadgeSubTemplate()
       .replace("{count}", String(boardData.items.length))
-      .replace("{total}", String(boardData.items.length)), 0, 11);
+      .replace("{total}", String(boardData.items.length)), 0, 18);
     ctx.restore();
   }
   async function buildChecklistBlob() {
