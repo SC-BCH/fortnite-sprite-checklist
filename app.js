@@ -509,10 +509,34 @@
   async function saveImage() {
     const blob = await buildChecklistBlob();
     if (!blob) return;
+
+    const fileName = `fortnite-sprite-checklist-${formatCurrentDate()}.png`;
+    const isMobileShareDevice =
+      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    if (isMobileShareDevice && navigator.canShare && navigator.share) {
+      const file = new File([blob], fileName, { type: "image/png" });
+
+      if (navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({
+            files: [file],
+            title: "Fortnite Sprite Checklist",
+            text: "Fortnite Sprite Checklist"
+          });
+          return;
+        } catch (error) {
+          if (error?.name === "AbortError") return;
+          console.warn("Share failed. Falling back to download.", error);
+        }
+      }
+    }
+
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `fortnite-sprite-checklist-${formatCurrentDate()}.png`;
+    a.download = fileName;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -613,3 +637,4 @@
 
   init();
 })();
+
