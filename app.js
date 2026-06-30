@@ -524,9 +524,15 @@
     if (!blob) return;
 
     const fileName = `fortnite-sprite-checklist-${formatCurrentDate()}.png`;
+    const userAgent = navigator.userAgent || "";
+    const platform = navigator.platform || "";
+    const isAndroidDevice = /Android/i.test(userAgent);
     const isIOSShareDevice =
-      /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      !isAndroidDevice &&
+      (
+        /iPhone|iPad|iPod/i.test(userAgent) ||
+        (platform === "MacIntel" && navigator.maxTouchPoints > 1)
+      );
 
     if (isIOSShareDevice && navigator.canShare && navigator.share) {
       const file = new File([blob], fileName, { type: "image/png" });
@@ -655,4 +661,5 @@
 
   init();
 })();
+
 
