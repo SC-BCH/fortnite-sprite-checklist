@@ -524,15 +524,30 @@
     if (!blob) return;
 
     const fileName = `fortnite-sprite-checklist-${formatCurrentDate()}.png`;
+
+    const downloadBlob = () => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+    };
+
     const userAgent = navigator.userAgent || "";
     const platform = navigator.platform || "";
     const isAndroidDevice = /Android/i.test(userAgent);
+
+    if (isAndroidDevice) {
+      downloadBlob();
+      return;
+    }
+
     const isIOSShareDevice =
-      !isAndroidDevice &&
-      (
-        /iPhone|iPad|iPod/i.test(userAgent) ||
-        (platform === "MacIntel" && navigator.maxTouchPoints > 1)
-      );
+      /iPhone|iPad|iPod/i.test(userAgent) ||
+      (platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
     if (isIOSShareDevice && navigator.canShare && navigator.share) {
       const file = new File([blob], fileName, { type: "image/png" });
@@ -552,14 +567,7 @@
       }
     }
 
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = fileName;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    downloadBlob();
   }
   function wireInputs() {
     els.tipsBtn?.addEventListener("click", () => {
@@ -661,5 +669,4 @@
 
   init();
 })();
-
 
