@@ -524,11 +524,11 @@
     if (!blob) return;
 
     const fileName = `fortnite-sprite-checklist-${formatCurrentDate()}.png`;
-    const isMobileShareDevice =
-      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    const isIOSShareDevice =
+      /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-    if (isMobileShareDevice && navigator.canShare && navigator.share) {
+    if (isIOSShareDevice && navigator.canShare && navigator.share) {
       const file = new File([blob], fileName, { type: "image/png" });
 
       if (navigator.canShare({ files: [file] })) {
@@ -655,5 +655,4 @@
 
   init();
 })();
-
 
