@@ -148,6 +148,54 @@ button,input,select { font:inherit; }
 .meta-line.is-hidden { display:none; }
 .footer { margin-top:10px; text-align:center; color:var(--muted); font-size:13px; }
 .footer a { color:inherit; }
+.tips-toggle {
+  white-space:nowrap;
+  border-color:rgba(122,162,255,.62);
+  background:linear-gradient(135deg, rgba(122,162,255,.24), rgba(255,255,255,.06));
+  color:#fff;
+  box-shadow:0 0 0 1px rgba(122,162,255,.18) inset;
+}
+.tips-panel {
+  position:relative;
+  margin:2px 0 12px;
+  padding:12px 14px 12px 16px;
+  border:1px solid rgba(122,162,255,.36);
+  border-left:4px solid rgba(122,162,255,.95);
+  border-radius:16px;
+  background:linear-gradient(135deg, rgba(30,45,92,.88), rgba(12,18,36,.86));
+  color:#eef3ff;
+  font-size:14px;
+  line-height:1.65;
+  box-shadow:0 10px 26px rgba(0,0,0,.22), 0 0 0 1px rgba(255,255,255,.04) inset;
+}
+.tips-panel::before {
+  content:"💡 使い方 / Tips";
+  display:block;
+  margin-bottom:4px;
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.tips-panel.is-hidden { display:none; }
+.tips-text { margin-bottom:8px; }
+.tips-link {
+  display:inline-flex;
+  align-items:center;
+  max-width:100%;
+  padding:6px 10px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  font-weight:900;
+  word-break:break-all;
+  text-decoration:none;
+}
+.tips-link:hover {
+  background:rgba(255,255,255,.16);
+  text-decoration:underline;
+}
 @media (max-width:640px) {
   .wrap { padding:10px 8px 14px; }
   .toolbar { font-size:14px; }
@@ -156,3 +204,5 @@ button,input,select { font:inherit; }
   .complete-badge-main { font-size:clamp(10px,2.2vw,16px); }
   .complete-badge-sub { margin-top:2px; font-size:clamp(6px,1.25vw,9px); }
 }
+
+

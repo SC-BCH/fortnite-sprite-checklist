@@ -12,6 +12,10 @@
     langEnBtn: $("langEnBtn"),
     pageHint: $("pageHint"),
     pageFooter: $("pageFooter"),
+    tipsBtn: $("tipsBtn"),
+    tipsPanel: $("tipsPanel"),
+    tipsText: $("tipsText"),
+    tipsLink: $("tipsLink"),
     colorLabel: $("colorLabel"),
     sizeLabel: $("sizeLabel"),
     nameInput: $("nameInput"),
@@ -50,7 +54,10 @@
       saveImage: "画像保存",
       reset: "全解除",
       saved: "保存済み",
-      hint: "タップで 未所持 → 所持 → マスター → 未所持。状態はこの端末のブラウザに保存されます。",
+      hint: "チェック内容はこの端末のブラウザに自動保存されます。",
+      tipsButton: "使い方",
+      tipsText: "ワンタップでチェックが付き、所持数にカウントされます。2タップで精霊に王冠マークが付き、マスターした精霊としてマスター数にカウントされます。もう一度タップすると未所持に戻ります。チェック内容はこの端末のブラウザに自動保存されます。最新の使い方・更新情報はこちら：",
+      tipsLink: "https://x.com/BCH_1025",
       footer: 'ローカル保存対応 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a>',
       collected: "所持",
       mastered: "マスター",
@@ -70,7 +77,10 @@
       saveImage: "Save Image",
       reset: "Clear All",
       saved: "Saved",
-      hint: "Tap to cycle: Unowned → Collected → Mastered → Unowned. Progress is saved in this browser on this device.",
+      hint: "Your checklist is saved automatically in this browser on this device.",
+      tipsButton: "Tips",
+      tipsText: "Tap once to mark a Sprite as collected and add it to the Collected count. Tap twice to add a crown mark and count it as mastered. Tap again to return it to unowned. Your checklist is saved automatically in this browser on this device. Latest guide and updates:",
+      tipsLink: "https://x.com/BCH_1025",
       footer: 'Local save supported | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a> | <a href="https://buymeacoffee.com/bch1025?new=1" target="_blank" rel="noopener noreferrer">Support the developer</a>',
       collected: "Collected",
       mastered: "Mastered",
@@ -339,6 +349,9 @@
     els.saveBadge.textContent = t("saved");
     els.pageHint.textContent = t("hint");
     els.pageFooter.innerHTML = t("footer");
+    if (els.tipsBtn) els.tipsBtn.textContent = t("tipsButton");
+    if (els.tipsText) els.tipsText.textContent = t("tipsText");
+    if (els.tipsLink) els.tipsLink.textContent = t("tipsLink");
     els.langJaBtn?.classList.toggle("is-active", currentLanguage === "ja");
     els.langEnBtn?.classList.toggle("is-active", currentLanguage === "en");
     refreshMetaOverlay();
@@ -543,6 +556,11 @@
     setTimeout(() => URL.revokeObjectURL(url), 2000);
   }
   function wireInputs() {
+    els.tipsBtn?.addEventListener("click", () => {
+      if (!els.tipsPanel) return;
+      const hidden = els.tipsPanel.classList.toggle("is-hidden");
+      els.tipsBtn.setAttribute("aria-expanded", hidden ? "false" : "true");
+    });
     els.nameInput.value = displayName;
     els.nameColorSelect.value = displayNameColor;
     els.nameSizeSelect.value = displayNameSize;
@@ -637,4 +655,5 @@
 
   init();
 })();
+
 

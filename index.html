@@ -21,6 +21,7 @@
       <button class="lang-btn is-active" id="langJaBtn" type="button">日本語</button>
       <button class="lang-btn" id="langEnBtn" type="button">English</button>
     </div>
+    <button class="action tips-toggle" id="tipsBtn" type="button" aria-expanded="false" aria-controls="tipsPanel">使い方</button>
     <input class="name-input" id="nameInput" type="text" maxlength="32" placeholder="名前（任意）" autocomplete="nickname">
     <span class="pill label" id="colorLabel">文字色</span>
     <select class="select" id="nameColorSelect" aria-label="文字色">
@@ -39,6 +40,10 @@
     <button class="action" id="resetBtn" type="button">全解除</button>
   </div>
   <div class="hint" id="pageHint">タップで切替。状態はこの端末のブラウザに保存されます。</div>
+  <div class="tips-panel is-hidden" id="tipsPanel">
+    <div class="tips-text" id="tipsText"></div>
+    <a class="tips-link" id="tipsLink" href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">https://x.com/BCH_1025</a>
+  </div>
   <div class="board" id="board">
     <img id="boardImage" src="./images/imagessprseireiv2.png" alt="Fortnite Sprite Checklist">
     <div class="meta-overlay" id="metaOverlay">
