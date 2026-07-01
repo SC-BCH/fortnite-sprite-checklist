@@ -16,6 +16,7 @@
     tipsPanel: $("tipsPanel"),
     tipsText: $("tipsText"),
     tipsLink: $("tipsLink"),
+    supportHotspot: $("supportHotspot"),
     colorLabel: $("colorLabel"),
     sizeLabel: $("sizeLabel"),
     nameInput: $("nameInput"),
@@ -40,6 +41,10 @@
     lang: "fortnite_sprite_checklist_lang_v1"
   };
 
+  const SUPPORT_URLS = {
+    ja: "https://ofuse.me/264d3031",
+    en: "https://buymeacoffee.com/bch1025?new=1"
+  };
   const translations = {
     ja: {
       namePlaceholder: "名前（任意）",
@@ -58,7 +63,7 @@
       tipsButton: "使い方",
       tipsText: "ワンタップでチェックが付き、所持数にカウントされます。2タップで精霊に王冠マークが付き、マスターした精霊としてマスター数にカウントされます。もう一度タップすると未所持に戻ります。チェック内容はこの端末のブラウザに自動保存されます。最新の使い方・更新情報はこちら：",
       tipsLink: "https://x.com/BCH_1025",
-      footer: 'ローカル保存対応 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a>',
+      footer: 'ローカル保存対応 | Produced by BCH | <a href="https://x.com/BCH_1025" target="_blank" rel="noopener noreferrer">X @BCH_1025</a> | <a href="https://ofuse.me/264d3031" target="_blank" rel="noopener noreferrer">Support the developer</a>',
       collected: "所持",
       mastered: "マスター",
       loading: "チェックリストを読み込んでいます…",
@@ -569,7 +574,158 @@
 
     downloadBlob();
   }
+  function supportUrl() {
+    if (currentLanguage === "en") {
+      return "https://buymeacoffee.com/bch1025?new=1";
+    }
+
+    return "https://ofuse.me/264d3031";
+  }
+function supportDialogText() {
+    if (currentLanguage === "en") {
+      return {
+        message: "Would you like to support the developer?",
+        yes: "Yes",
+        no: "No"
+      };
+    }
+
+    return {
+      message: "制作者を応援して頂けますか？",
+      yes: "はい",
+      no: "いいえ"
+    };
+  }
+
+  function ensureSupportDialog() {
+    let dialog = document.getElementById("supportConfirmDialog");
+    if (dialog) return dialog;
+
+    dialog = document.createElement("div");
+    dialog.id = "supportConfirmDialog";
+    dialog.className = "support-confirm is-hidden";
+    dialog.setAttribute("role", "dialog");
+    dialog.setAttribute("aria-modal", "true");
+    dialog.setAttribute("aria-hidden", "true");
+
+    const card = document.createElement("div");
+    card.className = "support-confirm-card";
+
+    const message = document.createElement("div");
+    message.className = "support-confirm-message";
+    message.id = "supportConfirmMessage";
+
+    const actions = document.createElement("div");
+    actions.className = "support-confirm-actions";
+
+    const yes = document.createElement("button");
+    yes.type = "button";
+    yes.className = "support-confirm-button support-confirm-yes";
+    yes.id = "supportConfirmYes";
+
+    const no = document.createElement("button");
+    no.type = "button";
+    no.className = "support-confirm-button support-confirm-no";
+    no.id = "supportConfirmNo";
+
+    actions.appendChild(yes);
+    actions.appendChild(no);
+    card.appendChild(message);
+    card.appendChild(actions);
+    dialog.appendChild(card);
+    document.body.appendChild(dialog);
+
+    yes.addEventListener("click", () => {
+      window.location.assign(supportUrl());
+    });
+
+    no.addEventListener("click", closeSupportConfirm);
+
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) closeSupportConfirm();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeSupportConfirm();
+    });
+
+    return dialog;
+  }
+
+  function closeSupportConfirm() {
+    const dialog = document.getElementById("supportConfirmDialog");
+    if (!dialog) return;
+    dialog.classList.add("is-hidden");
+    dialog.setAttribute("aria-hidden", "true");
+  }
+
+  function navigateToSupport() {
+    const dialog = ensureSupportDialog();
+    const text = supportDialogText();
+
+    const message = dialog.querySelector("#supportConfirmMessage");
+    const yes = dialog.querySelector("#supportConfirmYes");
+    const no = dialog.querySelector("#supportConfirmNo");
+
+    if (message) message.textContent = text.message;
+    if (yes) yes.textContent = text.yes;
+    if (no) no.textContent = text.no;
+
+    dialog.classList.remove("is-hidden");
+    dialog.setAttribute("aria-hidden", "false");
+
+    if (no) no.focus();
+  }
+function wireSupportHotspot() {
+    const hotspot = els.supportHotspot;
+    if (!hotspot) return;
+
+    let timer = null;
+    let activePointerId = null;
+    let startX = 0;
+    let startY = 0;
+
+    const clearLongPress = () => {
+      if (timer) {
+        window.clearTimeout(timer);
+        timer = null;
+      }
+      activePointerId = null;
+    };
+
+    const startLongPress = (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      if (event.cancelable) event.preventDefault();
+
+      activePointerId = event.pointerId;
+      startX = event.clientX;
+      startY = event.clientY;
+
+      timer = window.setTimeout(() => {
+        timer = null;
+        activePointerId = null;
+        navigateToSupport();
+      }, 850);
+    };
+
+    const moveLongPress = (event) => {
+      if (activePointerId !== event.pointerId) return;
+      const moved =
+        Math.abs(event.clientX - startX) > 12 ||
+        Math.abs(event.clientY - startY) > 12;
+      if (moved) clearLongPress();
+    };
+
+    hotspot.addEventListener("pointerdown", startLongPress);
+    hotspot.addEventListener("pointermove", moveLongPress);
+    hotspot.addEventListener("pointerup", clearLongPress);
+    hotspot.addEventListener("pointercancel", clearLongPress);
+    hotspot.addEventListener("pointerleave", clearLongPress);
+    hotspot.addEventListener("contextmenu", (event) => event.preventDefault());
+    hotspot.addEventListener("click", (event) => event.preventDefault());
+  }
   function wireInputs() {
+    wireSupportHotspot();
     els.tipsBtn?.addEventListener("click", () => {
       if (!els.tipsPanel) return;
       const hidden = els.tipsPanel.classList.toggle("is-hidden");
@@ -669,4 +825,7 @@
 
   init();
 })();
+
+
+
 

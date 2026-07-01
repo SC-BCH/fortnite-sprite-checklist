@@ -205,4 +205,86 @@ button,input,select { font:inherit; }
   .complete-badge-sub { margin-top:2px; font-size:clamp(6px,1.25vw,9px); }
 }
 
+.support-hidden-hotspot {
+  position:absolute;
+  left:84.2%;
+  top:2.0%;
+  width:9.0%;
+  height:13.5%;
+  z-index:24;
+  padding:0;
+  margin:0;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  opacity:0;
+  cursor:default;
+  appearance:none;
+  -webkit-appearance:none;
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.support-hidden-hotspot:focus-visible {
+  outline:2px solid rgba(122,162,255,.55);
+  outline-offset:2px;
+}
+
+.support-confirm {
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.52);
+}
+.support-confirm.is-hidden {
+  display:none;
+}
+.support-confirm-card {
+  width:min(92vw, 360px);
+  padding:20px 18px 16px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:18px;
+  background:linear-gradient(135deg, rgba(30,45,92,.98), rgba(12,18,36,.98));
+  color:#fff;
+  box-shadow:0 18px 44px rgba(0,0,0,.38), 0 0 0 1px rgba(255,255,255,.05) inset;
+  text-align:center;
+}
+.support-confirm-message {
+  margin-bottom:16px;
+  font-size:16px;
+  font-weight:800;
+  line-height:1.55;
+}
+.support-confirm-actions {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+.support-confirm-button {
+  min-width:96px;
+  padding:9px 14px;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
+.support-confirm-button:hover,
+.support-confirm-button:focus-visible {
+  background:rgba(255,255,255,.18);
+  outline:2px solid rgba(122,162,255,.7);
+  outline-offset:2px;
+}
+.support-confirm-yes {
+  border-color:rgba(139,255,176,.45);
+}
+.support-confirm-no {
+  color:rgba(255,255,255,.82);
+}
 
