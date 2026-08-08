@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>FORTNITE Sprite Checklist Ver.7.0.0</title>
   <meta name="theme-color" content="#0b1020" />
-  <link rel="stylesheet" href="./app.css?v=20260720-v4-background-secret-a" />
+  <link rel="stylesheet" href="./app.css?v=20260808-v7-sprite-code-a" />
 </head>
 <body>
   <main class="app-shell">
@@ -47,6 +47,7 @@
 
         <button class="pill-button primary-button" id="saveImageBtn" type="button">画像保存</button>
         <button class="pill-button" id="clearAllBtn" type="button">すべて解除</button>
+        <button class="pill-button" id="spriteCodeBtn" type="button" hidden>精霊コード</button>
       </div>
     </section>
 
@@ -155,6 +156,128 @@
     </div>
   </dialog>
 
+  <dialog
+    class="background-dialog"
+    id="spriteCodeDialog"
+    aria-labelledby="spriteCodeDialogTitle"
+    aria-describedby="spriteCodeMessage"
+  >
+    <div class="background-dialog-panel">
+      <header class="background-dialog-header">
+        <h2
+          class="background-dialog-title"
+          id="spriteCodeDialogTitle"
+        >精霊コード</h2>
+      </header>
+
+      <div class="background-code-group">
+        <label
+          class="background-code-label"
+          id="spriteCodeCurrentLabel"
+          for="spriteCodeOutput"
+        >現在の精霊コード</label>
+
+        <input
+          class="background-code-input"
+          id="spriteCodeOutput"
+          type="text"
+          readonly
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+
+        <div class="background-code-actions">
+          <button
+            class="background-dialog-button background-dialog-button-primary"
+            id="spriteCodeCopyBtn"
+            type="button"
+          >コピー</button>
+        </div>
+      </div>
+
+      <section
+        class="background-options-section"
+        aria-labelledby="spriteCodeImportTitle"
+      >
+        <div
+          class="background-unlocked-title"
+          id="spriteCodeImportTitle"
+        >別ブラウザから引き継ぐ</div>
+
+        <div class="background-code-group">
+          <label
+            class="background-code-label"
+            id="spriteCodeImportLabel"
+            for="spriteCodeInput"
+          >精霊コード</label>
+
+          <input
+            class="background-code-input"
+            id="spriteCodeInput"
+            type="text"
+            maxlength="128"
+            placeholder="F1.から始まる精霊コードを入力"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <div class="background-code-actions">
+            <button
+              class="background-dialog-button background-dialog-button-primary"
+              id="spriteCodePreviewBtn"
+              type="button"
+            >内容を確認</button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="background-options-section"
+        id="spriteCodePreviewSection"
+        aria-labelledby="spriteCodePreviewTitle"
+        hidden
+      >
+        <div
+          class="background-unlocked-title"
+          id="spriteCodePreviewTitle"
+        >読み込み内容</div>
+
+        <p
+          class="background-message"
+          id="spriteCodeSummary"
+        ></p>
+
+        <div class="background-code-actions">
+          <button
+            class="background-dialog-button background-dialog-button-primary"
+            id="spriteCodeApplyBtn"
+            type="button"
+            disabled
+          >この状態を反映する</button>
+        </div>
+      </section>
+
+      <p
+        class="background-message"
+        id="spriteCodeMessage"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div class="background-dialog-actions">
+        <button
+          class="background-dialog-button background-dialog-button-close"
+          id="spriteCodeCancelBtn"
+          type="button"
+        >閉じる</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./sprite-state-codec.js?v=20260808-f1-a"></script>
+  <script src="./sprite-transfer-ui.js?v=20260808-f1-b"></script>
   <script src="./app.js?v=20260807-v7-0-punk-gem-117-e"></script>
   <script src="./tips.js?v=20260805-v7-0-note-link-b"></script>
 </body>
