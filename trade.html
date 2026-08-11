@@ -15,7 +15,7 @@
   />
   <link
     rel="stylesheet"
-    href="./trade.css?v=20260808-trade-b"
+    href="./trade.css?v=20260811-trade-modes-player-state-d"
   />
 </head>
 
@@ -63,16 +63,16 @@
         id="tradeDescription"
       >
         自分と相手の精霊コードを比較し、
-        お互いに未所持の精霊を確認します。
+        リスト埋めとマスター埋めの候補を確認します。
       </p>
 
       <p
         class="trade-notice"
         id="tradeNotice"
       >
-        この結果は所持状況の差分です。
+        この結果は所持・Master状態の差分から候補を表示します。
         実際に交換できることや交換成立を保証するものではありません。
-        Masterも自動的に交換可能とは判定しません。
+        Master表示も交換可能判定ではありません。
       </p>
     </section>
 
@@ -186,6 +186,34 @@
         id="tradeResultsTitle"
       >比較結果</h2>
 
+      <div
+        class="trade-mode-tabs"
+        id="tradeModeTabs"
+        role="group"
+        aria-label="表示切り替え"
+      >
+        <button
+          class="pill-button trade-mode-button is-active"
+          id="tradeModeListBtn"
+          type="button"
+          aria-pressed="true"
+        >リスト埋め</button>
+
+        <button
+          class="pill-button trade-mode-button"
+          id="tradeModeMasterBtn"
+          type="button"
+          aria-pressed="false"
+        >マスター埋め</button>
+
+        <button
+          class="pill-button trade-mode-button"
+          id="tradeModeAllBtn"
+          type="button"
+          aria-pressed="false"
+        >リスト＆マスター埋め</button>
+      </div>
+
       <div class="trade-result-grid">
 
         <article class="trade-card trade-result-card">
@@ -193,19 +221,19 @@
             <h3
               class="trade-result-title"
               id="tradePartnerToMeTitle"
-            >相手が所持・自分が未所持</h3>
+            >相手から受け取る候補</h3>
 
             <span
               class="pill trade-result-summary"
               id="tradePartnerToMeSummary"
-            >0件 / Master 0</span>
+            >0件</span>
           </div>
 
           <p
             class="trade-result-description"
             id="tradePartnerToMeDescription"
           >
-            相手が所持していて、自分が未所持の精霊です。
+            相手から受け取る候補です。
           </p>
 
           <ul
@@ -219,19 +247,19 @@
             <h3
               class="trade-result-title"
               id="tradeMeToPartnerTitle"
-            >自分が所持・相手が未所持</h3>
+            >自分から渡す候補</h3>
 
             <span
               class="pill trade-result-summary"
               id="tradeMeToPartnerSummary"
-            >0件 / Master 0</span>
+            >0件</span>
           </div>
 
           <p
             class="trade-result-description"
             id="tradeMeToPartnerDescription"
           >
-            自分が所持していて、相手が未所持の精霊です。
+            自分から渡す候補です。
           </p>
 
           <ul
@@ -247,6 +275,6 @@
 
   <script src="./sprite-state-codec.js?v=20260811-f1-zero-width-c"></script>
   <script src="./sprite-catalog-f1.js?v=20260809-f1-display-c"></script>
-  <script src="./trade.js?v=20260809-trade-d"></script>
+  <script src="./trade.js?v=20260811-trade-modes-player-state-h"></script>
 </body>
 </html>
