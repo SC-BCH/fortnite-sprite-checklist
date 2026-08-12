@@ -11,11 +11,11 @@
 
   <link
     rel="stylesheet"
-    href="./app.css?v=20260808-v7-sprite-code-a"
+    href="./app.css?v=20260812-v7-f2-ui-a"
   />
   <link
     rel="stylesheet"
-    href="./trade.css?v=20260811-trade-modes-player-state-d"
+    href="./trade.css?v=20260812-trade-partner-code-copy-d"
   />
 </head>
 
@@ -95,8 +95,8 @@
             class="background-code-input trade-code-input"
             id="tradeMyCode"
             type="text"
-            maxlength="128"
-            placeholder="F1.から始まる自分の精霊コード"
+            maxlength="256"
+            placeholder="F1. または F2. から始まる自分の精霊コード"
             autocomplete="off"
             autocapitalize="off"
             spellcheck="false"
@@ -136,12 +136,59 @@
             class="background-code-input trade-code-input"
             id="tradePartnerCode"
             type="text"
-            maxlength="128"
-            placeholder="F1.から始まる相手の精霊コード"
+            maxlength="256"
+            placeholder="F1. または F2. から始まる相手の精霊コード"
             autocomplete="off"
             autocapitalize="off"
             spellcheck="false"
           />
+
+          <div
+            class="trade-saved-partners"
+            id="tradeSavedPartners"
+          >
+            <div class="trade-saved-partner-heading-row">
+              <label
+                class="trade-saved-partner-label"
+                id="tradeSavedPartnerLabel"
+                for="tradeSavedPartnerSelect"
+              >保存済みプレイヤー</label>
+
+              <span
+                class="trade-saved-partner-count"
+                id="tradeSavedPartnerCount"
+              >0 / 5</span>
+            </div>
+
+            <select
+              class="trade-saved-partner-select"
+              id="tradeSavedPartnerSelect"
+            >
+              <option value="">保存済みプレイヤーを選択</option>
+            </select>
+
+            <div class="trade-saved-partner-actions">
+              <button
+                class="background-dialog-button"
+                id="tradeSavedPartnerSaveBtn"
+                type="button"
+              >この相手を保存</button>
+
+              <button
+                class="background-dialog-button"
+                id="tradeSavedPartnerDeleteBtn"
+                type="button"
+                disabled
+              >選択した相手を削除</button>
+            </div>
+
+            <p
+              class="trade-field-message"
+              id="tradeSavedPartnerMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
 
           <p
             class="trade-field-message"
@@ -149,6 +196,30 @@
             role="status"
             aria-live="polite"
           ></p>
+
+          <div
+            class="trade-partner-epic"
+            id="tradePartnerEpic"
+            hidden
+          >
+            <span
+              class="trade-partner-epic-label"
+              id="tradePartnerEpicLabel"
+            >相手のEpic Gamesディスプレイネーム</span>
+
+            <div class="trade-partner-epic-value-row">
+              <strong
+                class="trade-partner-epic-name"
+                id="tradePartnerEpicName"
+              ></strong>
+
+              <button
+                class="trade-partner-epic-copy"
+                id="tradePartnerEpicCopyBtn"
+                type="button"
+              >コピー</button>
+            </div>
+          </div>
         </div>
       </article>
 
@@ -266,6 +337,34 @@
             class="trade-result-list"
             id="tradeMeToPartnerList"
           ></ul>
+
+          <div
+            class="trade-partner-code-update"
+            id="tradePartnerCodeUpdate"
+          >
+            <div class="trade-partner-code-update-actions">
+              <button
+                class="background-dialog-button trade-partner-code-update-button"
+                id="tradePartnerCodeUpdateBtn"
+                type="button"
+                disabled
+              >相手コードを更新</button>
+
+              <button
+                class="background-dialog-button trade-partner-code-copy-button"
+                id="tradePartnerCodeCopyBtn"
+                type="button"
+                disabled
+              >相手コードをコピー</button>
+            </div>
+
+            <p
+              class="trade-field-message"
+              id="tradePartnerCodeUpdateMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
         </article>
 
       </div>
@@ -273,8 +372,8 @@
 
   </main>
 
-  <script src="./sprite-state-codec.js?v=20260811-f1-zero-width-c"></script>
-  <script src="./sprite-catalog-f1.js?v=20260809-f1-display-c"></script>
-  <script src="./trade.js?v=20260811-trade-modes-player-state-h"></script>
+  <script src="./sprite-state-codec.js?v=20260812-f2-codec-a"></script>
+  <script src="./sprite-catalog-f1.js?v=20260812-f1-display-d"></script>
+  <script src="./trade.js?v=20260812-trade-partner-code-copy-d"></script>
 </body>
 </html>
