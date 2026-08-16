@@ -627,6 +627,35 @@
             class="trade-result-list"
             id="tradePartnerToMeList"
           ></ul>
+
+          <div
+            class="trade-partner-code-update"
+            id="tradePartnerToMeCodeUpdate"
+            hidden
+          >
+            <div class="trade-partner-code-update-actions">
+              <button
+                class="background-dialog-button trade-partner-code-update-button"
+                id="tradePartnerToMeCodeUpdateBtn"
+                type="button"
+                disabled
+              >相手コードを更新</button>
+
+              <button
+                class="background-dialog-button trade-partner-code-copy-button"
+                id="tradePartnerToMeCodeCopyBtn"
+                type="button"
+                disabled
+              >相手コードをコピー</button>
+            </div>
+
+            <p
+              class="trade-field-message"
+              id="tradePartnerToMeCodeUpdateMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
         </article>
 
         <article class="trade-card trade-result-card">
