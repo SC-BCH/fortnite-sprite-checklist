@@ -76,9 +76,53 @@
       </p>
     </section>
 
+    <section
+      class="trade-card trade-player-count-card"
+      id="tradePlayerCountCard"
+      hidden
+    >
+      <div class="trade-player-count-heading-row">
+        <span
+          class="trade-saved-partner-label"
+          id="tradePlayerCountLabel"
+        >比較人数</span>
+
+        <div
+          class="trade-player-count-tabs"
+          id="tradePlayerCountTabs"
+          role="group"
+          aria-label="比較人数"
+        >
+          <button
+            class="pill-button trade-player-count-button is-active"
+            id="tradePlayerCount2Btn"
+            type="button"
+            aria-pressed="true"
+          >2人</button>
+
+          <button
+            class="pill-button trade-player-count-button"
+            id="tradePlayerCount3Btn"
+            type="button"
+            aria-pressed="false"
+          >3人</button>
+
+          <button
+            class="pill-button trade-player-count-button"
+            id="tradePlayerCount4Btn"
+            type="button"
+            aria-pressed="false"
+          >4人</button>
+        </div>
+      </div>
+    </section>
+
     <section class="trade-input-grid">
 
-      <article class="trade-card">
+      <article
+        class="trade-card"
+        id="tradeMyCard"
+      >
         <h2
           class="trade-section-title"
           id="tradeMyTitle"
@@ -119,7 +163,10 @@
         </div>
       </article>
 
-      <article class="trade-card">
+      <article
+        class="trade-card"
+        id="tradePartnerACard"
+      >
         <h2
           class="trade-section-title"
           id="tradePartnerTitle"
@@ -223,6 +270,222 @@
         </div>
       </article>
 
+      <article
+        class="trade-card"
+        id="tradePartnerBCard"
+        hidden
+      >
+        <h2
+          class="trade-section-title"
+          id="tradePartnerBTitle"
+        >相手B</h2>
+
+        <div class="trade-code-group">
+          <label
+            class="background-code-label"
+            id="tradePartnerBCodeLabel"
+            for="tradePartnerBCode"
+          >精霊コード</label>
+
+          <input
+            class="background-code-input trade-code-input"
+            id="tradePartnerBCode"
+            type="text"
+            maxlength="256"
+            placeholder="F1. または F2. から始まる相手Bの精霊コード"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <div
+            class="trade-saved-partners"
+            id="tradeSavedPartnersB"
+          >
+            <div class="trade-saved-partner-heading-row">
+              <label
+                class="trade-saved-partner-label"
+                id="tradeSavedPartnerBLabel"
+                for="tradeSavedPartnerBSelect"
+              >保存済みプレイヤー</label>
+
+              <span
+                class="trade-saved-partner-count"
+                id="tradeSavedPartnerBCount"
+              >0 / 5</span>
+            </div>
+
+            <select
+              class="trade-saved-partner-select"
+              id="tradeSavedPartnerBSelect"
+            >
+              <option value="">保存済みプレイヤーを選択</option>
+            </select>
+
+            <div class="trade-saved-partner-actions">
+              <button
+                class="background-dialog-button"
+                id="tradeSavedPartnerBSaveBtn"
+                type="button"
+              >この相手を保存</button>
+
+              <button
+                class="background-dialog-button"
+                id="tradeSavedPartnerBDeleteBtn"
+                type="button"
+                disabled
+              >選択した相手を削除</button>
+            </div>
+
+            <p
+              class="trade-field-message"
+              id="tradeSavedPartnerBMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <p
+            class="trade-field-message"
+            id="tradePartnerBCodeMessage"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <div
+            class="trade-partner-epic"
+            id="tradePartnerBEpic"
+            hidden
+          >
+            <span
+              class="trade-partner-epic-label"
+              id="tradePartnerBEpicLabel"
+            >相手BのEpic Gamesディスプレイネーム</span>
+
+            <div class="trade-partner-epic-value-row">
+              <strong
+                class="trade-partner-epic-name"
+                id="tradePartnerBEpicName"
+              ></strong>
+
+              <button
+                class="trade-partner-epic-copy"
+                id="tradePartnerBEpicCopyBtn"
+                type="button"
+              >コピー</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article
+        class="trade-card"
+        id="tradePartnerCCard"
+        hidden
+      >
+        <h2
+          class="trade-section-title"
+          id="tradePartnerCTitle"
+        >相手C</h2>
+
+        <div class="trade-code-group">
+          <label
+            class="background-code-label"
+            id="tradePartnerCCodeLabel"
+            for="tradePartnerCCode"
+          >精霊コード</label>
+
+          <input
+            class="background-code-input trade-code-input"
+            id="tradePartnerCCode"
+            type="text"
+            maxlength="256"
+            placeholder="F1. または F2. から始まる相手Cの精霊コード"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <div
+            class="trade-saved-partners"
+            id="tradeSavedPartnersC"
+          >
+            <div class="trade-saved-partner-heading-row">
+              <label
+                class="trade-saved-partner-label"
+                id="tradeSavedPartnerCLabel"
+                for="tradeSavedPartnerCSelect"
+              >保存済みプレイヤー</label>
+
+              <span
+                class="trade-saved-partner-count"
+                id="tradeSavedPartnerCCount"
+              >0 / 5</span>
+            </div>
+
+            <select
+              class="trade-saved-partner-select"
+              id="tradeSavedPartnerCSelect"
+            >
+              <option value="">保存済みプレイヤーを選択</option>
+            </select>
+
+            <div class="trade-saved-partner-actions">
+              <button
+                class="background-dialog-button"
+                id="tradeSavedPartnerCSaveBtn"
+                type="button"
+              >この相手を保存</button>
+
+              <button
+                class="background-dialog-button"
+                id="tradeSavedPartnerCDeleteBtn"
+                type="button"
+                disabled
+              >選択した相手を削除</button>
+            </div>
+
+            <p
+              class="trade-field-message"
+              id="tradeSavedPartnerCMessage"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
+
+          <p
+            class="trade-field-message"
+            id="tradePartnerCCodeMessage"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <div
+            class="trade-partner-epic"
+            id="tradePartnerCEpic"
+            hidden
+          >
+            <span
+              class="trade-partner-epic-label"
+              id="tradePartnerCEpicLabel"
+            >相手CのEpic Gamesディスプレイネーム</span>
+
+            <div class="trade-partner-epic-value-row">
+              <strong
+                class="trade-partner-epic-name"
+                id="tradePartnerCEpicName"
+              ></strong>
+
+              <button
+                class="trade-partner-epic-copy"
+                id="tradePartnerCEpicCopyBtn"
+                type="button"
+              >コピー</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </section>
 
     <div class="trade-compare-actions">
@@ -258,6 +521,56 @@
       >比較結果</h2>
 
       <div
+        class="trade-pair-tabs"
+        id="tradePairTabs"
+        role="group"
+        aria-label="比較ペア切り替え"
+        hidden
+      >
+        <button
+          class="pill-button trade-pair-button is-active"
+          id="tradePairMyABtn"
+          type="button"
+          aria-pressed="true"
+        >自分 ↔ 相手A</button>
+
+        <button
+          class="pill-button trade-pair-button"
+          id="tradePairMyBBtn"
+          type="button"
+          aria-pressed="false"
+        >自分 ↔ 相手B</button>
+
+        <button
+          class="pill-button trade-pair-button"
+          id="tradePairMyCBtn"
+          type="button"
+          aria-pressed="false"
+        >自分 ↔ 相手C</button>
+
+        <button
+          class="pill-button trade-pair-button"
+          id="tradePairABBtn"
+          type="button"
+          aria-pressed="false"
+        >相手A ↔ 相手B</button>
+
+        <button
+          class="pill-button trade-pair-button"
+          id="tradePairACBtn"
+          type="button"
+          aria-pressed="false"
+        >相手A ↔ 相手C</button>
+
+        <button
+          class="pill-button trade-pair-button"
+          id="tradePairBCBtn"
+          type="button"
+          aria-pressed="false"
+        >相手B ↔ 相手C</button>
+      </div>
+
+      <div
         class="trade-mode-tabs"
         id="tradeModeTabs"
         role="group"
@@ -285,7 +598,10 @@
         >リスト＆マスター埋め</button>
       </div>
 
-      <div class="trade-result-grid">
+      <div
+        class="trade-result-grid"
+        id="tradeResultGrid"
+      >
 
         <article class="trade-card trade-result-card">
           <div class="trade-result-heading-row">
