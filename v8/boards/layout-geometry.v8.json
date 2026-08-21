@@ -1,0 +1,922 @@
+{
+  "schema": "ver8-layout-geometry-audit-v1",
+  "status": "geometry-only",
+  "canvas": {
+    "width": 2812,
+    "height": 2838
+  },
+  "textAnchors": {
+    "collectValue": {
+      "x": 604,
+      "y": 130,
+      "align": "left",
+      "fontSize": 94
+    },
+    "masterValue": {
+      "x": 604,
+      "y": 258,
+      "align": "left",
+      "fontSize": 94
+    },
+    "date": {
+      "x": 104,
+      "y": 68,
+      "align": "left",
+      "fontSize": 86
+    },
+    "name": {
+      "x": 352,
+      "y": 390,
+      "align": "center",
+      "fontSize": 120,
+      "maxWidth": 640,
+      "fontStyle": "italic"
+    }
+  },
+  "slotGrid": {
+    "rows": 4,
+    "columns": 9,
+    "groupsPerRow": 3,
+    "slotsPerGroup": 3,
+    "slotCount": 36
+  },
+  "sources": {
+    "background": {
+      "path": "../images/SpriteChechList Ver8.0 (2812 x 2838 px)背景.png",
+      "sha256": "D8B23D2F35663F146F8DBBD794DF5685DDCC6D99956615ED9CBC8BA621A28901"
+    },
+    "versionLayer": {
+      "path": "../images/3.png",
+      "sha256": "E6FCC8E57010C59C36AF59790B1F116E831233F8C82BC63CD5D1446DF77C085E"
+    },
+    "spriteLayer": {
+      "path": "../images/4.png",
+      "sha256": "E76143D7D09873C70E6E035B393E40C95A286297FCE539B5EF724C90CADB1A2A"
+    },
+    "crownLayer": {
+      "path": "../images/5.png",
+      "sha256": "0DC0FC9D5C4BF2E655ABAEB3ED6EDCEE847450EE4197A61D6C4BDF7C4571A1EA"
+    },
+    "checkboxLayer": {
+      "path": "../images/6.png",
+      "sha256": "97F125155E8F493A79E246CDFE5743894F4DE3FC383C95E2DDC9090BACD33411"
+    },
+    "groupPanelLayer": {
+      "path": "../images/7.png",
+      "sha256": "688557E01B5AD42CADD11F666E0721F2613CD9FCEBE80F1220B69CDCC9CA4821"
+    },
+    "markLayer": {
+      "path": "../images/8.png",
+      "sha256": "172B04842C64E3D5CF2AADCAE407DC9A0669AEFD1B8B70A8EE332457F60058D1"
+    },
+    "completeLayer": {
+      "path": "../images/9.png",
+      "sha256": "9B13444FEA5C13403FACB7682CF8BA16C2050EA4F0E69DDD2501D197647F0000"
+    }
+  },
+  "markSources": {
+    "check": {
+      "x": 92,
+      "y": 860,
+      "w": 138,
+      "h": 156
+    },
+    "heart": {
+      "x": 367,
+      "y": 896,
+      "w": 119,
+      "h": 119
+    },
+    "star": {
+      "x": 632,
+      "y": 893,
+      "w": 129,
+      "h": 122
+    }
+  },
+  "groups": [
+    {
+      "groupNo": 1,
+      "row": 1,
+      "group": 1,
+      "panelDetectedRect": {
+        "x": 30,
+        "y": 881,
+        "w": 784,
+        "h": 152
+      }
+    },
+    {
+      "groupNo": 2,
+      "row": 1,
+      "group": 2,
+      "panelDetectedRect": {
+        "x": 965,
+        "y": 880,
+        "w": 784,
+        "h": 153
+      }
+    },
+    {
+      "groupNo": 3,
+      "row": 1,
+      "group": 3,
+      "panelDetectedRect": {
+        "x": 1919,
+        "y": 879,
+        "w": 784,
+        "h": 152
+      }
+    },
+    {
+      "groupNo": 4,
+      "row": 2,
+      "group": 1,
+      "panelDetectedRect": {
+        "x": 55,
+        "y": 1467,
+        "w": 784,
+        "h": 153
+      }
+    },
+    {
+      "groupNo": 5,
+      "row": 2,
+      "group": 2,
+      "panelDetectedRect": {
+        "x": 990,
+        "y": 1466,
+        "w": 784,
+        "h": 153
+      }
+    },
+    {
+      "groupNo": 6,
+      "row": 2,
+      "group": 3,
+      "panelDetectedRect": {
+        "x": 1943,
+        "y": 1465,
+        "w": 784,
+        "h": 152
+      }
+    },
+    {
+      "groupNo": 7,
+      "row": 3,
+      "group": 1,
+      "panelDetectedRect": {
+        "x": 58,
+        "y": 2069,
+        "w": 784,
+        "h": 152
+      }
+    },
+    {
+      "groupNo": 8,
+      "row": 3,
+      "group": 2,
+      "panelDetectedRect": {
+        "x": 993,
+        "y": 2068,
+        "w": 784,
+        "h": 153
+      }
+    },
+    {
+      "groupNo": 9,
+      "row": 3,
+      "group": 3,
+      "panelDetectedRect": {
+        "x": 1946,
+        "y": 2067,
+        "w": 784,
+        "h": 152
+      }
+    },
+    {
+      "groupNo": 10,
+      "row": 4,
+      "group": 1,
+      "panelDetectedRect": {
+        "x": 31,
+        "y": 2646,
+        "w": 784,
+        "h": 152
+      }
+    },
+    {
+      "groupNo": 11,
+      "row": 4,
+      "group": 2,
+      "panelDetectedRect": {
+        "x": 966,
+        "y": 2645,
+        "w": 784,
+        "h": 152
+      }
+    },
+    {
+      "groupNo": 12,
+      "row": 4,
+      "group": 3,
+      "panelDetectedRect": {
+        "x": 1920,
+        "y": 2643,
+        "w": 784,
+        "h": 153
+      }
+    }
+  ],
+  "slots": [
+    {
+      "slotNo": 1,
+      "row": 1,
+      "column": 1,
+      "group": 1,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 93,
+        "y": 898,
+        "w": 123,
+        "h": 122
+      },
+      "crownDetectedRect": {
+        "x": 131,
+        "y": 495,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 2,
+      "row": 1,
+      "column": 2,
+      "group": 1,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 364,
+        "y": 894,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 401,
+        "y": 495,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 3,
+      "row": 1,
+      "column": 3,
+      "group": 1,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 635,
+        "y": 895,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 671,
+        "y": 495,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 4,
+      "row": 1,
+      "column": 4,
+      "group": 2,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1026,
+        "y": 896,
+        "w": 125,
+        "h": 125
+      },
+      "crownDetectedRect": {
+        "x": 1060,
+        "y": 483,
+        "w": 202,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 5,
+      "row": 1,
+      "column": 5,
+      "group": 2,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 1301,
+        "y": 893,
+        "w": 125,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1342,
+        "y": 483,
+        "w": 201,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 6,
+      "row": 1,
+      "column": 6,
+      "group": 2,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 1577,
+        "y": 894,
+        "w": 125,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1628,
+        "y": 483,
+        "w": 202,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 7,
+      "row": 1,
+      "column": 7,
+      "group": 3,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1970,
+        "y": 896,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1998,
+        "y": 483,
+        "w": 201,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 8,
+      "row": 1,
+      "column": 8,
+      "group": 3,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 2244,
+        "y": 893,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2274,
+        "y": 483,
+        "w": 202,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 9,
+      "row": 1,
+      "column": 9,
+      "group": 3,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 2518,
+        "y": 894,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2551,
+        "y": 483,
+        "w": 202,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 10,
+      "row": 2,
+      "column": 1,
+      "group": 1,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 93,
+        "y": 1484,
+        "w": 122,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 137,
+        "y": 1081,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 11,
+      "row": 2,
+      "column": 2,
+      "group": 1,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 363,
+        "y": 1481,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 408,
+        "y": 1081,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 12,
+      "row": 2,
+      "column": 3,
+      "group": 1,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 634,
+        "y": 1482,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 678,
+        "y": 1081,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 13,
+      "row": 2,
+      "column": 4,
+      "group": 2,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1026,
+        "y": 1483,
+        "w": 124,
+        "h": 125
+      },
+      "crownDetectedRect": {
+        "x": 1067,
+        "y": 1069,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 14,
+      "row": 2,
+      "column": 5,
+      "group": 2,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 1301,
+        "y": 1480,
+        "w": 125,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1331,
+        "y": 1069,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 15,
+      "row": 2,
+      "column": 6,
+      "group": 2,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 1576,
+        "y": 1480,
+        "w": 125,
+        "h": 125
+      },
+      "crownDetectedRect": {
+        "x": 1618,
+        "y": 1069,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 16,
+      "row": 2,
+      "column": 7,
+      "group": 3,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1970,
+        "y": 1483,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1981,
+        "y": 1069,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 17,
+      "row": 2,
+      "column": 8,
+      "group": 3,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 2243,
+        "y": 1480,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2255,
+        "y": 1081,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 18,
+      "row": 2,
+      "column": 9,
+      "group": 3,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 2517,
+        "y": 1481,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2542,
+        "y": 1069,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 19,
+      "row": 3,
+      "column": 1,
+      "group": 1,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 93,
+        "y": 2083,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 112,
+        "y": 1696,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 20,
+      "row": 3,
+      "column": 2,
+      "group": 1,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 364,
+        "y": 2080,
+        "w": 122,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 383,
+        "y": 1696,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 21,
+      "row": 3,
+      "column": 3,
+      "group": 1,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 635,
+        "y": 2081,
+        "w": 122,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 653,
+        "y": 1696,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 22,
+      "row": 3,
+      "column": 4,
+      "group": 2,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1026,
+        "y": 2082,
+        "w": 125,
+        "h": 125
+      },
+      "crownDetectedRect": {
+        "x": 1067,
+        "y": 1678,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 23,
+      "row": 3,
+      "column": 5,
+      "group": 2,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 1301,
+        "y": 2079,
+        "w": 125,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1342,
+        "y": 1682,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 24,
+      "row": 3,
+      "column": 6,
+      "group": 2,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 1577,
+        "y": 2080,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1611,
+        "y": 1677,
+        "w": 201,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 25,
+      "row": 3,
+      "column": 7,
+      "group": 3,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1970,
+        "y": 2082,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2006,
+        "y": 1672,
+        "w": 201,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 26,
+      "row": 3,
+      "column": 8,
+      "group": 3,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 2244,
+        "y": 2079,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2281,
+        "y": 1680,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 27,
+      "row": 3,
+      "column": 9,
+      "group": 3,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 2518,
+        "y": 2080,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2547,
+        "y": 1669,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 28,
+      "row": 4,
+      "column": 1,
+      "group": 1,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 92,
+        "y": 2659,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 129,
+        "y": 2245,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 29,
+      "row": 4,
+      "column": 2,
+      "group": 1,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 363,
+        "y": 2656,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 399,
+        "y": 2245,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 30,
+      "row": 4,
+      "column": 3,
+      "group": 1,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 634,
+        "y": 2657,
+        "w": 123,
+        "h": 123
+      },
+      "crownDetectedRect": {
+        "x": 669,
+        "y": 2245,
+        "w": 201,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 31,
+      "row": 4,
+      "column": 4,
+      "group": 2,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1025,
+        "y": 2658,
+        "w": 125,
+        "h": 125
+      },
+      "crownDetectedRect": {
+        "x": 1060,
+        "y": 2250,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 32,
+      "row": 4,
+      "column": 5,
+      "group": 2,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 1300,
+        "y": 2655,
+        "w": 125,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1346,
+        "y": 2247,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 33,
+      "row": 4,
+      "column": 6,
+      "group": 2,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 1576,
+        "y": 2656,
+        "w": 125,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 1619,
+        "y": 2250,
+        "w": 202,
+        "h": 124
+      }
+    },
+    {
+      "slotNo": 34,
+      "row": 4,
+      "column": 7,
+      "group": 3,
+      "groupColumn": 1,
+      "checkboxDetectedRect": {
+        "x": 1970,
+        "y": 2658,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2003,
+        "y": 2261,
+        "w": 201,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 35,
+      "row": 4,
+      "column": 8,
+      "group": 3,
+      "groupColumn": 2,
+      "checkboxDetectedRect": {
+        "x": 2243,
+        "y": 2655,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2278,
+        "y": 2262,
+        "w": 201,
+        "h": 125
+      }
+    },
+    {
+      "slotNo": 36,
+      "row": 4,
+      "column": 9,
+      "group": 3,
+      "groupColumn": 3,
+      "checkboxDetectedRect": {
+        "x": 2517,
+        "y": 2656,
+        "w": 124,
+        "h": 124
+      },
+      "crownDetectedRect": {
+        "x": 2566,
+        "y": 2262,
+        "w": 202,
+        "h": 125
+      }
+    }
+  ],
+  "constraints": {
+    "spriteIdsAssigned": false,
+    "productionBoard": false,
+    "geometryDerivedFromAlphaBounds": true
+  }
+}

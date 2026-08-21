@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,viewport-fit=cover"
+  />
+  <title>FORTNITE Sprite Checklist Ver.8.0</title>
+  <meta name="theme-color" content="#0b1020" />
+  <link
+    rel="stylesheet"
+    href="./app.css?v=20260822-v8-version-tabs-a"
+  />
+</head>
+<body>
+  <main
+    class="ver8-app"
+    id="ver8App"
+  >
+    <nav
+      class="version-switcher"
+      aria-label="Checklist version"
+    >
+      <a
+        class="version-switcher-tab"
+        href="../index.html"
+        aria-label="Chapter 7 Season 3 Ver.7.7.7 archived checklist"
+      >
+        <span class="version-switcher-season">Chapter 7 Season 3</span>
+        <span class="version-switcher-version">Ver.7.7.7</span>
+      </a>
+
+      <a
+        class="version-switcher-tab is-active"
+        href="./index.html"
+        aria-current="page"
+        aria-label="Chapter 7 Season 4 Ver.8.0 checklist"
+      >
+        <span class="version-switcher-season">Chapter 7 Season 4</span>
+        <span class="version-switcher-version">Ver.8.0</span>
+      </a>
+    </nav>
+    <section
+      class="ver8-toolbar"
+      aria-label="Checklist controls"
+    >
+      <div class="ver8-toolbar-row">
+        <span
+          class="ver8-pill ver8-state-pill"
+          id="stateSummary"
+          aria-live="polite"
+        >0 / 0 | M 0</span>
+
+        <span
+          class="ver8-pill ver8-saved-pill"
+          id="saveBadge"
+          role="status"
+          aria-live="polite"
+        >保存済み</span>
+
+        <div
+          class="ver8-lang-group"
+          aria-label="Language switch"
+        >
+          <button
+            class="ver8-pill-button"
+            id="jaBtn"
+            type="button"
+          >日本語</button>
+
+          <button
+            class="ver8-pill-button"
+            id="enBtn"
+            type="button"
+          >English</button>
+        </div>
+
+        <button
+          class="ver8-pill-button"
+          id="saveImageBtn"
+          type="button"
+        >画像保存</button>
+
+        <button
+          class="ver8-pill-button"
+          id="spriteCodeBtn"
+          type="button"
+          hidden
+        >精霊コード</button>
+
+        <button
+          class="ver8-pill-button"
+          id="clearAllBtn"
+          type="button"
+        >すべて解除</button>
+
+        <button
+          class="ver8-pill-button"
+          id="tradeCompareBtn"
+          type="button"
+        >精霊交換比較</button>
+      </div>
+
+      <div
+        class="ver8-toolbar-row ver8-profile-row"
+      >
+        <input
+          class="ver8-name-input"
+          id="nameInput"
+          type="text"
+          maxlength="32"
+          placeholder="名前"
+          autocomplete="nickname"
+          aria-label="名前"
+        />
+
+        <label class="ver8-select-wrap">
+          <span
+            class="ver8-select-label"
+            id="textColorLabel"
+          >名前の色</span>
+
+          <select
+            id="nameColorSelect"
+            aria-label="名前の色"
+          >
+            <option value="black">黒</option>
+            <option value="white">白</option>
+            <option value="red">赤</option>
+          </select>
+        </label>
+
+        <label class="ver8-select-wrap">
+          <span
+            class="ver8-select-label"
+            id="markStyleLabel"
+          >取得マーク</span>
+
+          <select
+            id="markStyleSelect"
+            aria-label="取得マーク"
+          >
+            <option value="check">✓ チェック</option>
+            <option value="heart">♥ ハート</option>
+            <option value="star">★ スター</option>
+          </select>
+        </label>
+      </div>
+    </section>
+    <section
+      class="ver8-viewer"
+      aria-label="FORTNITE Sprite Checklist Ver.8.0 static viewer"
+    >
+      <div class="ver8-board-stage">
+        <canvas
+          class="ver8-board-canvas"
+          id="ver8BoardCanvas"
+          width="2812"
+          height="2838"
+          aria-label="FORTNITE Sprite Checklist Ver.8.0"
+        ></canvas>
+
+        <button
+          class="support-hidden-hotspot"
+          id="supportHotspot"
+          type="button"
+          aria-label="Support the developer"
+        ></button>
+      </div>
+    </section>
+  </main>
+
+  <dialog
+    class="ver8-sprite-code-dialog"
+    id="spriteCodeDialog"
+    aria-labelledby="spriteCodeDialogTitle"
+    aria-describedby="spriteCodeMessage"
+  >
+    <div class="ver8-sprite-code-panel">
+      <header class="ver8-sprite-code-header">
+        <h2
+          class="ver8-sprite-code-title"
+          id="spriteCodeDialogTitle"
+        >精霊コード</h2>
+      </header>
+
+      <section
+        class="ver8-sprite-code-section"
+        aria-labelledby="spriteCodeEpicTitle"
+      >
+        <div
+          class="ver8-sprite-code-section-title"
+          id="spriteCodeEpicTitle"
+        >EPIC表示名（任意）</div>
+
+        <div class="ver8-sprite-code-group">
+          <label
+            class="ver8-sprite-code-label"
+            id="spriteCodeEpicLabel"
+            for="spriteCodeEpicNameInput"
+          >EPIC表示名</label>
+
+          <input
+            class="ver8-sprite-code-input ver8-sprite-code-epic-input"
+            id="spriteCodeEpicNameInput"
+            type="text"
+            maxlength="64"
+            placeholder="EPIC表示名を入力"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <label class="ver8-sprite-code-include-option">
+            <input
+              id="spriteCodeIncludeEpicName"
+              type="checkbox"
+            />
+            <span
+              id="spriteCodeIncludeEpicNameLabel"
+            >コードにEPIC名を含める</span>
+          </label>
+
+          <p
+            class="ver8-sprite-code-message ver8-sprite-code-hint"
+            id="spriteCodeEpicHint"
+          >含めると、コードを受け取った相手側でEPIC名を表示できます。チェック状態の引き継ぎでは相手のEPIC名は保存されません。</p>
+        </div>
+      </section>
+
+      <div class="ver8-sprite-code-group">
+        <label
+          class="ver8-sprite-code-label"
+          id="spriteCodeCurrentLabel"
+          for="spriteCodeOutput"
+        >現在の精霊コード</label>
+
+        <input
+          class="ver8-sprite-code-input"
+          id="spriteCodeOutput"
+          type="text"
+          readonly
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+
+        <div class="ver8-sprite-code-actions">
+          <button
+            class="ver8-sprite-code-button ver8-sprite-code-button-primary"
+            id="spriteCodeCopyBtn"
+            type="button"
+          >コピー</button>
+        </div>
+      </div>
+
+      <section
+        class="ver8-sprite-code-section"
+        aria-labelledby="spriteCodeImportTitle"
+      >
+        <div
+          class="ver8-sprite-code-section-title"
+          id="spriteCodeImportTitle"
+        >別ブラウザから引き継ぐ</div>
+
+        <div class="ver8-sprite-code-group">
+          <label
+            class="ver8-sprite-code-label"
+            id="spriteCodeImportLabel"
+            for="spriteCodeInput"
+          >精霊コード</label>
+
+          <input
+            class="ver8-sprite-code-input"
+            id="spriteCodeInput"
+            type="text"
+            maxlength="128"
+            placeholder="V8C1. から始まる精霊コードを入力"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <div class="ver8-sprite-code-actions">
+            <button
+              class="ver8-sprite-code-button ver8-sprite-code-button-primary"
+              id="spriteCodePreviewBtn"
+              type="button"
+            >内容を確認</button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="ver8-sprite-code-section"
+        id="spriteCodePreviewSection"
+        aria-labelledby="spriteCodePreviewTitle"
+        hidden
+      >
+        <div
+          class="ver8-sprite-code-section-title"
+          id="spriteCodePreviewTitle"
+        >読み込み内容</div>
+
+        <p
+          class="ver8-sprite-code-message"
+          id="spriteCodeSummary"
+        ></p>
+
+        <div class="ver8-sprite-code-actions">
+          <button
+            class="ver8-sprite-code-button ver8-sprite-code-button-primary"
+            id="spriteCodeApplyBtn"
+            type="button"
+            disabled
+          >この状態を反映する</button>
+        </div>
+      </section>
+
+      <p
+        class="ver8-sprite-code-message"
+        id="spriteCodeMessage"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div
+        class="ver8-sprite-code-actions ver8-sprite-code-close-actions"
+      >
+        <button
+          class="ver8-sprite-code-button ver8-sprite-code-button-close"
+          id="spriteCodeCancelBtn"
+          type="button"
+        >閉じる</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./sprite-state-codec.v8.js?v=20260821-v8-ui-c7d3"></script>
+  <script src="./app.js?v=20260822-v8-trade-entry-b"></script>
+</body>
+</html>
