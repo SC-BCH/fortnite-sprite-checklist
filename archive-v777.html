@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>FORTNITE Sprite Checklist — Chapter 7 Season 3 Archive — Ver.7.7.7</title>
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="stylesheet" href="./app.css?v=20260822-version-tabs-a" />
+</head>
+<body class="archive-readonly">
+  <main class="app-shell">
+    <nav
+      class="version-switcher"
+      aria-label="Checklist version"
+    >
+      <a
+        class="version-switcher-tab is-active"
+        href="./archive-v777.html"
+        aria-current="page"
+        aria-label="Chapter 7 Season 3 Ver.7.7.7 archived checklist"
+      >
+        <span class="version-switcher-season">Chapter 7 Season 3</span>
+        <span class="version-switcher-version">Ver.7.7.7</span>
+      </a>
+
+      <a
+        class="version-switcher-tab"
+        href="./v8/index.html"
+        aria-label="Chapter 7 Season 4 Ver.8.0 checklist"
+      >
+        <span class="version-switcher-season">Chapter 7 Season 4</span>
+        <span class="version-switcher-version">Ver.8.0</span>
+      </a>
+    </nav>
+
+    <section
+      class="archive-readonly-banner"
+      aria-label="Archived checklist notice"
+    >
+      <strong>Chapter 7 Season 3 / Ver.7.7.7</strong>
+      <span>過去シーズン・閲覧のみ</span>
+    </section>
+    <section class="toolbar-card" aria-label="Checklist controls">
+      <div class="toolbar-row">
+        <span class="pill state-pill" id="stateSummary">0 / 91 | M 0</span>
+        <span class="pill saved-pill" id="saveBadge">保存済み</span>
+        <div class="lang-group" aria-label="Language switch">
+          <button class="pill-button" id="jaBtn" type="button">日本語</button>
+          <button class="pill-button" id="enBtn" type="button">English</button>
+        </div>
+
+        <input
+          class="name-input"
+          id="nameInput"
+          type="text"
+          maxlength="32"
+          placeholder="名前"
+          autocomplete="nickname"
+        />
+
+        <label class="select-wrap">
+          <span class="select-label" id="textColorLabel">名前の色</span>
+          <select id="nameColorSelect" aria-label="名前の色">
+            <option value="black">黒</option>
+            <option value="white">白</option>
+            <option value="red">赤</option>
+          </select>
+        </label>
+
+        <label class="select-wrap">
+          <span class="select-label" id="markStyleLabel">取得マーク</span>
+          <select id="markStyleSelect" aria-label="取得マーク">
+            <option value="check">✓ チェック</option>
+            <option value="heart">♥ ハート</option>
+            <option value="star">★ スター</option>
+          </select>
+        </label>
+
+        <button class="pill-button primary-button" id="saveImageBtn" type="button">画像保存</button>
+        <button class="pill-button" id="clearAllBtn" type="button">すべて解除</button>
+        <button class="pill-button" id="spriteCodeBtn" type="button" hidden>精霊コード</button>
+        <button class="pill-button" id="tradeCompareBtn" type="button">精霊交換比較</button>
+      </div>
+    </section>
+
+    <section class="viewer-grid production-viewer-grid">
+      <div class="board-shell">
+        <div class="board-stage" id="boardStage">
+          <canvas id="boardCanvas" class="board-canvas"></canvas>
+          <div id="hitLayer" class="hit-layer" aria-label="Fortnite Sprite Checklist interaction layer"></div>
+          <button
+            class="background-secret-hotspot"
+            id="backgroundSecretHotspot"
+            type="button"
+            aria-label="特典背景を開く"
+          ></button>
+          <button
+            class="support-hidden-hotspot"
+            id="supportHotspot"
+            type="button"
+            aria-label="Support the developer"
+          ></button>
+        </div>
+
+        <footer class="board-footer" id="boardFooter"></footer>
+      </div>
+
+      <aside class="viewer-info" id="viewerInfo" hidden></aside>
+    </section>
+  </main>
+
+  <dialog
+    class="background-dialog"
+    id="backgroundDialog"
+    aria-labelledby="backgroundDialogTitle"
+    aria-describedby="backgroundMessage"
+  >
+    <div class="background-dialog-panel">
+      <header class="background-dialog-header">
+        <h2
+          class="background-dialog-title"
+          id="backgroundDialogTitle"
+        >特典背景</h2>
+      </header>
+
+      <div class="background-code-group">
+        <label
+          class="background-code-label"
+          id="backgroundCodeLabel"
+          for="backgroundCodeInput"
+        >シークレットコード</label>
+
+        <input
+          class="background-code-input"
+          id="backgroundCodeInput"
+          type="text"
+          maxlength="32"
+          placeholder="8文字のコードを入力"
+          autocomplete="off"
+          autocapitalize="characters"
+          spellcheck="false"
+        />
+
+        <div class="background-code-actions">
+          <button
+            class="background-dialog-button background-dialog-button-primary"
+            id="backgroundConfirmBtn"
+            type="button"
+          >決定</button>
+        </div>
+      </div>
+
+      <section
+        class="background-options-section"
+        aria-labelledby="backgroundUnlockedTitle"
+      >
+        <div
+          class="background-unlocked-title"
+          id="backgroundUnlockedTitle"
+        >解放済み背景</div>
+
+        <div
+          class="background-options"
+          id="backgroundOptions"
+        ></div>
+      </section>
+
+      <p
+        class="background-message"
+        id="backgroundMessage"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div class="background-dialog-actions">
+        <button
+          class="background-dialog-button background-dialog-button-reset"
+          id="backgroundResetBtn"
+          type="button"
+        >標準背景に戻す</button>
+
+        <button
+          class="background-dialog-button background-dialog-button-close"
+          id="backgroundCancelBtn"
+          type="button"
+        >閉じる</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog
+    class="background-dialog"
+    id="spriteCodeDialog"
+    aria-labelledby="spriteCodeDialogTitle"
+    aria-describedby="spriteCodeMessage"
+  >
+    <div class="background-dialog-panel">
+      <header class="background-dialog-header">
+        <h2
+          class="background-dialog-title"
+          id="spriteCodeDialogTitle"
+        >精霊コード</h2>
+      </header>
+
+      <section
+        class="sprite-code-epic-section"
+        aria-labelledby="spriteCodeEpicTitle"
+      >
+        <div
+          class="background-unlocked-title"
+          id="spriteCodeEpicTitle"
+        >EPIC表示名（任意）</div>
+
+        <div class="background-code-group">
+          <label
+            class="background-code-label"
+            id="spriteCodeEpicLabel"
+            for="spriteCodeEpicNameInput"
+          >EPIC表示名</label>
+
+          <input
+            class="background-code-input sprite-epic-name-input"
+            id="spriteCodeEpicNameInput"
+            type="text"
+            maxlength="64"
+            placeholder="EPIC表示名を入力"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <label class="sprite-code-include-option">
+            <input
+              id="spriteCodeIncludeEpicName"
+              type="checkbox"
+            />
+            <span
+              id="spriteCodeIncludeEpicNameLabel"
+            >コードにEPIC名を含める</span>
+          </label>
+
+          <p
+            class="background-message sprite-code-epic-hint"
+            id="spriteCodeEpicHint"
+          >含めると、コードを受け取った相手側でEPIC名が表示されるようになります。チェック状態の引き継ぎでは相手のEPIC名は保存されません。</p>
+        </div>
+      </section>
+
+      <div class="background-code-group">
+        <label
+          class="background-code-label"
+          id="spriteCodeCurrentLabel"
+          for="spriteCodeOutput"
+        >現在の精霊コード</label>
+
+        <input
+          class="background-code-input"
+          id="spriteCodeOutput"
+          type="text"
+          readonly
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+
+        <div class="background-code-actions">
+          <button
+            class="background-dialog-button background-dialog-button-primary"
+            id="spriteCodeCopyBtn"
+            type="button"
+          >コピー</button>
+        </div>
+      </div>
+
+      <section
+        class="background-options-section"
+        aria-labelledby="spriteCodeImportTitle"
+      >
+        <div
+          class="background-unlocked-title"
+          id="spriteCodeImportTitle"
+        >別ブラウザから引き継ぐ</div>
+
+        <div class="background-code-group">
+          <label
+            class="background-code-label"
+            id="spriteCodeImportLabel"
+            for="spriteCodeInput"
+          >精霊コード</label>
+
+          <input
+            class="background-code-input"
+            id="spriteCodeInput"
+            type="text"
+            maxlength="256"
+            placeholder="F1. または F2. から始まる精霊コードを入力"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <div class="background-code-actions">
+            <button
+              class="background-dialog-button background-dialog-button-primary"
+              id="spriteCodePreviewBtn"
+              type="button"
+            >内容を確認</button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="background-options-section"
+        id="spriteCodePreviewSection"
+        aria-labelledby="spriteCodePreviewTitle"
+        hidden
+      >
+        <div
+          class="background-unlocked-title"
+          id="spriteCodePreviewTitle"
+        >読み込み内容</div>
+
+        <p
+          class="background-message"
+          id="spriteCodeSummary"
+        ></p>
+
+        <div class="background-code-actions">
+          <button
+            class="background-dialog-button background-dialog-button-primary"
+            id="spriteCodeApplyBtn"
+            type="button"
+            disabled
+          >この状態を反映する</button>
+        </div>
+      </section>
+
+      <p
+        class="background-message"
+        id="spriteCodeMessage"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div class="background-dialog-actions">
+        <button
+          class="background-dialog-button background-dialog-button-close"
+          id="spriteCodeCancelBtn"
+          type="button"
+        >閉じる</button>
+      </div>
+    </div>
+  </dialog>
+
+  <template
+    id="tipsGuideAssetManifest"
+  >
+    <img
+      src="./images/guide/ver777-guide-01-sprite-code.png"
+      alt=""
+    />
+    <img
+      src="./images/guide/ver777-guide-02-f1-f2.png"
+      alt=""
+    />
+    <img
+      src="./images/guide/ver777-guide-03-trade-compare.png"
+      alt=""
+    />
+    <img
+      src="./images/guide/ver777-guide-04-partner-update.png"
+      alt=""
+    />
+  </template>
+  <script src="./sprite-state-codec.js?v=20260812-f2-codec-a"></script>
+  <script src="./sprite-transfer-ui.js?v=20260812-f2-transfer-a"></script>
+  <script src="./app.js?v=20260812-v7-7-7-italic-b"></script>
+  <script src="./tips.js?v=20260813-v777-visual-guide-a"></script>
+  <script src="./archive-readonly.js?v=20260822-c7s3-readonly-a"></script>
+</body>
+</html>
