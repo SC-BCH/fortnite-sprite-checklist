@@ -46,8 +46,8 @@
       "sha256": "D8B23D2F35663F146F8DBBD794DF5685DDCC6D99956615ED9CBC8BA621A28901"
     },
     "versionLayer": {
-      "path": "../images/3.png",
-      "sha256": "E6FCC8E57010C59C36AF59790B1F116E831233F8C82BC63CD5D1446DF77C085E"
+      "path": "../images/3.png?v=20260822-v801-a",
+      "sha256": "4AAE8401D58788715FE2FE246A39FE837D8394E202446CE916D4E222157C1EBD"
     },
     "spriteLayer": {
       "path": "../images/4.png",
