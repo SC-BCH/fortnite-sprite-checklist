@@ -1,9 +1,9 @@
 {
   "schema": "ver8-slot-availability-v1",
   "status": "current-runtime-gate",
-  "asOf": "2026-08-22",
+  "asOf": "2026-08-27",
   "capacitySlotCount": 36,
-  "activeSlotCount": 33,
+  "activeSlotCount": 36,
   "activeSlotNumbers": [
     1,
     2,
@@ -37,18 +37,17 @@
     30,
     31,
     32,
-    33
+    33,
+    34,
+    35,
+    36
   ],
   "pendingGold": {
     "scheduledDate": "2026-08-22",
     "activationPolicy": "manual-after-game-verification",
     "slotNumbers": []
   },
-  "reservedSlotNumbers": [
-    34,
-    35,
-    36
-  ],
+  "reservedSlotNumbers": [],
   "constraints": {
     "spriteIdsAssigned": false,
     "slotNumbersArePersistenceIds": false,
