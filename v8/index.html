@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0b1020" />
   <link
     rel="stylesheet"
-    href="./app.css?v=20260831-iphone-bottom-safe-a"
+    href="./app.css?v=20260902-v9-tips-modal-a"
   />
 </head>
 <body>
@@ -153,25 +153,37 @@
       <div
         class="ver8-toolbar-row ver8-danger-row"
       >
+        <section
+          class="ver8-tips-launcher"
+          id="tipsRegion"
+          aria-label="Tips"
+          aria-live="polite"
+          hidden
+        >
+          <button
+            class="ver8-pill-button ver8-tips-open-button"
+            id="tipsOpenBtn"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="tipsDialog"
+          >
+            <span
+              id="tipsOpenLabel"
+            >お知らせ</span>
+            <span
+              class="ver8-tips-open-new"
+              id="tipsOpenNew"
+              hidden
+            >NEW</span>
+          </button>
+        </section>
+
         <button
           class="ver8-pill-button ver8-danger-button"
           id="clearAllBtn"
           type="button"
         >全チェック削除</button>
       </div>
-    </section>
-
-    <section
-      class="ver8-tips"
-      id="tipsRegion"
-      aria-label="Tips"
-      aria-live="polite"
-      hidden
-    >
-      <div
-        class="ver8-tips-list"
-        id="tipsList"
-      ></div>
     </section>
 
     <section
@@ -196,6 +208,32 @@
       </div>
     </section>
   </main>
+
+  <dialog
+    class="ver8-tips-dialog"
+    id="tipsDialog"
+    aria-labelledby="tipsDialogTitle"
+  >
+    <div class="ver8-tips-dialog-panel">
+      <header class="ver8-tips-dialog-header">
+        <h2
+          class="ver8-tips-dialog-title"
+          id="tipsDialogTitle"
+        >お知らせ</h2>
+
+        <button
+          class="ver8-tips-dialog-close"
+          id="tipsCloseBtn"
+          type="button"
+        >閉じる</button>
+      </header>
+
+      <div
+        class="ver8-tips-list"
+        id="tipsList"
+      ></div>
+    </div>
+  </dialog>
 
   <dialog
     class="ver8-sprite-code-dialog"
@@ -364,6 +402,6 @@
   </dialog>
 
   <script src="./sprite-state-codec.v8.js?v=20260828-c7s4-f1f2-a"></script>
-  <script src="./app.js?v=20260831-iphone-bottom-safe-a"></script>
+  <script src="./app.js?v=20260902-v9-tips-modal-a"></script>
 </body>
 </html>
