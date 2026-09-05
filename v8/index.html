@@ -94,6 +94,7 @@
           id="tradeCompareBtn"
           type="button"
         >精霊トレードナビ</button>
+
       </div>
 
       <div
@@ -153,6 +154,16 @@
       <div
         class="ver8-toolbar-row ver8-danger-row"
       >
+        <button
+          class="ver8-pill-button"
+          id="overlayEntitlementBtn"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="overlayEntitlementDialog"
+          aria-pressed="false"
+          hidden
+        >チェックリストゲームオーバーレイ</button>
+
         <section
           class="ver8-tips-launcher"
           id="tipsRegion"
@@ -232,6 +243,73 @@
         class="ver8-tips-list"
         id="tipsList"
       ></div>
+    </div>
+  </dialog>
+
+  <dialog
+    class="ver8-sprite-code-dialog"
+    id="overlayEntitlementDialog"
+    aria-labelledby="overlayEntitlementDialogTitle"
+    aria-describedby="overlayEntitlementDescription"
+  >
+    <div class="ver8-sprite-code-panel">
+      <header class="ver8-sprite-code-header">
+        <h2
+          class="ver8-sprite-code-title"
+          id="overlayEntitlementDialogTitle"
+        >チェックリストゲームオーバーレイ 認証</h2>
+      </header>
+
+      <section class="ver8-sprite-code-section">
+        <p
+          class="ver8-sprite-code-message ver8-sprite-code-hint"
+          id="overlayEntitlementDescription"
+        >note有料記事で案内されたコードを入力してください。コードそのものはブラウザに保存しません。</p>
+
+        <div class="ver8-sprite-code-group">
+          <label
+            class="ver8-sprite-code-label"
+            id="overlayEntitlementCodeLabel"
+            for="overlayEntitlementCodeInput"
+          >利用コード</label>
+
+          <input
+            class="ver8-sprite-code-input"
+            id="overlayEntitlementCodeInput"
+            type="password"
+            maxlength="128"
+            placeholder="コードを入力"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <div class="ver8-sprite-code-actions">
+            <button
+              class="ver8-sprite-code-button ver8-sprite-code-button-primary"
+              id="overlayEntitlementRedeemBtn"
+              type="button"
+            >認証する</button>
+          </div>
+        </div>
+      </section>
+
+      <p
+        class="ver8-sprite-code-message"
+        id="overlayEntitlementMessage"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div
+        class="ver8-sprite-code-actions ver8-sprite-code-close-actions"
+      >
+        <button
+          class="ver8-sprite-code-button ver8-sprite-code-button-close"
+          id="overlayEntitlementCloseBtn"
+          type="button"
+        >閉じる</button>
+      </div>
     </div>
   </dialog>
 
@@ -402,6 +480,6 @@
   </dialog>
 
   <script src="./sprite-state-codec.v9.js?v=20260904-ver900-g6-candidate-a"></script>
-  <script src="./app.js?v=20260904-ver900-g6-candidate-a"></script>
+  <script src="./app.js?v=20260905-v9-overlay-entitlement-a"></script>
 </body>
 </html>
