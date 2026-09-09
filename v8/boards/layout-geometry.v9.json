@@ -69,8 +69,8 @@
       "sha256": "0A14BD6A6142F4D2A623F10E9DAE05B2EE82E741694FC19197F0A599602E4651"
     },
     "versionLayer": {
-      "path": "../images/ver9-version.png",
-      "sha256": "F6C25F6A37684537E7DBEA3C5AF0C1DEE2421C65804D76DB86B8FFF4657FB42A"
+      "path": "../images/ver9-version.png?v=20260910-ver910-release-a",
+      "sha256": "53395FB0FC7978E0A7FDD92DEEAF1AABBF36B86198345831860D35E461AEE2D7"
     },
     "completeLayer": {
       "path": "../images/9.png",
