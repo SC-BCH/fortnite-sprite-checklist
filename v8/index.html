@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0b1020" />
   <link
     rel="stylesheet"
-    href="./app.css?v=20260906-v9-overlay-setup-link-a"
+    href="./app.css?v=20260910-vanguard-ii-a"
   />
 </head>
 <body>
@@ -211,6 +211,13 @@
         ></canvas>
 
         <button
+          class="ver8-background-secret-hotspot"
+          id="backgroundSecretHotspot"
+          type="button"
+          aria-label="特典背景を開く"
+        ></button>
+
+        <button
           class="support-hidden-hotspot"
           id="supportHotspot"
           type="button"
@@ -219,6 +226,85 @@
       </div>
     </section>
   </main>
+
+
+  <dialog
+    class="ver8-sprite-code-dialog"
+    id="backgroundDialog"
+    aria-labelledby="backgroundDialogTitle"
+    aria-describedby="backgroundMessage"
+  >
+    <div class="ver8-sprite-code-panel">
+      <header class="ver8-sprite-code-header">
+        <h2
+          class="ver8-sprite-code-title"
+          id="backgroundDialogTitle"
+        >特典背景</h2>
+      </header>
+
+      <section class="ver8-sprite-code-section">
+        <div class="ver8-sprite-code-group">
+          <label
+            class="ver8-sprite-code-label"
+            id="backgroundCodeLabel"
+            for="backgroundCodeInput"
+          >シークレットコード</label>
+
+          <input
+            class="ver8-sprite-code-input"
+            id="backgroundCodeInput"
+            type="text"
+            maxlength="32"
+            placeholder="8文字のコードを入力"
+            autocomplete="off"
+            autocapitalize="characters"
+            spellcheck="false"
+          />
+
+          <div class="ver8-sprite-code-actions">
+            <button
+              class="ver8-sprite-code-button ver8-sprite-code-button-primary"
+              id="backgroundConfirmBtn"
+              type="button"
+            >決定</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="ver8-sprite-code-section">
+        <h3
+          class="ver8-sprite-code-section-title"
+          id="backgroundUnlockedTitle"
+        >解放済み背景</h3>
+
+        <div
+          class="ver8-background-options"
+          id="backgroundOptions"
+        ></div>
+      </section>
+
+      <p
+        class="ver8-sprite-code-message"
+        id="backgroundMessage"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <div class="ver8-sprite-code-actions ver8-sprite-code-close-actions">
+        <button
+          class="ver8-sprite-code-button"
+          id="backgroundResetBtn"
+          type="button"
+        >標準背景に戻す</button>
+
+        <button
+          class="ver8-sprite-code-button ver8-sprite-code-button-close"
+          id="backgroundCancelBtn"
+          type="button"
+        >閉じる</button>
+      </div>
+    </div>
+  </dialog>
 
   <dialog
     class="ver8-tips-dialog"
@@ -488,6 +574,6 @@
   </dialog>
 
   <script src="./sprite-state-codec.v9.js?v=20260904-ver900-g6-candidate-a"></script>
-  <script src="./app.js?v=20260910-ver910-release-a"></script>
+  <script src="./app.js?v=20260910-vanguard-ii-export-r2"></script>
 </body>
 </html>

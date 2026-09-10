@@ -44,6 +44,10 @@
       "path": "../images/ver9-background.png",
       "sha256": "2D1B7FDFB106A4FAADA31CE3B5E3E5F821D37A98C2B9C45D1EDF0D5A2BD582CF"
     },
+    "vanguardBackground": {
+      "path": "../images/ver9-vanguard-ii.png?v=20260910-vanguard-ii-a",
+      "sha256": "DE8962595537813D6961504CFB9FBD1CE658930C112071A746E7508440041C98"
+    },
     "groupPanelLayer": {
       "path": "../images/ver9-group-panels.png",
       "sha256": "0D677147FBDCDAB907567EFA033DD947E98700789B57EDDF561220D2864C2B78"
