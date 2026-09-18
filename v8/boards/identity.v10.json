@@ -1,0 +1,835 @@
+{
+  "schema": "ver8-sprite-identity-v1",
+  "status": "application-stable-identities",
+  "season": "Chapter 7 Season 4",
+  "idNamespace": "ch7s4",
+  "layoutRevisionId": "ch7s4-r03",
+  "familyCount": 21,
+  "capacitySlotCount": 101,
+  "spriteIdentityCount": 101,
+  "variantIds": [
+    "base",
+    "cheat-master",
+    "gold",
+    "loot-hacker",
+    "bounty-hunter"
+  ],
+  "sprites": [
+    {
+      "slotNo": 1,
+      "familyId": "ch7s4-mega-man",
+      "familyDisplayName": "Mega Man",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-mega-man-base"
+    },
+    {
+      "slotNo": 2,
+      "familyId": "ch7s4-jonesy",
+      "familyDisplayName": "Jonesy",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-jonesy-base"
+    },
+    {
+      "slotNo": 3,
+      "familyId": "ch7s4-jonesy",
+      "familyDisplayName": "Jonesy",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-jonesy-cheat-master"
+    },
+    {
+      "slotNo": 4,
+      "familyId": "ch7s4-jonesy",
+      "familyDisplayName": "Jonesy",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-jonesy-gold"
+    },
+    {
+      "slotNo": 5,
+      "familyId": "ch7s4-jonesy",
+      "familyDisplayName": "Jonesy",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-jonesy-loot-hacker"
+    },
+    {
+      "slotNo": 6,
+      "familyId": "ch7s4-jonesy",
+      "familyDisplayName": "Jonesy",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-jonesy-bounty-hunter"
+    },
+    {
+      "slotNo": 7,
+      "familyId": "ch7s4-klombo",
+      "familyDisplayName": "Klombo",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-klombo-base"
+    },
+    {
+      "slotNo": 8,
+      "familyId": "ch7s4-klombo",
+      "familyDisplayName": "Klombo",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-klombo-cheat-master"
+    },
+    {
+      "slotNo": 9,
+      "familyId": "ch7s4-klombo",
+      "familyDisplayName": "Klombo",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-klombo-gold"
+    },
+    {
+      "slotNo": 10,
+      "familyId": "ch7s4-klombo",
+      "familyDisplayName": "Klombo",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-klombo-loot-hacker"
+    },
+    {
+      "slotNo": 11,
+      "familyId": "ch7s4-klombo",
+      "familyDisplayName": "Klombo",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-klombo-bounty-hunter"
+    },
+    {
+      "slotNo": 12,
+      "familyId": "ch7s4-adventure",
+      "familyDisplayName": "Adventure",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-adventure-base"
+    },
+    {
+      "slotNo": 13,
+      "familyId": "ch7s4-adventure",
+      "familyDisplayName": "Adventure",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-adventure-cheat-master"
+    },
+    {
+      "slotNo": 14,
+      "familyId": "ch7s4-adventure",
+      "familyDisplayName": "Adventure",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-adventure-gold"
+    },
+    {
+      "slotNo": 15,
+      "familyId": "ch7s4-adventure",
+      "familyDisplayName": "Adventure",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-adventure-loot-hacker"
+    },
+    {
+      "slotNo": 16,
+      "familyId": "ch7s4-adventure",
+      "familyDisplayName": "Adventure",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-adventure-bounty-hunter"
+    },
+    {
+      "slotNo": 17,
+      "familyId": "ch7s4-overshield",
+      "familyDisplayName": "Overshield",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-overshield-base"
+    },
+    {
+      "slotNo": 18,
+      "familyId": "ch7s4-overshield",
+      "familyDisplayName": "Overshield",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-overshield-cheat-master"
+    },
+    {
+      "slotNo": 19,
+      "familyId": "ch7s4-overshield",
+      "familyDisplayName": "Overshield",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-overshield-gold"
+    },
+    {
+      "slotNo": 20,
+      "familyId": "ch7s4-overshield",
+      "familyDisplayName": "Overshield",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-overshield-loot-hacker"
+    },
+    {
+      "slotNo": 21,
+      "familyId": "ch7s4-overshield",
+      "familyDisplayName": "Overshield",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-overshield-bounty-hunter"
+    },
+    {
+      "slotNo": 22,
+      "familyId": "ch7s4-bush",
+      "familyDisplayName": "Bush",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-bush-base"
+    },
+    {
+      "slotNo": 23,
+      "familyId": "ch7s4-bush",
+      "familyDisplayName": "Bush",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-bush-cheat-master"
+    },
+    {
+      "slotNo": 24,
+      "familyId": "ch7s4-bush",
+      "familyDisplayName": "Bush",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-bush-gold"
+    },
+    {
+      "slotNo": 25,
+      "familyId": "ch7s4-bush",
+      "familyDisplayName": "Bush",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-bush-loot-hacker"
+    },
+    {
+      "slotNo": 26,
+      "familyId": "ch7s4-bush",
+      "familyDisplayName": "Bush",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-bush-bounty-hunter"
+    },
+    {
+      "slotNo": 27,
+      "familyId": "ch7s4-pond",
+      "familyDisplayName": "Pond",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-pond-base"
+    },
+    {
+      "slotNo": 28,
+      "familyId": "ch7s4-pond",
+      "familyDisplayName": "Pond",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-pond-cheat-master"
+    },
+    {
+      "slotNo": 29,
+      "familyId": "ch7s4-pond",
+      "familyDisplayName": "Pond",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-pond-gold"
+    },
+    {
+      "slotNo": 30,
+      "familyId": "ch7s4-pond",
+      "familyDisplayName": "Pond",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-pond-loot-hacker"
+    },
+    {
+      "slotNo": 31,
+      "familyId": "ch7s4-pond",
+      "familyDisplayName": "Pond",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-pond-bounty-hunter"
+    },
+    {
+      "slotNo": 32,
+      "familyId": "ch7s4-sonic",
+      "familyDisplayName": "Sonic",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-sonic-base"
+    },
+    {
+      "slotNo": 33,
+      "familyId": "ch7s4-sonic",
+      "familyDisplayName": "Sonic",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-sonic-cheat-master"
+    },
+    {
+      "slotNo": 34,
+      "familyId": "ch7s4-sonic",
+      "familyDisplayName": "Sonic",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-sonic-gold"
+    },
+    {
+      "slotNo": 35,
+      "familyId": "ch7s4-sonic",
+      "familyDisplayName": "Sonic",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-sonic-loot-hacker"
+    },
+    {
+      "slotNo": 36,
+      "familyId": "ch7s4-sonic",
+      "familyDisplayName": "Sonic",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-sonic-bounty-hunter"
+    },
+    {
+      "slotNo": 37,
+      "familyId": "ch7s4-x-ray",
+      "familyDisplayName": "X-Ray",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-x-ray-base"
+    },
+    {
+      "slotNo": 38,
+      "familyId": "ch7s4-x-ray",
+      "familyDisplayName": "X-Ray",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-x-ray-cheat-master"
+    },
+    {
+      "slotNo": 39,
+      "familyId": "ch7s4-x-ray",
+      "familyDisplayName": "X-Ray",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-x-ray-gold"
+    },
+    {
+      "slotNo": 40,
+      "familyId": "ch7s4-x-ray",
+      "familyDisplayName": "X-Ray",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-x-ray-loot-hacker"
+    },
+    {
+      "slotNo": 41,
+      "familyId": "ch7s4-x-ray",
+      "familyDisplayName": "X-Ray",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-x-ray-bounty-hunter"
+    },
+    {
+      "slotNo": 42,
+      "familyId": "ch7s4-tails",
+      "familyDisplayName": "Tails",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-tails-base"
+    },
+    {
+      "slotNo": 43,
+      "familyId": "ch7s4-tails",
+      "familyDisplayName": "Tails",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-tails-cheat-master"
+    },
+    {
+      "slotNo": 44,
+      "familyId": "ch7s4-tails",
+      "familyDisplayName": "Tails",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-tails-gold"
+    },
+    {
+      "slotNo": 45,
+      "familyId": "ch7s4-tails",
+      "familyDisplayName": "Tails",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-tails-loot-hacker"
+    },
+    {
+      "slotNo": 46,
+      "familyId": "ch7s4-tails",
+      "familyDisplayName": "Tails",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-tails-bounty-hunter"
+    },
+    {
+      "slotNo": 47,
+      "familyId": "ch7s4-onigiri",
+      "familyDisplayName": "Onigiri",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-onigiri-base"
+    },
+    {
+      "slotNo": 48,
+      "familyId": "ch7s4-onigiri",
+      "familyDisplayName": "Onigiri",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-onigiri-cheat-master"
+    },
+    {
+      "slotNo": 49,
+      "familyId": "ch7s4-onigiri",
+      "familyDisplayName": "Onigiri",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-onigiri-gold"
+    },
+    {
+      "slotNo": 50,
+      "familyId": "ch7s4-onigiri",
+      "familyDisplayName": "Onigiri",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-onigiri-loot-hacker"
+    },
+    {
+      "slotNo": 51,
+      "familyId": "ch7s4-onigiri",
+      "familyDisplayName": "Onigiri",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-onigiri-bounty-hunter"
+    },
+    {
+      "slotNo": 52,
+      "familyId": "ch7s4-shadow",
+      "familyDisplayName": "Shadow",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-shadow-base"
+    },
+    {
+      "slotNo": 53,
+      "familyId": "ch7s4-shadow",
+      "familyDisplayName": "Shadow",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-shadow-cheat-master"
+    },
+    {
+      "slotNo": 54,
+      "familyId": "ch7s4-shadow",
+      "familyDisplayName": "Shadow",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-shadow-gold"
+    },
+    {
+      "slotNo": 55,
+      "familyId": "ch7s4-shadow",
+      "familyDisplayName": "Shadow",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-shadow-loot-hacker"
+    },
+    {
+      "slotNo": 56,
+      "familyId": "ch7s4-shadow",
+      "familyDisplayName": "Shadow",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-shadow-bounty-hunter"
+    },
+    {
+      "slotNo": 57,
+      "familyId": "ch7s4-storm-scout",
+      "familyDisplayName": "Storm Scout",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-storm-scout-base"
+    },
+    {
+      "slotNo": 58,
+      "familyId": "ch7s4-storm-scout",
+      "familyDisplayName": "Storm Scout",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-storm-scout-cheat-master"
+    },
+    {
+      "slotNo": 59,
+      "familyId": "ch7s4-storm-scout",
+      "familyDisplayName": "Storm Scout",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-storm-scout-gold"
+    },
+    {
+      "slotNo": 60,
+      "familyId": "ch7s4-storm-scout",
+      "familyDisplayName": "Storm Scout",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-storm-scout-loot-hacker"
+    },
+    {
+      "slotNo": 61,
+      "familyId": "ch7s4-storm-scout",
+      "familyDisplayName": "Storm Scout",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-storm-scout-bounty-hunter"
+    },
+    {
+      "slotNo": 62,
+      "familyId": "ch7s4-8-bit",
+      "familyDisplayName": "8-Bit",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-8-bit-base"
+    },
+    {
+      "slotNo": 63,
+      "familyId": "ch7s4-8-bit",
+      "familyDisplayName": "8-Bit",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-8-bit-cheat-master"
+    },
+    {
+      "slotNo": 64,
+      "familyId": "ch7s4-8-bit",
+      "familyDisplayName": "8-Bit",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-8-bit-gold"
+    },
+    {
+      "slotNo": 65,
+      "familyId": "ch7s4-8-bit",
+      "familyDisplayName": "8-Bit",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-8-bit-loot-hacker"
+    },
+    {
+      "slotNo": 66,
+      "familyId": "ch7s4-8-bit",
+      "familyDisplayName": "8-Bit",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-8-bit-bounty-hunter"
+    },
+    {
+      "slotNo": 67,
+      "familyId": "ch7s4-blinky",
+      "familyDisplayName": "Blinky",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-blinky-base"
+    },
+    {
+      "slotNo": 68,
+      "familyId": "ch7s4-blinky",
+      "familyDisplayName": "Blinky",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-blinky-cheat-master"
+    },
+    {
+      "slotNo": 69,
+      "familyId": "ch7s4-blinky",
+      "familyDisplayName": "Blinky",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-blinky-gold"
+    },
+    {
+      "slotNo": 70,
+      "familyId": "ch7s4-blinky",
+      "familyDisplayName": "Blinky",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-blinky-loot-hacker"
+    },
+    {
+      "slotNo": 71,
+      "familyId": "ch7s4-blinky",
+      "familyDisplayName": "Blinky",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-blinky-bounty-hunter"
+    },
+    {
+      "slotNo": 72,
+      "familyId": "ch7s4-jackrabbit",
+      "familyDisplayName": "Jackrabbit",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-jackrabbit-base"
+    },
+    {
+      "slotNo": 73,
+      "familyId": "ch7s4-jackrabbit",
+      "familyDisplayName": "Jackrabbit",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-jackrabbit-cheat-master"
+    },
+    {
+      "slotNo": 74,
+      "familyId": "ch7s4-jackrabbit",
+      "familyDisplayName": "Jackrabbit",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-jackrabbit-gold"
+    },
+    {
+      "slotNo": 75,
+      "familyId": "ch7s4-jackrabbit",
+      "familyDisplayName": "Jackrabbit",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-jackrabbit-loot-hacker"
+    },
+    {
+      "slotNo": 76,
+      "familyId": "ch7s4-jackrabbit",
+      "familyDisplayName": "Jackrabbit",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-jackrabbit-bounty-hunter"
+    },
+    {
+      "slotNo": 77,
+      "familyId": "ch7s4-crash-bandicoot",
+      "familyDisplayName": "Crash Bandicoot",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-crash-bandicoot-base"
+    },
+    {
+      "slotNo": 78,
+      "familyId": "ch7s4-crash-bandicoot",
+      "familyDisplayName": "Crash Bandicoot",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-crash-bandicoot-cheat-master"
+    },
+    {
+      "slotNo": 79,
+      "familyId": "ch7s4-crash-bandicoot",
+      "familyDisplayName": "Crash Bandicoot",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-crash-bandicoot-gold"
+    },
+    {
+      "slotNo": 80,
+      "familyId": "ch7s4-crash-bandicoot",
+      "familyDisplayName": "Crash Bandicoot",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-crash-bandicoot-loot-hacker"
+    },
+    {
+      "slotNo": 81,
+      "familyId": "ch7s4-crash-bandicoot",
+      "familyDisplayName": "Crash Bandicoot",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-crash-bandicoot-bounty-hunter"
+    },
+    {
+      "slotNo": 82,
+      "familyId": "ch7s4-crown",
+      "familyDisplayName": "Crown",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-crown-base"
+    },
+    {
+      "slotNo": 83,
+      "familyId": "ch7s4-crown",
+      "familyDisplayName": "Crown",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-crown-cheat-master"
+    },
+    {
+      "slotNo": 84,
+      "familyId": "ch7s4-crown",
+      "familyDisplayName": "Crown",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-crown-gold"
+    },
+    {
+      "slotNo": 85,
+      "familyId": "ch7s4-crown",
+      "familyDisplayName": "Crown",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-crown-loot-hacker"
+    },
+    {
+      "slotNo": 86,
+      "familyId": "ch7s4-crown",
+      "familyDisplayName": "Crown",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-crown-bounty-hunter"
+    },
+    {
+      "slotNo": 87,
+      "familyId": "ch7s4-morgana",
+      "familyDisplayName": "Morgana",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-morgana-base"
+    },
+    {
+      "slotNo": 88,
+      "familyId": "ch7s4-morgana",
+      "familyDisplayName": "Morgana",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-morgana-cheat-master"
+    },
+    {
+      "slotNo": 89,
+      "familyId": "ch7s4-morgana",
+      "familyDisplayName": "Morgana",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-morgana-gold"
+    },
+    {
+      "slotNo": 90,
+      "familyId": "ch7s4-morgana",
+      "familyDisplayName": "Morgana",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-morgana-loot-hacker"
+    },
+    {
+      "slotNo": 91,
+      "familyId": "ch7s4-morgana",
+      "familyDisplayName": "Morgana",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-morgana-bounty-hunter"
+    },
+    {
+      "slotNo": 92,
+      "familyId": "ch7s4-killswitch",
+      "familyDisplayName": "Killswitch",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-killswitch-base"
+    },
+    {
+      "slotNo": 93,
+      "familyId": "ch7s4-killswitch",
+      "familyDisplayName": "Killswitch",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-killswitch-cheat-master"
+    },
+    {
+      "slotNo": 94,
+      "familyId": "ch7s4-killswitch",
+      "familyDisplayName": "Killswitch",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-killswitch-gold"
+    },
+    {
+      "slotNo": 95,
+      "familyId": "ch7s4-killswitch",
+      "familyDisplayName": "Killswitch",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-killswitch-loot-hacker"
+    },
+    {
+      "slotNo": 96,
+      "familyId": "ch7s4-killswitch",
+      "familyDisplayName": "Killswitch",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-killswitch-bounty-hunter"
+    },
+    {
+      "slotNo": 97,
+      "familyId": "ch7s4-birthday",
+      "familyDisplayName": "Birthday",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-birthday-base"
+    },
+    {
+      "slotNo": 98,
+      "familyId": "ch7s4-birthday",
+      "familyDisplayName": "Birthday",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-birthday-cheat-master"
+    },
+    {
+      "slotNo": 99,
+      "familyId": "ch7s4-birthday",
+      "familyDisplayName": "Birthday",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-birthday-gold"
+    },
+    {
+      "slotNo": 100,
+      "familyId": "ch7s4-birthday",
+      "familyDisplayName": "Birthday",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-birthday-loot-hacker"
+    },
+    {
+      "slotNo": 101,
+      "familyId": "ch7s4-birthday",
+      "familyDisplayName": "Birthday",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-birthday-bounty-hunter"
+    }
+  ],
+  "constraints": {
+    "idsOwnedByApplication": true,
+    "epicInternalIdsUsed": false,
+    "slotNumbersArePersistenceIds": false,
+    "familyDisplayNamesArePersistenceIds": false,
+    "spriteIdsArePersistenceIds": true,
+    "availabilityControlsIdentity": false
+  }
+}
