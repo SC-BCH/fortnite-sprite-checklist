@@ -14,6 +14,29 @@
     "loot-hacker",
     "bounty-hunter"
   ],
+  "familyDisplayOrder": [
+    "ch7s4-jonesy",
+    "ch7s4-adventure",
+    "ch7s4-bush",
+    "ch7s4-sonic",
+    "ch7s4-tails",
+    "ch7s4-shadow",
+    "ch7s4-8-bit",
+    "ch7s4-jackrabbit",
+    "ch7s4-crown",
+    "ch7s4-killswitch",
+    "ch7s4-klombo",
+    "ch7s4-mega-man",
+    "ch7s4-overshield",
+    "ch7s4-pond",
+    "ch7s4-x-ray",
+    "ch7s4-onigiri",
+    "ch7s4-storm-scout",
+    "ch7s4-blinky",
+    "ch7s4-crash-bandicoot",
+    "ch7s4-morgana",
+    "ch7s4-birthday"
+  ],
   "sprites": [
     {
       "slotNo": 1,
