@@ -42,7 +42,7 @@
   },
   "sources": {
     "background": {
-      "path": "../images/ver10-background.png"
+      "path": "../images/ver10-background.png?v=20260923-ver101-version-a"
     },
     "vanguardBackground": {
       "path": "../images/ver10-vanguard-ii.png"
@@ -54,12 +54,12 @@
       "path": "../images/ver10-sprites.png"
     },
     "crownLayer": {
-      "path": "../images/ver10-master-crowns.png",
-      "sha256": "6118B9B72E1D7FFB3C39E2B9E8C83DDCAEE6B920C755F096F37BA141EDAB9284"
+      "path": "../images/ver10-master-crowns.png?v=20260923-ver101-visual-a",
+      "sha256": "38D5B8FA6E4611BBE6B723E3F12591AA8F52770918F55B8783527F67D856EA88"
     },
     "checkboxLayer": {
-      "path": "../images/ver10-checkboxes.png",
-      "sha256": "C161C338958078FCE594BA17F131D7C8BD8DFF51707110D14145A607D7FF0BDD"
+      "path": "../images/ver10-checkboxes.png?v=20260923-ver101-visual-a",
+      "sha256": "C34DED568B0ED48E8D3BB8A02164F8CD47B52A837F673E95BEB5FB515E415EDE"
     },
     "markLayer": {
       "path": "../images/ver10-marks.png",
