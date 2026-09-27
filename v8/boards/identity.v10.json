@@ -9,8 +9,8 @@
   "spriteIdentityCount": 101,
   "variantIds": [
     "base",
-    "cheat-master",
     "gold",
+    "cheat-master",
     "loot-hacker",
     "bounty-hunter"
   ],
@@ -33,9 +33,9 @@
     "ch7s4-onigiri",
     "ch7s4-storm-scout",
     "ch7s4-blinky",
+    "ch7s4-birthday",
     "ch7s4-crash-bandicoot",
-    "ch7s4-morgana",
-    "ch7s4-birthday"
+    "ch7s4-morgana"
   ],
   "sprites": [
     {

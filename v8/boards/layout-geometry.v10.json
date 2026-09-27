@@ -8,16 +8,16 @@
   },
   "textAnchors": {
     "collectValue": {
-      "x": 652,
+      "x": 590,
       "y": 173,
       "align": "left",
-      "fontSize": 94
+      "fontSize": 82
     },
     "masterValue": {
       "x": 777,
       "y": 287,
       "align": "right",
-      "fontSize": 94
+      "fontSize": 74
     },
     "date": {
       "x": 231,
@@ -42,38 +42,38 @@
   },
   "sources": {
     "background": {
-      "path": "../images/ver10-background.png?v=20260923-ver101-version-a"
+      "path": "../images/ver10-background.png?v=20260927-ver102-canonical-a"
     },
     "vanguardBackground": {
-      "path": "../images/ver10-vanguard-ii.png"
+      "path": "../images/ver10-vanguard-ii.png?v=20260927-ver102-canonical-a"
     },
     "groupPanelLayer": {
-      "path": "../images/ver10-family-panels.png"
+      "path": "../images/ver10-family-panels.png?v=20260927-ver102-canonical-a"
     },
     "spriteLayer": {
-      "path": "../images/ver10-sprites.png"
+      "path": "../images/ver10-sprites.png?v=20260927-ver102-sprite-replace-a"
     },
     "crownLayer": {
-      "path": "../images/ver10-master-crowns.png?v=20260923-ver101-visual-a",
-      "sha256": "38D5B8FA6E4611BBE6B723E3F12591AA8F52770918F55B8783527F67D856EA88"
+      "path": "../images/ver10-master-crowns.png?v=20260927-ver102-canonical-a",
+      "sha256": "7DDE008417C0856FF99C837C3031BC590124833186E558F612B1844B1F1C4654"
     },
     "checkboxLayer": {
-      "path": "../images/ver10-checkboxes.png?v=20260923-ver101-visual-a",
-      "sha256": "C34DED568B0ED48E8D3BB8A02164F8CD47B52A837F673E95BEB5FB515E415EDE"
+      "path": "../images/ver10-checkboxes.png?v=20260927-ver102-canonical-a",
+      "sha256": "B63F3A2B7A989BC0A51B3E50426EBCCD08D3CF01A2D285F745B625BB830E44F3"
     },
     "markLayer": {
       "path": "../images/ver10-marks.png",
       "sha256": "62A3D10FF1F1F7E762C37B75CB163C9CF91871075E9692A6FA9EBB302B06B1B0"
     },
     "familyNameLayer": {
-      "path": "../images/ver10-family-names.png",
-      "sha256": "98B12E0E11C221C6C9CC9613CC1800CC05D72A7281F7839349E52F2B109BC17D"
+      "path": "../images/ver10-family-names.png?v=20260927-ver102-canonical-a",
+      "sha256": "E40B2B32C7C7F33D323C2256812AE85101A94FACA9D416A9C246969B65D178AA"
     },
     "versionLayer": {
       "path": "../images/ver10-version-transparent.png"
     },
     "completeLayer": {
-      "path": "../images/ver10-complete.png"
+      "path": "../images/ver10-complete.png?v=20260927-ver102-canonical-a"
     }
   },
   "markSources": {
@@ -119,6 +119,7 @@
   "slots": [
     {
       "slotNo": 1,
+      "stableSlotNo": 1,
       "row": 0,
       "column": 0,
       "zone": "CENTER",
@@ -127,10 +128,16 @@
       "checkboxDetectedRect": {
         "x": 1431,
         "y": 614,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1449,
+        "y": 351,
+        "w": 138,
+        "h": 77
+      },
+      "crownInteractionRect": {
         "x": 1471,
         "y": 370,
         "w": 99,
@@ -139,6 +146,7 @@
     },
     {
       "slotNo": 2,
+      "stableSlotNo": 2,
       "row": 1,
       "column": 1,
       "zone": "LEFT",
@@ -151,6 +159,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 88,
+        "y": 686,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 111,
         "y": 705,
         "w": 98,
@@ -159,11 +173,12 @@
     },
     {
       "slotNo": 3,
+      "stableSlotNo": 4,
       "row": 1,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-jonesy-cheat-master",
+      "spriteId": "ch7s4-jonesy-gold",
       "checkboxDetectedRect": {
         "x": 254,
         "y": 958,
@@ -171,6 +186,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 274,
+        "y": 686,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 297,
         "y": 705,
         "w": 98,
@@ -179,18 +200,25 @@
     },
     {
       "slotNo": 4,
+      "stableSlotNo": 3,
       "row": 1,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-jonesy-gold",
+      "spriteId": "ch7s4-jonesy-cheat-master",
       "checkboxDetectedRect": {
-        "x": 441,
+        "x": 440,
         "y": 958,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 472,
+        "y": 688,
+        "w": 136,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 494,
         "y": 707,
         "w": 98,
@@ -199,6 +227,7 @@
     },
     {
       "slotNo": 5,
+      "stableSlotNo": 5,
       "row": 1,
       "column": 4,
       "zone": "LEFT",
@@ -211,6 +240,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 648,
+        "y": 689,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 671,
         "y": 708,
         "w": 98,
@@ -219,6 +254,7 @@
     },
     {
       "slotNo": 6,
+      "stableSlotNo": 6,
       "row": 1,
       "column": 5,
       "zone": "LEFT",
@@ -231,6 +267,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 834,
+        "y": 689,
+        "w": 136,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 856,
         "y": 708,
         "w": 98,
@@ -239,18 +281,25 @@
     },
     {
       "slotNo": 7,
+      "stableSlotNo": 7,
       "row": 1,
       "column": 6,
       "zone": "RIGHT",
       "candidateNo": 1,
       "spriteId": "ch7s4-klombo-base",
       "checkboxDetectedRect": {
-        "x": 1607,
+        "x": 1606,
         "y": 957,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1627,
+        "y": 706,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 1650,
         "y": 725,
         "w": 97,
@@ -259,11 +308,12 @@
     },
     {
       "slotNo": 8,
+      "stableSlotNo": 9,
       "row": 1,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-klombo-cheat-master",
+      "spriteId": "ch7s4-klombo-gold",
       "checkboxDetectedRect": {
         "x": 1787,
         "y": 958,
@@ -271,6 +321,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1808,
+        "y": 706,
+        "w": 136,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 1830,
         "y": 726,
         "w": 98,
@@ -279,11 +335,12 @@
     },
     {
       "slotNo": 9,
+      "stableSlotNo": 8,
       "row": 1,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-klombo-gold",
+      "spriteId": "ch7s4-klombo-cheat-master",
       "checkboxDetectedRect": {
         "x": 1971,
         "y": 958,
@@ -291,6 +348,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1993,
+        "y": 706,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2016,
         "y": 726,
         "w": 98,
@@ -299,6 +362,7 @@
     },
     {
       "slotNo": 10,
+      "stableSlotNo": 10,
       "row": 1,
       "column": 9,
       "zone": "RIGHT",
@@ -311,6 +375,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2172,
+        "y": 706,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2195,
         "y": 725,
         "w": 98,
@@ -319,6 +389,7 @@
     },
     {
       "slotNo": 11,
+      "stableSlotNo": 11,
       "row": 1,
       "column": 10,
       "zone": "RIGHT",
@@ -331,6 +402,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2362,
+        "y": 706,
+        "w": 136,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2384,
         "y": 725,
         "w": 98,
@@ -339,6 +416,7 @@
     },
     {
       "slotNo": 12,
+      "stableSlotNo": 12,
       "row": 2,
       "column": 1,
       "zone": "LEFT",
@@ -351,6 +429,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 89,
+        "y": 1028,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 111,
         "y": 1047,
         "w": 99,
@@ -359,18 +443,25 @@
     },
     {
       "slotNo": 13,
+      "stableSlotNo": 14,
       "row": 2,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-adventure-cheat-master",
+      "spriteId": "ch7s4-adventure-gold",
       "checkboxDetectedRect": {
-        "x": 252,
+        "x": 251,
         "y": 1306,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 273,
+        "y": 1029,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 296,
         "y": 1048,
         "w": 98,
@@ -379,11 +470,12 @@
     },
     {
       "slotNo": 14,
+      "stableSlotNo": 13,
       "row": 2,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-adventure-gold",
+      "spriteId": "ch7s4-adventure-cheat-master",
       "checkboxDetectedRect": {
         "x": 439,
         "y": 1306,
@@ -391,6 +483,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 457,
+        "y": 1026,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 480,
         "y": 1046,
         "w": 98,
@@ -399,6 +497,7 @@
     },
     {
       "slotNo": 15,
+      "stableSlotNo": 15,
       "row": 2,
       "column": 4,
       "zone": "LEFT",
@@ -411,6 +510,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 644,
+        "y": 1027,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 666,
         "y": 1047,
         "w": 99,
@@ -419,6 +524,7 @@
     },
     {
       "slotNo": 16,
+      "stableSlotNo": 16,
       "row": 2,
       "column": 5,
       "zone": "LEFT",
@@ -431,14 +537,21 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 829,
+        "y": 1028,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 851,
         "y": 1047,
-        "w": 99,
+        "w": 98,
         "h": 60
       }
     },
     {
       "slotNo": 17,
+      "stableSlotNo": 17,
       "row": 2,
       "column": 6,
       "zone": "RIGHT",
@@ -451,6 +564,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1623,
+        "y": 1051,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 1646,
         "y": 1070,
         "w": 99,
@@ -459,11 +578,12 @@
     },
     {
       "slotNo": 18,
+      "stableSlotNo": 19,
       "row": 2,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-overshield-cheat-master",
+      "spriteId": "ch7s4-overshield-gold",
       "checkboxDetectedRect": {
         "x": 1787,
         "y": 1304,
@@ -471,6 +591,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1803,
+        "y": 1053,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 1826,
         "y": 1072,
         "w": 98,
@@ -479,18 +605,25 @@
     },
     {
       "slotNo": 19,
+      "stableSlotNo": 18,
       "row": 2,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-overshield-gold",
+      "spriteId": "ch7s4-overshield-cheat-master",
       "checkboxDetectedRect": {
         "x": 1972,
         "y": 1305,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1988,
+        "y": 1055,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2011,
         "y": 1074,
         "w": 98,
@@ -499,18 +632,25 @@
     },
     {
       "slotNo": 20,
+      "stableSlotNo": 20,
       "row": 2,
       "column": 9,
       "zone": "RIGHT",
       "candidateNo": 4,
       "spriteId": "ch7s4-overshield-loot-hacker",
       "checkboxDetectedRect": {
-        "x": 2153,
+        "x": 2152,
         "y": 1304,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2173,
+        "y": 1055,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2196,
         "y": 1074,
         "w": 98,
@@ -519,6 +659,7 @@
     },
     {
       "slotNo": 21,
+      "stableSlotNo": 21,
       "row": 2,
       "column": 10,
       "zone": "RIGHT",
@@ -527,18 +668,25 @@
       "checkboxDetectedRect": {
         "x": 2341,
         "y": 1305,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 2365,
+        "y": 1053,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2388,
         "y": 1072,
-        "w": 99,
+        "w": 98,
         "h": 61
       }
     },
     {
       "slotNo": 22,
+      "stableSlotNo": 22,
       "row": 3,
       "column": 1,
       "zone": "LEFT",
@@ -551,6 +699,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 85,
+        "y": 1402,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 108,
         "y": 1421,
         "w": 98,
@@ -559,18 +713,25 @@
     },
     {
       "slotNo": 23,
+      "stableSlotNo": 24,
       "row": 3,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-bush-cheat-master",
+      "spriteId": "ch7s4-bush-gold",
       "checkboxDetectedRect": {
-        "x": 252,
+        "x": 251,
         "y": 1656,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 270,
+        "y": 1403,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 293,
         "y": 1422,
         "w": 99,
@@ -579,11 +740,12 @@
     },
     {
       "slotNo": 24,
+      "stableSlotNo": 23,
       "row": 3,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-bush-gold",
+      "spriteId": "ch7s4-bush-cheat-master",
       "checkboxDetectedRect": {
         "x": 440,
         "y": 1656,
@@ -591,6 +753,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 460,
+        "y": 1399,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 483,
         "y": 1419,
         "w": 99,
@@ -599,6 +767,7 @@
     },
     {
       "slotNo": 25,
+      "stableSlotNo": 25,
       "row": 3,
       "column": 4,
       "zone": "LEFT",
@@ -611,6 +780,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 637,
+        "y": 1403,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 660,
         "y": 1422,
         "w": 98,
@@ -619,6 +794,7 @@
     },
     {
       "slotNo": 26,
+      "stableSlotNo": 26,
       "row": 3,
       "column": 5,
       "zone": "LEFT",
@@ -631,26 +807,39 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 826,
+        "y": 1395,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 849,
-        "y": 1414,
+        "y": 1415,
         "w": 98,
-        "h": 61
+        "h": 60
       }
     },
     {
       "slotNo": 27,
+      "stableSlotNo": 27,
       "row": 3,
       "column": 6,
       "zone": "RIGHT",
       "candidateNo": 1,
       "spriteId": "ch7s4-pond-base",
       "checkboxDetectedRect": {
-        "x": 1607,
+        "x": 1606,
         "y": 1655,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1622,
+        "y": 1401,
+        "w": 139,
+        "h": 76
+      },
+      "crownInteractionRect": {
         "x": 1644,
         "y": 1419,
         "w": 100,
@@ -659,11 +848,12 @@
     },
     {
       "slotNo": 28,
+      "stableSlotNo": 29,
       "row": 3,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-pond-cheat-master",
+      "spriteId": "ch7s4-pond-gold",
       "checkboxDetectedRect": {
         "x": 1787,
         "y": 1656,
@@ -671,6 +861,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1799,
+        "y": 1397,
+        "w": 139,
+        "h": 76
+      },
+      "crownInteractionRect": {
         "x": 1822,
         "y": 1415,
         "w": 99,
@@ -679,11 +875,12 @@
     },
     {
       "slotNo": 29,
+      "stableSlotNo": 28,
       "row": 3,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-pond-gold",
+      "spriteId": "ch7s4-pond-cheat-master",
       "checkboxDetectedRect": {
         "x": 1982,
         "y": 1656,
@@ -691,6 +888,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1993,
+        "y": 1402,
+        "w": 138,
+        "h": 77
+      },
+      "crownInteractionRect": {
         "x": 2015,
         "y": 1421,
         "w": 99,
@@ -699,18 +902,25 @@
     },
     {
       "slotNo": 30,
+      "stableSlotNo": 30,
       "row": 3,
       "column": 9,
       "zone": "RIGHT",
       "candidateNo": 4,
       "spriteId": "ch7s4-pond-loot-hacker",
       "checkboxDetectedRect": {
-        "x": 2154,
+        "x": 2153,
         "y": 1655,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 2162,
+        "y": 1400,
+        "w": 138,
+        "h": 76
+      },
+      "crownInteractionRect": {
         "x": 2184,
         "y": 1418,
         "w": 99,
@@ -719,6 +929,7 @@
     },
     {
       "slotNo": 31,
+      "stableSlotNo": 31,
       "row": 3,
       "column": 10,
       "zone": "RIGHT",
@@ -731,14 +942,21 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 2353,
+        "y": 1398,
+        "w": 138,
+        "h": 77
+      },
+      "crownInteractionRect": {
         "x": 2375,
         "y": 1417,
-        "w": 100,
+        "w": 99,
         "h": 58
       }
     },
     {
       "slotNo": 32,
+      "stableSlotNo": 32,
       "row": 4,
       "column": 1,
       "zone": "LEFT",
@@ -751,6 +969,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 84,
+        "y": 1742,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 107,
         "y": 1761,
         "w": 98,
@@ -759,18 +983,25 @@
     },
     {
       "slotNo": 33,
+      "stableSlotNo": 34,
       "row": 4,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-sonic-cheat-master",
+      "spriteId": "ch7s4-sonic-gold",
       "checkboxDetectedRect": {
-        "x": 252,
+        "x": 251,
         "y": 1998,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 264,
+        "y": 1742,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 287,
         "y": 1761,
         "w": 98,
@@ -779,11 +1010,12 @@
     },
     {
       "slotNo": 34,
+      "stableSlotNo": 33,
       "row": 4,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-sonic-gold",
+      "spriteId": "ch7s4-sonic-cheat-master",
       "checkboxDetectedRect": {
         "x": 440,
         "y": 1996,
@@ -791,6 +1023,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 457,
+        "y": 1743,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 479,
         "y": 1763,
         "w": 99,
@@ -799,6 +1037,7 @@
     },
     {
       "slotNo": 35,
+      "stableSlotNo": 35,
       "row": 4,
       "column": 4,
       "zone": "LEFT",
@@ -807,10 +1046,16 @@
       "checkboxDetectedRect": {
         "x": 621,
         "y": 1996,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 633,
+        "y": 1741,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 656,
         "y": 1760,
         "w": 98,
@@ -819,6 +1064,7 @@
     },
     {
       "slotNo": 36,
+      "stableSlotNo": 36,
       "row": 4,
       "column": 5,
       "zone": "LEFT",
@@ -831,14 +1077,21 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 820,
+        "y": 1736,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 843,
-        "y": 1755,
+        "y": 1756,
         "w": 98,
-        "h": 61
+        "h": 60
       }
     },
     {
       "slotNo": 37,
+      "stableSlotNo": 37,
       "row": 4,
       "column": 6,
       "zone": "RIGHT",
@@ -851,6 +1104,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1622,
+        "y": 1730,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 1645,
         "y": 1749,
         "w": 98,
@@ -859,11 +1118,12 @@
     },
     {
       "slotNo": 38,
+      "stableSlotNo": 39,
       "row": 4,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-x-ray-cheat-master",
+      "spriteId": "ch7s4-x-ray-gold",
       "checkboxDetectedRect": {
         "x": 1786,
         "y": 1996,
@@ -871,6 +1131,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1803,
+        "y": 1732,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 1826,
         "y": 1751,
         "w": 98,
@@ -879,11 +1145,12 @@
     },
     {
       "slotNo": 39,
+      "stableSlotNo": 38,
       "row": 4,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-x-ray-gold",
+      "spriteId": "ch7s4-x-ray-cheat-master",
       "checkboxDetectedRect": {
         "x": 1971,
         "y": 1996,
@@ -891,6 +1158,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1993,
+        "y": 1732,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2016,
         "y": 1751,
         "w": 99,
@@ -899,18 +1172,25 @@
     },
     {
       "slotNo": 40,
+      "stableSlotNo": 40,
       "row": 4,
       "column": 9,
       "zone": "RIGHT",
       "candidateNo": 4,
       "spriteId": "ch7s4-x-ray-loot-hacker",
       "checkboxDetectedRect": {
-        "x": 2154,
+        "x": 2153,
         "y": 1996,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 2173,
+        "y": 1733,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2195,
         "y": 1752,
         "w": 99,
@@ -919,18 +1199,25 @@
     },
     {
       "slotNo": 41,
+      "stableSlotNo": 41,
       "row": 4,
       "column": 10,
       "zone": "RIGHT",
       "candidateNo": 5,
       "spriteId": "ch7s4-x-ray-bounty-hunter",
       "checkboxDetectedRect": {
-        "x": 2341,
+        "x": 2340,
         "y": 1996,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 2365,
+        "y": 1730,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2388,
         "y": 1749,
         "w": 98,
@@ -939,6 +1226,7 @@
     },
     {
       "slotNo": 42,
+      "stableSlotNo": 42,
       "row": 5,
       "column": 1,
       "zone": "LEFT",
@@ -951,6 +1239,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 86,
+        "y": 2098,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 109,
         "y": 2117,
         "w": 99,
@@ -959,18 +1253,25 @@
     },
     {
       "slotNo": 43,
+      "stableSlotNo": 44,
       "row": 5,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-tails-cheat-master",
+      "spriteId": "ch7s4-tails-gold",
       "checkboxDetectedRect": {
-        "x": 252,
+        "x": 251,
         "y": 2353,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 267,
+        "y": 2099,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 289,
         "y": 2118,
         "w": 99,
@@ -979,11 +1280,12 @@
     },
     {
       "slotNo": 44,
+      "stableSlotNo": 43,
       "row": 5,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-tails-gold",
+      "spriteId": "ch7s4-tails-cheat-master",
       "checkboxDetectedRect": {
         "x": 440,
         "y": 2353,
@@ -991,6 +1293,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 453,
+        "y": 2098,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 475,
         "y": 2117,
         "w": 99,
@@ -999,6 +1307,7 @@
     },
     {
       "slotNo": 45,
+      "stableSlotNo": 45,
       "row": 5,
       "column": 4,
       "zone": "LEFT",
@@ -1011,6 +1320,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 635,
+        "y": 2099,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 658,
         "y": 2118,
         "w": 98,
@@ -1019,6 +1334,7 @@
     },
     {
       "slotNo": 46,
+      "stableSlotNo": 46,
       "row": 5,
       "column": 5,
       "zone": "LEFT",
@@ -1031,14 +1347,21 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 819,
+        "y": 2097,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 842,
         "y": 2117,
-        "w": 99,
+        "w": 98,
         "h": 60
       }
     },
     {
       "slotNo": 47,
+      "stableSlotNo": 47,
       "row": 5,
       "column": 6,
       "zone": "RIGHT",
@@ -1051,6 +1374,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1618,
+        "y": 2089,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 1641,
         "y": 2108,
         "w": 98,
@@ -1059,11 +1388,12 @@
     },
     {
       "slotNo": 48,
+      "stableSlotNo": 49,
       "row": 5,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-onigiri-cheat-master",
+      "spriteId": "ch7s4-onigiri-gold",
       "checkboxDetectedRect": {
         "x": 1787,
         "y": 2353,
@@ -1071,6 +1401,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 1804,
+        "y": 2093,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 1827,
         "y": 2112,
         "w": 98,
@@ -1079,11 +1415,12 @@
     },
     {
       "slotNo": 49,
+      "stableSlotNo": 48,
       "row": 5,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-onigiri-gold",
+      "spriteId": "ch7s4-onigiri-cheat-master",
       "checkboxDetectedRect": {
         "x": 1972,
         "y": 2352,
@@ -1091,6 +1428,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1987,
+        "y": 2092,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2009,
         "y": 2111,
         "w": 99,
@@ -1099,6 +1442,7 @@
     },
     {
       "slotNo": 50,
+      "stableSlotNo": 50,
       "row": 5,
       "column": 9,
       "zone": "RIGHT",
@@ -1107,10 +1451,16 @@
       "checkboxDetectedRect": {
         "x": 2154,
         "y": 2351,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 2170,
+        "y": 2094,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2193,
         "y": 2113,
         "w": 98,
@@ -1119,6 +1469,7 @@
     },
     {
       "slotNo": 51,
+      "stableSlotNo": 51,
       "row": 5,
       "column": 10,
       "zone": "RIGHT",
@@ -1127,18 +1478,25 @@
       "checkboxDetectedRect": {
         "x": 2341,
         "y": 2352,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2359,
+        "y": 2093,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2381,
         "y": 2112,
-        "w": 99,
-        "h": 60
+        "w": 98,
+        "h": 61
       }
     },
     {
       "slotNo": 52,
+      "stableSlotNo": 52,
       "row": 6,
       "column": 1,
       "zone": "LEFT",
@@ -1151,6 +1509,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 103,
+        "y": 2440,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 126,
         "y": 2459,
         "w": 98,
@@ -1159,11 +1523,12 @@
     },
     {
       "slotNo": 53,
+      "stableSlotNo": 54,
       "row": 6,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-shadow-cheat-master",
+      "spriteId": "ch7s4-shadow-gold",
       "checkboxDetectedRect": {
         "x": 252,
         "y": 2689,
@@ -1171,6 +1536,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 282,
+        "y": 2434,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 305,
         "y": 2453,
         "w": 99,
@@ -1179,18 +1550,25 @@
     },
     {
       "slotNo": 54,
+      "stableSlotNo": 53,
       "row": 6,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-shadow-gold",
+      "spriteId": "ch7s4-shadow-cheat-master",
       "checkboxDetectedRect": {
-        "x": 441,
+        "x": 440,
         "y": 2687,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 476,
+        "y": 2434,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 499,
         "y": 2453,
         "w": 99,
@@ -1199,6 +1577,7 @@
     },
     {
       "slotNo": 55,
+      "stableSlotNo": 55,
       "row": 6,
       "column": 4,
       "zone": "LEFT",
@@ -1211,6 +1590,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 653,
+        "y": 2434,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 675,
         "y": 2453,
         "w": 99,
@@ -1219,6 +1604,7 @@
     },
     {
       "slotNo": 56,
+      "stableSlotNo": 56,
       "row": 6,
       "column": 5,
       "zone": "LEFT",
@@ -1231,14 +1617,21 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 864,
-        "y": 2453,
-        "w": 98,
-        "h": 61
+        "x": 841,
+        "y": 2434,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 863,
+        "y": 2454,
+        "w": 99,
+        "h": 60
       }
     },
     {
       "slotNo": 57,
+      "stableSlotNo": 57,
       "row": 6,
       "column": 6,
       "zone": "RIGHT",
@@ -1251,6 +1644,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1619,
+        "y": 2419,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 1641,
         "y": 2438,
         "w": 99,
@@ -1259,11 +1658,12 @@
     },
     {
       "slotNo": 58,
+      "stableSlotNo": 59,
       "row": 6,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-storm-scout-cheat-master",
+      "spriteId": "ch7s4-storm-scout-gold",
       "checkboxDetectedRect": {
         "x": 1786,
         "y": 2689,
@@ -1271,6 +1671,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1815,
+        "y": 2426,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 1838,
         "y": 2446,
         "w": 98,
@@ -1279,11 +1685,12 @@
     },
     {
       "slotNo": 59,
+      "stableSlotNo": 58,
       "row": 6,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-storm-scout-gold",
+      "spriteId": "ch7s4-storm-scout-cheat-master",
       "checkboxDetectedRect": {
         "x": 1971,
         "y": 2689,
@@ -1291,6 +1698,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1995,
+        "y": 2426,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2017,
         "y": 2446,
         "w": 99,
@@ -1299,18 +1712,25 @@
     },
     {
       "slotNo": 60,
+      "stableSlotNo": 60,
       "row": 6,
       "column": 9,
       "zone": "RIGHT",
       "candidateNo": 4,
       "spriteId": "ch7s4-storm-scout-loot-hacker",
       "checkboxDetectedRect": {
-        "x": 2154,
+        "x": 2153,
         "y": 2689,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2183,
+        "y": 2432,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2206,
         "y": 2452,
         "w": 98,
@@ -1319,26 +1739,34 @@
     },
     {
       "slotNo": 61,
+      "stableSlotNo": 61,
       "row": 6,
       "column": 10,
       "zone": "RIGHT",
       "candidateNo": 5,
       "spriteId": "ch7s4-storm-scout-bounty-hunter",
       "checkboxDetectedRect": {
-        "x": 2341,
+        "x": 2340,
         "y": 2689,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2368,
+        "y": 2426,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2391,
         "y": 2446,
-        "w": 99,
+        "w": 98,
         "h": 60
       }
     },
     {
       "slotNo": 62,
+      "stableSlotNo": 62,
       "row": 7,
       "column": 1,
       "zone": "LEFT",
@@ -1351,6 +1779,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 89,
+        "y": 2783,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 112,
         "y": 2802,
         "w": 98,
@@ -1359,11 +1793,12 @@
     },
     {
       "slotNo": 63,
+      "stableSlotNo": 64,
       "row": 7,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-8-bit-cheat-master",
+      "spriteId": "ch7s4-8-bit-gold",
       "checkboxDetectedRect": {
         "x": 253,
         "y": 3037,
@@ -1371,6 +1806,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 274,
+        "y": 2784,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 297,
         "y": 2803,
         "w": 99,
@@ -1379,18 +1820,25 @@
     },
     {
       "slotNo": 64,
+      "stableSlotNo": 63,
       "row": 7,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-8-bit-gold",
+      "spriteId": "ch7s4-8-bit-cheat-master",
       "checkboxDetectedRect": {
         "x": 439,
         "y": 3037,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 457,
+        "y": 2783,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 480,
         "y": 2802,
         "w": 99,
@@ -1399,6 +1847,7 @@
     },
     {
       "slotNo": 65,
+      "stableSlotNo": 65,
       "row": 7,
       "column": 4,
       "zone": "LEFT",
@@ -1411,6 +1860,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 640,
+        "y": 2789,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 663,
         "y": 2808,
         "w": 98,
@@ -1419,6 +1874,7 @@
     },
     {
       "slotNo": 66,
+      "stableSlotNo": 66,
       "row": 7,
       "column": 5,
       "zone": "LEFT",
@@ -1427,10 +1883,16 @@
       "checkboxDetectedRect": {
         "x": 805,
         "y": 3037,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 822,
+        "y": 2783,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 845,
         "y": 2802,
         "w": 98,
@@ -1439,6 +1901,7 @@
     },
     {
       "slotNo": 67,
+      "stableSlotNo": 67,
       "row": 7,
       "column": 6,
       "zone": "RIGHT",
@@ -1451,6 +1914,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1622,
+        "y": 2772,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 1645,
         "y": 2791,
         "w": 98,
@@ -1459,11 +1928,12 @@
     },
     {
       "slotNo": 68,
+      "stableSlotNo": 69,
       "row": 7,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-blinky-cheat-master",
+      "spriteId": "ch7s4-blinky-gold",
       "checkboxDetectedRect": {
         "x": 1787,
         "y": 3035,
@@ -1471,6 +1941,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1810,
+        "y": 2774,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 1832,
         "y": 2793,
         "w": 99,
@@ -1479,18 +1955,25 @@
     },
     {
       "slotNo": 69,
+      "stableSlotNo": 68,
       "row": 7,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-blinky-gold",
+      "spriteId": "ch7s4-blinky-cheat-master",
       "checkboxDetectedRect": {
         "x": 1972,
         "y": 3035,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1990,
+        "y": 2771,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2013,
         "y": 2791,
         "w": 99,
@@ -1499,6 +1982,7 @@
     },
     {
       "slotNo": 70,
+      "stableSlotNo": 70,
       "row": 7,
       "column": 9,
       "zone": "RIGHT",
@@ -1511,6 +1995,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2175,
+        "y": 2771,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 2198,
         "y": 2791,
         "w": 98,
@@ -1519,6 +2009,7 @@
     },
     {
       "slotNo": 71,
+      "stableSlotNo": 71,
       "row": 7,
       "column": 10,
       "zone": "RIGHT",
@@ -1531,6 +2022,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2368,
+        "y": 2772,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2391,
         "y": 2791,
         "w": 98,
@@ -1539,6 +2036,7 @@
     },
     {
       "slotNo": 72,
+      "stableSlotNo": 72,
       "row": 8,
       "column": 1,
       "zone": "LEFT",
@@ -1551,6 +2049,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 87,
+        "y": 3133,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 110,
         "y": 3152,
         "w": 98,
@@ -1559,11 +2063,12 @@
     },
     {
       "slotNo": 73,
+      "stableSlotNo": 74,
       "row": 8,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-jackrabbit-cheat-master",
+      "spriteId": "ch7s4-jackrabbit-gold",
       "checkboxDetectedRect": {
         "x": 253,
         "y": 3380,
@@ -1571,6 +2076,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 272,
+        "y": 3131,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 294,
         "y": 3150,
         "w": 99,
@@ -1579,18 +2090,25 @@
     },
     {
       "slotNo": 74,
+      "stableSlotNo": 73,
       "row": 8,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-jackrabbit-gold",
+      "spriteId": "ch7s4-jackrabbit-cheat-master",
       "checkboxDetectedRect": {
         "x": 440,
         "y": 3380,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 457,
+        "y": 3126,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 480,
         "y": 3146,
         "w": 99,
@@ -1599,6 +2117,7 @@
     },
     {
       "slotNo": 75,
+      "stableSlotNo": 75,
       "row": 8,
       "column": 4,
       "zone": "LEFT",
@@ -1611,6 +2130,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 634,
+        "y": 3130,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 657,
         "y": 3149,
         "w": 99,
@@ -1619,6 +2144,7 @@
     },
     {
       "slotNo": 76,
+      "stableSlotNo": 76,
       "row": 8,
       "column": 5,
       "zone": "LEFT",
@@ -1631,6 +2157,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 824,
+        "y": 3126,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 847,
         "y": 3146,
         "w": 98,
@@ -1639,11 +2171,12 @@
     },
     {
       "slotNo": 77,
+      "stableSlotNo": 97,
       "row": 8,
       "column": 6,
       "zone": "RIGHT",
       "candidateNo": 1,
-      "spriteId": "ch7s4-crash-bandicoot-base",
+      "spriteId": "ch7s4-birthday-base",
       "checkboxDetectedRect": {
         "x": 1607,
         "y": 3379,
@@ -1651,7 +2184,13 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 1635,
+        "x": 1621,
+        "y": 3125,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
+        "x": 1643,
         "y": 3144,
         "w": 99,
         "h": 60
@@ -1659,11 +2198,12 @@
     },
     {
       "slotNo": 78,
+      "stableSlotNo": 99,
       "row": 8,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-crash-bandicoot-cheat-master",
+      "spriteId": "ch7s4-birthday-gold",
       "checkboxDetectedRect": {
         "x": 1786,
         "y": 3378,
@@ -1671,74 +2211,102 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 1825,
-        "y": 3141,
-        "w": 98,
-        "h": 60
-      }
-    },
-    {
-      "slotNo": 79,
-      "row": 8,
-      "column": 8,
-      "zone": "RIGHT",
-      "candidateNo": 3,
-      "spriteId": "ch7s4-crash-bandicoot-gold",
-      "checkboxDetectedRect": {
-        "x": 1972,
-        "y": 3379,
-        "w": 82,
-        "h": 82
+        "x": 1804,
+        "y": 3125,
+        "w": 138,
+        "h": 79
       },
-      "crownDetectedRect": {
-        "x": 2001,
+      "crownInteractionRect": {
+        "x": 1827,
         "y": 3144,
         "w": 98,
         "h": 60
       }
     },
     {
+      "slotNo": 79,
+      "stableSlotNo": 98,
+      "row": 8,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-birthday-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 1971,
+        "y": 3379,
+        "w": 83,
+        "h": 82
+      },
+      "crownDetectedRect": {
+        "x": 1990,
+        "y": 3125,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
+        "x": 2013,
+        "y": 3144,
+        "w": 99,
+        "h": 60
+      }
+    },
+    {
       "slotNo": 80,
+      "stableSlotNo": 100,
       "row": 8,
       "column": 9,
       "zone": "RIGHT",
       "candidateNo": 4,
-      "spriteId": "ch7s4-crash-bandicoot-loot-hacker",
+      "spriteId": "ch7s4-birthday-loot-hacker",
       "checkboxDetectedRect": {
         "x": 2152,
         "y": 3379,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 2184,
-        "y": 3139,
+        "x": 2172,
+        "y": 3126,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 2195,
+        "y": 3146,
         "w": 98,
         "h": 60
       }
     },
     {
       "slotNo": 81,
+      "stableSlotNo": 101,
       "row": 8,
       "column": 10,
       "zone": "RIGHT",
       "candidateNo": 5,
-      "spriteId": "ch7s4-crash-bandicoot-bounty-hunter",
+      "spriteId": "ch7s4-birthday-bounty-hunter",
       "checkboxDetectedRect": {
         "x": 2341,
         "y": 3379,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 2353,
+        "y": 3125,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2376,
-        "y": 3136,
-        "w": 99,
-        "h": 61
+        "y": 3144,
+        "w": 98,
+        "h": 60
       }
     },
     {
       "slotNo": 82,
+      "stableSlotNo": 82,
       "row": 9,
       "column": 1,
       "zone": "LEFT",
@@ -1747,10 +2315,16 @@
       "checkboxDetectedRect": {
         "x": 73,
         "y": 3723,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 79,
+        "y": 3473,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 102,
         "y": 3492,
         "w": 98,
@@ -1759,11 +2333,12 @@
     },
     {
       "slotNo": 83,
+      "stableSlotNo": 84,
       "row": 9,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-crown-cheat-master",
+      "spriteId": "ch7s4-crown-gold",
       "checkboxDetectedRect": {
         "x": 255,
         "y": 3723,
@@ -1771,6 +2346,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 254,
+        "y": 3472,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 277,
         "y": 3491,
         "w": 98,
@@ -1779,11 +2360,12 @@
     },
     {
       "slotNo": 84,
+      "stableSlotNo": 83,
       "row": 9,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-crown-gold",
+      "spriteId": "ch7s4-crown-cheat-master",
       "checkboxDetectedRect": {
         "x": 438,
         "y": 3723,
@@ -1791,6 +2373,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 444,
+        "y": 3469,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 467,
         "y": 3489,
         "w": 98,
@@ -1799,6 +2387,7 @@
     },
     {
       "slotNo": 85,
+      "stableSlotNo": 85,
       "row": 9,
       "column": 4,
       "zone": "LEFT",
@@ -1811,6 +2400,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 630,
+        "y": 3477,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 652,
         "y": 3496,
         "w": 99,
@@ -1819,6 +2414,7 @@
     },
     {
       "slotNo": 86,
+      "stableSlotNo": 86,
       "row": 9,
       "column": 5,
       "zone": "LEFT",
@@ -1831,6 +2427,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 816,
+        "y": 3477,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 838,
         "y": 3496,
         "w": 99,
@@ -1839,11 +2441,12 @@
     },
     {
       "slotNo": 87,
+      "stableSlotNo": 77,
       "row": 9,
       "column": 6,
       "zone": "RIGHT",
       "candidateNo": 1,
-      "spriteId": "ch7s4-morgana-base",
+      "spriteId": "ch7s4-crash-bandicoot-base",
       "checkboxDetectedRect": {
         "x": 1606,
         "y": 3723,
@@ -1851,6 +2454,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 1620,
+        "y": 3464,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 1642,
         "y": 3484,
         "w": 99,
@@ -1859,11 +2468,12 @@
     },
     {
       "slotNo": 88,
+      "stableSlotNo": 79,
       "row": 9,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-morgana-cheat-master",
+      "spriteId": "ch7s4-crash-bandicoot-gold",
       "checkboxDetectedRect": {
         "x": 1785,
         "y": 3723,
@@ -1871,19 +2481,26 @@
         "h": 83
       },
       "crownDetectedRect": {
-        "x": 1820,
-        "y": 3482,
-        "w": 98,
+        "x": 1805,
+        "y": 3464,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
+        "x": 1828,
+        "y": 3483,
+        "w": 99,
         "h": 60
       }
     },
     {
       "slotNo": 89,
+      "stableSlotNo": 78,
       "row": 9,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-morgana-gold",
+      "spriteId": "ch7s4-crash-bandicoot-cheat-master",
       "checkboxDetectedRect": {
         "x": 1970,
         "y": 3723,
@@ -1891,26 +2508,39 @@
         "h": 83
       },
       "crownDetectedRect": {
-        "x": 2010,
+        "x": 1979,
+        "y": 3464,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 2002,
         "y": 3484,
-        "w": 98,
+        "w": 99,
         "h": 60
       }
     },
     {
       "slotNo": 90,
+      "stableSlotNo": 80,
       "row": 9,
       "column": 9,
       "zone": "RIGHT",
       "candidateNo": 4,
-      "spriteId": "ch7s4-morgana-loot-hacker",
+      "spriteId": "ch7s4-crash-bandicoot-loot-hacker",
       "checkboxDetectedRect": {
         "x": 2153,
         "y": 3722,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2167,
+        "y": 3464,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2190,
         "y": 3483,
         "w": 98,
@@ -1919,18 +2549,25 @@
     },
     {
       "slotNo": 91,
+      "stableSlotNo": 81,
       "row": 9,
       "column": 10,
       "zone": "RIGHT",
       "candidateNo": 5,
-      "spriteId": "ch7s4-morgana-bounty-hunter",
+      "spriteId": "ch7s4-crash-bandicoot-bounty-hunter",
       "checkboxDetectedRect": {
         "x": 2340,
         "y": 3723,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 2357,
+        "y": 3463,
+        "w": 137,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 2380,
         "y": 3482,
         "w": 98,
@@ -1939,6 +2576,7 @@
     },
     {
       "slotNo": 92,
+      "stableSlotNo": 92,
       "row": 10,
       "column": 1,
       "zone": "LEFT",
@@ -1947,10 +2585,16 @@
       "checkboxDetectedRect": {
         "x": 75,
         "y": 4083,
-        "w": 82,
+        "w": 83,
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 98,
+        "y": 3814,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 121,
         "y": 3833,
         "w": 98,
@@ -1959,11 +2603,12 @@
     },
     {
       "slotNo": 93,
+      "stableSlotNo": 94,
       "row": 10,
       "column": 2,
       "zone": "LEFT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-killswitch-cheat-master",
+      "spriteId": "ch7s4-killswitch-gold",
       "checkboxDetectedRect": {
         "x": 254,
         "y": 4083,
@@ -1971,6 +2616,12 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 282,
+        "y": 3814,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 305,
         "y": 3833,
         "w": 99,
@@ -1979,18 +2630,25 @@
     },
     {
       "slotNo": 94,
+      "stableSlotNo": 93,
       "row": 10,
       "column": 3,
       "zone": "LEFT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-killswitch-gold",
+      "spriteId": "ch7s4-killswitch-cheat-master",
       "checkboxDetectedRect": {
         "x": 439,
         "y": 4081,
-        "w": 82,
+        "w": 83,
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 465,
+        "y": 3811,
+        "w": 138,
+        "h": 79
+      },
+      "crownInteractionRect": {
         "x": 488,
         "y": 3830,
         "w": 99,
@@ -1999,6 +2657,7 @@
     },
     {
       "slotNo": 95,
+      "stableSlotNo": 95,
       "row": 10,
       "column": 4,
       "zone": "LEFT",
@@ -2011,6 +2670,12 @@
         "h": 83
       },
       "crownDetectedRect": {
+        "x": 650,
+        "y": 3812,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 673,
         "y": 3831,
         "w": 98,
@@ -2019,6 +2684,7 @@
     },
     {
       "slotNo": 96,
+      "stableSlotNo": 96,
       "row": 10,
       "column": 5,
       "zone": "LEFT",
@@ -2031,19 +2697,26 @@
         "h": 82
       },
       "crownDetectedRect": {
+        "x": 832,
+        "y": 3812,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
         "x": 855,
-        "y": 3831,
+        "y": 3832,
         "w": 98,
-        "h": 61
+        "h": 60
       }
     },
     {
       "slotNo": 97,
+      "stableSlotNo": 87,
       "row": 10,
       "column": 6,
       "zone": "RIGHT",
       "candidateNo": 1,
-      "spriteId": "ch7s4-birthday-base",
+      "spriteId": "ch7s4-morgana-base",
       "checkboxDetectedRect": {
         "x": 1606,
         "y": 4080,
@@ -2051,19 +2724,26 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 1645,
-        "y": 3847,
-        "w": 99,
-        "h": 61
+        "x": 1624,
+        "y": 3811,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 1647,
+        "y": 3831,
+        "w": 98,
+        "h": 60
       }
     },
     {
       "slotNo": 98,
+      "stableSlotNo": 89,
       "row": 10,
       "column": 7,
       "zone": "RIGHT",
       "candidateNo": 2,
-      "spriteId": "ch7s4-birthday-cheat-master",
+      "spriteId": "ch7s4-morgana-gold",
       "checkboxDetectedRect": {
         "x": 1787,
         "y": 4080,
@@ -2071,19 +2751,26 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 1827,
-        "y": 3847,
-        "w": 98,
-        "h": 61
+        "x": 1806,
+        "y": 3811,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 1828,
+        "y": 3831,
+        "w": 99,
+        "h": 60
       }
     },
     {
       "slotNo": 99,
+      "stableSlotNo": 88,
       "row": 10,
       "column": 8,
       "zone": "RIGHT",
       "candidateNo": 3,
-      "spriteId": "ch7s4-birthday-gold",
+      "spriteId": "ch7s4-morgana-cheat-master",
       "checkboxDetectedRect": {
         "x": 1971,
         "y": 4080,
@@ -2091,19 +2778,26 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 2011,
-        "y": 3846,
-        "w": 98,
+        "x": 1990,
+        "y": 3809,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 2012,
+        "y": 3829,
+        "w": 99,
         "h": 60
       }
     },
     {
       "slotNo": 100,
+      "stableSlotNo": 90,
       "row": 10,
       "column": 9,
       "zone": "RIGHT",
       "candidateNo": 4,
-      "spriteId": "ch7s4-birthday-loot-hacker",
+      "spriteId": "ch7s4-morgana-loot-hacker",
       "checkboxDetectedRect": {
         "x": 2153,
         "y": 4080,
@@ -2111,19 +2805,26 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 2193,
-        "y": 3846,
-        "w": 98,
+        "x": 2172,
+        "y": 3809,
+        "w": 137,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 2194,
+        "y": 3829,
+        "w": 99,
         "h": 60
       }
     },
     {
       "slotNo": 101,
+      "stableSlotNo": 91,
       "row": 10,
       "column": 10,
       "zone": "RIGHT",
       "candidateNo": 5,
-      "spriteId": "ch7s4-birthday-bounty-hunter",
+      "spriteId": "ch7s4-morgana-bounty-hunter",
       "checkboxDetectedRect": {
         "x": 2340,
         "y": 4080,
@@ -2131,10 +2832,16 @@
         "h": 82
       },
       "crownDetectedRect": {
-        "x": 2374,
-        "y": 3847,
-        "w": 99,
-        "h": 61
+        "x": 2353,
+        "y": 3811,
+        "w": 138,
+        "h": 80
+      },
+      "crownInteractionRect": {
+        "x": 2376,
+        "y": 3831,
+        "w": 98,
+        "h": 60
       }
     }
   ]
