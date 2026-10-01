@@ -1,0 +1,4039 @@
+{
+  "schema": "ver8-layout-geometry-audit-v1",
+  "status": "geometry-only",
+  "layoutRevisionId": "ch7s4-r04",
+  "canvas": {
+    "width": 3150,
+    "height": 4200
+  },
+  "textAnchors": {
+    "collectValue": {
+      "x": 590,
+      "y": 173,
+      "align": "left",
+      "fontSize": 82
+    },
+    "masterValue": {
+      "x": 777,
+      "y": 287,
+      "align": "right",
+      "fontSize": 74
+    },
+    "date": {
+      "x": 231,
+      "y": 68,
+      "align": "left",
+      "fontSize": 99
+    },
+    "name": {
+      "x": 360,
+      "y": 430,
+      "align": "center",
+      "fontSize": 120,
+      "maxWidth": 680,
+      "fontStyle": "italic"
+    }
+  },
+  "slotGrid": {
+    "rows": 12,
+    "columns": 12,
+    "centerSlotCount": 1,
+    "slotCount": 145
+  },
+  "sources": {
+    "background": {
+      "path": "../images/ver11-background.png",
+      "sha256": "9F5B0CEBCB917DECD7E5D286FD1B0BD39403D7754A0202F1C9C0C43F6BD62437"
+    },
+    "vanguardBackground": {
+      "path": "../images/ver11-vanguard-ii.png",
+      "sha256": "6EBED6ABB6F629243C0ABFEAD90CEEA23A25BC0CF214C6A34EDF42FB8DD47152"
+    },
+    "groupPanelLayer": {
+      "path": "../images/ver11-family-panels.png",
+      "sha256": "AE1CF08A0BB2790A860DB163E2FE0A12CF20933F8FAE07FCA62FD6FAEAA16922"
+    },
+    "spriteLayer": {
+      "path": "../images/ver11-sprites.png",
+      "sha256": "DFF53AD6431C591EE9D980421BE43CFDE89A45825B25252BBCB0CBE35D18DAF9"
+    },
+    "crownLayer": {
+      "path": "../images/ver11-master-crowns.png",
+      "sha256": "38EDAAC519AC3B560FFDDBD4089319F66C847CD63CCBBA7D0569E8DF5F9B4155"
+    },
+    "checkboxLayer": {
+      "path": "../images/ver11-checkboxes.png",
+      "sha256": "1E8652B2DC3EEAA97DBB22D67724A8F0A5A4DE7F0F20C20049A41DD9B3DCF47E"
+    },
+    "familyNameLayer": {
+      "path": "../images/ver11-family-names.png",
+      "sha256": "06D4B436B9E89B86A52853784A53755F325568B882AA16ADB9E1E5B663148D82"
+    },
+    "completeLayer": {
+      "path": "../images/ver11-complete.png",
+      "sha256": "786369070CF6F21E2EFE1B53B826DC7412AFF0613ABC42A13BB9C18D713064E8"
+    },
+    "markLayer": {
+      "path": "../images/ver11-marks.png",
+      "sha256": "62A3D10FF1F1F7E762C37B75CB163C9CF91871075E9692A6FA9EBB302B06B1B0"
+    }
+  },
+  "markSources": {
+    "check": {
+      "x": 92,
+      "y": 860,
+      "w": 138,
+      "h": 156
+    },
+    "heart": {
+      "x": 367,
+      "y": 896,
+      "w": 119,
+      "h": 119
+    },
+    "star": {
+      "x": 632,
+      "y": 893,
+      "w": 129,
+      "h": 122
+    }
+  },
+  "markTransforms": {
+    "check": {
+      "dxRatio": -0.008130081301,
+      "dyRatio": -0.3114754098,
+      "widthRatio": 1.12195122,
+      "heightRatio": 1.278688525
+    },
+    "heart": {
+      "dxRatio": 0.0243902439,
+      "dyRatio": 0.0162601626,
+      "widthRatio": 0.9674796748,
+      "heightRatio": 0.9674796748
+    },
+    "star": {
+      "dxRatio": -0.0243902439,
+      "dyRatio": -0.0162601626,
+      "widthRatio": 1.048780488,
+      "heightRatio": 0.9918699187
+    }
+  },
+  "slots": [
+    {
+      "slotNo": 1,
+      "stableSlotNo": 1,
+      "row": 0,
+      "column": 0,
+      "zone": "CENTER",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-mega-man-base",
+      "checkboxDetectedRect": {
+        "x": 1382,
+        "y": 568,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1408,
+        "y": 376,
+        "w": 85,
+        "h": 50
+      },
+      "crownInteractionRect": {
+        "x": 1409,
+        "y": 376,
+        "w": 84,
+        "h": 49
+      }
+    },
+    {
+      "slotNo": 2,
+      "stableSlotNo": 102,
+      "row": 1,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-dumpster-dive-base",
+      "checkboxDetectedRect": {
+        "x": 141,
+        "y": 860,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 181,
+        "y": 647,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 181,
+        "y": 648,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 3,
+      "stableSlotNo": 103,
+      "row": 1,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-dumpster-dive-gold",
+      "checkboxDetectedRect": {
+        "x": 320,
+        "y": 860,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 358,
+        "y": 649,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 359,
+        "y": 649,
+        "w": 82,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 4,
+      "stableSlotNo": 104,
+      "row": 1,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-dumpster-dive-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 859,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 538,
+        "y": 649,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 539,
+        "y": 649,
+        "w": 82,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 5,
+      "stableSlotNo": 105,
+      "row": 1,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-dumpster-dive-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680,
+        "y": 858,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 721,
+        "y": 659,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 721,
+        "y": 659,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 6,
+      "stableSlotNo": 106,
+      "row": 1,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-dumpster-dive-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 858,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 903,
+        "y": 654,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 903,
+        "y": 654,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 7,
+      "stableSlotNo": 107,
+      "row": 1,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-dumpster-dive-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 860,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1079,
+        "y": 649,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1080,
+        "y": 649,
+        "w": 82,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 8,
+      "stableSlotNo": 2,
+      "row": 2,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-jonesy-base",
+      "checkboxDetectedRect": {
+        "x": 141,
+        "y": 1155,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 181,
+        "y": 940,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 182,
+        "y": 941,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 9,
+      "stableSlotNo": 4,
+      "row": 2,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-jonesy-gold",
+      "checkboxDetectedRect": {
+        "x": 319,
+        "y": 1155,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 355,
+        "y": 940,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 355,
+        "y": 941,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 10,
+      "stableSlotNo": 3,
+      "row": 2,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-jonesy-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 501,
+        "y": 1157,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 528,
+        "y": 940,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 528,
+        "y": 941,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 11,
+      "stableSlotNo": 5,
+      "row": 2,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-jonesy-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 679,
+        "y": 1155,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 721,
+        "y": 947,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 721,
+        "y": 948,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 12,
+      "stableSlotNo": 6,
+      "row": 2,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-jonesy-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 1155,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 906,
+        "y": 940,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 906,
+        "y": 941,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 13,
+      "stableSlotNo": 108,
+      "row": 2,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-jonesy-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1040,
+        "y": 1155,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1079,
+        "y": 947,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 1080,
+        "y": 948,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 14,
+      "stableSlotNo": 12,
+      "row": 3,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-adventure-base",
+      "checkboxDetectedRect": {
+        "x": 137,
+        "y": 1452,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 171,
+        "y": 1249,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 172,
+        "y": 1250,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 15,
+      "stableSlotNo": 14,
+      "row": 3,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-adventure-gold",
+      "checkboxDetectedRect": {
+        "x": 319,
+        "y": 1452,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 355,
+        "y": 1252,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 355,
+        "y": 1253,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 16,
+      "stableSlotNo": 13,
+      "row": 3,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-adventure-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 1452,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 534,
+        "y": 1248,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 534,
+        "y": 1249,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 17,
+      "stableSlotNo": 15,
+      "row": 3,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-adventure-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680,
+        "y": 1452,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 721,
+        "y": 1249,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 721,
+        "y": 1250,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 18,
+      "stableSlotNo": 16,
+      "row": 3,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-adventure-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 1451,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 897,
+        "y": 1249,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 898,
+        "y": 1249,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 19,
+      "stableSlotNo": 109,
+      "row": 3,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-adventure-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 1452,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1074,
+        "y": 1245,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1075,
+        "y": 1245,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 20,
+      "stableSlotNo": 22,
+      "row": 4,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-bush-base",
+      "checkboxDetectedRect": {
+        "x": 137,
+        "y": 1742,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 167,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 167,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 21,
+      "stableSlotNo": 24,
+      "row": 4,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-bush-gold",
+      "checkboxDetectedRect": {
+        "x": 319,
+        "y": 1742,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 350,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 350,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 22,
+      "stableSlotNo": 23,
+      "row": 4,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-bush-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 1742,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 528,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 528,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 23,
+      "stableSlotNo": 25,
+      "row": 4,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-bush-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 679,
+        "y": 1741,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 711,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 711,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 24,
+      "stableSlotNo": 26,
+      "row": 4,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-bush-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 1741,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 888,
+        "y": 1550,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 888,
+        "y": 1551,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 25,
+      "stableSlotNo": 110,
+      "row": 4,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-bush-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 1742,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1071,
+        "y": 1546,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1072,
+        "y": 1547,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 26,
+      "stableSlotNo": 32,
+      "row": 5,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-sonic-base",
+      "checkboxDetectedRect": {
+        "x": 137,
+        "y": 2044,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 165,
+        "y": 1843,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 165,
+        "y": 1843,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 27,
+      "stableSlotNo": 34,
+      "row": 5,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-sonic-gold",
+      "checkboxDetectedRect": {
+        "x": 320,
+        "y": 2044,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 355,
+        "y": 1844,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 355,
+        "y": 1845,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 28,
+      "stableSlotNo": 33,
+      "row": 5,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-sonic-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 2044,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 528,
+        "y": 1844,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 528,
+        "y": 1845,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 29,
+      "stableSlotNo": 35,
+      "row": 5,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-sonic-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680,
+        "y": 2043,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 711,
+        "y": 1843,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 711,
+        "y": 1843,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 30,
+      "stableSlotNo": 36,
+      "row": 5,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-sonic-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 2043,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 894,
+        "y": 1839,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 894,
+        "y": 1839,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 31,
+      "stableSlotNo": 111,
+      "row": 5,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-sonic-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 2043,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1079,
+        "y": 1839,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 1079,
+        "y": 1840,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 32,
+      "stableSlotNo": 42,
+      "row": 6,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-tails-base",
+      "checkboxDetectedRect": {
+        "x": 141,
+        "y": 2328,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 173,
+        "y": 2126,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 174,
+        "y": 2127,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 33,
+      "stableSlotNo": 44,
+      "row": 6,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-tails-gold",
+      "checkboxDetectedRect": {
+        "x": 319,
+        "y": 2328,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 353,
+        "y": 2126,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 353,
+        "y": 2127,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 34,
+      "stableSlotNo": 43,
+      "row": 6,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-tails-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 2327,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 538,
+        "y": 2126,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 539,
+        "y": 2127,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 35,
+      "stableSlotNo": 45,
+      "row": 6,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-tails-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 679,
+        "y": 2327,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 718,
+        "y": 2126,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 718,
+        "y": 2127,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 36,
+      "stableSlotNo": 46,
+      "row": 6,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-tails-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 866,
+        "y": 2327,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 897,
+        "y": 2122,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 898,
+        "y": 2123,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 37,
+      "stableSlotNo": 112,
+      "row": 6,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-tails-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1040,
+        "y": 2328,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1078,
+        "y": 2122,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1078,
+        "y": 2122,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 38,
+      "stableSlotNo": 52,
+      "row": 7,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-shadow-base",
+      "checkboxDetectedRect": {
+        "x": 138,
+        "y": 2624,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 186,
+        "y": 2417,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 187,
+        "y": 2417,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 39,
+      "stableSlotNo": 54,
+      "row": 7,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-shadow-gold",
+      "checkboxDetectedRect": {
+        "x": 319,
+        "y": 2624,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 373,
+        "y": 2420,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 374,
+        "y": 2420,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 40,
+      "stableSlotNo": 53,
+      "row": 7,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-shadow-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 2625,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 553,
+        "y": 2416,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 553,
+        "y": 2417,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 41,
+      "stableSlotNo": 55,
+      "row": 7,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-shadow-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 679,
+        "y": 2624,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 731,
+        "y": 2415,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 732,
+        "y": 2415,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 42,
+      "stableSlotNo": 56,
+      "row": 7,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-shadow-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 2623,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 918,
+        "y": 2415,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 919,
+        "y": 2415,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 43,
+      "stableSlotNo": 113,
+      "row": 7,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-shadow-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1040,
+        "y": 2624,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1098,
+        "y": 2413,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1098,
+        "y": 2414,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 44,
+      "stableSlotNo": 62,
+      "row": 8,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-8-bit-base",
+      "checkboxDetectedRect": {
+        "x": 139,
+        "y": 2914,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 173,
+        "y": 2716,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 174,
+        "y": 2716,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 45,
+      "stableSlotNo": 64,
+      "row": 8,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-8-bit-gold",
+      "checkboxDetectedRect": {
+        "x": 320,
+        "y": 2914,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 359,
+        "y": 2716,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 359,
+        "y": 2716,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 46,
+      "stableSlotNo": 63,
+      "row": 8,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-8-bit-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 2914,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 538,
+        "y": 2715,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 539,
+        "y": 2715,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 47,
+      "stableSlotNo": 65,
+      "row": 8,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-8-bit-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 679,
+        "y": 2914,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 719,
+        "y": 2720,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 719,
+        "y": 2720,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 48,
+      "stableSlotNo": 66,
+      "row": 8,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-8-bit-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 2911,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 903,
+        "y": 2714,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 904,
+        "y": 2715,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 49,
+      "stableSlotNo": 114,
+      "row": 8,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-8-bit-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 2915,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 1079,
+        "y": 2713,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1080,
+        "y": 2714,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 50,
+      "stableSlotNo": 72,
+      "row": 9,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-jackrabbit-base",
+      "checkboxDetectedRect": {
+        "x": 140,
+        "y": 3205,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 173,
+        "y": 3011,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 174,
+        "y": 3011,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 51,
+      "stableSlotNo": 74,
+      "row": 9,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-jackrabbit-gold",
+      "checkboxDetectedRect": {
+        "x": 320,
+        "y": 3204,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 355,
+        "y": 3008,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 355,
+        "y": 3009,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 52,
+      "stableSlotNo": 73,
+      "row": 9,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-jackrabbit-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 501,
+        "y": 3205,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 538,
+        "y": 3008,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 539,
+        "y": 3009,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 53,
+      "stableSlotNo": 75,
+      "row": 9,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-jackrabbit-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680,
+        "y": 3207,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 711,
+        "y": 3008,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 711,
+        "y": 3009,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 54,
+      "stableSlotNo": 76,
+      "row": 9,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-jackrabbit-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 866,
+        "y": 3205,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 897,
+        "y": 3004,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 898,
+        "y": 3004,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 55,
+      "stableSlotNo": 115,
+      "row": 9,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-jackrabbit-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 3205,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1079,
+        "y": 3007,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 1079,
+        "y": 3008,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 56,
+      "stableSlotNo": 82,
+      "row": 10,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-crown-base",
+      "checkboxDetectedRect": {
+        "x": 142,
+        "y": 3510,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 165,
+        "y": 3298,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 165,
+        "y": 3298,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 57,
+      "stableSlotNo": 84,
+      "row": 10,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-crown-gold",
+      "checkboxDetectedRect": {
+        "x": 320,
+        "y": 3510,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 347,
+        "y": 3295,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 348,
+        "y": 3296,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 58,
+      "stableSlotNo": 83,
+      "row": 10,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-crown-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 3510,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 521,
+        "y": 3298,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 522,
+        "y": 3298,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 59,
+      "stableSlotNo": 85,
+      "row": 10,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-crown-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 679,
+        "y": 3509,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 711,
+        "y": 3303,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 711,
+        "y": 3303,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 60,
+      "stableSlotNo": 86,
+      "row": 10,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-crown-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 867,
+        "y": 3510,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 894,
+        "y": 3298,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 894,
+        "y": 3298,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 61,
+      "stableSlotNo": 116,
+      "row": 10,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-crown-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1040,
+        "y": 3510,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1076,
+        "y": 3301,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1076,
+        "y": 3301,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 62,
+      "stableSlotNo": 92,
+      "row": 11,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-killswitch-base",
+      "checkboxDetectedRect": {
+        "x": 138,
+        "y": 3828,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 177,
+        "y": 3607,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 178,
+        "y": 3607,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 63,
+      "stableSlotNo": 94,
+      "row": 11,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-killswitch-gold",
+      "checkboxDetectedRect": {
+        "x": 319,
+        "y": 3828,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 359,
+        "y": 3607,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 359,
+        "y": 3607,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 64,
+      "stableSlotNo": 93,
+      "row": 11,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-killswitch-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 500,
+        "y": 3827,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 535,
+        "y": 3604,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 536,
+        "y": 3605,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 65,
+      "stableSlotNo": 95,
+      "row": 11,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-killswitch-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 679,
+        "y": 3828,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 717,
+        "y": 3607,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 717,
+        "y": 3607,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 66,
+      "stableSlotNo": 96,
+      "row": 11,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-killswitch-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 866,
+        "y": 3827,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 897,
+        "y": 3604,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 898,
+        "y": 3605,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 67,
+      "stableSlotNo": 117,
+      "row": 11,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-killswitch-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 3827,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1084,
+        "y": 3607,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1085,
+        "y": 3607,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 68,
+      "stableSlotNo": 7,
+      "row": 12,
+      "column": 1,
+      "zone": "LEFT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-klombo-base",
+      "checkboxDetectedRect": {
+        "x": 142,
+        "y": 4101,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 178,
+        "y": 3899,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 178,
+        "y": 3900,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 69,
+      "stableSlotNo": 9,
+      "row": 12,
+      "column": 2,
+      "zone": "LEFT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-klombo-gold",
+      "checkboxDetectedRect": {
+        "x": 320,
+        "y": 4101,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 358,
+        "y": 3903,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 359,
+        "y": 3904,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 70,
+      "stableSlotNo": 8,
+      "row": 12,
+      "column": 3,
+      "zone": "LEFT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-klombo-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 501,
+        "y": 4101,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 540,
+        "y": 3905,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 540,
+        "y": 3906,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 71,
+      "stableSlotNo": 10,
+      "row": 12,
+      "column": 4,
+      "zone": "LEFT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-klombo-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680,
+        "y": 4100,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 718,
+        "y": 3905,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 719,
+        "y": 3906,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 72,
+      "stableSlotNo": 11,
+      "row": 12,
+      "column": 5,
+      "zone": "LEFT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-klombo-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 866,
+        "y": 4101,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 901,
+        "y": 3902,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 901,
+        "y": 3902,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 73,
+      "stableSlotNo": 118,
+      "row": 12,
+      "column": 6,
+      "zone": "LEFT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-klombo-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041,
+        "y": 4101,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1082,
+        "y": 3902,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1083,
+        "y": 3902,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 74,
+      "stableSlotNo": 17,
+      "row": 1,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-overshield-base",
+      "checkboxDetectedRect": {
+        "x": 1666,
+        "y": 860,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1703,
+        "y": 654,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1704,
+        "y": 654,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 75,
+      "stableSlotNo": 19,
+      "row": 1,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-overshield-gold",
+      "checkboxDetectedRect": {
+        "x": 1845,
+        "y": 860,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1879,
+        "y": 649,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1880,
+        "y": 649,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 76,
+      "stableSlotNo": 18,
+      "row": 1,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-overshield-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 859,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2062,
+        "y": 647,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2062,
+        "y": 648,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 77,
+      "stableSlotNo": 20,
+      "row": 1,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-overshield-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2205,
+        "y": 858,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2240,
+        "y": 648,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2240,
+        "y": 648,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 78,
+      "stableSlotNo": 21,
+      "row": 1,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-overshield-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 858,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2424,
+        "y": 652,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2425,
+        "y": 652,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 79,
+      "stableSlotNo": 119,
+      "row": 1,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-overshield-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2565,
+        "y": 860,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2603,
+        "y": 652,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2603,
+        "y": 652,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 80,
+      "stableSlotNo": 27,
+      "row": 2,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-pond-base",
+      "checkboxDetectedRect": {
+        "x": 1666,
+        "y": 1155,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1696,
+        "y": 957,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 1696,
+        "y": 958,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 81,
+      "stableSlotNo": 29,
+      "row": 2,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-pond-gold",
+      "checkboxDetectedRect": {
+        "x": 1844,
+        "y": 1155,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1873,
+        "y": 956,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1874,
+        "y": 956,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 82,
+      "stableSlotNo": 28,
+      "row": 2,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-pond-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 1157,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2054,
+        "y": 957,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2055,
+        "y": 958,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 83,
+      "stableSlotNo": 30,
+      "row": 2,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-pond-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 1155,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2235,
+        "y": 956,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2236,
+        "y": 956,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 84,
+      "stableSlotNo": 31,
+      "row": 2,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-pond-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 1155,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2426,
+        "y": 957,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2426,
+        "y": 958,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 85,
+      "stableSlotNo": 120,
+      "row": 2,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-pond-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2565,
+        "y": 1155,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2601,
+        "y": 953,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2601,
+        "y": 953,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 86,
+      "stableSlotNo": 37,
+      "row": 3,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-x-ray-base",
+      "checkboxDetectedRect": {
+        "x": 1662,
+        "y": 1452,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1697,
+        "y": 1241,
+        "w": 84,
+        "h": 50
+      },
+      "crownInteractionRect": {
+        "x": 1697,
+        "y": 1241,
+        "w": 84,
+        "h": 49
+      }
+    },
+    {
+      "slotNo": 87,
+      "stableSlotNo": 39,
+      "row": 3,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-x-ray-gold",
+      "checkboxDetectedRect": {
+        "x": 1844,
+        "y": 1452,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1878,
+        "y": 1241,
+        "w": 85,
+        "h": 50
+      },
+      "crownInteractionRect": {
+        "x": 1879,
+        "y": 1241,
+        "w": 84,
+        "h": 49
+      }
+    },
+    {
+      "slotNo": 88,
+      "stableSlotNo": 38,
+      "row": 3,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-x-ray-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 1452,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2053,
+        "y": 1241,
+        "w": 85,
+        "h": 50
+      },
+      "crownInteractionRect": {
+        "x": 2054,
+        "y": 1241,
+        "w": 84,
+        "h": 49
+      }
+    },
+    {
+      "slotNo": 89,
+      "stableSlotNo": 40,
+      "row": 3,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-x-ray-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2205,
+        "y": 1452,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2238,
+        "y": 1241,
+        "w": 84,
+        "h": 50
+      },
+      "crownInteractionRect": {
+        "x": 2238,
+        "y": 1241,
+        "w": 84,
+        "h": 49
+      }
+    },
+    {
+      "slotNo": 90,
+      "stableSlotNo": 41,
+      "row": 3,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-x-ray-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 1451,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2425,
+        "y": 1241,
+        "w": 84,
+        "h": 50
+      },
+      "crownInteractionRect": {
+        "x": 2426,
+        "y": 1241,
+        "w": 83,
+        "h": 49
+      }
+    },
+    {
+      "slotNo": 91,
+      "stableSlotNo": 121,
+      "row": 3,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-x-ray-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2566,
+        "y": 1452,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2599,
+        "y": 1245,
+        "w": 84,
+        "h": 49
+      },
+      "crownInteractionRect": {
+        "x": 2599,
+        "y": 1245,
+        "w": 84,
+        "h": 49
+      }
+    },
+    {
+      "slotNo": 92,
+      "stableSlotNo": 47,
+      "row": 4,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-onigiri-base",
+      "checkboxDetectedRect": {
+        "x": 1662,
+        "y": 1742,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 1696,
+        "y": 1546,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1697,
+        "y": 1547,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 93,
+      "stableSlotNo": 49,
+      "row": 4,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-onigiri-gold",
+      "checkboxDetectedRect": {
+        "x": 1844,
+        "y": 1742,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1873,
+        "y": 1546,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1874,
+        "y": 1547,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 94,
+      "stableSlotNo": 48,
+      "row": 4,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-onigiri-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 1742,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2058,
+        "y": 1546,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2059,
+        "y": 1547,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 95,
+      "stableSlotNo": 50,
+      "row": 4,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-onigiri-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 1741,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2238,
+        "y": 1550,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2239,
+        "y": 1551,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 96,
+      "stableSlotNo": 51,
+      "row": 4,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-onigiri-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 1741,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2418,
+        "y": 1546,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2419,
+        "y": 1547,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 97,
+      "stableSlotNo": 122,
+      "row": 4,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-onigiri-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2566,
+        "y": 1742,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2598,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2598,
+        "y": 1543,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 98,
+      "stableSlotNo": 57,
+      "row": 5,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-storm-scout-base",
+      "checkboxDetectedRect": {
+        "x": 1662,
+        "y": 2044,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1703,
+        "y": 1844,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1704,
+        "y": 1845,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 99,
+      "stableSlotNo": 59,
+      "row": 5,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-storm-scout-gold",
+      "checkboxDetectedRect": {
+        "x": 1845,
+        "y": 2044,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1885,
+        "y": 1840,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1886,
+        "y": 1840,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 100,
+      "stableSlotNo": 58,
+      "row": 5,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-storm-scout-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 2044,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2062,
+        "y": 1847,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2062,
+        "y": 1848,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 101,
+      "stableSlotNo": 60,
+      "row": 5,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-storm-scout-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2205,
+        "y": 2043,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2244,
+        "y": 1847,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2244,
+        "y": 1848,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 102,
+      "stableSlotNo": 61,
+      "row": 5,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-storm-scout-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 2043,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2429,
+        "y": 1843,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2429,
+        "y": 1843,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 103,
+      "stableSlotNo": 123,
+      "row": 5,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-storm-scout-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2566,
+        "y": 2043,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2605,
+        "y": 1840,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2605,
+        "y": 1840,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 104,
+      "stableSlotNo": 67,
+      "row": 6,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-blinky-base",
+      "checkboxDetectedRect": {
+        "x": 1666,
+        "y": 2328,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1706,
+        "y": 2126,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1706,
+        "y": 2127,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 105,
+      "stableSlotNo": 69,
+      "row": 6,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-blinky-gold",
+      "checkboxDetectedRect": {
+        "x": 1844,
+        "y": 2328,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1890,
+        "y": 2127,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1890,
+        "y": 2128,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 106,
+      "stableSlotNo": 68,
+      "row": 6,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-blinky-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 2327,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2070,
+        "y": 2127,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2070,
+        "y": 2128,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 107,
+      "stableSlotNo": 70,
+      "row": 6,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-blinky-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 2327,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2248,
+        "y": 2127,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2248,
+        "y": 2128,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 108,
+      "stableSlotNo": 71,
+      "row": 6,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-blinky-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 2327,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2438,
+        "y": 2127,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2439,
+        "y": 2128,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 109,
+      "stableSlotNo": 124,
+      "row": 6,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-blinky-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2565,
+        "y": 2328,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2616,
+        "y": 2127,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2617,
+        "y": 2128,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 110,
+      "stableSlotNo": 97,
+      "row": 7,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-birthday-base",
+      "checkboxDetectedRect": {
+        "x": 1663,
+        "y": 2624,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1698,
+        "y": 2424,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 1698,
+        "y": 2425,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 111,
+      "stableSlotNo": 99,
+      "row": 7,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-birthday-gold",
+      "checkboxDetectedRect": {
+        "x": 1844,
+        "y": 2624,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1878,
+        "y": 2424,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 1878,
+        "y": 2425,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 112,
+      "stableSlotNo": 98,
+      "row": 7,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-birthday-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 2625,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2062,
+        "y": 2424,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2062,
+        "y": 2425,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 113,
+      "stableSlotNo": 100,
+      "row": 7,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-birthday-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 2624,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2242,
+        "y": 2424,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2242,
+        "y": 2425,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 114,
+      "stableSlotNo": 101,
+      "row": 7,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-birthday-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 2623,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2429,
+        "y": 2424,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2429,
+        "y": 2425,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 115,
+      "stableSlotNo": 125,
+      "row": 7,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-birthday-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2565,
+        "y": 2624,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2603,
+        "y": 2424,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2603,
+        "y": 2425,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 116,
+      "stableSlotNo": 77,
+      "row": 8,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-crash-bandicoot-base",
+      "checkboxDetectedRect": {
+        "x": 1663,
+        "y": 2914,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1697,
+        "y": 2716,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1698,
+        "y": 2716,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 117,
+      "stableSlotNo": 79,
+      "row": 8,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-crash-bandicoot-gold",
+      "checkboxDetectedRect": {
+        "x": 1845,
+        "y": 2914,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1880,
+        "y": 2715,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1881,
+        "y": 2715,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 118,
+      "stableSlotNo": 78,
+      "row": 8,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-crash-bandicoot-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 2914,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2064,
+        "y": 2714,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2064,
+        "y": 2715,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 119,
+      "stableSlotNo": 80,
+      "row": 8,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-crash-bandicoot-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 2914,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2242,
+        "y": 2720,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2242,
+        "y": 2720,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 120,
+      "stableSlotNo": 81,
+      "row": 8,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-crash-bandicoot-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 2911,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2427,
+        "y": 2715,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2428,
+        "y": 2715,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 121,
+      "stableSlotNo": 126,
+      "row": 8,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-crash-bandicoot-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2566,
+        "y": 2915,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2605,
+        "y": 2715,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2605,
+        "y": 2715,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 122,
+      "stableSlotNo": 87,
+      "row": 9,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-morgana-base",
+      "checkboxDetectedRect": {
+        "x": 1665,
+        "y": 3205,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 1701,
+        "y": 2996,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1702,
+        "y": 2997,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 123,
+      "stableSlotNo": 89,
+      "row": 9,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-morgana-gold",
+      "checkboxDetectedRect": {
+        "x": 1845,
+        "y": 3204,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 1885,
+        "y": 2996,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1886,
+        "y": 2997,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 124,
+      "stableSlotNo": 88,
+      "row": 9,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-morgana-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 3205,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2064,
+        "y": 2996,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2064,
+        "y": 2997,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 125,
+      "stableSlotNo": 90,
+      "row": 9,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-morgana-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2205,
+        "y": 3207,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2244,
+        "y": 2993,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2244,
+        "y": 2993,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 126,
+      "stableSlotNo": 91,
+      "row": 9,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-morgana-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 3205,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2429,
+        "y": 2993,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2429,
+        "y": 2993,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 127,
+      "stableSlotNo": 127,
+      "row": 9,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-morgana-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2566,
+        "y": 3205,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2607,
+        "y": 2993,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2607,
+        "y": 2993,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 128,
+      "stableSlotNo": 128,
+      "row": 10,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-spooky-dash-base",
+      "checkboxDetectedRect": {
+        "x": 1667,
+        "y": 3510,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 1703,
+        "y": 3280,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1704,
+        "y": 3280,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 129,
+      "stableSlotNo": 129,
+      "row": 10,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-spooky-dash-gold",
+      "checkboxDetectedRect": {
+        "x": 1845,
+        "y": 3510,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1885,
+        "y": 3280,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1885,
+        "y": 3280,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 130,
+      "stableSlotNo": 130,
+      "row": 10,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-spooky-dash-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 3510,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2058,
+        "y": 3280,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2059,
+        "y": 3280,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 131,
+      "stableSlotNo": 131,
+      "row": 10,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-spooky-dash-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 3509,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2244,
+        "y": 3280,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2244,
+        "y": 3280,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 132,
+      "stableSlotNo": 132,
+      "row": 10,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-spooky-dash-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 3510,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2430,
+        "y": 3280,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2430,
+        "y": 3280,
+        "w": 83,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 133,
+      "stableSlotNo": 133,
+      "row": 10,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-spooky-dash-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2565,
+        "y": 3510,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2605,
+        "y": 3280,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2605,
+        "y": 3280,
+        "w": 84,
+        "h": 51
+      }
+    },
+    {
+      "slotNo": 134,
+      "stableSlotNo": 134,
+      "row": 11,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-the-deer-base",
+      "checkboxDetectedRect": {
+        "x": 1663,
+        "y": 3828,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1698,
+        "y": 3611,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1698,
+        "y": 3612,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 135,
+      "stableSlotNo": 135,
+      "row": 11,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-the-deer-gold",
+      "checkboxDetectedRect": {
+        "x": 1844,
+        "y": 3828,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1879,
+        "y": 3617,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1880,
+        "y": 3617,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 136,
+      "stableSlotNo": 136,
+      "row": 11,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-the-deer-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 3827,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2058,
+        "y": 3611,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2059,
+        "y": 3612,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 137,
+      "stableSlotNo": 137,
+      "row": 11,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-the-deer-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 3828,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2240,
+        "y": 3617,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2240,
+        "y": 3617,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 138,
+      "stableSlotNo": 138,
+      "row": 11,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-the-deer-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 3827,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2430,
+        "y": 3617,
+        "w": 83,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2430,
+        "y": 3617,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 139,
+      "stableSlotNo": 139,
+      "row": 11,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-the-deer-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2566,
+        "y": 3827,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2599,
+        "y": 3611,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2600,
+        "y": 3612,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 140,
+      "stableSlotNo": 140,
+      "row": 12,
+      "column": 7,
+      "zone": "RIGHT",
+      "candidateNo": 1,
+      "spriteId": "ch7s4-vampire-base",
+      "checkboxDetectedRect": {
+        "x": 1667,
+        "y": 4101,
+        "w": 70,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 1683,
+        "y": 3980,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1683,
+        "y": 3980,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 141,
+      "stableSlotNo": 141,
+      "row": 12,
+      "column": 8,
+      "zone": "RIGHT",
+      "candidateNo": 2,
+      "spriteId": "ch7s4-vampire-gold",
+      "checkboxDetectedRect": {
+        "x": 1845,
+        "y": 4101,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 1863,
+        "y": 3986,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 1863,
+        "y": 3987,
+        "w": 84,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 142,
+      "stableSlotNo": 142,
+      "row": 12,
+      "column": 9,
+      "zone": "RIGHT",
+      "candidateNo": 3,
+      "spriteId": "ch7s4-vampire-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2025,
+        "y": 4101,
+        "w": 71,
+        "h": 71
+      },
+      "crownDetectedRect": {
+        "x": 2040,
+        "y": 3982,
+        "w": 83,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2040,
+        "y": 3983,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 143,
+      "stableSlotNo": 143,
+      "row": 12,
+      "column": 10,
+      "zone": "RIGHT",
+      "candidateNo": 4,
+      "spriteId": "ch7s4-vampire-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2204,
+        "y": 4100,
+        "w": 71,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2223,
+        "y": 3985,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2224,
+        "y": 3986,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 144,
+      "stableSlotNo": 144,
+      "row": 12,
+      "column": 11,
+      "zone": "RIGHT",
+      "candidateNo": 5,
+      "spriteId": "ch7s4-vampire-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2391,
+        "y": 4101,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2407,
+        "y": 3986,
+        "w": 84,
+        "h": 51
+      },
+      "crownInteractionRect": {
+        "x": 2408,
+        "y": 3987,
+        "w": 83,
+        "h": 50
+      }
+    },
+    {
+      "slotNo": 145,
+      "stableSlotNo": 145,
+      "row": 12,
+      "column": 12,
+      "zone": "RIGHT",
+      "candidateNo": 6,
+      "spriteId": "ch7s4-vampire-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2566,
+        "y": 4101,
+        "w": 70,
+        "h": 70
+      },
+      "crownDetectedRect": {
+        "x": 2580,
+        "y": 3982,
+        "w": 84,
+        "h": 52
+      },
+      "crownInteractionRect": {
+        "x": 2581,
+        "y": 3983,
+        "w": 83,
+        "h": 50
+      }
+    }
+  ],
+  "releaseGenerationId": "g20261002a"
+}
