@@ -42,12 +42,12 @@
   },
   "sources": {
     "background": {
-      "path": "../images/ver11-background.png",
-      "sha256": "9F5B0CEBCB917DECD7E5D286FD1B0BD39403D7754A0202F1C9C0C43F6BD62437"
+      "path": "../images/ver111-background.png",
+      "sha256": "2D1A7CBE10CA6A8E4B41988128E9E3A0C7C1BD84540BE2D40AF53E50B05AA619"
     },
     "vanguardBackground": {
-      "path": "../images/ver11-vanguard-ii.png",
-      "sha256": "6EBED6ABB6F629243C0ABFEAD90CEEA23A25BC0CF214C6A34EDF42FB8DD47152"
+      "path": "../images/ver111-vanguard-ii.png",
+      "sha256": "266BDDFE0405DA92C840991CBB9AD132A727B5A79C1A80F6A56827956DE4FB37"
     },
     "groupPanelLayer": {
       "path": "../images/ver11-family-panels.png",
@@ -71,7 +71,7 @@
     },
     "completeLayer": {
       "path": "../images/ver11-complete.png",
-      "sha256": "786369070CF6F21E2EFE1B53B826DC7412AFF0613ABC42A13BB9C18D713064E8"
+      "sha256": "58302E69EBEDFF8578D8CEA571D5BDC57106E34E24A10EBA10CEEB0EB6AFBAE3"
     },
     "markLayer": {
       "path": "../images/ver11-marks.png",
@@ -4035,5 +4035,5 @@
       }
     }
   ],
-  "releaseGenerationId": "g20261002a"
+  "releaseGenerationId": "g20261006a"
 }
