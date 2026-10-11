@@ -45,6 +45,10 @@
       "path": "../images/ver111-background.png",
       "sha256": "2D1A7CBE10CA6A8E4B41988128E9E3A0C7C1BD84540BE2D40AF53E50B05AA619"
     },
+    "mioriGumiBackground": {
+      "path": "../images/ver111-miori-gumi.png",
+      "sha256": "A373D887B60C438596D9BDB3E207FF2452D183B088A21A10AD113CDB60CCD490"
+    },
     "vanguardBackground": {
       "path": "../images/ver111-vanguard-ii.png",
       "sha256": "266BDDFE0405DA92C840991CBB9AD132A727B5A79C1A80F6A56827956DE4FB37"
