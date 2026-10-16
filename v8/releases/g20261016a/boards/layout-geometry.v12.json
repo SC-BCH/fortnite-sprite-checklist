@@ -1,0 +1,7389 @@
+{
+  "schema": "ver8-layout-geometry-audit-v1",
+  "status": "geometry-only",
+  "layoutRevisionId": "ch7s4-r05",
+  "canvas": {
+    "width": 3150,
+    "height": 4200
+  },
+  "textAnchors": {
+    "collectValue": {
+      "x": 590,
+      "y": 173,
+      "align": "left",
+      "fontSize": 82
+    },
+    "masterValue": {
+      "x": 777,
+      "y": 287,
+      "align": "right",
+      "fontSize": 74
+    },
+    "date": {
+      "x": 231,
+      "y": 68,
+      "align": "left",
+      "fontSize": 99
+    },
+    "name": {
+      "x": 360,
+      "y": 430,
+      "align": "center",
+      "fontSize": 120,
+      "maxWidth": 680,
+      "fontStyle": "italic"
+    }
+  },
+  "slotGrid": {
+    "rows": 13,
+    "columns": 16,
+    "centerSlotCount": 1,
+    "slotCount": 162,
+    "visualBoxCount": 209,
+    "emptyVisualBoxCount": 47
+  },
+  "visualBoxes": [
+    {
+      "physicalIndex": 1,
+      "row": 0,
+      "column": 0,
+      "side": "center",
+      "rect": {
+        "x": 1417.0898,
+        "y": 545.5077999999999,
+        "w": 65.62499999999979,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 2,
+      "row": 1,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50390000000016,
+        "y": 828.5156,
+        "w": 67.67580000000021,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 3,
+      "row": 1,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9726999999998,
+        "y": 828.5155999999998,
+        "w": 65.62499999999982,
+        "h": 65.62500000000003
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 4,
+      "row": 1,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000016,
+        "y": 828.5156,
+        "w": 65.62500000000021,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 5,
+      "row": 1,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 828.5156000000002,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 6,
+      "row": 1,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 828.5156,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 7,
+      "row": 1,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7968999999998,
+        "y": 828.5155999999998,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 8,
+      "row": 1,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 828.516,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 9,
+      "row": 1,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 828.516,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 10,
+      "row": 1,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 828.5156,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 11,
+      "row": 1,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 828.5156,
+        "w": 65.62499999999979,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 12,
+      "row": 1,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 828.5156,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 13,
+      "row": 1,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 828.5156,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 14,
+      "row": 1,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 828.5156,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 15,
+      "row": 1,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 828.5156,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 16,
+      "row": 1,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 828.516,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 17,
+      "row": 1,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 828.516,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 18,
+      "row": 2,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50389999999993,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 19,
+      "row": 2,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.97270000000003,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 20,
+      "row": 2,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44139999999993,
+        "y": 1099.2188,
+        "w": 65.62500000000003,
+        "h": 67.67580000000001
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 21,
+      "row": 2,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 1099.2188000000006,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 22,
+      "row": 2,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 23,
+      "row": 2,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 24,
+      "row": 2,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.2656,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 25,
+      "row": 2,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 1099.219,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 26,
+      "row": 2,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 27,
+      "row": 2,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 28,
+      "row": 2,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 29,
+      "row": 2,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 30,
+      "row": 2,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 31,
+      "row": 2,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 32,
+      "row": 2,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 1099.219,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 33,
+      "row": 2,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 1099.219,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 34,
+      "row": 3,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50389999999993,
+        "y": 1371.9727,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 35,
+      "row": 3,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.97270000000003,
+        "y": 1371.9726999999998,
+        "w": 65.62500000000003,
+        "h": 67.67580000000001
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 36,
+      "row": 3,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000016,
+        "y": 1371.9727000000003,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 37,
+      "row": 3,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 38,
+      "row": 3,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 39,
+      "row": 3,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 40,
+      "row": 3,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.2656,
+        "y": 1371.9726999999998,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 41,
+      "row": 3,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 1371.973,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 42,
+      "row": 3,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 43,
+      "row": 3,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 1371.9726999999998,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 44,
+      "row": 3,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 1371.9727000000007,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 45,
+      "row": 3,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 1371.9726999999998,
+        "w": 67.67580000000021,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 46,
+      "row": 3,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 1371.9727,
+        "w": 67.67579999999977,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 47,
+      "row": 3,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 1371.9726999999998,
+        "w": 67.6757999999998,
+        "h": 67.67580000000001
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 48,
+      "row": 3,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 1371.973,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 49,
+      "row": 3,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 1371.973,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 50,
+      "row": 4,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50390000000016,
+        "y": 1644.7266000000002,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 51,
+      "row": 4,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.97270000000003,
+        "y": 1644.7266000000002,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 52,
+      "row": 4,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000016,
+        "y": 1644.7266,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 53,
+      "row": 4,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 1644.7266,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 54,
+      "row": 4,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 1644.7266000000004,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 55,
+      "row": 4,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7968999999998,
+        "y": 1644.7265999999997,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 56,
+      "row": 4,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.2656,
+        "y": 1644.7266000000004,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 57,
+      "row": 4,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 1644.727,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 58,
+      "row": 4,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039000000002,
+        "y": 1644.7266000000002,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 59,
+      "row": 4,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 1644.7266000000002,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 60,
+      "row": 4,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 1644.7266,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 61,
+      "row": 4,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 1644.7266,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 62,
+      "row": 4,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 1644.7265999999997,
+        "w": 67.67580000000001,
+        "h": 65.62500000000003
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 63,
+      "row": 4,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 1644.7266,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 64,
+      "row": 4,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 1644.727,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 65,
+      "row": 4,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 1644.727,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 66,
+      "row": 5,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50389999999993,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 67,
+      "row": 5,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.97270000000003,
+        "y": 1915.4296999999992,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 68,
+      "row": 5,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000016,
+        "y": 1915.4296999999995,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 69,
+      "row": 5,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 70,
+      "row": 5,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 71,
+      "row": 5,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 72,
+      "row": 5,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 1915.43,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 73,
+      "row": 5,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 1915.43,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 74,
+      "row": 5,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 75,
+      "row": 5,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 1915.4296999999997,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 76,
+      "row": 5,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 1915.4296999999992,
+        "w": 65.62499999999979,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 77,
+      "row": 5,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 1915.4296999999992,
+        "w": 67.67580000000021,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 78,
+      "row": 5,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 1915.4297,
+        "w": 67.67580000000021,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 79,
+      "row": 5,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 1915.4296999999995,
+        "w": 67.6757999999998,
+        "h": 67.67580000000001
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 80,
+      "row": 5,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 1915.43,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 81,
+      "row": 5,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 1915.43,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 82,
+      "row": 6,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50390000000016,
+        "y": 2188.1836,
+        "w": 67.67580000000021,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 83,
+      "row": 6,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9726999999998,
+        "y": 2188.1835999999994,
+        "w": 65.62500000000021,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 84,
+      "row": 6,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000016,
+        "y": 2188.1836,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 85,
+      "row": 6,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 86,
+      "row": 6,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 87,
+      "row": 6,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969000000003,
+        "y": 2188.1836,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 88,
+      "row": 6,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 2188.184,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 89,
+      "row": 6,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 2188.184,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 90,
+      "row": 6,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039000000002,
+        "y": 2188.1836,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 91,
+      "row": 6,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 2188.1836,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 92,
+      "row": 6,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 2188.1836000000003,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 93,
+      "row": 6,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 94,
+      "row": 6,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 2188.1836,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 95,
+      "row": 6,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 96,
+      "row": 6,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 2188.184,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 97,
+      "row": 6,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 2188.184,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 98,
+      "row": 7,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50390000000016,
+        "y": 2460.9375,
+        "w": 67.6757999999998,
+        "h": 65.62500000000003
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 99,
+      "row": 7,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9726999999998,
+        "y": 2460.9375,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 100,
+      "row": 7,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000016,
+        "y": 2460.9375,
+        "w": 65.62499999999979,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 101,
+      "row": 7,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594000000003,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 102,
+      "row": 7,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 103,
+      "row": 7,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7968999999998,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 104,
+      "row": 7,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 2460.938,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 105,
+      "row": 7,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 2460.938,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 106,
+      "row": 7,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039000000002,
+        "y": 2460.9375,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 107,
+      "row": 7,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 2460.9375,
+        "w": 65.62499999999979,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 108,
+      "row": 7,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 2460.9375000000005,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 109,
+      "row": 7,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 110,
+      "row": 7,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 2460.9375,
+        "w": 67.6757999999998,
+        "h": 65.62500000000003
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 111,
+      "row": 7,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 2460.9375,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 112,
+      "row": 7,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 2460.938,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 113,
+      "row": 7,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 2460.938,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 114,
+      "row": 8,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50390000000016,
+        "y": 2731.6406,
+        "w": 67.67580000000021,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 115,
+      "row": 8,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9726999999998,
+        "y": 2731.6406,
+        "w": 65.62500000000021,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 116,
+      "row": 8,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000016,
+        "y": 2731.6406,
+        "w": 65.62499999999979,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 117,
+      "row": 8,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594000000003,
+        "y": 2731.6406,
+        "w": 67.67579999999977,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 118,
+      "row": 8,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3280999999997,
+        "y": 2731.6406,
+        "w": 67.67579999999977,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 119,
+      "row": 8,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969000000003,
+        "y": 2731.6406,
+        "w": 67.67580000000021,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 120,
+      "row": 8,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 2731.641,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 121,
+      "row": 8,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 2731.641,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 122,
+      "row": 8,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 2731.6406,
+        "w": 67.67579999999977,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 123,
+      "row": 8,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 2731.6406,
+        "w": 65.62499999999979,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 124,
+      "row": 8,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 2731.6406,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 125,
+      "row": 8,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 2731.6406,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 126,
+      "row": 8,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 2731.6406,
+        "w": 67.67580000000001,
+        "h": 67.67580000000001
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 127,
+      "row": 8,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 2731.6406,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 128,
+      "row": 8,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 2731.641,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 129,
+      "row": 8,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 2731.641,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 130,
+      "row": 9,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50390000000004,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 131,
+      "row": 9,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9726999999999,
+        "y": 3004.3945000000003,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 132,
+      "row": 9,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000004,
+        "y": 3004.3944999999994,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 133,
+      "row": 9,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 3004.3944999999994,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 134,
+      "row": 9,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 135,
+      "row": 9,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 136,
+      "row": 9,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 3004.394,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 137,
+      "row": 9,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 3004.394,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 138,
+      "row": 9,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 139,
+      "row": 9,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 3004.3945000000003,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 140,
+      "row": 9,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 3004.3945000000003,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 141,
+      "row": 9,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 3004.3944999999994,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 142,
+      "row": 9,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 143,
+      "row": 9,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 3004.3945000000003,
+        "w": 67.67580000000001,
+        "h": 65.62500000000003
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 144,
+      "row": 9,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.2656,
+        "y": 3004.3944999999994,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 145,
+      "row": 9,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 3004.394,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 146,
+      "row": 10,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.5039,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 147,
+      "row": 10,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9727,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 148,
+      "row": 10,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000004,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 149,
+      "row": 10,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 150,
+      "row": 10,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 151,
+      "row": 10,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 152,
+      "row": 10,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 3277.148,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 153,
+      "row": 10,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 3277.148,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 154,
+      "row": 10,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 155,
+      "row": 10,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 156,
+      "row": 10,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 157,
+      "row": 10,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 158,
+      "row": 10,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000003
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 159,
+      "row": 10,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 160,
+      "row": 10,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 3277.148,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 161,
+      "row": 10,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 3277.148,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 162,
+      "row": 11,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.5039,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 163,
+      "row": 11,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9727,
+        "y": 3547.8515999999995,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 164,
+      "row": 11,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000004,
+        "y": 3547.8515999999995,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 165,
+      "row": 11,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 166,
+      "row": 11,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 167,
+      "row": 11,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 168,
+      "row": 11,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 3547.852,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 169,
+      "row": 11,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 3547.852,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 170,
+      "row": 11,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 3547.8516000000004,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 171,
+      "row": 11,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 3547.8515999999995,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 172,
+      "row": 11,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 3547.8516000000004,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 173,
+      "row": 11,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 3547.8516000000004,
+        "w": 67.67580000000001,
+        "h": 67.67580000000001
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 174,
+      "row": 11,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 175,
+      "row": 11,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 176,
+      "row": 11,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 3547.852,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 177,
+      "row": 11,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 3547.852,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 178,
+      "row": 12,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.50390000000004,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 179,
+      "row": 12,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9727,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 180,
+      "row": 12,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000004,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 181,
+      "row": 12,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 182,
+      "row": 12,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 183,
+      "row": 12,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 184,
+      "row": 12,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.2656,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 185,
+      "row": 12,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 3820.606,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 186,
+      "row": 12,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5039,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 187,
+      "row": 12,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 3820.6054999999997,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 188,
+      "row": 12,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.62500000000003
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 189,
+      "row": 12,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.625
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 190,
+      "row": 12,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 191,
+      "row": 12,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.62500000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 192,
+      "row": 12,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 3820.606,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 193,
+      "row": 12,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 3820.606,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 194,
+      "row": 13,
+      "column": 1,
+      "side": "left",
+      "rect": {
+        "x": 141.5039,
+        "y": 4091.3086,
+        "w": 67.6758,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 195,
+      "row": 13,
+      "column": 2,
+      "side": "left",
+      "rect": {
+        "x": 321.9727,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 196,
+      "row": 13,
+      "column": 3,
+      "side": "left",
+      "rect": {
+        "x": 502.44140000000004,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 197,
+      "row": 13,
+      "column": 4,
+      "side": "left",
+      "rect": {
+        "x": 680.8594,
+        "y": 4091.3086,
+        "w": 67.6758,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 198,
+      "row": 13,
+      "column": 5,
+      "side": "left",
+      "rect": {
+        "x": 861.3281,
+        "y": 4091.3086,
+        "w": 67.6758,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 199,
+      "row": 13,
+      "column": 6,
+      "side": "left",
+      "rect": {
+        "x": 1041.7969,
+        "y": 4091.3086000000008,
+        "w": 67.6758,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 200,
+      "row": 13,
+      "column": 7,
+      "side": "left",
+      "rect": {
+        "x": 1222.266,
+        "y": 4091.309,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 201,
+      "row": 13,
+      "column": 8,
+      "side": "left",
+      "rect": {
+        "x": 1402.734,
+        "y": 4091.309,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 202,
+      "row": 13,
+      "column": 1,
+      "side": "right",
+      "rect": {
+        "x": 1716.5038999999997,
+        "y": 4091.3086,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 203,
+      "row": 13,
+      "column": 2,
+      "side": "right",
+      "rect": {
+        "x": 1896.9727000000003,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 204,
+      "row": 13,
+      "column": 3,
+      "side": "right",
+      "rect": {
+        "x": 2077.4414,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 205,
+      "row": 13,
+      "column": 4,
+      "side": "right",
+      "rect": {
+        "x": 2255.8594,
+        "y": 4091.3086000000008,
+        "w": 67.67580000000001,
+        "h": 67.67580000000001
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 206,
+      "row": 13,
+      "column": 5,
+      "side": "right",
+      "rect": {
+        "x": 2436.3281,
+        "y": 4091.3086000000008,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 207,
+      "row": 13,
+      "column": 6,
+      "side": "right",
+      "rect": {
+        "x": 2616.7969,
+        "y": 4091.3086,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "occupied": true
+    },
+    {
+      "physicalIndex": 208,
+      "row": 13,
+      "column": 7,
+      "side": "right",
+      "rect": {
+        "x": 2797.266,
+        "y": 4091.309,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    },
+    {
+      "physicalIndex": 209,
+      "row": 13,
+      "column": 8,
+      "side": "right",
+      "rect": {
+        "x": 2977.734,
+        "y": 4091.309,
+        "w": 65.625,
+        "h": 67.676
+      },
+      "occupied": false
+    }
+  ],
+  "sources": {
+    "background": {
+      "path": "../images/ver12-background.png",
+      "sha256": "58327F2A84DD66E8D89C930FCC27979E3B56D902867AB898094F1CE408241761"
+    },
+    "mioriGumiBackground": {
+      "path": "../images/ver12-miori-gumi.png",
+      "sha256": "AEB83D219D9DC5EBEA531EDC35F5BC326A50725B0967989839553496A6E2837B"
+    },
+    "vanguardBackground": {
+      "path": "../images/ver12-vanguard-ii.png",
+      "sha256": "9C639E4B2C625E68CD3B4D1C5BB91F53A917E61CA1556E1A841A14591C589FBC"
+    },
+    "groupPanelLayer": {
+      "path": "../images/ver12-family-panels.png",
+      "sha256": "42BA1E2CB18D964215055A8FD17E911EAB461E2C36228DC6E229028023BF2CB3"
+    },
+    "spriteLayer": {
+      "path": "../images/ver12-sprites.png",
+      "sha256": "209E6682B1D19BB87D22C4722B2C80CE3B03BF3A5CC29115C2004711C2063839"
+    },
+    "crownLayer": {
+      "path": "../images/ver12-master-crowns.png",
+      "sha256": "2024C7B7CCD615AF5459C0034A8841B54120FAB584E81BFC73F65F5AF176B317"
+    },
+    "checkboxLayer": {
+      "path": "../images/ver12-checkboxes.png",
+      "sha256": "0F1F30108E8C954EE14C7FC047FAEA5DC0892CC69AC62911F2FBD4E946BBCDEC"
+    },
+    "familyNameLayer": {
+      "path": "../images/ver12-family-names.png",
+      "sha256": "EB1C2FB2231E99A09E403D7378E264EAAF85D02C1944DE3978BDB47D22AD30CF"
+    },
+    "completeLayer": {
+      "path": "../images/ver12-complete-normal.png",
+      "sha256": "374410DA683863DDB949C024C00435D00612C020BC6B5BA49E24C8CBBE9830BA"
+    },
+    "markLayer": {
+      "path": "../../g20261006a/images/ver11-marks.png",
+      "sha256": "62A3D10FF1F1F7E762C37B75CB163C9CF91871075E9692A6FA9EBB302B06B1B0"
+    },
+    "completeMasterLayer": {
+      "path": "../images/ver12-complete-master.png",
+      "sha256": "C6D2353A4C2605DFE3AED0C66774AD69E359FC37288319464E1AA7EEEB1BCD90"
+    }
+  },
+  "markSources": {
+    "check": {
+      "x": 92,
+      "y": 860,
+      "w": 138,
+      "h": 156
+    },
+    "heart": {
+      "x": 367,
+      "y": 896,
+      "w": 119,
+      "h": 119
+    },
+    "star": {
+      "x": 632,
+      "y": 893,
+      "w": 129,
+      "h": 122
+    }
+  },
+  "markTransforms": {
+    "check": {
+      "dxRatio": -0.008130081301,
+      "dyRatio": -0.3114754098,
+      "widthRatio": 1.12195122,
+      "heightRatio": 1.278688525
+    },
+    "heart": {
+      "dxRatio": 0.0243902439,
+      "dyRatio": 0.0162601626,
+      "widthRatio": 0.9674796748,
+      "heightRatio": 0.9674796748
+    },
+    "star": {
+      "dxRatio": -0.0243902439,
+      "dyRatio": -0.0162601626,
+      "widthRatio": 1.048780488,
+      "heightRatio": 0.9918699187
+    }
+  },
+  "slots": [
+    {
+      "slotNo": 1,
+      "stableSlotNo": 1,
+      "physicalIndex": 1,
+      "row": 0,
+      "column": 0,
+      "zone": "CENTER",
+      "spriteId": "ch7s4-mega-man-base",
+      "checkboxDetectedRect": {
+        "x": 1417.0898,
+        "y": 545.5077999999999,
+        "w": 65.62499999999979,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 1433.4960548387096,
+        "y": 332.22660625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 1433.4960548387096,
+        "y": 332.22660625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 2,
+      "stableSlotNo": 102,
+      "physicalIndex": 2,
+      "row": 1,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-dumpster-dive-base",
+      "checkboxDetectedRect": {
+        "x": 141.50390000000016,
+        "y": 828.5156,
+        "w": 67.67580000000021,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 168.1640548387097,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 168.1640548387097,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 3,
+      "stableSlotNo": 103,
+      "physicalIndex": 3,
+      "row": 1,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-dumpster-dive-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9726999999998,
+        "y": 828.5155999999998,
+        "w": 65.62499999999982,
+        "h": 65.62500000000003
+      },
+      "crownDetectedRect": {
+        "x": 344.5312548387097,
+        "y": 618.56685625,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownInteractionRect": {
+        "x": 344.5312548387097,
+        "y": 618.56685625,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 4,
+      "stableSlotNo": 104,
+      "physicalIndex": 4,
+      "row": 1,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-dumpster-dive-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000016,
+        "y": 828.5156,
+        "w": 65.62500000000021,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 524.9999548387096,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 524.9999548387096,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 5,
+      "stableSlotNo": 105,
+      "physicalIndex": 5,
+      "row": 1,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-dumpster-dive-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 828.5156000000002,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 705.4687548387096,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 705.4687548387096,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 6,
+      "stableSlotNo": 106,
+      "physicalIndex": 6,
+      "row": 1,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-dumpster-dive-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 828.5156,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 881.8359548387097,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 881.8359548387097,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 7,
+      "stableSlotNo": 107,
+      "physicalIndex": 7,
+      "row": 1,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-dumpster-dive-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7968999999998,
+        "y": 828.5155999999998,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 1066.4062548387096,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1066.4062548387096,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 8,
+      "stableSlotNo": 27,
+      "physicalIndex": 10,
+      "row": 1,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-pond-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 828.5156,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 1735.4901935483867,
+        "y": 622.0275812499999,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1735.4901935483867,
+        "y": 622.0275812499999,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 9,
+      "stableSlotNo": 29,
+      "physicalIndex": 11,
+      "row": 1,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-pond-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 828.5156,
+        "w": 65.62499999999979,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1915.4296548387097,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1915.4296548387097,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 10,
+      "stableSlotNo": 28,
+      "physicalIndex": 12,
+      "row": 1,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-pond-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 828.5156,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2095.8984548387098,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2095.8984548387098,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 11,
+      "stableSlotNo": 30,
+      "physicalIndex": 13,
+      "row": 1,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-pond-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 828.5156,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2274.3164548387094,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2274.3164548387094,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 12,
+      "stableSlotNo": 31,
+      "physicalIndex": 14,
+      "row": 1,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-pond-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 828.5156,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2456.8359548387098,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2456.8359548387098,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 13,
+      "stableSlotNo": 120,
+      "physicalIndex": 15,
+      "row": 1,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-pond-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 828.5156,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2635.2539548387094,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2635.2539548387094,
+        "y": 622.0275812499999,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 14,
+      "stableSlotNo": 2,
+      "physicalIndex": 18,
+      "row": 2,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jonesy-base",
+      "checkboxDetectedRect": {
+        "x": 141.50389999999993,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 170.2148548387097,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 170.2148548387097,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 15,
+      "stableSlotNo": 4,
+      "physicalIndex": 19,
+      "row": 2,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jonesy-gold",
+      "checkboxDetectedRect": {
+        "x": 321.97270000000003,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 350.6835548387097,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 350.6835548387097,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 16,
+      "stableSlotNo": 3,
+      "physicalIndex": 20,
+      "row": 2,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jonesy-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44139999999993,
+        "y": 1099.2188,
+        "w": 65.62500000000003,
+        "h": 67.67580000000001
+      },
+      "crownDetectedRect": {
+        "x": 522.9492548387096,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 522.9492548387096,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 17,
+      "stableSlotNo": 5,
+      "physicalIndex": 21,
+      "row": 2,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jonesy-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 1099.2188000000006,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 709.5703548387096,
+        "y": 894.78148125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 709.5703548387096,
+        "y": 894.78148125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 18,
+      "stableSlotNo": 6,
+      "physicalIndex": 22,
+      "row": 2,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jonesy-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 889.5098161290323,
+        "y": 892.73068125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 889.5098161290323,
+        "y": 892.73068125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 19,
+      "stableSlotNo": 108,
+      "physicalIndex": 23,
+      "row": 2,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jonesy-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1070.5078548387096,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1070.5078548387096,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 20,
+      "stableSlotNo": 158,
+      "physicalIndex": 24,
+      "row": 2,
+      "column": 7,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jonesy-quack",
+      "checkboxDetectedRect": {
+        "x": 1222.2656,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 1251.505793548387,
+        "y": 896.19140625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 1251.505793548387,
+        "y": 896.19140625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 21,
+      "stableSlotNo": 37,
+      "physicalIndex": 26,
+      "row": 2,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-x-ray-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1747.7948935483869,
+        "y": 896.19140625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 1747.7948935483869,
+        "y": 896.19140625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 22,
+      "stableSlotNo": 39,
+      "physicalIndex": 27,
+      "row": 2,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-x-ray-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1927.7343548387096,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 1927.7343548387096,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 23,
+      "stableSlotNo": 38,
+      "physicalIndex": 28,
+      "row": 2,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-x-ray-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 1099.2188,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2104.1015548387095,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2104.1015548387095,
+        "y": 892.73068125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 24,
+      "stableSlotNo": 40,
+      "physicalIndex": 29,
+      "row": 2,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-x-ray-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2286.62105483871,
+        "y": 891.32075625,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownInteractionRect": {
+        "x": 2286.62105483871,
+        "y": 891.32075625,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 25,
+      "stableSlotNo": 41,
+      "physicalIndex": 30,
+      "row": 2,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-x-ray-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2467.0898548387095,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 2467.0898548387095,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 26,
+      "stableSlotNo": 121,
+      "physicalIndex": 31,
+      "row": 2,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-x-ray-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 1099.2188,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2645.5078548387096,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 2645.5078548387096,
+        "y": 896.19140625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 27,
+      "stableSlotNo": 12,
+      "physicalIndex": 34,
+      "row": 3,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-adventure-base",
+      "checkboxDetectedRect": {
+        "x": 141.50389999999993,
+        "y": 1371.9727,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 168.1640548387097,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 168.1640548387097,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 28,
+      "stableSlotNo": 14,
+      "physicalIndex": 35,
+      "row": 3,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-adventure-gold",
+      "checkboxDetectedRect": {
+        "x": 321.97270000000003,
+        "y": 1371.9726999999998,
+        "w": 65.62500000000003,
+        "h": 67.67580000000001
+      },
+      "crownDetectedRect": {
+        "x": 351.21279354838714,
+        "y": 1165.48458125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 351.21279354838714,
+        "y": 1165.48458125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 29,
+      "stableSlotNo": 13,
+      "physicalIndex": 36,
+      "row": 3,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-adventure-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000016,
+        "y": 1371.9727000000003,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 527.0507548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 527.0507548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 30,
+      "stableSlotNo": 15,
+      "physicalIndex": 37,
+      "row": 3,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-adventure-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 706.9903161290323,
+        "y": 1165.48458125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 706.9903161290323,
+        "y": 1165.48458125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 31,
+      "stableSlotNo": 16,
+      "physicalIndex": 38,
+      "row": 3,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-adventure-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 883.8867548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 883.8867548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 32,
+      "stableSlotNo": 109,
+      "physicalIndex": 39,
+      "row": 3,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-adventure-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1066.4062548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1066.4062548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 33,
+      "stableSlotNo": 159,
+      "physicalIndex": 40,
+      "row": 3,
+      "column": 7,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-adventure-quack",
+      "checkboxDetectedRect": {
+        "x": 1222.2656,
+        "y": 1371.9726999999998,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1248.9257548387097,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1248.9257548387097,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 34,
+      "stableSlotNo": 47,
+      "physicalIndex": 42,
+      "row": 3,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-onigiri-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 1371.9726999999998,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1745.2148548387097,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1745.2148548387097,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 35,
+      "stableSlotNo": 49,
+      "physicalIndex": 43,
+      "row": 3,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-onigiri-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 1371.9726999999998,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1923.6328548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1923.6328548387096,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 36,
+      "stableSlotNo": 48,
+      "physicalIndex": 44,
+      "row": 3,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-onigiri-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 1371.9727000000007,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2106.1523548387095,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2106.1523548387095,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 37,
+      "stableSlotNo": 50,
+      "physicalIndex": 45,
+      "row": 3,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-onigiri-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 1371.9726999999998,
+        "w": 67.67580000000021,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2286.62105483871,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2286.62105483871,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 38,
+      "stableSlotNo": 51,
+      "physicalIndex": 46,
+      "row": 3,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-onigiri-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 1371.9727,
+        "w": 67.67579999999977,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 2462.9882548387095,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2462.9882548387095,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 39,
+      "stableSlotNo": 122,
+      "physicalIndex": 47,
+      "row": 3,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-onigiri-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 1371.9726999999998,
+        "w": 67.6757999999998,
+        "h": 67.67580000000001
+      },
+      "crownDetectedRect": {
+        "x": 2647.55855483871,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2647.55855483871,
+        "y": 1165.48458125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 40,
+      "stableSlotNo": 22,
+      "physicalIndex": 50,
+      "row": 4,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-bush-base",
+      "checkboxDetectedRect": {
+        "x": 141.50390000000016,
+        "y": 1644.7266000000002,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 164.06255483870967,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 164.06255483870967,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 41,
+      "stableSlotNo": 24,
+      "physicalIndex": 51,
+      "row": 4,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-bush-gold",
+      "checkboxDetectedRect": {
+        "x": 321.97270000000003,
+        "y": 1644.7266000000002,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 338.37895483870966,
+        "y": 1434.7777562499998,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownInteractionRect": {
+        "x": 338.37895483870966,
+        "y": 1434.7777562499998,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 42,
+      "stableSlotNo": 23,
+      "physicalIndex": 52,
+      "row": 4,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-bush-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000016,
+        "y": 1644.7266,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 519.3768935483871,
+        "y": 1439.64840625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 519.3768935483871,
+        "y": 1439.64840625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 43,
+      "stableSlotNo": 25,
+      "physicalIndex": 53,
+      "row": 4,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-bush-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 1644.7266,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 701.3671548387097,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 701.3671548387097,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 44,
+      "stableSlotNo": 26,
+      "physicalIndex": 54,
+      "row": 4,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-bush-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 1644.7266000000004,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 878.263593548387,
+        "y": 1438.2384812500002,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 878.263593548387,
+        "y": 1438.2384812500002,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 45,
+      "stableSlotNo": 110,
+      "physicalIndex": 55,
+      "row": 4,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-bush-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7968999999998,
+        "y": 1644.7265999999997,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 1066.4062548387096,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1066.4062548387096,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 46,
+      "stableSlotNo": 160,
+      "physicalIndex": 56,
+      "row": 4,
+      "column": 7,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-bush-quack",
+      "checkboxDetectedRect": {
+        "x": 1222.2656,
+        "y": 1644.7266000000004,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1242.7734548387095,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1242.7734548387095,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 47,
+      "stableSlotNo": 57,
+      "physicalIndex": 58,
+      "row": 4,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-storm-scout-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039000000002,
+        "y": 1644.7266000000002,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1734.9609548387095,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1734.9609548387095,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 48,
+      "stableSlotNo": 59,
+      "physicalIndex": 59,
+      "row": 4,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-storm-scout-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 1644.7266000000002,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1915.4296548387097,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1915.4296548387097,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 49,
+      "stableSlotNo": 58,
+      "physicalIndex": 60,
+      "row": 4,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-storm-scout-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 1644.7266,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2091.79685483871,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2091.79685483871,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 50,
+      "stableSlotNo": 60,
+      "physicalIndex": 61,
+      "row": 4,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-storm-scout-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 1644.7266,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2274.3164548387094,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2274.3164548387094,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 51,
+      "stableSlotNo": 61,
+      "physicalIndex": 62,
+      "row": 4,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-storm-scout-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 1644.7265999999997,
+        "w": 67.67580000000001,
+        "h": 65.62500000000003
+      },
+      "crownDetectedRect": {
+        "x": 2452.73435483871,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2452.73435483871,
+        "y": 1438.2384812500002,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 52,
+      "stableSlotNo": 123,
+      "physicalIndex": 63,
+      "row": 4,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-storm-scout-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 1644.7266,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2632.673916129032,
+        "y": 1438.2384812500002,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2632.673916129032,
+        "y": 1438.2384812500002,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 53,
+      "stableSlotNo": 32,
+      "physicalIndex": 66,
+      "row": 5,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-sonic-base",
+      "checkboxDetectedRect": {
+        "x": 141.50389999999993,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 151.75785483870968,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 151.75785483870968,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 54,
+      "stableSlotNo": 34,
+      "physicalIndex": 67,
+      "row": 5,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-sonic-gold",
+      "checkboxDetectedRect": {
+        "x": 321.97270000000003,
+        "y": 1915.4296999999992,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 334.2773548387097,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 334.2773548387097,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 55,
+      "stableSlotNo": 33,
+      "physicalIndex": 68,
+      "row": 5,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-sonic-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000016,
+        "y": 1915.4296999999995,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 510.64455483870967,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 510.64455483870967,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 56,
+      "stableSlotNo": 35,
+      "physicalIndex": 69,
+      "row": 5,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-sonic-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 697.2656548387097,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 697.2656548387097,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 57,
+      "stableSlotNo": 36,
+      "physicalIndex": 70,
+      "row": 5,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-sonic-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 875.6835548387096,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 875.6835548387096,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 58,
+      "stableSlotNo": 111,
+      "physicalIndex": 71,
+      "row": 5,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-sonic-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1056.1523548387097,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1056.1523548387097,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 59,
+      "stableSlotNo": 67,
+      "physicalIndex": 74,
+      "row": 5,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-blinky-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 1915.4296999999992,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1747.2656548387097,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 1747.2656548387097,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 60,
+      "stableSlotNo": 69,
+      "physicalIndex": 75,
+      "row": 5,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-blinky-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 1915.4296999999997,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1925.6835548387096,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1925.6835548387096,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 61,
+      "stableSlotNo": 68,
+      "physicalIndex": 76,
+      "row": 5,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-blinky-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 1915.4296999999992,
+        "w": 65.62499999999979,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2108.2031548387095,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2108.2031548387095,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 62,
+      "stableSlotNo": 70,
+      "physicalIndex": 77,
+      "row": 5,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-blinky-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 1915.4296999999992,
+        "w": 67.67580000000021,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2284.5703548387096,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2284.5703548387096,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 63,
+      "stableSlotNo": 71,
+      "physicalIndex": 78,
+      "row": 5,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-blinky-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 1915.4297,
+        "w": 67.67580000000021,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 2467.0898548387095,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2467.0898548387095,
+        "y": 1708.94168125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 64,
+      "stableSlotNo": 124,
+      "physicalIndex": 79,
+      "row": 5,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-blinky-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 1915.4296999999995,
+        "w": 67.6757999999998,
+        "h": 67.67580000000001
+      },
+      "crownDetectedRect": {
+        "x": 2647.55855483871,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 2647.55855483871,
+        "y": 1712.40230625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 65,
+      "stableSlotNo": 42,
+      "physicalIndex": 82,
+      "row": 6,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-tails-base",
+      "checkboxDetectedRect": {
+        "x": 141.50390000000016,
+        "y": 2188.1836,
+        "w": 67.67580000000021,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 164.06255483870967,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 164.06255483870967,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 66,
+      "stableSlotNo": 44,
+      "physicalIndex": 83,
+      "row": 6,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-tails-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9726999999998,
+        "y": 2188.1835999999994,
+        "w": 65.62500000000021,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 344.5312548387097,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 344.5312548387097,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 67,
+      "stableSlotNo": 43,
+      "physicalIndex": 84,
+      "row": 6,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-tails-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000016,
+        "y": 2188.1836,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 527.0507548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 527.0507548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 68,
+      "stableSlotNo": 45,
+      "physicalIndex": 85,
+      "row": 6,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-tails-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 705.4687548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 705.4687548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 69,
+      "stableSlotNo": 46,
+      "physicalIndex": 86,
+      "row": 6,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-tails-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 883.8867548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 883.8867548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 70,
+      "stableSlotNo": 112,
+      "physicalIndex": 87,
+      "row": 6,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-tails-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969000000003,
+        "y": 2188.1836,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1066.4062548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1066.4062548387096,
+        "y": 1981.69558125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 71,
+      "stableSlotNo": 97,
+      "physicalIndex": 90,
+      "row": 6,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-birthday-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039000000002,
+        "y": 2188.1836,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1728.8085548387096,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1728.8085548387096,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 72,
+      "stableSlotNo": 99,
+      "physicalIndex": 91,
+      "row": 6,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-birthday-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 2188.1836,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 1911.3281548387097,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1911.3281548387097,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 73,
+      "stableSlotNo": 98,
+      "physicalIndex": 92,
+      "row": 6,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-birthday-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 2188.1836000000003,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2091.79685483871,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2091.79685483871,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 74,
+      "stableSlotNo": 100,
+      "physicalIndex": 93,
+      "row": 6,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-birthday-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2269.685616129032,
+        "y": 2004.25418125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2269.685616129032,
+        "y": 2004.25418125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 75,
+      "stableSlotNo": 101,
+      "physicalIndex": 94,
+      "row": 6,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-birthday-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 2188.1836,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2450.68355483871,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2450.68355483871,
+        "y": 2004.25418125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 76,
+      "stableSlotNo": 125,
+      "physicalIndex": 95,
+      "row": 6,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-birthday-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 2188.1836000000003,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2629.1015548387095,
+        "y": 2006.30488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2629.1015548387095,
+        "y": 2006.30488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 77,
+      "stableSlotNo": 52,
+      "physicalIndex": 98,
+      "row": 7,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-shadow-base",
+      "checkboxDetectedRect": {
+        "x": 141.50390000000016,
+        "y": 2460.9375,
+        "w": 67.6757999999998,
+        "h": 65.62500000000003
+      },
+      "crownDetectedRect": {
+        "x": 159.96095483870968,
+        "y": 2255.85940625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 159.96095483870968,
+        "y": 2255.85940625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 78,
+      "stableSlotNo": 54,
+      "physicalIndex": 99,
+      "row": 7,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-shadow-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9726999999998,
+        "y": 2460.9375,
+        "w": 65.62499999999979,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 344.5312548387097,
+        "y": 2252.39868125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 344.5312548387097,
+        "y": 2252.39868125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 79,
+      "stableSlotNo": 53,
+      "physicalIndex": 100,
+      "row": 7,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-shadow-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000016,
+        "y": 2460.9375,
+        "w": 65.62499999999979,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 522.9492548387096,
+        "y": 2252.39868125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 522.9492548387096,
+        "y": 2252.39868125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 80,
+      "stableSlotNo": 55,
+      "physicalIndex": 101,
+      "row": 7,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-shadow-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594000000003,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 703.4179548387096,
+        "y": 2254.44948125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 703.4179548387096,
+        "y": 2254.44948125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 81,
+      "stableSlotNo": 56,
+      "physicalIndex": 102,
+      "row": 7,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-shadow-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 883.8867548387096,
+        "y": 2254.44948125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 883.8867548387096,
+        "y": 2254.44948125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 82,
+      "stableSlotNo": 113,
+      "physicalIndex": 103,
+      "row": 7,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-shadow-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7968999999998,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 1062.3046548387097,
+        "y": 2252.39868125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1062.3046548387097,
+        "y": 2252.39868125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 83,
+      "stableSlotNo": 77,
+      "physicalIndex": 106,
+      "row": 7,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-crash-bandicoot-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039000000002,
+        "y": 2460.9375,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1734.9609548387095,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1734.9609548387095,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 84,
+      "stableSlotNo": 79,
+      "physicalIndex": 107,
+      "row": 7,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-crash-bandicoot-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 2460.9375,
+        "w": 65.62499999999979,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1915.4296548387097,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1915.4296548387097,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 85,
+      "stableSlotNo": 78,
+      "physicalIndex": 108,
+      "row": 7,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-crash-bandicoot-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 2460.9375000000005,
+        "w": 65.62500000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2097.9492548387097,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2097.9492548387097,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 86,
+      "stableSlotNo": 80,
+      "physicalIndex": 109,
+      "row": 7,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-crash-bandicoot-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 2460.9375,
+        "w": 67.67579999999977,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2278.4179548387096,
+        "y": 2267.39495625,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownInteractionRect": {
+        "x": 2278.4179548387096,
+        "y": 2267.39495625,
+        "w": 98.43747096774193,
+        "h": 73.8282
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 87,
+      "stableSlotNo": 81,
+      "physicalIndex": 110,
+      "row": 7,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-crash-bandicoot-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 2460.9375,
+        "w": 67.6757999999998,
+        "h": 65.62500000000003
+      },
+      "crownDetectedRect": {
+        "x": 2454.78515483871,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2454.78515483871,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 88,
+      "stableSlotNo": 126,
+      "physicalIndex": 111,
+      "row": 7,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-crash-bandicoot-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 2460.9375,
+        "w": 67.67580000000021,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2639.3554548387096,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2639.3554548387096,
+        "y": 2268.80488125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 89,
+      "stableSlotNo": 62,
+      "physicalIndex": 114,
+      "row": 8,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-8-bit-base",
+      "checkboxDetectedRect": {
+        "x": 141.50390000000016,
+        "y": 2731.6406,
+        "w": 67.67580000000021,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 170.2148548387097,
+        "y": 2528.61330625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 170.2148548387097,
+        "y": 2528.61330625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 90,
+      "stableSlotNo": 64,
+      "physicalIndex": 115,
+      "row": 8,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-8-bit-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9726999999998,
+        "y": 2731.6406,
+        "w": 65.62500000000021,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 350.6835548387097,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 350.6835548387097,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 91,
+      "stableSlotNo": 63,
+      "physicalIndex": 116,
+      "row": 8,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-8-bit-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000016,
+        "y": 2731.6406,
+        "w": 65.62499999999979,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 531.1523548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 531.1523548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 92,
+      "stableSlotNo": 65,
+      "physicalIndex": 117,
+      "row": 8,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-8-bit-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594000000003,
+        "y": 2731.6406,
+        "w": 67.67579999999977,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 709.5703548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 709.5703548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 93,
+      "stableSlotNo": 66,
+      "physicalIndex": 118,
+      "row": 8,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-8-bit-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3280999999997,
+        "y": 2731.6406,
+        "w": 67.67579999999977,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 890.0390548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 890.0390548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 94,
+      "stableSlotNo": 114,
+      "physicalIndex": 119,
+      "row": 8,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-8-bit-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969000000003,
+        "y": 2731.6406,
+        "w": 67.67580000000021,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 1070.5078548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1070.5078548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 95,
+      "stableSlotNo": 87,
+      "physicalIndex": 122,
+      "row": 8,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-morgana-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 2731.6406,
+        "w": 67.67579999999977,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1745.744093548387,
+        "y": 2528.61330625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 1745.744093548387,
+        "y": 2528.61330625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 96,
+      "stableSlotNo": 89,
+      "physicalIndex": 123,
+      "row": 8,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-morgana-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 2731.6406,
+        "w": 65.62499999999979,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1925.6835548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1925.6835548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 97,
+      "stableSlotNo": 88,
+      "physicalIndex": 124,
+      "row": 8,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-morgana-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 2731.6406,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2106.1523548387095,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2106.1523548387095,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 98,
+      "stableSlotNo": 90,
+      "physicalIndex": 125,
+      "row": 8,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-morgana-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 2731.6406,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 2284.5703548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2284.5703548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 99,
+      "stableSlotNo": 91,
+      "physicalIndex": 126,
+      "row": 8,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-morgana-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 2731.6406,
+        "w": 67.67580000000001,
+        "h": 67.67580000000001
+      },
+      "crownDetectedRect": {
+        "x": 2465.0390548387095,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2465.0390548387095,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 100,
+      "stableSlotNo": 127,
+      "physicalIndex": 127,
+      "row": 8,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-morgana-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 2731.6406,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2645.5078548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2645.5078548387096,
+        "y": 2525.15258125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 101,
+      "stableSlotNo": 72,
+      "physicalIndex": 130,
+      "row": 9,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jackrabbit-base",
+      "checkboxDetectedRect": {
+        "x": 141.50390000000004,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 164.06255483870967,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 164.06255483870967,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 102,
+      "stableSlotNo": 74,
+      "physicalIndex": 131,
+      "row": 9,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jackrabbit-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9726999999999,
+        "y": 3004.3945000000003,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 344.5312548387097,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 344.5312548387097,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 103,
+      "stableSlotNo": 73,
+      "physicalIndex": 132,
+      "row": 9,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jackrabbit-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000004,
+        "y": 3004.3944999999994,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 524.9999548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 524.9999548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 104,
+      "stableSlotNo": 75,
+      "physicalIndex": 133,
+      "row": 9,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jackrabbit-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 3004.3944999999994,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 703.4179548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 703.4179548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 105,
+      "stableSlotNo": 76,
+      "physicalIndex": 134,
+      "row": 9,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jackrabbit-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 883.8867548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 883.8867548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 106,
+      "stableSlotNo": 115,
+      "physicalIndex": 135,
+      "row": 9,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-jackrabbit-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1064.3554548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1064.3554548387096,
+        "y": 2812.26198125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 107,
+      "stableSlotNo": 128,
+      "physicalIndex": 138,
+      "row": 9,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-spooky-dash-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1743.1640548387097,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1743.1640548387097,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 108,
+      "stableSlotNo": 129,
+      "physicalIndex": 139,
+      "row": 9,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-spooky-dash-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 3004.3945000000003,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1923.6328548387096,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1923.6328548387096,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 109,
+      "stableSlotNo": 130,
+      "physicalIndex": 140,
+      "row": 9,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-spooky-dash-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 3004.3945000000003,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2104.1015548387095,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2104.1015548387095,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 110,
+      "stableSlotNo": 131,
+      "physicalIndex": 141,
+      "row": 9,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-spooky-dash-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 3004.3944999999994,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2285.099593548387,
+        "y": 2797.90648125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2285.099593548387,
+        "y": 2797.90648125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 111,
+      "stableSlotNo": 132,
+      "physicalIndex": 142,
+      "row": 9,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-spooky-dash-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 3004.3945000000003,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2462.9882548387095,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2462.9882548387095,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 112,
+      "stableSlotNo": 133,
+      "physicalIndex": 143,
+      "row": 9,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-spooky-dash-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 3004.3945000000003,
+        "w": 67.67580000000001,
+        "h": 65.62500000000003
+      },
+      "crownDetectedRect": {
+        "x": 2643.4570548387096,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2643.4570548387096,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 113,
+      "stableSlotNo": 162,
+      "physicalIndex": 144,
+      "row": 9,
+      "column": 7,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-spooky-dash-quack",
+      "checkboxDetectedRect": {
+        "x": 2797.2656,
+        "y": 3004.3944999999994,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2823.9257548387095,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2823.9257548387095,
+        "y": 2797.90648125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 114,
+      "stableSlotNo": 82,
+      "physicalIndex": 146,
+      "row": 10,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-crown-base",
+      "checkboxDetectedRect": {
+        "x": 141.5039,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 158.43939354838707,
+        "y": 3082.32420625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 158.43939354838707,
+        "y": 3082.32420625,
+        "w": 95.26203870967743,
+        "h": 65.625
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 115,
+      "stableSlotNo": 84,
+      "physicalIndex": 147,
+      "row": 10,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-crown-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9727,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 338.37895483870966,
+        "y": 3078.8634812499995,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 338.37895483870966,
+        "y": 3078.8634812499995,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 116,
+      "stableSlotNo": 83,
+      "physicalIndex": 148,
+      "row": 10,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-crown-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000004,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 516.7968548387096,
+        "y": 3078.8634812499995,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 516.7968548387096,
+        "y": 3078.8634812499995,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 117,
+      "stableSlotNo": 85,
+      "physicalIndex": 149,
+      "row": 10,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-crown-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 703.4179548387096,
+        "y": 3074.7619812500006,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 703.4179548387096,
+        "y": 3074.7619812500006,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 118,
+      "stableSlotNo": 86,
+      "physicalIndex": 150,
+      "row": 10,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-crown-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 881.8359548387098,
+        "y": 3076.8126812500004,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 881.8359548387098,
+        "y": 3076.8126812500004,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 119,
+      "stableSlotNo": 116,
+      "physicalIndex": 151,
+      "row": 10,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-crown-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1060.2539548387097,
+        "y": 3076.8126812500004,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1060.2539548387097,
+        "y": 3076.8126812500004,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 120,
+      "stableSlotNo": 134,
+      "physicalIndex": 154,
+      "row": 10,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-the-deer-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1741.1132548387097,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1741.1132548387097,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 121,
+      "stableSlotNo": 135,
+      "physicalIndex": 155,
+      "row": 10,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-the-deer-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1921.5820548387096,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1921.5820548387096,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 122,
+      "stableSlotNo": 136,
+      "physicalIndex": 156,
+      "row": 10,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-the-deer-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 3277.1484,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2099.9999548387095,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2099.9999548387095,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 123,
+      "stableSlotNo": 137,
+      "physicalIndex": 157,
+      "row": 10,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-the-deer-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2278.4179548387096,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2278.4179548387096,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 124,
+      "stableSlotNo": 138,
+      "physicalIndex": 158,
+      "row": 10,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-the-deer-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.62500000000003
+      },
+      "crownDetectedRect": {
+        "x": 2460.9375548387097,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2460.9375548387097,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 125,
+      "stableSlotNo": 139,
+      "physicalIndex": 159,
+      "row": 10,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-the-deer-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 3277.1484,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2639.3554548387096,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2639.3554548387096,
+        "y": 3078.86348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 126,
+      "stableSlotNo": 92,
+      "physicalIndex": 162,
+      "row": 11,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-killswitch-base",
+      "checkboxDetectedRect": {
+        "x": 141.5039,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 170.2148548387097,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 170.2148548387097,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 127,
+      "stableSlotNo": 94,
+      "physicalIndex": 163,
+      "row": 11,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-killswitch-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9727,
+        "y": 3547.8515999999995,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 350.6835548387097,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 350.6835548387097,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 128,
+      "stableSlotNo": 93,
+      "physicalIndex": 164,
+      "row": 11,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-killswitch-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000004,
+        "y": 3547.8515999999995,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 531.1523548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 531.1523548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 129,
+      "stableSlotNo": 95,
+      "physicalIndex": 165,
+      "row": 11,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-killswitch-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 709.5703548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 709.5703548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 130,
+      "stableSlotNo": 96,
+      "physicalIndex": 166,
+      "row": 11,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-killswitch-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 892.0898548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 892.0898548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 131,
+      "stableSlotNo": 117,
+      "physicalIndex": 167,
+      "row": 11,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-killswitch-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1070.5078548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1070.5078548387096,
+        "y": 3341.36348125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 132,
+      "stableSlotNo": 140,
+      "physicalIndex": 170,
+      "row": 11,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-vampire-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 3547.8516000000004,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1722.6562548387096,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1722.6562548387096,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 133,
+      "stableSlotNo": 141,
+      "physicalIndex": 171,
+      "row": 11,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-vampire-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 3547.8515999999995,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1903.1249548387095,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1903.1249548387095,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 134,
+      "stableSlotNo": 142,
+      "physicalIndex": 172,
+      "row": 11,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-vampire-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 3547.8516000000004,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 2081.5429548387096,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2081.5429548387096,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 135,
+      "stableSlotNo": 143,
+      "physicalIndex": 173,
+      "row": 11,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-vampire-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 3547.8516000000004,
+        "w": 67.67580000000001,
+        "h": 67.67580000000001
+      },
+      "crownDetectedRect": {
+        "x": 2262.0117548387097,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2262.0117548387097,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 136,
+      "stableSlotNo": 144,
+      "physicalIndex": 174,
+      "row": 11,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-vampire-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2442.4804548387096,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2442.4804548387096,
+        "y": 3437.75028125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 137,
+      "stableSlotNo": 145,
+      "physicalIndex": 175,
+      "row": 11,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-vampire-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 3547.8515999999995,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2623.478493548387,
+        "y": 3437.75028125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2623.478493548387,
+        "y": 3437.75028125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 138,
+      "stableSlotNo": 7,
+      "physicalIndex": 178,
+      "row": 12,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-klombo-base",
+      "checkboxDetectedRect": {
+        "x": 141.50390000000004,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 162.0117548387097,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 162.0117548387097,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 139,
+      "stableSlotNo": 9,
+      "physicalIndex": 179,
+      "row": 12,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-klombo-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9727,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 344.5312548387097,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 344.5312548387097,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 140,
+      "stableSlotNo": 8,
+      "physicalIndex": 180,
+      "row": 12,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-klombo-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000004,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 524.9999548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 524.9999548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 141,
+      "stableSlotNo": 10,
+      "physicalIndex": 181,
+      "row": 12,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-klombo-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 705.4687548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 705.4687548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 142,
+      "stableSlotNo": 11,
+      "physicalIndex": 182,
+      "row": 12,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-klombo-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 883.8867548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 883.8867548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 143,
+      "stableSlotNo": 118,
+      "physicalIndex": 183,
+      "row": 12,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-klombo-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 3820.6055000000006,
+        "w": 67.67579999999998,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1068.4570548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1068.4570548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 144,
+      "stableSlotNo": 161,
+      "physicalIndex": 184,
+      "row": 12,
+      "column": 7,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-klombo-quack",
+      "checkboxDetectedRect": {
+        "x": 1222.2656,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 1242.7734548387095,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1242.7734548387095,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 145,
+      "stableSlotNo": 146,
+      "physicalIndex": 186,
+      "row": 12,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-honey-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5039,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 1739.0625548387097,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1739.0625548387097,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 146,
+      "stableSlotNo": 147,
+      "physicalIndex": 187,
+      "row": 12,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-honey-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 3820.6054999999997,
+        "w": 65.625,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 1919.5312548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1919.5312548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 147,
+      "stableSlotNo": 148,
+      "physicalIndex": 188,
+      "row": 12,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-honey-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 3820.6055000000006,
+        "w": 65.625,
+        "h": 65.62500000000003
+      },
+      "crownDetectedRect": {
+        "x": 2099.9999548387095,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2099.9999548387095,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 148,
+      "stableSlotNo": 149,
+      "physicalIndex": 189,
+      "row": 12,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-honey-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.625
+      },
+      "crownDetectedRect": {
+        "x": 2280.997993548387,
+        "y": 3614.11738125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2280.997993548387,
+        "y": 3614.11738125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 149,
+      "stableSlotNo": 150,
+      "physicalIndex": 190,
+      "row": 12,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-honey-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2461.466793548387,
+        "y": 3614.11738125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2461.466793548387,
+        "y": 3614.11738125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 150,
+      "stableSlotNo": 151,
+      "physicalIndex": 191,
+      "row": 12,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-honey-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 3820.6055000000006,
+        "w": 67.6758,
+        "h": 65.62500000000021
+      },
+      "crownDetectedRect": {
+        "x": 2639.3554548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2639.3554548387096,
+        "y": 3614.11738125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 151,
+      "stableSlotNo": 17,
+      "physicalIndex": 194,
+      "row": 13,
+      "column": 1,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-overshield-base",
+      "checkboxDetectedRect": {
+        "x": 141.5039,
+        "y": 4091.3086,
+        "w": 67.6758,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 168.1640548387097,
+        "y": 3888.28120625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 168.1640548387097,
+        "y": 3888.28120625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 152,
+      "stableSlotNo": 19,
+      "physicalIndex": 195,
+      "row": 13,
+      "column": 2,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-overshield-gold",
+      "checkboxDetectedRect": {
+        "x": 321.9727,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 348.6328548387097,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 348.6328548387097,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 153,
+      "stableSlotNo": 18,
+      "physicalIndex": 196,
+      "row": 13,
+      "column": 3,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-overshield-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 502.44140000000004,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 529.630793548387,
+        "y": 3884.82058125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 529.630793548387,
+        "y": 3884.82058125,
+        "w": 95.26203870967743,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 154,
+      "stableSlotNo": 20,
+      "physicalIndex": 197,
+      "row": 13,
+      "column": 4,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-overshield-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 680.8594,
+        "y": 4091.3086,
+        "w": 67.6758,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 707.5195548387096,
+        "y": 3888.28120625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 707.5195548387096,
+        "y": 3888.28120625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 155,
+      "stableSlotNo": 21,
+      "physicalIndex": 198,
+      "row": 13,
+      "column": 5,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-overshield-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 861.3281,
+        "y": 4091.3086,
+        "w": 67.6758,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 887.9882548387096,
+        "y": 3888.28120625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownInteractionRect": {
+        "x": 887.9882548387096,
+        "y": 3888.28120625,
+        "w": 98.43747096774193,
+        "h": 65.625
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 156,
+      "stableSlotNo": 119,
+      "physicalIndex": 199,
+      "row": 13,
+      "column": 6,
+      "zone": "LEFT",
+      "spriteId": "ch7s4-overshield-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 1041.7969,
+        "y": 4091.3086000000008,
+        "w": 67.6758,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1068.4570548387096,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1068.4570548387096,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 157,
+      "stableSlotNo": 152,
+      "physicalIndex": 202,
+      "row": 13,
+      "column": 1,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-willow-base",
+      "checkboxDetectedRect": {
+        "x": 1716.5038999999997,
+        "y": 4091.3086,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1726.7578548387096,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1726.7578548387096,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 158,
+      "stableSlotNo": 153,
+      "physicalIndex": 203,
+      "row": 13,
+      "column": 2,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-willow-gold",
+      "checkboxDetectedRect": {
+        "x": 1896.9727000000003,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 1907.2265548387097,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 1907.2265548387097,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 159,
+      "stableSlotNo": 154,
+      "physicalIndex": 204,
+      "row": 13,
+      "column": 3,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-willow-cheat-master",
+      "checkboxDetectedRect": {
+        "x": 2077.4414,
+        "y": 4091.3086,
+        "w": 65.625,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 2087.6953548387096,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2087.6953548387096,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 160,
+      "stableSlotNo": 155,
+      "physicalIndex": 205,
+      "row": 13,
+      "column": 4,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-willow-loot-hacker",
+      "checkboxDetectedRect": {
+        "x": 2255.8594,
+        "y": 4091.3086000000008,
+        "w": 67.67580000000001,
+        "h": 67.67580000000001
+      },
+      "crownDetectedRect": {
+        "x": 2265.584016129032,
+        "y": 3883.41065625,
+        "w": 101.61290322580643,
+        "h": 73.8282
+      },
+      "crownInteractionRect": {
+        "x": 2265.584016129032,
+        "y": 3883.41065625,
+        "w": 101.61290322580643,
+        "h": 73.8282
+      },
+      "crownColor": "yellow"
+    },
+    {
+      "slotNo": 161,
+      "stableSlotNo": 156,
+      "physicalIndex": 206,
+      "row": 13,
+      "column": 5,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-willow-bounty-hunter",
+      "checkboxDetectedRect": {
+        "x": 2436.3281,
+        "y": 4091.3086000000008,
+        "w": 67.67579999999998,
+        "h": 67.67580000000021
+      },
+      "crownDetectedRect": {
+        "x": 2446.052816129032,
+        "y": 3884.82058125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2446.052816129032,
+        "y": 3884.82058125,
+        "w": 101.61290322580643,
+        "h": 69.7266
+      },
+      "crownColor": "red"
+    },
+    {
+      "slotNo": 162,
+      "stableSlotNo": 157,
+      "physicalIndex": 207,
+      "row": 13,
+      "column": 6,
+      "zone": "RIGHT",
+      "spriteId": "ch7s4-willow-trick-or-treat",
+      "checkboxDetectedRect": {
+        "x": 2616.7969,
+        "y": 4091.3086,
+        "w": 67.67579999999998,
+        "h": 67.67579999999998
+      },
+      "crownDetectedRect": {
+        "x": 2627.0507548387095,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownInteractionRect": {
+        "x": 2627.0507548387095,
+        "y": 3884.82058125,
+        "w": 98.43747096774193,
+        "h": 69.7266
+      },
+      "crownColor": "yellow"
+    }
+  ],
+  "releaseGenerationId": "g20261016a"
+}

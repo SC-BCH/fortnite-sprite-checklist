@@ -3,17 +3,18 @@
   "status": "application-stable-identities",
   "season": "Chapter 7 Season 4",
   "idNamespace": "ch7s4",
-  "layoutRevisionId": "ch7s4-r04",
-  "familyCount": 25,
-  "capacitySlotCount": 145,
-  "spriteIdentityCount": 145,
+  "layoutRevisionId": "ch7s4-r05",
+  "familyCount": 27,
+  "capacitySlotCount": 162,
+  "spriteIdentityCount": 162,
   "variantIds": [
     "base",
     "gold",
     "cheat-master",
     "loot-hacker",
     "bounty-hunter",
-    "trick-or-treat"
+    "trick-or-treat",
+    "quack"
   ],
   "familyDisplayOrder": [
     "ch7s4-dumpster-dive",
@@ -40,7 +41,9 @@
     "ch7s4-morgana",
     "ch7s4-spooky-dash",
     "ch7s4-the-deer",
-    "ch7s4-vampire"
+    "ch7s4-vampire",
+    "ch7s4-honey",
+    "ch7s4-willow"
   ],
   "sprites": [
     {
@@ -1681,6 +1684,198 @@
       "gameFamilyOrder": 25,
       "layoutRole": "REGULAR",
       "thumbnailPath": "./images/trade-thumbs/ch7s4-vampire-trick-or-treat.png"
+    },
+    {
+      "slotNo": 146,
+      "familyId": "ch7s4-honey",
+      "familyDisplayName": "Honey",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-honey-base",
+      "gameFamilyOrder": 26,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-honey-base.png"
+    },
+    {
+      "slotNo": 147,
+      "familyId": "ch7s4-honey",
+      "familyDisplayName": "Honey",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-honey-gold",
+      "gameFamilyOrder": 26,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-honey-gold.png"
+    },
+    {
+      "slotNo": 148,
+      "familyId": "ch7s4-honey",
+      "familyDisplayName": "Honey",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-honey-cheat-master",
+      "gameFamilyOrder": 26,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-honey-cheat-master.png"
+    },
+    {
+      "slotNo": 149,
+      "familyId": "ch7s4-honey",
+      "familyDisplayName": "Honey",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-honey-loot-hacker",
+      "gameFamilyOrder": 26,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-honey-loot-hacker.png"
+    },
+    {
+      "slotNo": 150,
+      "familyId": "ch7s4-honey",
+      "familyDisplayName": "Honey",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-honey-bounty-hunter",
+      "gameFamilyOrder": 26,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-honey-bounty-hunter.png"
+    },
+    {
+      "slotNo": 151,
+      "familyId": "ch7s4-honey",
+      "familyDisplayName": "Honey",
+      "variantId": "trick-or-treat",
+      "variantDisplayName": "Trick or Treat",
+      "spriteId": "ch7s4-honey-trick-or-treat",
+      "gameFamilyOrder": 26,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-honey-trick-or-treat.png"
+    },
+    {
+      "slotNo": 152,
+      "familyId": "ch7s4-willow",
+      "familyDisplayName": "Willow (provisional)",
+      "variantId": "base",
+      "variantDisplayName": "Base",
+      "spriteId": "ch7s4-willow-base",
+      "gameFamilyOrder": 27,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-willow-base.png"
+    },
+    {
+      "slotNo": 153,
+      "familyId": "ch7s4-willow",
+      "familyDisplayName": "Willow (provisional)",
+      "variantId": "gold",
+      "variantDisplayName": "Gold",
+      "spriteId": "ch7s4-willow-gold",
+      "gameFamilyOrder": 27,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-willow-gold.png"
+    },
+    {
+      "slotNo": 154,
+      "familyId": "ch7s4-willow",
+      "familyDisplayName": "Willow (provisional)",
+      "variantId": "cheat-master",
+      "variantDisplayName": "Cheat Master",
+      "spriteId": "ch7s4-willow-cheat-master",
+      "gameFamilyOrder": 27,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-willow-cheat-master.png"
+    },
+    {
+      "slotNo": 155,
+      "familyId": "ch7s4-willow",
+      "familyDisplayName": "Willow (provisional)",
+      "variantId": "loot-hacker",
+      "variantDisplayName": "Loot Hacker",
+      "spriteId": "ch7s4-willow-loot-hacker",
+      "gameFamilyOrder": 27,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-willow-loot-hacker.png"
+    },
+    {
+      "slotNo": 156,
+      "familyId": "ch7s4-willow",
+      "familyDisplayName": "Willow (provisional)",
+      "variantId": "bounty-hunter",
+      "variantDisplayName": "Bounty Hunter",
+      "spriteId": "ch7s4-willow-bounty-hunter",
+      "gameFamilyOrder": 27,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-willow-bounty-hunter.png"
+    },
+    {
+      "slotNo": 157,
+      "familyId": "ch7s4-willow",
+      "familyDisplayName": "Willow (provisional)",
+      "variantId": "trick-or-treat",
+      "variantDisplayName": "Trick or Treat",
+      "spriteId": "ch7s4-willow-trick-or-treat",
+      "gameFamilyOrder": 27,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-willow-trick-or-treat.png"
+    },
+    {
+      "slotNo": 158,
+      "familyId": "ch7s4-jonesy",
+      "familyDisplayName": "Jonesy",
+      "variantId": "quack",
+      "variantDisplayName": "Quack",
+      "spriteId": "ch7s4-jonesy-quack",
+      "gameDexNumber": 27,
+      "gameFamilyOrder": 2,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-jonesy-quack.png"
+    },
+    {
+      "slotNo": 159,
+      "familyId": "ch7s4-adventure",
+      "familyDisplayName": "Adventure",
+      "variantId": "quack",
+      "variantDisplayName": "Quack",
+      "spriteId": "ch7s4-adventure-quack",
+      "gameDexNumber": 28,
+      "gameFamilyOrder": 3,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-adventure-quack.png"
+    },
+    {
+      "slotNo": 160,
+      "familyId": "ch7s4-bush",
+      "familyDisplayName": "Bush",
+      "variantId": "quack",
+      "variantDisplayName": "Quack",
+      "spriteId": "ch7s4-bush-quack",
+      "gameDexNumber": 29,
+      "gameFamilyOrder": 4,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-bush-quack.png"
+    },
+    {
+      "slotNo": 161,
+      "familyId": "ch7s4-klombo",
+      "familyDisplayName": "Klombo",
+      "variantId": "quack",
+      "variantDisplayName": "Quack",
+      "spriteId": "ch7s4-klombo-quack",
+      "gameDexNumber": 37,
+      "gameFamilyOrder": 12,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-klombo-quack.png"
+    },
+    {
+      "slotNo": 162,
+      "familyId": "ch7s4-spooky-dash",
+      "familyDisplayName": "Spooky Dash",
+      "variantId": "quack",
+      "variantDisplayName": "Quack",
+      "spriteId": "ch7s4-spooky-dash-quack",
+      "gameDexNumber": 50,
+      "gameFamilyOrder": 23,
+      "layoutRole": "REGULAR",
+      "thumbnailPath": "./images/trade-thumbs/ch7s4-spooky-dash-quack.png"
     }
   ],
   "constraints": {
@@ -1691,5 +1886,5 @@
     "spriteIdsArePersistenceIds": true,
     "availabilityControlsIdentity": false
   },
-  "releaseGenerationId": "g20261006a"
+  "releaseGenerationId": "g20261016a"
 }

@@ -1,10 +1,10 @@
 {
   "schema": "ver8-slot-availability-v1",
   "status": "current-runtime-gate",
-  "asOf": "2026-10-06",
-  "layoutRevisionId": "ch7s4-r04",
-  "capacitySlotCount": 145,
-  "activeSlotCount": 145,
+  "asOf": "2026-10-16",
+  "layoutRevisionId": "ch7s4-r05",
+  "capacitySlotCount": 162,
+  "activeSlotCount": 162,
   "activeSlotNumbers": [
     1,
     2,
@@ -150,7 +150,24 @@
     142,
     143,
     144,
-    145
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162
   ],
   "pendingGold": {
     "scheduledDate": null,
@@ -163,6 +180,6 @@
     "slotNumbersArePersistenceIds": false,
     "autoActivateByDate": false
   },
-  "releaseGenerationId": "g20261006a",
-  "activationEvidence": "User instruction 2026-10-06 JST: all Trick or Treat variants are implemented; activate all 145 existing stable identities."
+  "releaseGenerationId": "g20261016a",
+  "activationEvidence": "User instruction 2026-10-15 JST: all 17 added sprites are implemented; all 162 are active. Local candidate only, not deployed."
 }
